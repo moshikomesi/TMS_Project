@@ -33,6 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MetroFramework, Version=1.2.0.3, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroFramework.RunTime.1.2.0.3\lib\net40-Client\MetroFramework.dll</HintPath>
       <Private>True</Private>
@@ -45,8 +53,14 @@
       <HintPath>..\packages\MetroFramework.Fonts.1.2.0.3\lib\net40\MetroFramework.Fonts.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -70,11 +84,23 @@
     <Compile Include="Customers.Designer.cs">
       <DependentUpon>Customers.cs</DependentUpon>
     </Compile>
+    <Compile Include="CustomersTbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomersTbl.Designer.cs">
+      <DependentUpon>CustomersTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drivers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Drivers.Designer.cs">
       <DependentUpon>Drivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeTbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeTbl.Designer.cs">
+      <DependentUpon>EmployeeTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -88,6 +114,12 @@
     <Compile Include="Invoices.Designer.cs">
       <DependentUpon>Invoices.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports.cs">
@@ -95,6 +127,12 @@
     </Compile>
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShippTypeTbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShippTypeTbl.Designer.cs">
+      <DependentUpon>ShippTypeTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Traks.cs">
       <SubType>Form</SubType>
@@ -108,11 +146,26 @@
     <Compile Include="transactions.Designer.cs">
       <DependentUpon>transactions.cs</DependentUpon>
     </Compile>
+    <Compile Include="VehicleTbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehicleTbl.Designer.cs">
+      <DependentUpon>VehicleTbl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CustomersTbl.resx">
+      <DependentUpon>CustomersTbl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Drivers.resx">
       <DependentUpon>Drivers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeTbl.resx">
+      <DependentUpon>EmployeeTbl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -122,12 +175,19 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShippTypeTbl.resx">
+      <DependentUpon>ShippTypeTbl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="transactions.resx">
       <DependentUpon>transactions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehicleTbl.resx">
+      <DependentUpon>VehicleTbl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -145,6 +205,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <None Include="Resources\logo1.jpeg" />
+    <None Include="Resources\logo.jpeg" />
+    <None Include="Resources\serchicn1.png" />
+    <None Include="Resources\serchicn.png" />
+    <None Include="Resources\pluse.jpg" />
+    <None Include="Resources\updateicon.jpg" />
+    <None Include="Resources\okiconpng.png" />
+    <None Include="Resources\deleteicon.png" />
+    <None Include="Resources\report.png" />
+    <None Include="Resources\recepit.png" />
+    <None Include="Resources\invoice.jpg" />
+    <None Include="Resources\customers.jpg" />
+    <None Include="Resources\track.png" />
+    <None Include="Resources\driverion.png" />
+    <None Include="Resources\racing1.png" />
+    <None Include="Resources\racing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

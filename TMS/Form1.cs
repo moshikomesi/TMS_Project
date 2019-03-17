@@ -46,13 +46,13 @@ namespace TMS
             Customers cu = new Customers();
             cu.ShowDialog();
         }
-
+        
         private void invoicesbtn_Click(object sender, EventArgs e)
         {
             Invoices inv = new Invoices();
             inv.ShowDialog();
         }
-
+        
         private void billsbtn_Click(object sender, EventArgs e)
         {
             Bills bil = new Bills();

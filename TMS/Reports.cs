@@ -23,11 +23,19 @@ namespace TMS
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
             SqlConnection con = new SqlConnection(constring);
             con.Open();
+            /*
             SqlDataAdapter sqlDa = new SqlDataAdapter("select * from Transactions", con);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
             dataGridView1.DataSource = dtbl;
+            */
 
+        }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }
