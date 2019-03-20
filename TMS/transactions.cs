@@ -47,9 +47,41 @@ namespace TMS
             this.Hide();
         }
 
+        bool Isred = false;
+        bool Cusrtomer_Hold = false;
+        bool Driver_Hold = false;
 
         private void transactions_Load(object sender, EventArgs e)
         {
+            // הקפאת סוג הובלה 
+            Isred = Properties.Settings.Default.Isred;
+            if(Isred)
+            KindTran.Text = Properties.Settings.Default.KindTran;
+            // הקפאת מס לקוח 
+            Cusrtomer_Hold = Properties.Settings.Default.Cusrtomer_Hold;
+            if(Cusrtomer_Hold)
+            CustomerNum.Text = Properties.Settings.Default.CustomerNum;
+            // הקפאת נהג 
+            Driver_Hold = Properties.Settings.Default.Driver_Hold;
+            if(Driver_Hold)
+            Driver.Text = Properties.Settings.Default.Driver;
+
+
+            if (Isred)
+            {
+                KindTran.BackColor = Color.Red;
+            }
+
+            if (Cusrtomer_Hold)
+            {
+                CustomerNum.BackColor = Color.Red;
+            }
+            if (Driver_Hold)
+            {
+                Driver.BackColor = Color.Red;
+            }
+
+
             // Create the ToolTip and associate with the Form container.
             ToolTip toolTip1 = new ToolTip();
 
@@ -156,8 +188,8 @@ namespace TMS
                
         }
         */
-       
-      
+
+
         private void Driver_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (char)Keys.F1)
@@ -168,9 +200,39 @@ namespace TMS
 
             }
 
+            // הקפאה
+            if (e.KeyValue == (char)Keys.F4)
+            {
+                if (!Driver_Hold)
+                {
+                    MessageBox.Show("בחרת להקפיא את השדה", "הקפאת שדות");
+                if (Driver.Text == "")
+                {
+                    MessageBox.Show("נא להזין ערך לשדה", "לא הוזן ערך ");
+                    return;
+                }
+               
+                    Driver.BackColor = Color.Red;
+                    Properties.Settings.Default.Driver = Driver.Text;
+                    Properties.Settings.Default.Save();
+                    Driver_Hold = true;
+                    Properties.Settings.Default.Driver_Hold = Driver_Hold;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Driver.BackColor = Color.White;
+                    Driver_Hold = false;
+                    Properties.Settings.Default.Driver_Hold = Driver_Hold;
+                    Properties.Settings.Default.Save();
+
+                }
+
+            }
+
         }
 
-     
+
         private void Car_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == (char)Keys.F1)
@@ -187,15 +249,15 @@ namespace TMS
 
 
         }
-        
+
 
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
 
-          
+
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
-       
+
             string Query = "insert into dbo.Shipp(Customer_Number,Shipp_Date_Time,Shipp_DocNum,Transaction_Number,Shipp_origin,Shipp_Dest,Shipp_Quantity,Shipp_Amount,Employee_Number,Vehicle_Number) values('" + this.CustomerNum.Text + "','" + this.TranDate.Text + "','" + this.DocNum.Text + "','" + this.KindTran.Text + "','" + this.Exitt.Text + "','" + this.Targett.Text + "','" + this.quantity.Text + "','" + this.Amount.Text + "','" + this.Driver.Text + "','" + this.Car.Text + "');";
 
             SqlConnection con = new SqlConnection(constring);
@@ -211,18 +273,19 @@ namespace TMS
                     MessageBox.Show(" לא ניתן לשמור הזמנה ללא כל נתונים ");
                     return;
                 }
-         
+
 
                 myReader = cmdDataBase.ExecuteReader();
-                    MessageBox.Show("הזמנה נשמרה בהצלחה");
+                MessageBox.Show("הזמנה נשמרה בהצלחה");
                 while (myReader.Read()) { }
                 con.Close();
             }
 
-            catch (Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
-            
+
 
         }
 
@@ -242,6 +305,11 @@ namespace TMS
             SqlDataReader myReader;
             try
             {
+                DialogResult result = MessageBox.Show("?האם אתה בטוח שברצונך למחוק את ההזמנה", "אזהרה", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
 
                 con.Open();
                 myReader = cmdDataBase.ExecuteReader();
@@ -308,63 +376,63 @@ namespace TMS
             if (output == "1")
             {
                 MessageBox.Show("מספר תעודה מופיע במערכת ");
-                
-                    this.Text = "";
-                    string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_DocNum " + " = " + DocNum.Text;
+
+                this.Text = "";
+                string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_DocNum " + " = " + DocNum.Text;
 
 
-                    SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
+                SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
 
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        CustomerNum.Text = (dr["Customer_Number"].ToString());
-                        CustomerName.Text = (dr["Customer_Name"].ToString());
-                        TranDate.Text = (dr["Shipp_Date_Time"].ToString());
-                        DocNum.Text = (dr["Shipp_DocNum"].ToString());
-                        KindTran.Text = (dr["Transaction_Number"].ToString());
-                        ShipTypeText.Text = (dr["Transacion_Type"].ToString());
-                        Exitt.Text = (dr["Shipp_Origin"].ToString());
-                        Targett.Text = (dr["Shipp_Dest"].ToString());
-                        quantity.Text = (dr["Shipp_Quantity"].ToString());
-                        Amount.Text = (dr["Shipp_Amount"].ToString());
-                        Driver.Text = (dr["Employee_Number"].ToString());
-                        DriverNameText.Text = (dr["Employee_Fname"].ToString());
-                        Car.Text = (dr["Vehicle_Number"].ToString());
-                       OrdeNum.Text = (dr["Shipp_Num"].ToString());
-                      this.Text = " מספר הזמנה :" + OrdeNum.Text;
-                        dataGridView1.Rows[0].Cells[5].Value = TranDate.Text;
-                        dataGridView1.Rows[0].Cells[6].Value = OrdeNum.Text;
-                        dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
-                        dataGridView1.Rows[0].Cells[2].Value = Targett.Text;
-                        dataGridView1.Rows[0].Cells[1].Value = quantity.Text;
-                        dataGridView1.Rows[0].Cells[0].Value = Amount.Text + "ש\"ח";
-                        dataGridView1.Rows[0].Cells[4].Value = DriverNameText.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    CustomerNum.Text = (dr["Customer_Number"].ToString());
+                    CustomerName.Text = (dr["Customer_Name"].ToString());
+                    TranDate.Text = (dr["Shipp_Date_Time"].ToString());
+                    DocNum.Text = (dr["Shipp_DocNum"].ToString());
+                    KindTran.Text = (dr["Transaction_Number"].ToString());
+                    ShipTypeText.Text = (dr["Transacion_Type"].ToString());
+                    Exitt.Text = (dr["Shipp_Origin"].ToString());
+                    Targett.Text = (dr["Shipp_Dest"].ToString());
+                    quantity.Text = (dr["Shipp_Quantity"].ToString());
+                    Amount.Text = (dr["Shipp_Amount"].ToString());
+                    Driver.Text = (dr["Employee_Number"].ToString());
+                    DriverNameText.Text = (dr["Employee_Fname"].ToString());
+                    Car.Text = (dr["Vehicle_Number"].ToString());
+                    OrdeNum.Text = (dr["Shipp_Num"].ToString());
+                    this.Text = " מספר הזמנה :" + OrdeNum.Text;
+                    dataGridView1.Rows[0].Cells[5].Value = TranDate.Text;
+                    dataGridView1.Rows[0].Cells[6].Value = OrdeNum.Text;
+                    dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
+                    dataGridView1.Rows[0].Cells[2].Value = Targett.Text;
+                    dataGridView1.Rows[0].Cells[1].Value = quantity.Text;
+                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text + "ש\"ח";
+                    dataGridView1.Rows[0].Cells[4].Value = DriverNameText.Text;
 
-
-                    }
 
                 }
-        
-           
+
+            }
+
+
 
 
 
             else
             {
 
-                    MessageBox.Show("מספר תעודה לא נמצא ");
-                   DocNum.Text = "";
-                    return;
-                }
-                con.Close();
-
-
-
+                MessageBox.Show("מספר תעודה לא נמצא ");
+                DocNum.Text = "";
+                return;
             }
+            con.Close();
 
 
-        
+
+        }
+
+
+
 
         private void CustomerNum_Leave(object sender, EventArgs e)
         {
@@ -466,7 +534,7 @@ namespace TMS
             else
             {
 
-                MessageBox.Show(" סוג הובלה לא נמצא ");
+                MessageBox.Show(" סוג הובלה לא מופיע במערכת ");
                 ShipTypeText.Text = "";
                 KindTran.Text = "";
             }
@@ -509,7 +577,7 @@ namespace TMS
             {
                 this.Text = "";
                 this.Text = " מספר הזמנה :" + OrdeNum.Text;
-                string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_Num"+" = " + OrdeNum.Text;
+                string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_Num" + " = " + OrdeNum.Text;
 
 
                 SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
@@ -518,17 +586,17 @@ namespace TMS
                 if (dr.Read())
                 {
                     CustomerNum.Text = (dr["Customer_Number"].ToString());
-                    CustomerName.Text= (dr["Customer_Name"].ToString());
+                    CustomerName.Text = (dr["Customer_Name"].ToString());
                     TranDate.Text = (dr["Shipp_Date_Time"].ToString());
                     DocNum.Text = (dr["Shipp_DocNum"].ToString());
                     KindTran.Text = (dr["Transaction_Number"].ToString());
-                   ShipTypeText.Text = (dr["Transacion_Type"].ToString());
+                    ShipTypeText.Text = (dr["Transacion_Type"].ToString());
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
                     Targett.Text = (dr["Shipp_Dest"].ToString());
                     quantity.Text = (dr["Shipp_Quantity"].ToString());
                     Amount.Text = (dr["Shipp_Amount"].ToString());
                     Driver.Text = (dr["Employee_Number"].ToString());
-                   DriverNameText.Text = (dr["Employee_Fname"].ToString());
+                    DriverNameText.Text = (dr["Employee_Fname"].ToString());
                     Car.Text = (dr["Vehicle_Number"].ToString());
                     dataGridView1.Rows[0].Cells[5].Value = TranDate.Text;
                     dataGridView1.Rows[0].Cells[6].Value = OrdeNum.Text;
@@ -542,8 +610,8 @@ namespace TMS
                 }
 
             }
-        
-           
+
+
 
 
 
@@ -555,8 +623,8 @@ namespace TMS
                 return;
             }
             con.Close();
-         
-            
+
+
 
         }
 
@@ -569,7 +637,39 @@ namespace TMS
                 CustomerNum.Text = ct.getS();
 
             }
+
+            // הקפאה
+            if (e.KeyValue == (char)Keys.F4)
+            {
+                if (!Cusrtomer_Hold)
+                {
+                    MessageBox.Show("בחרת להקפיא את השדה", "הקפאת שדות");
+                if (CustomerNum.Text == "")
+                {
+                    MessageBox.Show("נא להזין ערך לשדה","לא הוזן ערך ");
+                    return;
+                }
+               
+                    CustomerNum.BackColor = Color.Red;
+                    Properties.Settings.Default.CustomerNum = CustomerNum.Text;
+                    Properties.Settings.Default.Save();
+                    Cusrtomer_Hold = true;
+                    Properties.Settings.Default.Cusrtomer_Hold = Cusrtomer_Hold;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    CustomerNum.BackColor = Color.White;
+                    Cusrtomer_Hold = false;
+                    Properties.Settings.Default.Cusrtomer_Hold = Cusrtomer_Hold;
+                    Properties.Settings.Default.Save();
+
+                }
+
+            }
+
         }
+
 
         private void KindTran_KeyDown(object sender, KeyEventArgs e)
         {
@@ -580,23 +680,106 @@ namespace TMS
                 KindTran.Text = stb.getS();
 
             }
+
+            // הקפאה
+            if (e.KeyValue == (char)Keys.F4)
+            {
+                if (!Isred)
+                {
+
+                    MessageBox.Show("בחרת להקפיא את השדה" ,"הקפאת שדות");
+                if (KindTran.Text == "")
+                {
+                    MessageBox.Show("נא להזין ערך לשדה", "לא הוזן ערך ");
+                    return;
+                }
+               
+                    KindTran.BackColor = Color.Red;
+                    Properties.Settings.Default.KindTran = KindTran.Text;
+                    Properties.Settings.Default.Save();
+                    Isred = true;
+                    Properties.Settings.Default.Isred = Isred;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    KindTran.BackColor = Color.White;
+                    Isred = false;
+                    Properties.Settings.Default.Isred = Isred;
+                    Properties.Settings.Default.Save();
+
+                }
+
+            }
         }
 
         private void DocNum_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exitt_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.F1)
+            {
+                CityTbl ctb = new CityTbl();
+                ctb.ShowDialog();
+                Exitt.Text = ctb.getS();
+
+            }
+
+        }
+
+        private void Targett_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.F1)
+            {
+                CityTbl ctb = new CityTbl();
+                ctb.ShowDialog();
+                Targett.Text = ctb.getS();
+
+            }
+        }
+
+        private void transactions_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void transactions_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void transactions_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void DocNum_Leave(object sender, EventArgs e)
+        {
+
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
             SqlConnection con = new SqlConnection(constring);
-            string selectq = "select count(*) from Shipp, Customer where Shipp_DocNum" + "=" + DocNum.Text+ "and Customer_Num ="+CustomerNum.Text;
+            string selectq = "select count(*) from Shipp, Customer where Shipp_DocNum" + "=" + DocNum.Text + "and Customer_Num =" + CustomerNum.Text;
             con.Open();
             SqlCommand cmdx = new SqlCommand(selectq, con);
             string output = cmdx.ExecuteScalar().ToString();
+            string SelectDoc = "select Shipp_Num from Shipp where Shipp_DocNum " + "=" + DocNum.Text;
             if (output == "1")
             {
-                MessageBox.Show("לא ניתן להכניס את אותה תעודה משלוח לאותו הלקוח ");
-                DocNum.Text = "";
-                con.Close();
-                return;
+                cmdx = new SqlCommand(SelectDoc, con);
+                SqlDataReader drx = cmdx.ExecuteReader();
+                if (drx.Read())
+                {
+                    string m;
+                    m = (drx["Shipp_Num"].ToString());
+                    MessageBox.Show(m + " : תעודת משלוח מופיעה בזמנה מס " , "כפל תעודות משלוח ");
+                    DocNum.Text = "";
+                    con.Close();
+                    return;
+                }
+
             }
         }
     }

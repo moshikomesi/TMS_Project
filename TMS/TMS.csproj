@@ -78,6 +78,12 @@
     <Compile Include="Bills.Designer.cs">
       <DependentUpon>Bills.cs</DependentUpon>
     </Compile>
+    <Compile Include="CityTbl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CityTbl.Designer.cs">
+      <DependentUpon>CityTbl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <Compile Include="VehicleTbl.Designer.cs">
       <DependentUpon>VehicleTbl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CityTbl.resx">
+      <DependentUpon>CityTbl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersTbl.resx">
       <DependentUpon>CustomersTbl.cs</DependentUpon>
     </EmbeddedResource>

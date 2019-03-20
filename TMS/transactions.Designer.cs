@@ -47,11 +47,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SherchB = new System.Windows.Forms.Button();
-            this.Reset = new System.Windows.Forms.Button();
-            this.UpdateBt = new System.Windows.Forms.Button();
-            this.SaveBtn = new System.Windows.Forms.Button();
-            this.EraseBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -71,8 +66,13 @@
             this.ShipTypeText = new MetroFramework.Controls.MetroTextBox();
             this.CustomerNum = new MetroFramework.Controls.MetroTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.SherchB = new System.Windows.Forms.Button();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.SherchOrderBtn = new System.Windows.Forms.Button();
+            this.UpdateBt = new System.Windows.Forms.Button();
+            this.EraseBtn = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
+            this.SaveBtn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -113,6 +113,7 @@
             // DocNum
             // 
             this.DocNum.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.DocNum.CustomBackground = true;
             this.DocNum.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.DocNum.Location = new System.Drawing.Point(588, 239);
             this.DocNum.Name = "DocNum";
@@ -120,6 +121,7 @@
             this.DocNum.TabIndex = 5;
             this.DocNum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.DocNum.TextChanged += new System.EventHandler(this.DocNum_TextChanged);
+            this.DocNum.Leave += new System.EventHandler(this.DocNum_Leave);
             // 
             // Exitt
             // 
@@ -130,6 +132,7 @@
             this.Exitt.Size = new System.Drawing.Size(122, 30);
             this.Exitt.TabIndex = 8;
             this.Exitt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Exitt.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Exitt_KeyDown);
             this.Exitt.Leave += new System.EventHandler(this.Exitt_Leave);
             // 
             // Targett
@@ -141,15 +144,16 @@
             this.Targett.Size = new System.Drawing.Size(121, 30);
             this.Targett.TabIndex = 9;
             this.Targett.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Targett.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Targett_KeyDown);
             this.Targett.Leave += new System.EventHandler(this.Targett_Leave);
             // 
             // quantity
             // 
             this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.quantity.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.quantity.Location = new System.Drawing.Point(17, 236);
+            this.quantity.Location = new System.Drawing.Point(4, 236);
             this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(57, 30);
+            this.quantity.Size = new System.Drawing.Size(88, 30);
             this.quantity.TabIndex = 10;
             this.quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.quantity.TextChanged += new System.EventHandler(this.quantity_TextChanged);
@@ -159,9 +163,9 @@
             // 
             this.Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Amount.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Amount.Location = new System.Drawing.Point(17, 294);
+            this.Amount.Location = new System.Drawing.Point(4, 294);
             this.Amount.Name = "Amount";
-            this.Amount.Size = new System.Drawing.Size(57, 30);
+            this.Amount.Size = new System.Drawing.Size(89, 30);
             this.Amount.TabIndex = 11;
             this.Amount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Amount.Leave += new System.EventHandler(this.Amount_Leave);
@@ -260,65 +264,6 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
-            // SherchB
-            // 
-            this.SherchB.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.SherchB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SherchB.Image = global::TMS.Properties.Resources.serchicn1;
-            this.SherchB.Location = new System.Drawing.Point(522, 239);
-            this.SherchB.Name = "SherchB";
-            this.SherchB.Size = new System.Drawing.Size(28, 32);
-            this.SherchB.TabIndex = 34;
-            this.SherchB.UseVisualStyleBackColor = true;
-            this.SherchB.Click += new System.EventHandler(this.SherchB_Click);
-            // 
-            // Reset
-            // 
-            this.Reset.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Reset.Image = global::TMS.Properties.Resources.pluse;
-            this.Reset.Location = new System.Drawing.Point(97, 289);
-            this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(41, 33);
-            this.Reset.TabIndex = 33;
-            this.Reset.UseVisualStyleBackColor = true;
-            this.Reset.Click += new System.EventHandler(this.Reset_Click);
-            // 
-            // UpdateBt
-            // 
-            this.UpdateBt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.UpdateBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.UpdateBt.Image = global::TMS.Properties.Resources.updateicon;
-            this.UpdateBt.Location = new System.Drawing.Point(97, 184);
-            this.UpdateBt.Name = "UpdateBt";
-            this.UpdateBt.Size = new System.Drawing.Size(41, 33);
-            this.UpdateBt.TabIndex = 32;
-            this.UpdateBt.UseVisualStyleBackColor = true;
-            this.UpdateBt.Click += new System.EventHandler(this.UpdateBt_Click);
-            // 
-            // SaveBtn
-            // 
-            this.SaveBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.SaveBtn.Image = global::TMS.Properties.Resources.okiconpng;
-            this.SaveBtn.Location = new System.Drawing.Point(97, 140);
-            this.SaveBtn.Name = "SaveBtn";
-            this.SaveBtn.Size = new System.Drawing.Size(41, 33);
-            this.SaveBtn.TabIndex = 31;
-            this.SaveBtn.UseVisualStyleBackColor = true;
-            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
-            // 
-            // EraseBtn
-            // 
-            this.EraseBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.EraseBtn.Image = global::TMS.Properties.Resources.deleteicon;
-            this.EraseBtn.Location = new System.Drawing.Point(97, 232);
-            this.EraseBtn.Name = "EraseBtn";
-            this.EraseBtn.Size = new System.Drawing.Size(41, 35);
-            this.EraseBtn.TabIndex = 30;
-            this.EraseBtn.UseVisualStyleBackColor = true;
-            this.EraseBtn.Click += new System.EventHandler(this.EraseBtn_Click);
-            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -357,7 +302,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label14.Location = new System.Drawing.Point(98, 297);
+            this.label14.Location = new System.Drawing.Point(120, 297);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(117, 27);
             this.label14.TabIndex = 43;
@@ -388,6 +333,7 @@
             // KindTran
             // 
             this.KindTran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.KindTran.CustomBackground = true;
             this.KindTran.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.KindTran.Location = new System.Drawing.Point(677, 314);
             this.KindTran.Name = "KindTran";
@@ -400,6 +346,7 @@
             // Driver
             // 
             this.Driver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Driver.CustomBackground = true;
             this.Driver.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Driver.Location = new System.Drawing.Point(677, 116);
             this.Driver.Name = "Driver";
@@ -413,6 +360,7 @@
             // Car
             // 
             this.Car.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Car.CustomBackground = true;
             this.Car.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.Car.Location = new System.Drawing.Point(628, 177);
             this.Car.Name = "Car";
@@ -448,7 +396,7 @@
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(42, 119);
+            this.label9.Location = new System.Drawing.Point(53, 119);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 27);
             this.label9.TabIndex = 37;
@@ -459,7 +407,7 @@
             this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(65, 180);
+            this.label10.Location = new System.Drawing.Point(81, 180);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 27);
             this.label10.TabIndex = 38;
@@ -527,6 +475,8 @@
             // CustomerNum
             // 
             this.CustomerNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CustomerNum.BackColor = System.Drawing.Color.White;
+            this.CustomerNum.CustomBackground = true;
             this.CustomerNum.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.CustomerNum.Location = new System.Drawing.Point(677, 61);
             this.CustomerNum.Name = "CustomerNum";
@@ -575,6 +525,18 @@
             this.splitContainer1.SplitterDistance = 768;
             this.splitContainer1.TabIndex = 49;
             // 
+            // SherchB
+            // 
+            this.SherchB.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.SherchB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SherchB.Image = global::TMS.Properties.Resources.serchicn1;
+            this.SherchB.Location = new System.Drawing.Point(522, 239);
+            this.SherchB.Name = "SherchB";
+            this.SherchB.Size = new System.Drawing.Size(28, 32);
+            this.SherchB.TabIndex = 34;
+            this.SherchB.UseVisualStyleBackColor = true;
+            this.SherchB.Click += new System.EventHandler(this.SherchB_Click);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.Location = new System.Drawing.Point(3, 56);
@@ -611,6 +573,53 @@
             this.SherchOrderBtn.TabIndex = 49;
             this.SherchOrderBtn.UseVisualStyleBackColor = true;
             this.SherchOrderBtn.Click += new System.EventHandler(this.SherchOrderBtn_Click);
+            // 
+            // UpdateBt
+            // 
+            this.UpdateBt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.UpdateBt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.UpdateBt.Image = global::TMS.Properties.Resources.updateicon;
+            this.UpdateBt.Location = new System.Drawing.Point(97, 184);
+            this.UpdateBt.Name = "UpdateBt";
+            this.UpdateBt.Size = new System.Drawing.Size(41, 33);
+            this.UpdateBt.TabIndex = 32;
+            this.UpdateBt.UseVisualStyleBackColor = true;
+            this.UpdateBt.Click += new System.EventHandler(this.UpdateBt_Click);
+            // 
+            // EraseBtn
+            // 
+            this.EraseBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.EraseBtn.Image = global::TMS.Properties.Resources.deleteicon;
+            this.EraseBtn.Location = new System.Drawing.Point(97, 232);
+            this.EraseBtn.Name = "EraseBtn";
+            this.EraseBtn.Size = new System.Drawing.Size(41, 35);
+            this.EraseBtn.TabIndex = 30;
+            this.EraseBtn.UseVisualStyleBackColor = true;
+            this.EraseBtn.Click += new System.EventHandler(this.EraseBtn_Click);
+            // 
+            // Reset
+            // 
+            this.Reset.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Reset.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Reset.Image = global::TMS.Properties.Resources.pluse;
+            this.Reset.Location = new System.Drawing.Point(97, 289);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(41, 33);
+            this.Reset.TabIndex = 33;
+            this.Reset.UseVisualStyleBackColor = true;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
+            // 
+            // SaveBtn
+            // 
+            this.SaveBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.SaveBtn.Image = global::TMS.Properties.Resources.okiconpng;
+            this.SaveBtn.Location = new System.Drawing.Point(97, 140);
+            this.SaveBtn.Name = "SaveBtn";
+            this.SaveBtn.Size = new System.Drawing.Size(41, 33);
+            this.SaveBtn.TabIndex = 31;
+            this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label15
             // 
@@ -670,7 +679,10 @@
             this.Name = "transactions";
             this.Padding = new System.Windows.Forms.Padding(40, 102, 40, 34);
             this.Text = "מספר הזמנה";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.transactions_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.transactions_FormClosed);
             this.Load += new System.EventHandler(this.transactions_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.transactions_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
