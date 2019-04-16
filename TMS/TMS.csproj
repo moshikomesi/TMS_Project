@@ -126,6 +126,21 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports.cs">
@@ -133,6 +148,9 @@
     </Compile>
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Shipp.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="ShippTypeTbl.cs">
       <SubType>Form</SubType>
@@ -173,6 +191,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Invoices.resx">
+      <DependentUpon>Invoices.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,13 +213,44 @@
     <EmbeddedResource Include="ShippTypeTbl.resx">
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Shipp_Report.rdlc" />
     <EmbeddedResource Include="transactions.resx">
       <DependentUpon>transactions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehicleTbl.resx">
       <DependentUpon>VehicleTbl.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Bills.datasource" />
+    <None Include="Properties\DataSources\CityTbl.datasource" />
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\Customers.datasource" />
+    <None Include="Properties\DataSources\CustomersTbl.datasource" />
+    <None Include="Properties\DataSources\Drivers.datasource" />
+    <None Include="Properties\DataSources\Employee.datasource" />
+    <None Include="Properties\DataSources\EmployeeTbl.datasource" />
+    <None Include="Properties\DataSources\Form1.datasource" />
+    <None Include="Properties\DataSources\Invoices.datasource" />
+    <None Include="Properties\DataSources\Login.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\Reports.datasource" />
+    <None Include="Properties\DataSources\Shipp.datasource" />
+    <None Include="Properties\DataSources\ShippTypeTbl.datasource" />
+    <None Include="Properties\DataSources\TMS.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\TMS.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\TmsDbEntities1.datasource" />
+    <None Include="Properties\DataSources\Traks.datasource" />
+    <None Include="Properties\DataSources\transactions.datasource" />
+    <None Include="Properties\DataSources\Transactions_Type.datasource" />
+    <None Include="Properties\DataSources\Vehicle.datasource" />
+    <None Include="Properties\DataSources\VehicleTbl.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -214,6 +266,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <None Include="Resources\logo1.jpeg" />
     <None Include="Resources\logo.jpeg" />
     <None Include="Resources\serchicn1.png" />

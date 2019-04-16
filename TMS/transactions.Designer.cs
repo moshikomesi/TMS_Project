@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.DocNum = new MetroFramework.Controls.MetroTextBox();
@@ -91,7 +91,7 @@
             // metroTextBox1
             // 
             this.metroTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.metroTextBox1.Location = new System.Drawing.Point(2036, 39);
+            this.metroTextBox1.Location = new System.Drawing.Point(2113, 39);
             this.metroTextBox1.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.Size = new System.Drawing.Size(57, 23);
@@ -101,7 +101,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.Location = new System.Drawing.Point(6, 242);
@@ -115,7 +114,7 @@
             this.DocNum.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.DocNum.CustomBackground = true;
             this.DocNum.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.DocNum.Location = new System.Drawing.Point(588, 239);
+            this.DocNum.Location = new System.Drawing.Point(603, 239);
             this.DocNum.Name = "DocNum";
             this.DocNum.Size = new System.Drawing.Size(168, 30);
             this.DocNum.TabIndex = 5;
@@ -127,7 +126,7 @@
             // 
             this.Exitt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Exitt.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Exitt.Location = new System.Drawing.Point(533, 404);
+            this.Exitt.Location = new System.Drawing.Point(649, 392);
             this.Exitt.Name = "Exitt";
             this.Exitt.Size = new System.Drawing.Size(122, 30);
             this.Exitt.TabIndex = 8;
@@ -139,7 +138,7 @@
             // 
             this.Targett.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Targett.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Targett.Location = new System.Drawing.Point(321, 404);
+            this.Targett.Location = new System.Drawing.Point(429, 395);
             this.Targett.Name = "Targett";
             this.Targett.Size = new System.Drawing.Size(121, 30);
             this.Targett.TabIndex = 9;
@@ -151,7 +150,7 @@
             // 
             this.quantity.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.quantity.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.quantity.Location = new System.Drawing.Point(4, 236);
+            this.quantity.Location = new System.Drawing.Point(8, 269);
             this.quantity.Name = "quantity";
             this.quantity.Size = new System.Drawing.Size(88, 30);
             this.quantity.TabIndex = 10;
@@ -163,7 +162,7 @@
             // 
             this.Amount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.Amount.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Amount.Location = new System.Drawing.Point(4, 294);
+            this.Amount.Location = new System.Drawing.Point(8, 327);
             this.Amount.Name = "Amount";
             this.Amount.Size = new System.Drawing.Size(89, 30);
             this.Amount.TabIndex = 11;
@@ -185,14 +184,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -202,21 +201,21 @@
             this.Column5,
             this.Column6,
             this.Column7});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Location = new System.Drawing.Point(148, 487);
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridView1.Location = new System.Drawing.Point(148, 561);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(842, 76);
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridView1.Size = new System.Drawing.Size(919, 76);
             this.dataGridView1.TabIndex = 28;
             // 
             // Column1
@@ -269,7 +268,7 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(683, 404);
+            this.label3.Location = new System.Drawing.Point(80, 394);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 27);
             this.label3.TabIndex = 40;
@@ -280,7 +279,7 @@
             this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label12.Location = new System.Drawing.Point(466, 404);
+            this.label12.Location = new System.Drawing.Point(574, 395);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(43, 27);
             this.label12.TabIndex = 41;
@@ -291,7 +290,7 @@
             this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label13.Location = new System.Drawing.Point(98, 239);
+            this.label13.Location = new System.Drawing.Point(102, 272);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(151, 27);
             this.label13.TabIndex = 42;
@@ -302,7 +301,7 @@
             this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label14.Location = new System.Drawing.Point(120, 297);
+            this.label14.Location = new System.Drawing.Point(124, 330);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(117, 27);
             this.label14.TabIndex = 43;
@@ -324,7 +323,7 @@
             this.TranDate.CustomFormat = "yyyy-MM-dd";
             this.TranDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.TranDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TranDate.Location = new System.Drawing.Point(611, 5);
+            this.TranDate.Location = new System.Drawing.Point(624, 5);
             this.TranDate.Name = "TranDate";
             this.TranDate.Size = new System.Drawing.Size(145, 29);
             this.TranDate.TabIndex = 1;
@@ -335,7 +334,7 @@
             this.KindTran.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.KindTran.CustomBackground = true;
             this.KindTran.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.KindTran.Location = new System.Drawing.Point(677, 314);
+            this.KindTran.Location = new System.Drawing.Point(692, 314);
             this.KindTran.Name = "KindTran";
             this.KindTran.Size = new System.Drawing.Size(77, 30);
             this.KindTran.TabIndex = 7;
@@ -348,7 +347,7 @@
             this.Driver.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Driver.CustomBackground = true;
             this.Driver.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Driver.Location = new System.Drawing.Point(677, 116);
+            this.Driver.Location = new System.Drawing.Point(692, 116);
             this.Driver.Name = "Driver";
             this.Driver.Size = new System.Drawing.Size(77, 30);
             this.Driver.TabIndex = 3;
@@ -362,7 +361,7 @@
             this.Car.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Car.CustomBackground = true;
             this.Car.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Car.Location = new System.Drawing.Point(628, 177);
+            this.Car.Location = new System.Drawing.Point(643, 177);
             this.Car.Name = "Car";
             this.Car.Size = new System.Drawing.Size(126, 30);
             this.Car.TabIndex = 4;
@@ -371,7 +370,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label8.Location = new System.Drawing.Point(60, 5);
@@ -382,7 +380,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.Location = new System.Drawing.Point(42, 61);
@@ -393,7 +390,6 @@
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label9.Location = new System.Drawing.Point(53, 119);
@@ -404,18 +400,17 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(81, 180);
+            this.label10.Location = new System.Drawing.Point(94, 177);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(48, 27);
             this.label10.TabIndex = 38;
             this.label10.Text = "רכב";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label11.Location = new System.Drawing.Point(22, 311);
@@ -432,7 +427,7 @@
             this.CustomerName.CustomForeColor = true;
             this.CustomerName.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.CustomerName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.CustomerName.Location = new System.Drawing.Point(414, 61);
+            this.CustomerName.Location = new System.Drawing.Point(429, 61);
             this.CustomerName.Name = "CustomerName";
             this.CustomerName.Size = new System.Drawing.Size(241, 30);
             this.CustomerName.Style = MetroFramework.MetroColorStyle.Orange;
@@ -448,7 +443,7 @@
             this.DriverNameText.CustomForeColor = true;
             this.DriverNameText.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.DriverNameText.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DriverNameText.Location = new System.Drawing.Point(497, 116);
+            this.DriverNameText.Location = new System.Drawing.Point(512, 116);
             this.DriverNameText.Name = "DriverNameText";
             this.DriverNameText.Size = new System.Drawing.Size(158, 30);
             this.DriverNameText.Style = MetroFramework.MetroColorStyle.Orange;
@@ -464,7 +459,7 @@
             this.ShipTypeText.CustomForeColor = true;
             this.ShipTypeText.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.ShipTypeText.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.ShipTypeText.Location = new System.Drawing.Point(538, 314);
+            this.ShipTypeText.Location = new System.Drawing.Point(553, 314);
             this.ShipTypeText.Name = "ShipTypeText";
             this.ShipTypeText.Size = new System.Drawing.Size(115, 30);
             this.ShipTypeText.Style = MetroFramework.MetroColorStyle.Orange;
@@ -478,7 +473,7 @@
             this.CustomerNum.BackColor = System.Drawing.Color.White;
             this.CustomerNum.CustomBackground = true;
             this.CustomerNum.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.CustomerNum.Location = new System.Drawing.Point(677, 61);
+            this.CustomerNum.Location = new System.Drawing.Point(692, 61);
             this.CustomerNum.Name = "CustomerNum";
             this.CustomerNum.Size = new System.Drawing.Size(77, 30);
             this.CustomerNum.TabIndex = 2;
@@ -489,7 +484,7 @@
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Location = new System.Drawing.Point(349, 34);
+            this.splitContainer1.Location = new System.Drawing.Point(400, 85);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -499,9 +494,9 @@
             this.splitContainer1.Panel1.Controls.Add(this.TranDate);
             this.splitContainer1.Panel1.Controls.Add(this.Amount);
             this.splitContainer1.Panel1.Controls.Add(this.label14);
-            this.splitContainer1.Panel1.Controls.Add(this.label3);
             this.splitContainer1.Panel1.Controls.Add(this.ShipTypeText);
             this.splitContainer1.Panel1.Controls.Add(this.CustomerNum);
+            this.splitContainer1.Panel1.Controls.Add(this.Exitt);
             this.splitContainer1.Panel1.Controls.Add(this.label12);
             this.splitContainer1.Panel1.Controls.Add(this.Driver);
             this.splitContainer1.Panel1.Controls.Add(this.DriverNameText);
@@ -511,7 +506,6 @@
             this.splitContainer1.Panel1.Controls.Add(this.KindTran);
             this.splitContainer1.Panel1.Controls.Add(this.DocNum);
             this.splitContainer1.Panel1.Controls.Add(this.Targett);
-            this.splitContainer1.Panel1.Controls.Add(this.Exitt);
             // 
             // splitContainer1.Panel2
             // 
@@ -520,9 +514,11 @@
             this.splitContainer1.Panel2.Controls.Add(this.label9);
             this.splitContainer1.Panel2.Controls.Add(this.label10);
             this.splitContainer1.Panel2.Controls.Add(this.label11);
+            this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
-            this.splitContainer1.Size = new System.Drawing.Size(920, 447);
-            this.splitContainer1.SplitterDistance = 768;
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.splitContainer1.Size = new System.Drawing.Size(927, 447);
+            this.splitContainer1.SplitterDistance = 772;
             this.splitContainer1.TabIndex = 49;
             // 
             // SherchB
@@ -530,7 +526,7 @@
             this.SherchB.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.SherchB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SherchB.Image = global::TMS.Properties.Resources.serchicn1;
-            this.SherchB.Location = new System.Drawing.Point(522, 239);
+            this.SherchB.Location = new System.Drawing.Point(537, 239);
             this.SherchB.Name = "SherchB";
             this.SherchB.Size = new System.Drawing.Size(28, 32);
             this.SherchB.TabIndex = 34;
@@ -539,7 +535,7 @@
             // 
             // splitContainer2
             // 
-            this.splitContainer2.Location = new System.Drawing.Point(3, 56);
+            this.splitContainer2.Location = new System.Drawing.Point(43, 120);
             this.splitContainer2.Name = "splitContainer2";
             // 
             // splitContainer2.Panel1
@@ -666,7 +662,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1272, 577);
+            this.ClientSize = new System.Drawing.Size(1349, 651);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.metroTextBox1);
