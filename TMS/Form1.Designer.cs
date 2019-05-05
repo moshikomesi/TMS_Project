@@ -40,10 +40,11 @@
             // 
             // ReportsBtn
             // 
+            this.ReportsBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ReportsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ReportsBtn.Location = new System.Drawing.Point(697, 141);
+            this.ReportsBtn.Location = new System.Drawing.Point(948, 190);
             this.ReportsBtn.Name = "ReportsBtn";
-            this.ReportsBtn.Size = new System.Drawing.Size(110, 105);
+            this.ReportsBtn.Size = new System.Drawing.Size(144, 130);
             this.ReportsBtn.TabIndex = 6;
             this.ReportsBtn.Text = "דוחות";
             this.ReportsBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -54,10 +55,11 @@
             // 
             // billsbtn
             // 
+            this.billsbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.billsbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.billsbtn.Location = new System.Drawing.Point(581, 141);
+            this.billsbtn.Location = new System.Drawing.Point(798, 190);
             this.billsbtn.Name = "billsbtn";
-            this.billsbtn.Size = new System.Drawing.Size(110, 105);
+            this.billsbtn.Size = new System.Drawing.Size(144, 130);
             this.billsbtn.TabIndex = 5;
             this.billsbtn.Text = "קבלות";
             this.billsbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -68,10 +70,11 @@
             // 
             // traksbtn
             // 
+            this.traksbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.traksbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.traksbtn.Location = new System.Drawing.Point(233, 141);
+            this.traksbtn.Location = new System.Drawing.Point(346, 190);
             this.traksbtn.Name = "traksbtn";
-            this.traksbtn.Size = new System.Drawing.Size(110, 105);
+            this.traksbtn.Size = new System.Drawing.Size(144, 131);
             this.traksbtn.TabIndex = 4;
             this.traksbtn.Text = "רכבים";
             this.traksbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -82,10 +85,11 @@
             // 
             // invoicesbtn
             // 
+            this.invoicesbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.invoicesbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.invoicesbtn.Location = new System.Drawing.Point(465, 141);
+            this.invoicesbtn.Location = new System.Drawing.Point(646, 190);
             this.invoicesbtn.Name = "invoicesbtn";
-            this.invoicesbtn.Size = new System.Drawing.Size(110, 105);
+            this.invoicesbtn.Size = new System.Drawing.Size(146, 131);
             this.invoicesbtn.TabIndex = 3;
             this.invoicesbtn.Text = "חשבוניות";
             this.invoicesbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -97,10 +101,11 @@
             // 
             // customersbtn
             // 
+            this.customersbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.customersbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.customersbtn.Location = new System.Drawing.Point(349, 141);
+            this.customersbtn.Location = new System.Drawing.Point(496, 190);
             this.customersbtn.Name = "customersbtn";
-            this.customersbtn.Size = new System.Drawing.Size(110, 105);
+            this.customersbtn.Size = new System.Drawing.Size(144, 131);
             this.customersbtn.TabIndex = 2;
             this.customersbtn.Text = "לקוחות";
             this.customersbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -111,10 +116,11 @@
             // 
             // driversbtn
             // 
+            this.driversbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.driversbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.driversbtn.Location = new System.Drawing.Point(117, 141);
+            this.driversbtn.Location = new System.Drawing.Point(196, 190);
             this.driversbtn.Name = "driversbtn";
-            this.driversbtn.Size = new System.Drawing.Size(110, 105);
+            this.driversbtn.Size = new System.Drawing.Size(144, 130);
             this.driversbtn.TabIndex = 1;
             this.driversbtn.Text = "נהגים";
             this.driversbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -125,10 +131,11 @@
             // 
             // transactionsbtn
             // 
+            this.transactionsbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.transactionsbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.transactionsbtn.Location = new System.Drawing.Point(1, 141);
+            this.transactionsbtn.Location = new System.Drawing.Point(46, 190);
             this.transactionsbtn.Name = "transactionsbtn";
-            this.transactionsbtn.Size = new System.Drawing.Size(110, 105);
+            this.transactionsbtn.Size = new System.Drawing.Size(144, 130);
             this.transactionsbtn.TabIndex = 0;
             this.transactionsbtn.Text = "נסיעות";
             this.transactionsbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -141,7 +148,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 445);
+            this.ClientSize = new System.Drawing.Size(1111, 542);
             this.Controls.Add(this.ReportsBtn);
             this.Controls.Add(this.billsbtn);
             this.Controls.Add(this.traksbtn);

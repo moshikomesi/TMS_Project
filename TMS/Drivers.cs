@@ -87,9 +87,14 @@ namespace TMS
                     MessageBox.Show(" לא ניתן להוסיף נהג  ללא כל נתונים ");
                     return;
                 }
+                if (Driver_Id.Text.Length < 9)
+                {
+                    MessageBox.Show("מספר זהות לא תקין ");
+                    return;
+                } 
 
                 string query = "select count(*) from Employee where Employee_Id ='" + Driver_Id.Text + "'";
-
+                string qvn = "select count(*) from Vehicle where Vehicle_Num ='" + Driver_Vehicle.Text + "'";
                 SqlCommand cmd1 = new SqlCommand(query, con);
                 string output = cmd1.ExecuteScalar().ToString();
 
@@ -99,6 +104,19 @@ namespace TMS
 
                     Driver_Id.Text = "";
                 }
+
+                SqlCommand cmd0 = new SqlCommand(qvn, con);
+                string output12 = cmd0.ExecuteScalar().ToString();
+
+                if (output12 != "1")
+                {
+                    MessageBox.Show(" רכב לא קיים במערכת ");
+
+                    Driver_Vehicle.Text = "";
+                    return;
+                }
+
+
 
                 if (Driver_Fmane.Text == "" || Driver_Lname.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "")
                     MessageBox.Show("אין אפרות לשמור ללא כל הנתונים  ");
@@ -134,9 +152,10 @@ namespace TMS
                         MessageBox.Show("רכב זה משויך לנהג לא ניתן לשייך רכב אחד לשני נהגים ");
                         con.Close();
                     }
-                    
+
+                 
                     else
-                    MessageBox.Show("נהג נוסף  בהצלחה");
+                        MessageBox.Show("נהג נוסף  בהצלחה");
                    
                 }
             }
@@ -266,6 +285,56 @@ namespace TMS
                 }
             }
 
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Driver_Num_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Driver_Lname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Driver_Vehicle_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Driver_S_Click(object sender, EventArgs e)
+        {
 
         }
     }

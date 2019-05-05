@@ -179,6 +179,9 @@
     <EmbeddedResource Include="CityTbl.resx">
       <DependentUpon>CityTbl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Customers.resx">
+      <DependentUpon>Customers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomersTbl.resx">
       <DependentUpon>CustomersTbl.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +217,9 @@
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Shipp_Report.rdlc" />
+    <EmbeddedResource Include="Traks.resx">
+      <DependentUpon>Traks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="transactions.resx">
       <DependentUpon>transactions.cs</DependentUpon>
     </EmbeddedResource>

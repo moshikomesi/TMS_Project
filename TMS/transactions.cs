@@ -395,7 +395,7 @@ namespace TMS
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
                     Targett.Text = (dr["Shipp_Dest"].ToString());
                     quantity.Text = (dr["Shipp_Quantity"].ToString());
-                    Amount.Text = (dr["Shipp_Amount"].ToString());
+                     Amount.Text = (dr["Shipp_Amount"].ToString());
                     Driver.Text = (dr["Employee_Number"].ToString());
                     DriverNameText.Text = (dr["Employee_Fname"].ToString());
                     Car.Text = (dr["Vehicle_Number"].ToString());
@@ -594,7 +594,22 @@ namespace TMS
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
                     Targett.Text = (dr["Shipp_Dest"].ToString());
                     quantity.Text = (dr["Shipp_Quantity"].ToString());
-                    Amount.Text = (dr["Shipp_Amount"].ToString());
+                    string am = (dr["Shipp_Amount"].ToString());   
+                    char[] ar = { '.' };
+                    string[] s = am.Split(ar);
+                    string ss = s[0].ToString();
+                    for(int i = 0; i < am.Length; i++)
+                    {
+                        if (am[i] == '.')
+                        {
+                            ss += am[i];
+                            ss += am[i + 1];
+                            ss += am[i + 2];
+                           
+                        }
+                    }
+                    Amount.Text = ss;
+                    
                     Driver.Text = (dr["Employee_Number"].ToString());
                     DriverNameText.Text = (dr["Employee_Fname"].ToString());
                     Car.Text = (dr["Vehicle_Number"].ToString());
@@ -603,9 +618,12 @@ namespace TMS
                     dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
                     dataGridView1.Rows[0].Cells[2].Value = Targett.Text;
                     dataGridView1.Rows[0].Cells[1].Value = quantity.Text;
-                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text + "ש\"ח";
+                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text ;
                     dataGridView1.Rows[0].Cells[4].Value = DriverNameText.Text;
 
+                    UpdateBt.Enabled = true;
+                    EraseBtn.Enabled = true;
+                    SaveBtn.Enabled = false;
 
                 }
 
@@ -763,27 +781,42 @@ namespace TMS
             SqlConnection con = new SqlConnection(constring);
             string selectq = "select count(*) from Shipp, Customer where Shipp_DocNum" + "=" + DocNum.Text + "and Customer_Num =" + CustomerNum.Text;
             con.Open();
-            SqlCommand cmdx = new SqlCommand(selectq, con);
-            string output = cmdx.ExecuteScalar().ToString();
-            string SelectDoc = "select Shipp_Num from Shipp where Shipp_DocNum " + "=" + DocNum.Text;
-            if (output == "1")
+            if(CustomerName.Text== "") MessageBox.Show("נא להזין מספר לקוח  ");
+            if (DocNum.Text.Length > 9) MessageBox.Show("  מספר תעודה ארוך מדי ");
+            try
             {
-                cmdx = new SqlCommand(SelectDoc, con);
-                SqlDataReader drx = cmdx.ExecuteReader();
-                if (drx.Read())
+                SqlCommand cmdx = new SqlCommand(selectq, con);
+                string output = cmdx.ExecuteScalar().ToString();
+                string SelectDoc = "select Shipp_Num from Shipp where Shipp_DocNum " + "=" + DocNum.Text;
+                if (output == "1")
                 {
-                    string m;
-                    m = (drx["Shipp_Num"].ToString());
-                    MessageBox.Show(m + " : תעודת משלוח מופיעה בזמנה מס " , "כפל תעודות משלוח ");
-                    DocNum.Text = "";
-                    con.Close();
-                    return;
-                }
+                    cmdx = new SqlCommand(SelectDoc, con);
+                    SqlDataReader drx = cmdx.ExecuteReader();
+                    if (drx.Read())
+                    {
+                        string m;
+                        m = (drx["Shipp_Num"].ToString());
+                        MessageBox.Show(m + " : תעודת משלוח מופיעה בזמנה מס ", "כפל תעודות משלוח ");
+                        DocNum.Text = "";
+                        con.Close();
+                        return;
+                    }
 
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
