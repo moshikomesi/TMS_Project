@@ -12,13 +12,18 @@ namespace TMS
 {
     public partial class Form1 : MetroFramework.Forms.MetroForm
     {
+
+       
         public Form1()
         {
             InitializeComponent();
+            
         }
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
 
         }
 
@@ -63,6 +68,88 @@ namespace TMS
         {
             Reports rep = new Reports();
             rep.ShowDialog();
+        }
+        
+        private void transactionsbtn_MouseHover(object sender, EventArgs e)
+        {
+            transactionsbtn.Style = MetroFramework.MetroColorStyle.Silver;     
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+        
+
+        }
+
+        private void transactionsbtn_MouseLeave(object sender, EventArgs e)
+        {
+            transactionsbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void ReportsBtn_MouseHover(object sender, EventArgs e)
+        {
+          ReportsBtn.Style = MetroFramework.MetroColorStyle.Silver;
+            
+        }
+
+        private void driversbtn_MouseHover(object sender, EventArgs e)
+        {
+            driversbtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void driversbtn_MouseLeave(object sender, EventArgs e)
+        {
+            driversbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void traksbtn_MouseHover(object sender, EventArgs e)
+        {
+            traksbtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void traksbtn_MouseLeave(object sender, EventArgs e)
+        {
+            traksbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void customersbtn_MouseHover(object sender, EventArgs e)
+        {
+            customersbtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void customersbtn_MouseLeave(object sender, EventArgs e)
+        {
+            customersbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void invoicesbtn_MouseHover(object sender, EventArgs e)
+        {
+            invoicesbtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void invoicesbtn_MouseLeave(object sender, EventArgs e)
+        {
+            invoicesbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void billsbtn_MouseHover(object sender, EventArgs e)
+        {
+            billsbtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void billsbtn_MouseLeave(object sender, EventArgs e)
+        {
+            billsbtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void ReportsBtn_MouseHover_1(object sender, EventArgs e)
+        {
+            ReportsBtn.Style = MetroFramework.MetroColorStyle.Silver;
+        }
+
+        private void ReportsBtn_MouseLeave(object sender, EventArgs e)
+        {
+            ReportsBtn.Style = MetroFramework.MetroColorStyle.Default;
         }
     }
 }

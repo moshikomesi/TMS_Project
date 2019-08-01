@@ -406,7 +406,7 @@ namespace TMS
                     dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
                     dataGridView1.Rows[0].Cells[2].Value = Targett.Text;
                     dataGridView1.Rows[0].Cells[1].Value = quantity.Text;
-                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text + "ש\"ח";
+                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text+ " ₪";
                     dataGridView1.Rows[0].Cells[4].Value = DriverNameText.Text;
 
 
@@ -558,7 +558,7 @@ namespace TMS
 
         private void Amount_Leave(object sender, EventArgs e)
         {
-            dataGridView1.Rows[0].Cells[0].Value = Amount.Text + "ש\"ח";
+            dataGridView1.Rows[0].Cells[0].Value = "₪ "+Amount.Text;
         }
 
         private void SherchOrderBtn_Click(object sender, EventArgs e)
@@ -594,22 +594,22 @@ namespace TMS
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
                     Targett.Text = (dr["Shipp_Dest"].ToString());
                     quantity.Text = (dr["Shipp_Quantity"].ToString());
-                    string am = (dr["Shipp_Amount"].ToString());   
+                    string am = (dr["Shipp_Amount"].ToString());
                     char[] ar = { '.' };
                     string[] s = am.Split(ar);
                     string ss = s[0].ToString();
-                    for(int i = 0; i < am.Length; i++)
+                    for (int i = 0; i < am.Length; i++)
                     {
                         if (am[i] == '.')
                         {
                             ss += am[i];
                             ss += am[i + 1];
                             ss += am[i + 2];
-                           
+
                         }
                     }
                     Amount.Text = ss;
-                    
+
                     Driver.Text = (dr["Employee_Number"].ToString());
                     DriverNameText.Text = (dr["Employee_Fname"].ToString());
                     Car.Text = (dr["Vehicle_Number"].ToString());
@@ -618,7 +618,7 @@ namespace TMS
                     dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
                     dataGridView1.Rows[0].Cells[2].Value = Targett.Text;
                     dataGridView1.Rows[0].Cells[1].Value = quantity.Text;
-                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text ;
+                    dataGridView1.Rows[0].Cells[0].Value = Amount.Text;
                     dataGridView1.Rows[0].Cells[4].Value = DriverNameText.Text;
 
                     UpdateBt.Enabled = true;

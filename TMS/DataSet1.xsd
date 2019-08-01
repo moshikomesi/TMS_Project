@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TmsDbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TmsDbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TmsDbConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ShippTableAdapter" GeneratorDataComponentClassName="ShippTableAdapter" Name="Shipp" UserDataComponentName="ShippTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TmsDbConnectionString (Settings)" DbObjectName="TmsDb.dbo.Shipp" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Shipp_Num, Shipp_Date_Time, Employee_Number, Customer_Number, Transaction_Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_Amount, Shipp_DocNum
+FROM            Shipp</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Shipp_Num" DataSetColumn="Shipp_Num" />
+              <Mapping SourceColumn="Shipp_Date_Time" DataSetColumn="Shipp_Date_Time" />
+              <Mapping SourceColumn="Employee_Number" DataSetColumn="Employee_Number" />
+              <Mapping SourceColumn="Customer_Number" DataSetColumn="Customer_Number" />
+              <Mapping SourceColumn="Transaction_Number" DataSetColumn="Transaction_Number" />
+              <Mapping SourceColumn="Vehicle_Number" DataSetColumn="Vehicle_Number" />
+              <Mapping SourceColumn="Shipp_Origin" DataSetColumn="Shipp_Origin" />
+              <Mapping SourceColumn="Shipp_Dest" DataSetColumn="Shipp_Dest" />
+              <Mapping SourceColumn="Shipp_Quantity" DataSetColumn="Shipp_Quantity" />
+              <Mapping SourceColumn="Shipp_Amount" DataSetColumn="Shipp_Amount" />
+              <Mapping SourceColumn="Shipp_DocNum" DataSetColumn="Shipp_DocNum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="TmsDbConnectionString (Settings)" DbObjectName="TmsDb.dbo.Shipp" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Customer_Number, Employee_Number, Shipp_Amount, Shipp_Date_Time, Shipp_Dest, Shipp_DocNum, Shipp_Num, Shipp_Origin, Shipp_Quantity, Transaction_Number, Vehicle_Number FROM Shipp</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Shipp" msprop:Generator_TableClassName="ShippDataTable" msprop:Generator_TableVarName="tableShipp" msprop:Generator_RowChangedName="ShippRowChanged" msprop:Generator_TablePropName="Shipp" msprop:Generator_RowDeletingName="ShippRowDeleting" msprop:Generator_RowChangingName="ShippRowChanging" msprop:Generator_RowEvHandlerName="ShippRowChangeEventHandler" msprop:Generator_RowDeletedName="ShippRowDeleted" msprop:Generator_RowClassName="ShippRow" msprop:Generator_UserTableName="Shipp" msprop:Generator_RowEvArgName="ShippRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Shipp_Num" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnShipp_Num" msprop:Generator_ColumnPropNameInRow="Shipp_Num" msprop:Generator_ColumnPropNameInTable="Shipp_NumColumn" msprop:Generator_UserColumnName="Shipp_Num" type="xs:int" />
+              <xs:element name="Shipp_Date_Time" msprop:Generator_ColumnVarNameInTable="columnShipp_Date_Time" msprop:Generator_ColumnPropNameInRow="Shipp_Date_Time" msprop:Generator_ColumnPropNameInTable="Shipp_Date_TimeColumn" msprop:Generator_UserColumnName="Shipp_Date_Time" type="xs:dateTime" />
+              <xs:element name="Employee_Number" msprop:Generator_ColumnVarNameInTable="columnEmployee_Number" msprop:Generator_ColumnPropNameInRow="Employee_Number" msprop:Generator_ColumnPropNameInTable="Employee_NumberColumn" msprop:Generator_UserColumnName="Employee_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Customer_Number" msprop:Generator_ColumnVarNameInTable="columnCustomer_Number" msprop:Generator_ColumnPropNameInRow="Customer_Number" msprop:Generator_ColumnPropNameInTable="Customer_NumberColumn" msprop:Generator_UserColumnName="Customer_Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Transaction_Number" msprop:Generator_ColumnVarNameInTable="columnTransaction_Number" msprop:Generator_ColumnPropNameInRow="Transaction_Number" msprop:Generator_ColumnPropNameInTable="Transaction_NumberColumn" msprop:Generator_UserColumnName="Transaction_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Vehicle_Number" msprop:Generator_ColumnVarNameInTable="columnVehicle_Number" msprop:Generator_ColumnPropNameInRow="Vehicle_Number" msprop:Generator_ColumnPropNameInTable="Vehicle_NumberColumn" msprop:Generator_UserColumnName="Vehicle_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Shipp_Origin" msprop:Generator_ColumnVarNameInTable="columnShipp_Origin" msprop:Generator_ColumnPropNameInRow="Shipp_Origin" msprop:Generator_ColumnPropNameInTable="Shipp_OriginColumn" msprop:Generator_UserColumnName="Shipp_Origin">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Shipp_Dest" msprop:Generator_ColumnVarNameInTable="columnShipp_Dest" msprop:Generator_ColumnPropNameInRow="Shipp_Dest" msprop:Generator_ColumnPropNameInTable="Shipp_DestColumn" msprop:Generator_UserColumnName="Shipp_Dest">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Shipp_Quantity" msprop:Generator_ColumnVarNameInTable="columnShipp_Quantity" msprop:Generator_ColumnPropNameInRow="Shipp_Quantity" msprop:Generator_ColumnPropNameInTable="Shipp_QuantityColumn" msprop:Generator_UserColumnName="Shipp_Quantity" type="xs:int" />
+              <xs:element name="Shipp_Amount" msprop:Generator_ColumnVarNameInTable="columnShipp_Amount" msprop:Generator_ColumnPropNameInRow="Shipp_Amount" msprop:Generator_ColumnPropNameInTable="Shipp_AmountColumn" msprop:Generator_UserColumnName="Shipp_Amount" type="xs:decimal" />
+              <xs:element name="Shipp_DocNum" msprop:Generator_ColumnVarNameInTable="columnShipp_DocNum" msprop:Generator_ColumnPropNameInRow="Shipp_DocNum" msprop:Generator_ColumnPropNameInTable="Shipp_DocNumColumn" msprop:Generator_UserColumnName="Shipp_DocNum">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Shipp" />
+      <xs:field xpath="mstns:Shipp_Num" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

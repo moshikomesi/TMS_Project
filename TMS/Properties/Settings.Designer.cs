@@ -94,5 +94,15 @@ namespace TMS.Properties {
                 this["Driver_Hold"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-C2IN8KT;Initial Catalog=TmsDb;Integrated Security=True")]
+        public string TmsDbConnectionString {
+            get {
+                return ((string)(this["TmsDbConnectionString"]));
+            }
+        }
     }
 }

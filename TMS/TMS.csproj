@@ -55,11 +55,20 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -84,6 +93,7 @@
     <Compile Include="CityTbl.Designer.cs">
       <DependentUpon>CityTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Customer .cs" />
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +105,14 @@
     </Compile>
     <Compile Include="CustomersTbl.Designer.cs">
       <DependentUpon>CustomersTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Drivers.cs">
       <SubType>Form</SubType>
@@ -126,6 +144,7 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginFunctions.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -149,6 +168,12 @@
     <Compile Include="Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ServiceReference1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceInstance.cs" />
     <Compile Include="Shipp.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -157,6 +182,21 @@
     </Compile>
     <Compile Include="ShippTypeTbl.Designer.cs">
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TmsDbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TmsDbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TmsDbDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TmsDbDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TmsDbDataVehicles_T.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TmsDbDataVehicles_T.xsd</DependentUpon>
     </Compile>
     <Compile Include="Traks.cs">
       <SubType>Form</SubType>
@@ -175,6 +215,11 @@
     </Compile>
     <Compile Include="VehicleTbl.Designer.cs">
       <DependentUpon>VehicleTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="V_T.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>V_T.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="CityTbl.resx">
       <DependentUpon>CityTbl.cs</DependentUpon>
@@ -210,6 +255,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +276,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
@@ -266,6 +323,108 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\ServiceReference1\ApiService.wsdl" />
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ApiClearingRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.AssociatedEmail.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.Branch.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CatalogItem.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClearingAccount.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClearingLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClientsStandingOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CreditCompany.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.Document.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.DocumentCsv.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.MeshulamClearingApi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.OrganizationTokenDetails.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.User.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSet.xsc">
+      <DependentUpon>TmsDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TmsDbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TmsDbDataSet.xss">
+      <DependentUpon>TmsDbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSet1.xsc">
+      <DependentUpon>TmsDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TmsDbDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TmsDbDataSet1.xss">
+      <DependentUpon>TmsDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataVehicles_T.xsc">
+      <DependentUpon>TmsDbDataVehicles_T.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataVehicles_T.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TmsDbDataVehicles_T.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TmsDbDataVehicles_T.xss">
+      <DependentUpon>TmsDbDataVehicles_T.xsd</DependentUpon>
+    </None>
+    <None Include="V_T.xsc">
+      <DependentUpon>V_T.xsd</DependentUpon>
+    </None>
+    <None Include="V_T.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>V_T.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="V_T.xss">
+      <DependentUpon>V_T.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -282,6 +441,12 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\ServiceReference1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceReference1\configuration.svcinfo" />
+    <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
     <None Include="Resources\logo1.jpeg" />
     <None Include="Resources\logo.jpeg" />
     <None Include="Resources\serchicn1.png" />
@@ -301,6 +466,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
