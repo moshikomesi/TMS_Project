@@ -24,7 +24,7 @@ namespace TMS
             // TODO: This line of code loads data into the 'v_T.Vehicles_Treatments' table. You can move, or remove it, as needed.
             this.vehicles_TreatmentsTableAdapter.Fill(this.v_T.Vehicles_Treatments);
             // TODO: This line of code loads data into the 'tmsDbDataSet1.Treatments_Type' table. You can move, or remove it, as needed.
-            this.treatments_TypeTableAdapter1.Fill(this.tmsDbDataSet1.Treatments_Type);
+            
             // TODO: This line of code loads data into the 'tmsDbDataSet.Treatments_Type' table. You can move, or remove it, as needed.
             this.treatments_TypeTableAdapter.Fill(this.tmsDbDataSet.Treatments_Type);
 

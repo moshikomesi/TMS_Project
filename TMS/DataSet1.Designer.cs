@@ -1060,6 +1060,71 @@ namespace TMS.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Shipp_Amount", "Shipp_Amount");
             tableMapping.ColumnMappings.Add("Shipp_DocNum", "Shipp_DocNum");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Shipp] WHERE (([Shipp_Num] = @Original_Shipp_Num) AND ([Shipp_Date_Time] = @Original_Shipp_Date_Time) AND ((@IsNull_Employee_Number = 1 AND [Employee_Number] IS NULL) OR ([Employee_Number] = @Original_Employee_Number)) AND ((@IsNull_Customer_Number = 1 AND [Customer_Number] IS NULL) OR ([Customer_Number] = @Original_Customer_Number)) AND ((@IsNull_Transaction_Number = 1 AND [Transaction_Number] IS NULL) OR ([Transaction_Number] = @Original_Transaction_Number)) AND ((@IsNull_Vehicle_Number = 1 AND [Vehicle_Number] IS NULL) OR ([Vehicle_Number] = @Original_Vehicle_Number)) AND ([Shipp_Origin] = @Original_Shipp_Origin) AND ([Shipp_Dest] = @Original_Shipp_Dest) AND ([Shipp_Quantity] = @Original_Shipp_Quantity) AND ([Shipp_Amount] = @Original_Shipp_Amount) AND ([Shipp_DocNum] = @Original_Shipp_DocNum))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Num", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Num", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Date_Time", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Date_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Number", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vehicle_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vehicle_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Origin", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Origin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Dest", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Dest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_DocNum", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_DocNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Shipp] ([Shipp_Date_Time], [Employee_Number], [Customer_Number], [Transaction_Number], [Vehicle_Number], [Shipp_Origin], [Shipp_Dest], [Shipp_Quantity], [Shipp_Amount], [Shipp_DocNum]) VALUES (@Shipp_Date_Time, @Employee_Number, @Customer_Number, @Transaction_Number, @Vehicle_Number, @Shipp_Origin, @Shipp_Dest, @Shipp_Quantity, @Shipp_Amount, @Shipp_DocNum);
+SELECT Shipp_Num, Shipp_Date_Time, Employee_Number, Customer_Number, Transaction_Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_Amount, Shipp_DocNum FROM Shipp WHERE (Shipp_Num = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Date_Time", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Date_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Number", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vehicle_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Origin", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Origin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Dest", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Dest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_DocNum", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_DocNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Shipp] SET [Shipp_Date_Time] = @Shipp_Date_Time, [Employee_Number] = @Employee_Number, [Customer_Number] = @Customer_Number, [Transaction_Number] = @Transaction_Number, [Vehicle_Number] = @Vehicle_Number, [Shipp_Origin] = @Shipp_Origin, [Shipp_Dest] = @Shipp_Dest, [Shipp_Quantity] = @Shipp_Quantity, [Shipp_Amount] = @Shipp_Amount, [Shipp_DocNum] = @Shipp_DocNum WHERE (([Shipp_Num] = @Original_Shipp_Num) AND ([Shipp_Date_Time] = @Original_Shipp_Date_Time) AND ((@IsNull_Employee_Number = 1 AND [Employee_Number] IS NULL) OR ([Employee_Number] = @Original_Employee_Number)) AND ((@IsNull_Customer_Number = 1 AND [Customer_Number] IS NULL) OR ([Customer_Number] = @Original_Customer_Number)) AND ((@IsNull_Transaction_Number = 1 AND [Transaction_Number] IS NULL) OR ([Transaction_Number] = @Original_Transaction_Number)) AND ((@IsNull_Vehicle_Number = 1 AND [Vehicle_Number] IS NULL) OR ([Vehicle_Number] = @Original_Vehicle_Number)) AND ([Shipp_Origin] = @Original_Shipp_Origin) AND ([Shipp_Dest] = @Original_Shipp_Dest) AND ([Shipp_Quantity] = @Original_Shipp_Quantity) AND ([Shipp_Amount] = @Original_Shipp_Amount) AND ([Shipp_DocNum] = @Original_Shipp_DocNum));
+SELECT Shipp_Num, Shipp_Date_Time, Employee_Number, Customer_Number, Transaction_Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_Amount, Shipp_DocNum FROM Shipp WHERE (Shipp_Num = @Shipp_Num)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Date_Time", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Date_Time", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Transaction_Number", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vehicle_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Origin", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Origin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Dest", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Dest", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Quantity", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Amount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_DocNum", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_DocNum", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Num", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Num", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Date_Time", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Date_Time", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Employee_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Employee_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Customer_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Customer_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Transaction_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Transaction_Number", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Transaction_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Vehicle_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Vehicle_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Origin", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Origin", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Dest", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Dest", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Quantity", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Quantity", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_Amount", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Amount", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Shipp_DocNum", global::System.Data.SqlDbType.Char, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_DocNum", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Shipp_Num", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Shipp_Num", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1072,19 +1137,13 @@ namespace TMS.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Shipp_Num, Shipp_Date_Time, Employee_Number, Customer_Number, Trans" +
-                "action_Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_A" +
-                "mount, Shipp_DocNum\r\nFROM            Shipp";
+            this._commandCollection[0].CommandText = "SELECT Shipp_Num, Shipp_Date_Time, Employee_Number, Customer_Number, Transaction_" +
+                "Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_Amount, " +
+                "Shipp_DocNum FROM dbo.Shipp";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Customer_Number, Employee_Number, Shipp_Amount, Shipp_Date_Time, Shipp_Des" +
-                "t, Shipp_DocNum, Shipp_Num, Shipp_Origin, Shipp_Quantity, Transaction_Number, Ve" +
-                "hicle_Number FROM Shipp";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1114,25 +1173,343 @@ namespace TMS.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.ShippDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
+        public virtual int Update(DataSet1.ShippDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.ShippDataTable GetDataBy() {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            DataSet1.ShippDataTable dataTable = new DataSet1.ShippDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Shipp");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Shipp_Num, System.DateTime Original_Shipp_Date_Time, global::System.Nullable<int> Original_Employee_Number, global::System.Nullable<int> Original_Customer_Number, string Original_Transaction_Number, string Original_Vehicle_Number, string Original_Shipp_Origin, string Original_Shipp_Dest, int Original_Shipp_Quantity, decimal Original_Shipp_Amount, string Original_Shipp_DocNum) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Shipp_Num));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Shipp_Date_Time));
+            if ((Original_Employee_Number.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Employee_Number.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Customer_Number.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_Customer_Number.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Transaction_Number == null)) {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((string)(Original_Transaction_Number));
+            }
+            if ((Original_Vehicle_Number == null)) {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((string)(Original_Vehicle_Number));
+            }
+            if ((Original_Shipp_Origin == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_Origin");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((string)(Original_Shipp_Origin));
+            }
+            if ((Original_Shipp_Dest == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_Dest");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[11].Value = ((string)(Original_Shipp_Dest));
+            }
+            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Shipp_Quantity));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((decimal)(Original_Shipp_Amount));
+            if ((Original_Shipp_DocNum == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_DocNum");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_Shipp_DocNum));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(System.DateTime Shipp_Date_Time, global::System.Nullable<int> Employee_Number, global::System.Nullable<int> Customer_Number, string Transaction_Number, string Vehicle_Number, string Shipp_Origin, string Shipp_Dest, int Shipp_Quantity, decimal Shipp_Amount, string Shipp_DocNum) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((System.DateTime)(Shipp_Date_Time));
+            if ((Employee_Number.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Employee_Number.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Customer_Number.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(Customer_Number.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Transaction_Number == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Transaction_Number));
+            }
+            if ((Vehicle_Number == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(Vehicle_Number));
+            }
+            if ((Shipp_Origin == null)) {
+                throw new global::System.ArgumentNullException("Shipp_Origin");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(Shipp_Origin));
+            }
+            if ((Shipp_Dest == null)) {
+                throw new global::System.ArgumentNullException("Shipp_Dest");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Shipp_Dest));
+            }
+            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(Shipp_Quantity));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((decimal)(Shipp_Amount));
+            if ((Shipp_DocNum == null)) {
+                throw new global::System.ArgumentNullException("Shipp_DocNum");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Shipp_DocNum));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    System.DateTime Shipp_Date_Time, 
+                    global::System.Nullable<int> Employee_Number, 
+                    global::System.Nullable<int> Customer_Number, 
+                    string Transaction_Number, 
+                    string Vehicle_Number, 
+                    string Shipp_Origin, 
+                    string Shipp_Dest, 
+                    int Shipp_Quantity, 
+                    decimal Shipp_Amount, 
+                    string Shipp_DocNum, 
+                    int Original_Shipp_Num, 
+                    System.DateTime Original_Shipp_Date_Time, 
+                    global::System.Nullable<int> Original_Employee_Number, 
+                    global::System.Nullable<int> Original_Customer_Number, 
+                    string Original_Transaction_Number, 
+                    string Original_Vehicle_Number, 
+                    string Original_Shipp_Origin, 
+                    string Original_Shipp_Dest, 
+                    int Original_Shipp_Quantity, 
+                    decimal Original_Shipp_Amount, 
+                    string Original_Shipp_DocNum, 
+                    int Shipp_Num) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((System.DateTime)(Shipp_Date_Time));
+            if ((Employee_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Employee_Number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Customer_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Customer_Number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Transaction_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Transaction_Number));
+            }
+            if ((Vehicle_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Vehicle_Number));
+            }
+            if ((Shipp_Origin == null)) {
+                throw new global::System.ArgumentNullException("Shipp_Origin");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Shipp_Origin));
+            }
+            if ((Shipp_Dest == null)) {
+                throw new global::System.ArgumentNullException("Shipp_Dest");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Shipp_Dest));
+            }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Shipp_Quantity));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(Shipp_Amount));
+            if ((Shipp_DocNum == null)) {
+                throw new global::System.ArgumentNullException("Shipp_DocNum");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Shipp_DocNum));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Shipp_Num));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_Shipp_Date_Time));
+            if ((Original_Employee_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Employee_Number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Customer_Number.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Customer_Number.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            if ((Original_Transaction_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Transaction_Number));
+            }
+            if ((Original_Vehicle_Number == null)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_Vehicle_Number));
+            }
+            if ((Original_Shipp_Origin == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_Origin");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_Shipp_Origin));
+            }
+            if ((Original_Shipp_Dest == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_Dest");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_Shipp_Dest));
+            }
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_Shipp_Quantity));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(Original_Shipp_Amount));
+            if ((Original_Shipp_DocNum == null)) {
+                throw new global::System.ArgumentNullException("Original_Shipp_DocNum");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_Shipp_DocNum));
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Shipp_Num));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    System.DateTime Shipp_Date_Time, 
+                    global::System.Nullable<int> Employee_Number, 
+                    global::System.Nullable<int> Customer_Number, 
+                    string Transaction_Number, 
+                    string Vehicle_Number, 
+                    string Shipp_Origin, 
+                    string Shipp_Dest, 
+                    int Shipp_Quantity, 
+                    decimal Shipp_Amount, 
+                    string Shipp_DocNum, 
+                    int Original_Shipp_Num, 
+                    System.DateTime Original_Shipp_Date_Time, 
+                    global::System.Nullable<int> Original_Employee_Number, 
+                    global::System.Nullable<int> Original_Customer_Number, 
+                    string Original_Transaction_Number, 
+                    string Original_Vehicle_Number, 
+                    string Original_Shipp_Origin, 
+                    string Original_Shipp_Dest, 
+                    int Original_Shipp_Quantity, 
+                    decimal Original_Shipp_Amount, 
+                    string Original_Shipp_DocNum) {
+            return this.Update(Shipp_Date_Time, Employee_Number, Customer_Number, Transaction_Number, Vehicle_Number, Shipp_Origin, Shipp_Dest, Shipp_Quantity, Shipp_Amount, Shipp_DocNum, Original_Shipp_Num, Original_Shipp_Date_Time, Original_Employee_Number, Original_Customer_Number, Original_Transaction_Number, Original_Vehicle_Number, Original_Shipp_Origin, Original_Shipp_Dest, Original_Shipp_Quantity, Original_Shipp_Amount, Original_Shipp_DocNum, Original_Shipp_Num);
         }
     }
     
@@ -1148,6 +1525,8 @@ namespace TMS.DataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
+        private ShippTableAdapter _shippTableAdapter;
+        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1160,6 +1539,20 @@ namespace TMS.DataSet1TableAdapters {
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ShippTableAdapter ShippTableAdapter {
+            get {
+                return this._shippTableAdapter;
+            }
+            set {
+                this._shippTableAdapter = value;
             }
         }
         
@@ -1182,6 +1575,10 @@ namespace TMS.DataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._shippTableAdapter != null) 
+                            && (this._shippTableAdapter.Connection != null))) {
+                    return this._shippTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -1195,6 +1592,9 @@ namespace TMS.DataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._shippTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -1206,6 +1606,15 @@ namespace TMS.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateUpdatedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._shippTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Shipp.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._shippTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -1216,6 +1625,14 @@ namespace TMS.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateInsertedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._shippTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Shipp.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._shippTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -1226,6 +1643,14 @@ namespace TMS.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._shippTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Shipp.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._shippTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -1265,6 +1690,11 @@ namespace TMS.DataSet1TableAdapters {
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
+            if (((this._shippTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._shippTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -1297,6 +1727,15 @@ namespace TMS.DataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._shippTableAdapter != null)) {
+                    revertConnections.Add(this._shippTableAdapter, this._shippTableAdapter.Connection);
+                    this._shippTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._shippTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._shippTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._shippTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._shippTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1354,6 +1793,10 @@ namespace TMS.DataSet1TableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._shippTableAdapter != null)) {
+                    this._shippTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._shippTableAdapter]));
+                    this._shippTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

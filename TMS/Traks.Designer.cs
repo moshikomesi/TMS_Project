@@ -54,7 +54,7 @@
             this.Vhicle_Date = new System.Windows.Forms.DateTimePicker();
             this.Serche_Trak = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.shippTableAdapter1 = new TMS.DataSet1TableAdapters.ShippTableAdapter();
+            
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.קליטה = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -79,21 +79,21 @@
             this.Vnum = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.vehiclesTreatmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.v_T = new TMS.V_T();
-            this.tmsDbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tmsDbDataSet1 = new TMS.TmsDbDataSet1();
-            this.treatments_TypeTableAdapter = new TMS.TmsDbDataSetTableAdapters.Treatments_TypeTableAdapter();
-            this.traksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new TMS.DataSet1();
-            this.treatmentsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.treatments_TypeTableAdapter1 = new TMS.TmsDbDataSet1TableAdapters.Treatments_TypeTableAdapter();
-            this.tmsDbDataVehicles_T = new TMS.TmsDbDataVehicles_T();
-            this.tmsDbDataVehiclesTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.vehicles_TreatmentsTableAdapter = new TMS.V_TTableAdapters.Vehicles_TreatmentsTableAdapter();
             this.vehicleNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treatmentsNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.treatmentLastDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehiclesTreatmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.v_T = new TMS.V_T();
+            this.tmsDbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+               
+            this.treatments_TypeTableAdapter = new TMS.TmsDbDataSetTableAdapters.Treatments_TypeTableAdapter();
+            this.traksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            
+            this.treatmentsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            
+            this.tmsDbDataVehicles_T = new TMS.TmsDbDataVehicles_T();
+            this.tmsDbDataVehiclesTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehicles_TreatmentsTableAdapter = new TMS.V_TTableAdapters.Vehicles_TreatmentsTableAdapter();
             this.tabControl1.SuspendLayout();
             this.קליטה.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -107,9 +107,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesTreatmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.traksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehicles_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehiclesTBindingSource)).BeginInit();
@@ -378,7 +378,7 @@
             // 
             // shippTableAdapter1
             // 
-            this.shippTableAdapter1.ClearBeforeFill = true;
+            
             // 
             // tabControl1
             // 
@@ -667,7 +667,7 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -675,67 +675,11 @@
             this.treatmentsNumberDataGridViewTextBoxColumn,
             this.treatmentLastDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.vehiclesTreatmentsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(412, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(413, 55);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(335, 371);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // vehiclesTreatmentsBindingSource
-            // 
-            this.vehiclesTreatmentsBindingSource.DataMember = "Vehicles_Treatments";
-            this.vehiclesTreatmentsBindingSource.DataSource = this.v_T;
-            // 
-            // v_T
-            // 
-            this.v_T.DataSetName = "V_T";
-            this.v_T.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tmsDbDataSet1BindingSource
-            // 
-            this.tmsDbDataSet1BindingSource.DataSource = this.tmsDbDataSet1;
-            this.tmsDbDataSet1BindingSource.Position = 0;
-            // 
-            // tmsDbDataSet1
-            // 
-            this.tmsDbDataSet1.DataSetName = "TmsDbDataSet1";
-            this.tmsDbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // treatments_TypeTableAdapter
-            // 
-            this.treatments_TypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // traksBindingSource
-            // 
-            this.traksBindingSource.DataSource = typeof(TMS.Traks);
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // treatmentsTypeBindingSource1
-            // 
-            this.treatmentsTypeBindingSource1.DataMember = "Treatments_Type";
-            this.treatmentsTypeBindingSource1.DataSource = this.tmsDbDataSet1;
-            // 
-            // treatments_TypeTableAdapter1
-            // 
-            this.treatments_TypeTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tmsDbDataVehicles_T
-            // 
-            this.tmsDbDataVehicles_T.DataSetName = "TmsDbDataVehicles_T";
-            this.tmsDbDataVehicles_T.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tmsDbDataVehiclesTBindingSource
-            // 
-            this.tmsDbDataVehiclesTBindingSource.DataSource = this.tmsDbDataVehicles_T;
-            this.tmsDbDataVehiclesTBindingSource.Position = 0;
-            // 
-            // vehicles_TreatmentsTableAdapter
-            // 
-            this.vehicles_TreatmentsTableAdapter.ClearBeforeFill = true;
             // 
             // vehicleNumberDataGridViewTextBoxColumn
             // 
@@ -766,6 +710,59 @@
             this.treatmentLastDataGridViewTextBoxColumn.FillWeight = 110F;
             this.treatmentLastDataGridViewTextBoxColumn.HeaderText = "תאריך טיפול ";
             this.treatmentLastDataGridViewTextBoxColumn.Name = "treatmentLastDataGridViewTextBoxColumn";
+            // 
+            // vehiclesTreatmentsBindingSource
+            // 
+            this.vehiclesTreatmentsBindingSource.DataMember = "Vehicles_Treatments";
+            this.vehiclesTreatmentsBindingSource.DataSource = this.v_T;
+            // 
+            // v_T
+            // 
+            this.v_T.DataSetName = "V_T";
+            this.v_T.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tmsDbDataSet1BindingSource
+            // 
+            this.tmsDbDataSet1BindingSource.Position = 0;
+            // 
+            // tmsDbDataSet1
+            // 
+           
+            // 
+            // treatments_TypeTableAdapter
+            // 
+            this.treatments_TypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // traksBindingSource
+            // 
+            this.traksBindingSource.DataSource = typeof(TMS.Traks);
+            // 
+            // dataSet11
+            // 
+           
+            // 
+            // treatmentsTypeBindingSource1
+            // 
+            this.treatmentsTypeBindingSource1.DataMember = "Treatments_Type";
+         
+            // 
+            // treatments_TypeTableAdapter1
+            // 
+          
+            // 
+            // tmsDbDataVehicles_T
+            // 
+            this.tmsDbDataVehicles_T.DataSetName = "TmsDbDataVehicles_T";
+            this.tmsDbDataVehicles_T.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tmsDbDataVehiclesTBindingSource
+            // 
+            this.tmsDbDataVehiclesTBindingSource.DataSource = this.tmsDbDataVehicles_T;
+            this.tmsDbDataVehiclesTBindingSource.Position = 0;
+            // 
+            // vehicles_TreatmentsTableAdapter
+            // 
+            this.vehicles_TreatmentsTableAdapter.ClearBeforeFill = true;
             // 
             // Traks
             // 
@@ -802,9 +799,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesTreatmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).EndInit();
+           
             ((System.ComponentModel.ISupportInitialize)(this.traksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehicles_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehiclesTBindingSource)).EndInit();
@@ -837,7 +834,7 @@
         private System.Windows.Forms.DateTimePicker Vhicle_Date;
         private System.Windows.Forms.TextBox Serche_Trak;
         private System.Windows.Forms.Label label4;
-        private DataSet1TableAdapters.ShippTableAdapter shippTableAdapter1;
+        
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage קליטה;
         private System.Windows.Forms.TabPage tabPage2;
@@ -854,12 +851,12 @@
         private System.Windows.Forms.BindingSource treatmentsTypeBindingSource;
         private TmsDbDataSetTableAdapters.Treatments_TypeTableAdapter treatments_TypeTableAdapter;
         private System.Windows.Forms.Label label11;
-        private DataSet1 dataSet11;
+        
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private TmsDbDataSet1 tmsDbDataSet1;
+        
         private System.Windows.Forms.BindingSource treatmentsTypeBindingSource1;
-        private TmsDbDataSet1TableAdapters.Treatments_TypeTableAdapter treatments_TypeTableAdapter1;
+      
         private System.Windows.Forms.BindingSource tmsDbDataSet1BindingSource;
         private System.Windows.Forms.BindingSource tmsDbDataVehiclesTBindingSource;
         private TmsDbDataVehicles_T tmsDbDataVehicles_T;

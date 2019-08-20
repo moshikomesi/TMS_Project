@@ -10,9 +10,8 @@
 namespace TMS
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Shipp
+    public partial class GetShippReport_Result
     {
         public int Shipp_Num { get; set; }
         public System.DateTime Shipp_Date_Time { get; set; }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Microsoft.Reporting.WinForms;
+
 
 namespace TMS
 {
@@ -17,24 +19,50 @@ namespace TMS
         {
             InitializeComponent();
         }
-
+        
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True");
+        DataTable dt;
+        SqlDataAdapter adpt;
+        DataSet1 ds = new DataSet1();
         private void Reports_Load(object sender, EventArgs e)
         {
-            string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
-            SqlConnection con = new SqlConnection(constring);
-            con.Open();
-
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select * from Shipp ", con);
-            DataTable dtbl = new DataTable();
-            sqlDa.Fill(dtbl);
+         
 
 
-            // TODO: This line of code loads data into the 'DataSet1.Shipp' table. You can move, or remove it, as needed.
-            this.ShippTableAdapter.Fill(this.DataSet1.Shipp);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void RdlcReport_Load(object sender, EventArgs e)
+        {
+          
 
 
-            // this.reporting.RefreshReport();
-            this.Shipp_Report.RefreshReport();
+           
+        }
+
+        private void Load_Btn_Click(object sender, EventArgs e)
+        {
+            
+            using (TmsDbEntitiess db = new TmsDbEntitiess())
+            {
+                GetShippReportBindingSource.DataSource = db.GetShippReport(FromDateP.Value, ToDateP.Value).ToList();
+                Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
+                {
+                    new  Microsoft.Reporting.WinForms.ReportParameter ("fromDate",FromDateP.Value.ToShortDateString()),
+                    new  Microsoft.Reporting.WinForms.ReportParameter ("toDate",ToDateP.Value.ToShortDateString())
+
+                };
+                reportViewer1.LocalReport.SetParameters(rParams);
+                reportViewer1.Visible = true;
+              
+                reportViewer1.RefreshReport();
+            }
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

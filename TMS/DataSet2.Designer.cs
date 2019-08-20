@@ -20,19 +20,17 @@ namespace TMS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("TmsDbDataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class TmsDbDataSet1 : global::System.Data.DataSet {
+    public partial class DataSet2 : global::System.Data.DataSet {
         
-        private Treatments_TypeDataTable tableTreatments_Type;
-        
-        private Vehicles_TreatmentsDataTable tableVehicles_Treatments;
+        private GetShippReportDataTable tableGetShippReport;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public TmsDbDataSet1() {
+        public DataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -43,7 +41,7 @@ namespace TMS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected TmsDbDataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -56,11 +54,8 @@ namespace TMS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Treatments_Type"] != null)) {
-                    base.Tables.Add(new Treatments_TypeDataTable(ds.Tables["Treatments_Type"]));
-                }
-                if ((ds.Tables["Vehicles_Treatments"] != null)) {
-                    base.Tables.Add(new Vehicles_TreatmentsDataTable(ds.Tables["Vehicles_Treatments"]));
+                if ((ds.Tables["GetShippReport"] != null)) {
+                    base.Tables.Add(new GetShippReportDataTable(ds.Tables["GetShippReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -84,19 +79,9 @@ namespace TMS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Treatments_TypeDataTable Treatments_Type {
+        public GetShippReportDataTable GetShippReport {
             get {
-                return this.tableTreatments_Type;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public Vehicles_TreatmentsDataTable Vehicles_Treatments {
-            get {
-                return this.tableVehicles_Treatments;
+                return this.tableGetShippReport;
             }
         }
         
@@ -142,7 +127,7 @@ namespace TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            TmsDbDataSet1 cln = ((TmsDbDataSet1)(base.Clone()));
+            DataSet2 cln = ((DataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -167,11 +152,8 @@ namespace TMS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Treatments_Type"] != null)) {
-                    base.Tables.Add(new Treatments_TypeDataTable(ds.Tables["Treatments_Type"]));
-                }
-                if ((ds.Tables["Vehicles_Treatments"] != null)) {
-                    base.Tables.Add(new Vehicles_TreatmentsDataTable(ds.Tables["Vehicles_Treatments"]));
+                if ((ds.Tables["GetShippReport"] != null)) {
+                    base.Tables.Add(new GetShippReportDataTable(ds.Tables["GetShippReport"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -206,16 +188,10 @@ namespace TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableTreatments_Type = ((Treatments_TypeDataTable)(base.Tables["Treatments_Type"]));
+            this.tableGetShippReport = ((GetShippReportDataTable)(base.Tables["GetShippReport"]));
             if ((initTable == true)) {
-                if ((this.tableTreatments_Type != null)) {
-                    this.tableTreatments_Type.InitVars();
-                }
-            }
-            this.tableVehicles_Treatments = ((Vehicles_TreatmentsDataTable)(base.Tables["Vehicles_Treatments"]));
-            if ((initTable == true)) {
-                if ((this.tableVehicles_Treatments != null)) {
-                    this.tableVehicles_Treatments.InitVars();
+                if ((this.tableGetShippReport != null)) {
+                    this.tableGetShippReport.InitVars();
                 }
             }
         }
@@ -223,26 +199,18 @@ namespace TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "TmsDbDataSet1";
+            this.DataSetName = "DataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/TmsDbDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/DataSet2.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableTreatments_Type = new Treatments_TypeDataTable();
-            base.Tables.Add(this.tableTreatments_Type);
-            this.tableVehicles_Treatments = new Vehicles_TreatmentsDataTable();
-            base.Tables.Add(this.tableVehicles_Treatments);
+            this.tableGetShippReport = new GetShippReportDataTable();
+            base.Tables.Add(this.tableGetShippReport);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeTreatments_Type() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeVehicles_Treatments() {
+        private bool ShouldSerializeGetShippReport() {
             return false;
         }
         
@@ -257,7 +225,7 @@ namespace TMS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            TmsDbDataSet1 ds = new TmsDbDataSet1();
+            DataSet2 ds = new DataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -302,277 +270,41 @@ namespace TMS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Treatments_TypeRowChangeEventHandler(object sender, Treatments_TypeRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void Vehicles_TreatmentsRowChangeEventHandler(object sender, Vehicles_TreatmentsRowChangeEvent e);
+        public delegate void GetShippReportRowChangeEventHandler(object sender, GetShippReportRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Treatments_TypeDataTable : global::System.Data.TypedTableBase<Treatments_TypeRow> {
+        public partial class GetShippReportDataTable : global::System.Data.TypedTableBase<GetShippReportRow> {
             
-            private global::System.Data.DataColumn columnTreatments_Type;
+            private global::System.Data.DataColumn columnShipp_Num;
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeDataTable() {
-                this.TableName = "Treatments_Type";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
+            private global::System.Data.DataColumn columnShipp_Date_Time;
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Treatments_TypeDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
+            private global::System.Data.DataColumn columnEmployee_Number;
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Treatments_TypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
+            private global::System.Data.DataColumn columnCustomer_Number;
             
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Treatments_TypeColumn {
-                get {
-                    return this.columnTreatments_Type;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeRow this[int index] {
-                get {
-                    return ((Treatments_TypeRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Treatments_TypeRowChangeEventHandler Treatments_TypeRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Treatments_TypeRowChangeEventHandler Treatments_TypeRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Treatments_TypeRowChangeEventHandler Treatments_TypeRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Treatments_TypeRowChangeEventHandler Treatments_TypeRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddTreatments_TypeRow(Treatments_TypeRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeRow AddTreatments_TypeRow(string Treatments_Type) {
-                Treatments_TypeRow rowTreatments_TypeRow = ((Treatments_TypeRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Treatments_Type};
-                rowTreatments_TypeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTreatments_TypeRow);
-                return rowTreatments_TypeRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                Treatments_TypeDataTable cln = ((Treatments_TypeDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new Treatments_TypeDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnTreatments_Type = base.Columns["Treatments_Type"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnTreatments_Type = new global::System.Data.DataColumn("Treatments_Type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTreatments_Type);
-                this.columnTreatments_Type.AllowDBNull = false;
-                this.columnTreatments_Type.MaxLength = 20;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeRow NewTreatments_TypeRow() {
-                return ((Treatments_TypeRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Treatments_TypeRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(Treatments_TypeRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.Treatments_TypeRowChanged != null)) {
-                    this.Treatments_TypeRowChanged(this, new Treatments_TypeRowChangeEvent(((Treatments_TypeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.Treatments_TypeRowChanging != null)) {
-                    this.Treatments_TypeRowChanging(this, new Treatments_TypeRowChangeEvent(((Treatments_TypeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.Treatments_TypeRowDeleted != null)) {
-                    this.Treatments_TypeRowDeleted(this, new Treatments_TypeRowChangeEvent(((Treatments_TypeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.Treatments_TypeRowDeleting != null)) {
-                    this.Treatments_TypeRowDeleting(this, new Treatments_TypeRowChangeEvent(((Treatments_TypeRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveTreatments_TypeRow(Treatments_TypeRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TmsDbDataSet1 ds = new TmsDbDataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Treatments_TypeDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class Vehicles_TreatmentsDataTable : global::System.Data.TypedTableBase<Vehicles_TreatmentsRow> {
+            private global::System.Data.DataColumn columnTransaction_Number;
             
             private global::System.Data.DataColumn columnVehicle_Number;
             
-            private global::System.Data.DataColumn columnTreatments_Number;
+            private global::System.Data.DataColumn columnShipp_Origin;
             
-            private global::System.Data.DataColumn columnTreatment_Last;
+            private global::System.Data.DataColumn columnShipp_Dest;
+            
+            private global::System.Data.DataColumn columnShipp_Quantity;
+            
+            private global::System.Data.DataColumn columnShipp_Amount;
+            
+            private global::System.Data.DataColumn columnShipp_DocNum;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsDataTable() {
-                this.TableName = "Vehicles_Treatments";
+            public GetShippReportDataTable() {
+                this.TableName = "GetShippReport";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -580,7 +312,7 @@ namespace TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Vehicles_TreatmentsDataTable(global::System.Data.DataTable table) {
+            internal GetShippReportDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -597,9 +329,49 @@ namespace TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected Vehicles_TreatmentsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected GetShippReportDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Shipp_NumColumn {
+                get {
+                    return this.columnShipp_Num;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Shipp_Date_TimeColumn {
+                get {
+                    return this.columnShipp_Date_Time;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Employee_NumberColumn {
+                get {
+                    return this.columnEmployee_Number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Customer_NumberColumn {
+                get {
+                    return this.columnCustomer_Number;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Transaction_NumberColumn {
+                get {
+                    return this.columnTransaction_Number;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -612,17 +384,41 @@ namespace TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Treatments_NumberColumn {
+            public global::System.Data.DataColumn Shipp_OriginColumn {
                 get {
-                    return this.columnTreatments_Number;
+                    return this.columnShipp_Origin;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Treatment_LastColumn {
+            public global::System.Data.DataColumn Shipp_DestColumn {
                 get {
-                    return this.columnTreatment_Last;
+                    return this.columnShipp_Dest;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Shipp_QuantityColumn {
+                get {
+                    return this.columnShipp_Quantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Shipp_AmountColumn {
+                get {
+                    return this.columnShipp_Amount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Shipp_DocNumColumn {
+                get {
+                    return this.columnShipp_DocNum;
                 }
             }
             
@@ -637,47 +433,62 @@ namespace TMS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsRow this[int index] {
+            public GetShippReportRow this[int index] {
                 get {
-                    return ((Vehicles_TreatmentsRow)(this.Rows[index]));
+                    return ((GetShippReportRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Vehicles_TreatmentsRowChangeEventHandler Vehicles_TreatmentsRowChanging;
+            public event GetShippReportRowChangeEventHandler GetShippReportRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Vehicles_TreatmentsRowChangeEventHandler Vehicles_TreatmentsRowChanged;
+            public event GetShippReportRowChangeEventHandler GetShippReportRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Vehicles_TreatmentsRowChangeEventHandler Vehicles_TreatmentsRowDeleting;
+            public event GetShippReportRowChangeEventHandler GetShippReportRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event Vehicles_TreatmentsRowChangeEventHandler Vehicles_TreatmentsRowDeleted;
+            public event GetShippReportRowChangeEventHandler GetShippReportRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddVehicles_TreatmentsRow(Vehicles_TreatmentsRow row) {
+            public void AddGetShippReportRow(GetShippReportRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsRow AddVehicles_TreatmentsRow(string Vehicle_Number, int Treatments_Number, System.DateTime Treatment_Last) {
-                Vehicles_TreatmentsRow rowVehicles_TreatmentsRow = ((Vehicles_TreatmentsRow)(this.NewRow()));
+            public GetShippReportRow AddGetShippReportRow(System.DateTime Shipp_Date_Time, int Employee_Number, int Customer_Number, string Transaction_Number, string Vehicle_Number, string Shipp_Origin, string Shipp_Dest, int Shipp_Quantity, decimal Shipp_Amount, string Shipp_DocNum) {
+                GetShippReportRow rowGetShippReportRow = ((GetShippReportRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        null,
+                        Shipp_Date_Time,
+                        Employee_Number,
+                        Customer_Number,
+                        Transaction_Number,
                         Vehicle_Number,
-                        Treatments_Number,
-                        Treatment_Last};
-                rowVehicles_TreatmentsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowVehicles_TreatmentsRow);
-                return rowVehicles_TreatmentsRow;
+                        Shipp_Origin,
+                        Shipp_Dest,
+                        Shipp_Quantity,
+                        Shipp_Amount,
+                        Shipp_DocNum};
+                rowGetShippReportRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetShippReportRow);
+                return rowGetShippReportRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetShippReportRow FindByShipp_Num(int Shipp_Num) {
+                return ((GetShippReportRow)(this.Rows.Find(new object[] {
+                            Shipp_Num})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                Vehicles_TreatmentsDataTable cln = ((Vehicles_TreatmentsDataTable)(base.Clone()));
+                GetShippReportDataTable cln = ((GetShippReportDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -685,54 +496,93 @@ namespace TMS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new Vehicles_TreatmentsDataTable();
+                return new GetShippReportDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnShipp_Num = base.Columns["Shipp_Num"];
+                this.columnShipp_Date_Time = base.Columns["Shipp_Date_Time"];
+                this.columnEmployee_Number = base.Columns["Employee_Number"];
+                this.columnCustomer_Number = base.Columns["Customer_Number"];
+                this.columnTransaction_Number = base.Columns["Transaction_Number"];
                 this.columnVehicle_Number = base.Columns["Vehicle_Number"];
-                this.columnTreatments_Number = base.Columns["Treatments_Number"];
-                this.columnTreatment_Last = base.Columns["Treatment_Last"];
+                this.columnShipp_Origin = base.Columns["Shipp_Origin"];
+                this.columnShipp_Dest = base.Columns["Shipp_Dest"];
+                this.columnShipp_Quantity = base.Columns["Shipp_Quantity"];
+                this.columnShipp_Amount = base.Columns["Shipp_Amount"];
+                this.columnShipp_DocNum = base.Columns["Shipp_DocNum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnShipp_Num = new global::System.Data.DataColumn("Shipp_Num", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Num);
+                this.columnShipp_Date_Time = new global::System.Data.DataColumn("Shipp_Date_Time", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Date_Time);
+                this.columnEmployee_Number = new global::System.Data.DataColumn("Employee_Number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployee_Number);
+                this.columnCustomer_Number = new global::System.Data.DataColumn("Customer_Number", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustomer_Number);
+                this.columnTransaction_Number = new global::System.Data.DataColumn("Transaction_Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTransaction_Number);
                 this.columnVehicle_Number = new global::System.Data.DataColumn("Vehicle_Number", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVehicle_Number);
-                this.columnTreatments_Number = new global::System.Data.DataColumn("Treatments_Number", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTreatments_Number);
-                this.columnTreatment_Last = new global::System.Data.DataColumn("Treatment_Last", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTreatment_Last);
+                this.columnShipp_Origin = new global::System.Data.DataColumn("Shipp_Origin", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Origin);
+                this.columnShipp_Dest = new global::System.Data.DataColumn("Shipp_Dest", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Dest);
+                this.columnShipp_Quantity = new global::System.Data.DataColumn("Shipp_Quantity", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Quantity);
+                this.columnShipp_Amount = new global::System.Data.DataColumn("Shipp_Amount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_Amount);
+                this.columnShipp_DocNum = new global::System.Data.DataColumn("Shipp_DocNum", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnShipp_DocNum);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnShipp_Num}, true));
+                this.columnShipp_Num.AutoIncrement = true;
+                this.columnShipp_Num.AllowDBNull = false;
+                this.columnShipp_Num.ReadOnly = true;
+                this.columnShipp_Num.Unique = true;
+                this.columnShipp_Date_Time.AllowDBNull = false;
+                this.columnTransaction_Number.MaxLength = 20;
                 this.columnVehicle_Number.MaxLength = 8;
-                this.columnTreatment_Last.AllowDBNull = false;
+                this.columnShipp_Origin.AllowDBNull = false;
+                this.columnShipp_Origin.MaxLength = 20;
+                this.columnShipp_Dest.AllowDBNull = false;
+                this.columnShipp_Dest.MaxLength = 20;
+                this.columnShipp_Quantity.AllowDBNull = false;
+                this.columnShipp_Amount.AllowDBNull = false;
+                this.columnShipp_DocNum.AllowDBNull = false;
+                this.columnShipp_DocNum.MaxLength = 255;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsRow NewVehicles_TreatmentsRow() {
-                return ((Vehicles_TreatmentsRow)(this.NewRow()));
+            public GetShippReportRow NewGetShippReportRow() {
+                return ((GetShippReportRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new Vehicles_TreatmentsRow(builder);
+                return new GetShippReportRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(Vehicles_TreatmentsRow);
+                return typeof(GetShippReportRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.Vehicles_TreatmentsRowChanged != null)) {
-                    this.Vehicles_TreatmentsRowChanged(this, new Vehicles_TreatmentsRowChangeEvent(((Vehicles_TreatmentsRow)(e.Row)), e.Action));
+                if ((this.GetShippReportRowChanged != null)) {
+                    this.GetShippReportRowChanged(this, new GetShippReportRowChangeEvent(((GetShippReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -740,8 +590,8 @@ namespace TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.Vehicles_TreatmentsRowChanging != null)) {
-                    this.Vehicles_TreatmentsRowChanging(this, new Vehicles_TreatmentsRowChangeEvent(((Vehicles_TreatmentsRow)(e.Row)), e.Action));
+                if ((this.GetShippReportRowChanging != null)) {
+                    this.GetShippReportRowChanging(this, new GetShippReportRowChangeEvent(((GetShippReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -749,8 +599,8 @@ namespace TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.Vehicles_TreatmentsRowDeleted != null)) {
-                    this.Vehicles_TreatmentsRowDeleted(this, new Vehicles_TreatmentsRowChangeEvent(((Vehicles_TreatmentsRow)(e.Row)), e.Action));
+                if ((this.GetShippReportRowDeleted != null)) {
+                    this.GetShippReportRowDeleted(this, new GetShippReportRowChangeEvent(((GetShippReportRow)(e.Row)), e.Action));
                 }
             }
             
@@ -758,14 +608,14 @@ namespace TMS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.Vehicles_TreatmentsRowDeleting != null)) {
-                    this.Vehicles_TreatmentsRowDeleting(this, new Vehicles_TreatmentsRowChangeEvent(((Vehicles_TreatmentsRow)(e.Row)), e.Action));
+                if ((this.GetShippReportRowDeleting != null)) {
+                    this.GetShippReportRowDeleting(this, new GetShippReportRowChangeEvent(((GetShippReportRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveVehicles_TreatmentsRow(Vehicles_TreatmentsRow row) {
+            public void RemoveGetShippReportRow(GetShippReportRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -774,7 +624,7 @@ namespace TMS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                TmsDbDataSet1 ds = new TmsDbDataSet1();
+                DataSet2 ds = new DataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -792,7 +642,7 @@ namespace TMS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "Vehicles_TreatmentsDataTable";
+                attribute2.FixedValue = "GetShippReportDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -836,41 +686,85 @@ namespace TMS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class Treatments_TypeRow : global::System.Data.DataRow {
+        public partial class GetShippReportRow : global::System.Data.DataRow {
             
-            private Treatments_TypeDataTable tableTreatments_Type;
+            private GetShippReportDataTable tableGetShippReport;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Treatments_TypeRow(global::System.Data.DataRowBuilder rb) : 
+            internal GetShippReportRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTreatments_Type = ((Treatments_TypeDataTable)(this.Table));
+                this.tableGetShippReport = ((GetShippReportDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Treatments_Type {
+            public int Shipp_Num {
                 get {
-                    return ((string)(this[this.tableTreatments_Type.Treatments_TypeColumn]));
+                    return ((int)(this[this.tableGetShippReport.Shipp_NumColumn]));
                 }
                 set {
-                    this[this.tableTreatments_Type.Treatments_TypeColumn] = value;
+                    this[this.tableGetShippReport.Shipp_NumColumn] = value;
                 }
             }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class Vehicles_TreatmentsRow : global::System.Data.DataRow {
-            
-            private Vehicles_TreatmentsDataTable tableVehicles_Treatments;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal Vehicles_TreatmentsRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableVehicles_Treatments = ((Vehicles_TreatmentsDataTable)(this.Table));
+            public System.DateTime Shipp_Date_Time {
+                get {
+                    return ((global::System.DateTime)(this[this.tableGetShippReport.Shipp_Date_TimeColumn]));
+                }
+                set {
+                    this[this.tableGetShippReport.Shipp_Date_TimeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Employee_Number {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetShippReport.Employee_NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Employee_Number\' in table \'GetShippReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetShippReport.Employee_NumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Customer_Number {
+                get {
+                    try {
+                        return ((int)(this[this.tableGetShippReport.Customer_NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Customer_Number\' in table \'GetShippReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetShippReport.Customer_NumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Transaction_Number {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetShippReport.Transaction_NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Transaction_Number\' in table \'GetShippReport\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetShippReport.Transaction_NumberColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -878,67 +772,118 @@ namespace TMS {
             public string Vehicle_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableVehicles_Treatments.Vehicle_NumberColumn]));
+                        return ((string)(this[this.tableGetShippReport.Vehicle_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Vehicle_Number\' in table \'Vehicles_Treatments\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Vehicle_Number\' in table \'GetShippReport\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableVehicles_Treatments.Vehicle_NumberColumn] = value;
+                    this[this.tableGetShippReport.Vehicle_NumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Treatments_Number {
+            public string Shipp_Origin {
                 get {
-                    try {
-                        return ((int)(this[this.tableVehicles_Treatments.Treatments_NumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Treatments_Number\' in table \'Vehicles_Treatments\' is DBNull" +
-                                ".", e);
-                    }
+                    return ((string)(this[this.tableGetShippReport.Shipp_OriginColumn]));
                 }
                 set {
-                    this[this.tableVehicles_Treatments.Treatments_NumberColumn] = value;
+                    this[this.tableGetShippReport.Shipp_OriginColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Treatment_Last {
+            public string Shipp_Dest {
                 get {
-                    return ((global::System.DateTime)(this[this.tableVehicles_Treatments.Treatment_LastColumn]));
+                    return ((string)(this[this.tableGetShippReport.Shipp_DestColumn]));
                 }
                 set {
-                    this[this.tableVehicles_Treatments.Treatment_LastColumn] = value;
+                    this[this.tableGetShippReport.Shipp_DestColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int Shipp_Quantity {
+                get {
+                    return ((int)(this[this.tableGetShippReport.Shipp_QuantityColumn]));
+                }
+                set {
+                    this[this.tableGetShippReport.Shipp_QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public decimal Shipp_Amount {
+                get {
+                    return ((decimal)(this[this.tableGetShippReport.Shipp_AmountColumn]));
+                }
+                set {
+                    this[this.tableGetShippReport.Shipp_AmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Shipp_DocNum {
+                get {
+                    return ((string)(this[this.tableGetShippReport.Shipp_DocNumColumn]));
+                }
+                set {
+                    this[this.tableGetShippReport.Shipp_DocNumColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsEmployee_NumberNull() {
+                return this.IsNull(this.tableGetShippReport.Employee_NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetEmployee_NumberNull() {
+                this[this.tableGetShippReport.Employee_NumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsCustomer_NumberNull() {
+                return this.IsNull(this.tableGetShippReport.Customer_NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetCustomer_NumberNull() {
+                this[this.tableGetShippReport.Customer_NumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTransaction_NumberNull() {
+                return this.IsNull(this.tableGetShippReport.Transaction_NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTransaction_NumberNull() {
+                this[this.tableGetShippReport.Transaction_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IsVehicle_NumberNull() {
-                return this.IsNull(this.tableVehicles_Treatments.Vehicle_NumberColumn);
+                return this.IsNull(this.tableGetShippReport.Vehicle_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetVehicle_NumberNull() {
-                this[this.tableVehicles_Treatments.Vehicle_NumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsTreatments_NumberNull() {
-                return this.IsNull(this.tableVehicles_Treatments.Treatments_NumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetTreatments_NumberNull() {
-                this[this.tableVehicles_Treatments.Treatments_NumberColumn] = global::System.Convert.DBNull;
+                this[this.tableGetShippReport.Vehicle_NumberColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -946,56 +891,22 @@ namespace TMS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Treatments_TypeRowChangeEvent : global::System.EventArgs {
+        public class GetShippReportRowChangeEvent : global::System.EventArgs {
             
-            private Treatments_TypeRow eventRow;
+            private GetShippReportRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeRowChangeEvent(Treatments_TypeRow row, global::System.Data.DataRowAction action) {
+            public GetShippReportRowChangeEvent(GetShippReportRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Treatments_TypeRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class Vehicles_TreatmentsRowChangeEvent : global::System.EventArgs {
-            
-            private Vehicles_TreatmentsRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsRowChangeEvent(Vehicles_TreatmentsRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Vehicles_TreatmentsRow Row {
+            public GetShippReportRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1011,7 +922,7 @@ namespace TMS {
         }
     }
 }
-namespace TMS.TmsDbDataSet1TableAdapters {
+namespace TMS.DataSet2TableAdapters {
     
     
     /// <summary>
@@ -1023,7 +934,7 @@ namespace TMS.TmsDbDataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Treatments_TypeTableAdapter : global::System.ComponentModel.Component {
+    public partial class GetShippReportTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1037,7 +948,7 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Treatments_TypeTableAdapter() {
+        public GetShippReportTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1134,248 +1045,19 @@ namespace TMS.TmsDbDataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Treatments_Type";
-            tableMapping.ColumnMappings.Add("Treatments_Type", "Treatments_Type");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Treatments_Type] ([Treatments_Type]) VALUES (@Treatments_Type)" +
-                "";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Treatments_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Treatments_Type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::TMS.Properties.Settings.Default.TmsDbConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Treatments_Type FROM dbo.Treatments_Type";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TmsDbDataSet1.Treatments_TypeDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TmsDbDataSet1.Treatments_TypeDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            TmsDbDataSet1.Treatments_TypeDataTable dataTable = new TmsDbDataSet1.Treatments_TypeDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TmsDbDataSet1.Treatments_TypeDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TmsDbDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Treatments_Type");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Treatments_Type) {
-            if ((Treatments_Type == null)) {
-                throw new global::System.ArgumentNullException("Treatments_Type");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Treatments_Type));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class Vehicles_TreatmentsTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public Vehicles_TreatmentsTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Vehicles_Treatments";
+            tableMapping.DataSetTable = "GetShippReport";
+            tableMapping.ColumnMappings.Add("Shipp_Num", "Shipp_Num");
+            tableMapping.ColumnMappings.Add("Shipp_Date_Time", "Shipp_Date_Time");
+            tableMapping.ColumnMappings.Add("Employee_Number", "Employee_Number");
+            tableMapping.ColumnMappings.Add("Customer_Number", "Customer_Number");
+            tableMapping.ColumnMappings.Add("Transaction_Number", "Transaction_Number");
             tableMapping.ColumnMappings.Add("Vehicle_Number", "Vehicle_Number");
-            tableMapping.ColumnMappings.Add("Treatments_Number", "Treatments_Number");
-            tableMapping.ColumnMappings.Add("Treatment_Last", "Treatment_Last");
+            tableMapping.ColumnMappings.Add("Shipp_Origin", "Shipp_Origin");
+            tableMapping.ColumnMappings.Add("Shipp_Dest", "Shipp_Dest");
+            tableMapping.ColumnMappings.Add("Shipp_Quantity", "Shipp_Quantity");
+            tableMapping.ColumnMappings.Add("Shipp_Amount", "Shipp_Amount");
+            tableMapping.ColumnMappings.Add("Shipp_DocNum", "Shipp_DocNum");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Vehicles_Treatments] ([Vehicle_Number], [Treatments_Number], [" +
-                "Treatment_Last]) VALUES (@Vehicle_Number, @Treatments_Number, @Treatment_Last)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vehicle_Number", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vehicle_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Treatments_Number", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Treatments_Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Treatment_Last", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Treatment_Last", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1391,17 +1073,31 @@ namespace TMS.TmsDbDataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Vehicle_Number, Treatments_Number, Treatment_Last FROM dbo.Vehicles_Treatm" +
-                "ents";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].CommandText = "dbo.GetShippReport";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FromDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ToDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TmsDbDataSet1.Vehicles_TreatmentsDataTable dataTable) {
+        public virtual int Fill(DataSet2.GetShippReportDataTable dataTable, global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ToDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1413,74 +1109,23 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TmsDbDataSet1.Vehicles_TreatmentsDataTable GetData() {
+        public virtual DataSet2.GetShippReportDataTable GetData(global::System.Nullable<global::System.DateTime> FromDate, global::System.Nullable<global::System.DateTime> ToDate) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            TmsDbDataSet1.Vehicles_TreatmentsDataTable dataTable = new TmsDbDataSet1.Vehicles_TreatmentsDataTable();
+            if ((FromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(FromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ToDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(ToDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            DataSet2.GetShippReportDataTable dataTable = new DataSet2.GetShippReportDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TmsDbDataSet1.Vehicles_TreatmentsDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(TmsDbDataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Vehicles_Treatments");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Vehicle_Number, global::System.Nullable<int> Treatments_Number, System.DateTime Treatment_Last) {
-            if ((Vehicle_Number == null)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Vehicle_Number));
-            }
-            if ((Treatments_Number.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Treatments_Number.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Treatment_Last));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -1496,10 +1141,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private Treatments_TypeTableAdapter _treatments_TypeTableAdapter;
-        
-        private Vehicles_TreatmentsTableAdapter _vehicles_TreatmentsTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1512,34 +1153,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public Treatments_TypeTableAdapter Treatments_TypeTableAdapter {
-            get {
-                return this._treatments_TypeTableAdapter;
-            }
-            set {
-                this._treatments_TypeTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public Vehicles_TreatmentsTableAdapter Vehicles_TreatmentsTableAdapter {
-            get {
-                return this._vehicles_TreatmentsTableAdapter;
-            }
-            set {
-                this._vehicles_TreatmentsTableAdapter = value;
             }
         }
         
@@ -1562,14 +1175,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._treatments_TypeTableAdapter != null) 
-                            && (this._treatments_TypeTableAdapter.Connection != null))) {
-                    return this._treatments_TypeTableAdapter.Connection;
-                }
-                if (((this._vehicles_TreatmentsTableAdapter != null) 
-                            && (this._vehicles_TreatmentsTableAdapter.Connection != null))) {
-                    return this._vehicles_TreatmentsTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1583,12 +1188,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._treatments_TypeTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1598,26 +1197,8 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(TmsDbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._treatments_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Treatments_Type.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._treatments_TypeTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Vehicles_Treatments.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vehicles_TreatmentsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1626,24 +1207,8 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(TmsDbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._treatments_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Treatments_Type.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._treatments_TypeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Vehicles_Treatments.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vehicles_TreatmentsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1652,24 +1217,8 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(TmsDbDataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Vehicles_Treatments.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._vehicles_TreatmentsTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._treatments_TypeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Treatments_Type.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._treatments_TypeTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1702,22 +1251,12 @@ namespace TMS.TmsDbDataSet1TableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(TmsDbDataSet1 dataSet) {
+        public virtual int UpdateAll(DataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
-            }
-            if (((this._treatments_TypeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._treatments_TypeTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
-            if (((this._vehicles_TreatmentsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._vehicles_TreatmentsTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
             }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
@@ -1751,24 +1290,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._treatments_TypeTableAdapter != null)) {
-                    revertConnections.Add(this._treatments_TypeTableAdapter, this._treatments_TypeTableAdapter.Connection);
-                    this._treatments_TypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._treatments_TypeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._treatments_TypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._treatments_TypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._treatments_TypeTableAdapter.Adapter);
-                    }
-                }
-                if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                    revertConnections.Add(this._vehicles_TreatmentsTableAdapter, this._vehicles_TreatmentsTableAdapter.Connection);
-                    this._vehicles_TreatmentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._vehicles_TreatmentsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._vehicles_TreatmentsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._vehicles_TreatmentsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._vehicles_TreatmentsTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1826,14 +1347,6 @@ namespace TMS.TmsDbDataSet1TableAdapters {
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._treatments_TypeTableAdapter != null)) {
-                    this._treatments_TypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._treatments_TypeTableAdapter]));
-                    this._treatments_TypeTableAdapter.Transaction = null;
-                }
-                if ((this._vehicles_TreatmentsTableAdapter != null)) {
-                    this._vehicles_TreatmentsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vehicles_TreatmentsTableAdapter]));
-                    this._vehicles_TreatmentsTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
