@@ -11,7 +11,7 @@ namespace TMS
 {
     using System;
     
-    public partial class GetShippReport_Result
+    public partial class GetShippsByPrameters_Result
     {
         public string FullName { get; set; }
         public string Customer_Name { get; set; }

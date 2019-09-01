@@ -13,7 +13,7 @@ namespace TMS
     public partial class Customers : MetroFramework.Forms.MetroForm
     {
 
-        string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
+    //    string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
 
         public Customers()
         {

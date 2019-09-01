@@ -15,10 +15,10 @@ namespace TMS
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class TmsDbEntitiess : DbContext
+    public partial class ShippReportTmsDbEntities : DbContext
     {
-        public TmsDbEntitiess()
-            : base("name=TmsDbEntitiess")
+        public ShippReportTmsDbEntities()
+            : base("name=ShippReportTmsDbEntities")
         {
         }
     
@@ -28,7 +28,7 @@ namespace TMS
         }
     
     
-        public virtual ObjectResult<GetShippReport_Result> GetShippReport(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate)
+        public virtual ObjectResult<GetShippReport_Result> GetShippReport(Nullable<System.DateTime> fromDate, Nullable<System.DateTime> toDate, string customerNum, string fromEmployee, string toEmployee)
         {
             var fromDateParameter = fromDate.HasValue ?
                 new ObjectParameter("FromDate", fromDate) :
@@ -38,7 +38,19 @@ namespace TMS
                 new ObjectParameter("ToDate", toDate) :
                 new ObjectParameter("ToDate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetShippReport_Result>("GetShippReport", fromDateParameter, toDateParameter);
+            var customerNumParameter = customerNum != null ?
+                new ObjectParameter("CustomerNum", customerNum) :
+                new ObjectParameter("CustomerNum", typeof(string));
+    
+            var fromEmployeeParameter = fromEmployee != null ?
+                new ObjectParameter("FromEmployee", fromEmployee) :
+                new ObjectParameter("FromEmployee", typeof(string));
+    
+            var toEmployeeParameter = toEmployee != null ?
+                new ObjectParameter("ToEmployee", toEmployee) :
+                new ObjectParameter("ToEmployee", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<GetShippReport_Result>("GetShippReport", fromDateParameter, toDateParameter, customerNumParameter, fromEmployeeParameter, toEmployeeParameter);
         }
     }
 }

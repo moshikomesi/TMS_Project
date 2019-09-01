@@ -100,6 +100,11 @@
       <DependentUpon>CityTbl.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer .cs" />
+    <Compile Include="CustomerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Customers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,7 +146,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GetShippReport_Result.cs">
-      <DependentUpon>ShippModel1.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Invoices.cs">
       <SubType>Form</SubType>
@@ -156,6 +161,21 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginFunctions.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reports.cs">
@@ -170,21 +190,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceInstance.cs" />
-    <Compile Include="ShippModel1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShippModel1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ShippModel1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShippModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ShippModel1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShippModel1.edmx</DependentUpon>
-    </Compile>
     <Compile Include="ShippTypeTbl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,7 +266,7 @@
     <EmbeddedResource Include="Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShippReport1.rdlc" />
+    <EmbeddedResource Include="ShippReport.rdlc" />
     <EmbeddedResource Include="ShippTypeTbl.resx">
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +279,17 @@
     <EmbeddedResource Include="VehicleTbl.resx">
       <DependentUpon>VehicleTbl.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="CustomerDataSet.xsc">
+      <DependentUpon>CustomerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CustomerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CustomerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CustomerDataSet.xss">
+      <DependentUpon>CustomerDataSet.xsd</DependentUpon>
+    </None>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -285,16 +301,23 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="DataSet2.xsc">
       <DependentUpon>DataSet2.xsd</DependentUpon>
     </None>
     <None Include="DataSet2.xsd">
-      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Bills.datasource" />
@@ -315,7 +338,6 @@
     <None Include="Properties\DataSources\ShippTypeTbl.datasource" />
     <None Include="Properties\DataSources\TMS.Properties.Resources.datasource" />
     <None Include="Properties\DataSources\TMS.Properties.Settings.datasource" />
-    <None Include="Properties\DataSources\TmsDbEntities1.datasource" />
     <None Include="Properties\DataSources\Traks.datasource" />
     <None Include="Properties\DataSources\transactions.datasource" />
     <None Include="Properties\DataSources\Transactions_Type.datasource" />
@@ -388,13 +410,6 @@
     <None Include="Service References\ServiceReference1\TMS.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <EntityDeploy Include="ShippModel1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ShippModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="ShippModel1.edmx.diagram">
-      <DependentUpon>ShippModel1.edmx</DependentUpon>
-    </None>
     <None Include="TmsDbDataSet.xsc">
       <DependentUpon>TmsDbDataSet.xsd</DependentUpon>
     </None>
@@ -434,16 +449,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MetroFramework.txt" />
-    <Content Include="ShippModel1.Context.tt">
+    <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShippModel1.edmx</DependentUpon>
-      <LastGenOutput>ShippModel1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="ShippModel1.tt">
+    <Content Include="Model1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ShippModel1.edmx</DependentUpon>
-      <LastGenOutput>ShippModel1.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\gobtn3.png" />
+    <None Include="Resources\gobtn2.png" />
+    <None Include="Resources\gobtn1.png" />
+    <None Include="Resources\gobtn.png" />
     <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

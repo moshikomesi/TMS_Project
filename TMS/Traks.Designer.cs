@@ -54,7 +54,6 @@
             this.Vhicle_Date = new System.Windows.Forms.DateTimePicker();
             this.Serche_Trak = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.קליטה = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -85,12 +84,9 @@
             this.vehiclesTreatmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.v_T = new TMS.V_T();
             this.tmsDbDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-               
             this.treatments_TypeTableAdapter = new TMS.TmsDbDataSetTableAdapters.Treatments_TypeTableAdapter();
             this.traksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            
             this.treatmentsTypeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            
             this.tmsDbDataVehicles_T = new TMS.TmsDbDataVehicles_T();
             this.tmsDbDataVehiclesTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicles_TreatmentsTableAdapter = new TMS.V_TTableAdapters.Vehicles_TreatmentsTableAdapter();
@@ -107,9 +103,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesTreatmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1BindingSource)).BeginInit();
-            
             ((System.ComponentModel.ISupportInitialize)(this.traksBindingSource)).BeginInit();
-            
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehicles_T)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehiclesTBindingSource)).BeginInit();
@@ -376,10 +370,6 @@
             this.label4.TabIndex = 102;
             this.label4.Text = "חיפוש רכב ";
             // 
-            // shippTableAdapter1
-            // 
-            
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.קליטה);
@@ -443,6 +433,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 381);
             this.panel2.TabIndex = 116;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label5
             // 
@@ -721,14 +712,6 @@
             this.v_T.DataSetName = "V_T";
             this.v_T.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tmsDbDataSet1BindingSource
-            // 
-            this.tmsDbDataSet1BindingSource.Position = 0;
-            // 
-            // tmsDbDataSet1
-            // 
-           
-            // 
             // treatments_TypeTableAdapter
             // 
             this.treatments_TypeTableAdapter.ClearBeforeFill = true;
@@ -737,18 +720,9 @@
             // 
             this.traksBindingSource.DataSource = typeof(TMS.Traks);
             // 
-            // dataSet11
-            // 
-           
-            // 
             // treatmentsTypeBindingSource1
             // 
             this.treatmentsTypeBindingSource1.DataMember = "Treatments_Type";
-         
-            // 
-            // treatments_TypeTableAdapter1
-            // 
-          
             // 
             // tmsDbDataVehicles_T
             // 
@@ -799,9 +773,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vehiclesTreatmentsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.v_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1BindingSource)).EndInit();
-           
             ((System.ComponentModel.ISupportInitialize)(this.traksBindingSource)).EndInit();
-            
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehicles_T)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataVehiclesTBindingSource)).EndInit();
