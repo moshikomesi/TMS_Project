@@ -30,10 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.GetShippReport_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GetSumShippReport_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ShippBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.SumBtn = new System.Windows.Forms.Button();
             this.C_N = new System.Windows.Forms.ComboBox();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customerDataSet = new TMS.CustomerDataSet();
@@ -47,6 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.customersTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new TMS.DataSet1();
@@ -57,6 +61,7 @@
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new TMS.CustomerDataSetTableAdapters.CustomerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.GetShippReport_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GetSumShippReport_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShippBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -77,6 +82,10 @@
             // 
             this.GetShippReport_ResultBindingSource.DataSource = typeof(TMS.GetShippReport_Result);
             // 
+            // GetSumShippReport_ResultBindingSource
+            // 
+            this.GetSumShippReport_ResultBindingSource.DataSource = typeof(TMS.GetSumShippReport_Result);
+            // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,7 +95,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TMS.ShippReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(954, 458);
+            this.reportViewer1.Size = new System.Drawing.Size(410, 270);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Visible = false;
             // 
@@ -104,6 +113,7 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.SumBtn);
             this.splitContainer1.Panel1.Controls.Add(this.C_N);
             this.splitContainer1.Panel1.Controls.Add(this.LoadBtn);
             this.splitContainer1.Panel1.Controls.Add(this.ToDate_P);
@@ -118,10 +128,21 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
-            this.splitContainer1.Size = new System.Drawing.Size(954, 458);
-            this.splitContainer1.SplitterDistance = 499;
+            
+            this.splitContainer1.Size = new System.Drawing.Size(410, 270);
+            this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.TabIndex = 8;
+            // 
+            // SumBtn
+            // 
+            this.SumBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.SumBtn.Location = new System.Drawing.Point(99, 221);
+            this.SumBtn.Name = "SumBtn";
+            this.SumBtn.Size = new System.Drawing.Size(73, 37);
+            this.SumBtn.TabIndex = 8;
+            this.SumBtn.Text = "דו\"ח מסוכם";
+            this.SumBtn.UseVisualStyleBackColor = false;
+            this.SumBtn.Click += new System.EventHandler(this.SumBtn_Click);
             // 
             // C_N
             // 
@@ -146,14 +167,14 @@
             // 
             // LoadBtn
             // 
-            this.LoadBtn.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.LoadBtn.BackgroundImage = global::TMS.Properties.Resources.gobtn3;
+            this.LoadBtn.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.LoadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.LoadBtn.Cursor = System.Windows.Forms.Cursors.AppStarting;
-            this.LoadBtn.Location = new System.Drawing.Point(61, 221);
+            this.LoadBtn.Location = new System.Drawing.Point(20, 221);
             this.LoadBtn.Name = "LoadBtn";
-            this.LoadBtn.Size = new System.Drawing.Size(73, 34);
+            this.LoadBtn.Size = new System.Drawing.Size(73, 37);
             this.LoadBtn.TabIndex = 6;
+            this.LoadBtn.Text = "דוח מפורט";
             this.LoadBtn.UseVisualStyleBackColor = false;
             this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
             // 
@@ -239,6 +260,20 @@
             this.label1.TabIndex = 11;
             this.label1.Text = ": מתאריך";
             // 
+            // reportViewer2
+            // 
+            this.reportViewer2.AutoSize = true;
+            this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.GetSumShippReport_ResultBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "TMS.SumShippReport.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(20, 60);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.Size = new System.Drawing.Size(410, 270);
+            this.reportViewer2.TabIndex = 16;
+            this.reportViewer2.Visible = false;
+            // 
             // customersTblBindingSource
             // 
             this.customersTblBindingSource.DataSource = typeof(TMS.CustomersTbl);
@@ -283,16 +318,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 538);
+            this.ClientSize = new System.Drawing.Size(450, 350);
+            this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.reportViewer1);
             this.MaximizeBox = false;
             this.Name = "Reports";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "ד\"וח משלוחים";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Load += new System.EventHandler(this.Reports_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GetShippReport_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GetSumShippReport_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShippBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -310,6 +346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -341,5 +378,8 @@
         private CustomerDataSet customerDataSet;
         private System.Windows.Forms.BindingSource customerBindingSource1;
         private CustomerDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.Button SumBtn;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.BindingSource GetSumShippReport_ResultBindingSource;
     }
 }

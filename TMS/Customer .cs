@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using TMS.ServiceReference1;
 
 namespace TMS
 {
   public  class Customer : ServiceInstance
     {
+        
         string token = new
   LoginFunctions().GetToken("Testing@test.com", "123456");
 
@@ -36,12 +40,12 @@ namespace TMS
                 Name = ,
                 Email = "sample@gmail.com",
                 Phone = "0465422356",
-                Fax = "046588689",
-                Address = "äøçåá äøàùé",
-                City = "òéø çùåáä",
-                Zip = "523367",
-                UniqueID = "064558083",
-                OrgID = User.OrganizationID,
+                
+                IPAddress = "äøçåá äøàùé",
+                city = "òéø çùåáä",
+                Ziip = "523367",
+                UniqueId = "064558083",
+                Oid = User.OrganizationID,
                 PayTerms = 30,
                 Cell = "0522256664",
                 Active = true,
@@ -52,6 +56,7 @@ namespace TMS
 
         }
         */
+        
     }
     
 }

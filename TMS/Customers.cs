@@ -20,6 +20,16 @@ namespace TMS
             InitializeComponent();
         }
 
+        public bool Active { get; internal set; }
+        public string Addresse { get; internal set; }
+        public string city { get; internal set; }
+        public string Email { get; internal set; }
+        public string IPAddress { get; internal set; }
+        public int Oid { get; internal set; }
+        public string Phone { get; internal set; }
+        public string UniqueId { get; internal set; }
+        public string Ziip { get; internal set; }
+
         private void Customers_Load(object sender, EventArgs e)
         {
 
