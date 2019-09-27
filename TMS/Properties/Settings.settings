@@ -28,5 +28,8 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-C2IN8KT;Initial Catalog=TmsDb;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="TMS_il_co_invoice4u_api_ApiService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://api.invoice4u.co.il/Services/ApiService.svc/Soap</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

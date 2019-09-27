@@ -1,25 +1,11 @@
-﻿using System;
-using TMS.ServiceReference1;
+﻿using TMS.ServiceReference1;
 namespace TMS
 {
-    public partial class Customers : MetroFramework.Forms.MetroForm
+    class CreateCustomers: ServiceInstance
     {
 
-    //    string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
-
-        public Customers()
-        {
-            InitializeComponent();
-        }
-        
-
-        private void Customers_Load(object sender, EventArgs e)
-        {
-
-        }
-
         string token = new
-    LoginFunctions().GetToken("Testing@test.com", "123456");
+LoginFunctions().GetToken("projecttms2019@gmail.com", "m6080405");
 
         /* Function for Customer Create detail*/
         public Customer CreateCustomer()
@@ -41,8 +27,8 @@ namespace TMS
                 Active = true,
 
             };
-            CreateCustomers crc = new CreateCustomers();
-            customer = crc.apiSrv.CreateCustomer(customer, token);
+
+            customer = apiSrv.CreateCustomer(customer, token);
 
             if (customer.Errors.Length > 0)
             {
@@ -54,11 +40,5 @@ namespace TMS
             }
             return customer;
         }
-
-        private void SaveBtn_Click(object sender, EventArgs e)
-        {
-            Customer cust = CreateCustomer();
-        }
     }
-
 }

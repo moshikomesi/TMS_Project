@@ -33,15 +33,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Invocie_Num = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.To_Pay = new System.Windows.Forms.TextBox();
+            this.Tax = new System.Windows.Forms.TextBox();
+            this.Sum = new System.Windows.Forms.TextBox();
             this.dataSet1 = new TMS.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
@@ -56,6 +56,17 @@
             this.customerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customersTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new TMS.TmsDbDataSet1TableAdapters.CustomerTableAdapter();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.In_Sum = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.In_Dt = new System.Windows.Forms.TextBox();
+            this.In_Q = new System.Windows.Forms.TextBox();
+            this.In_A = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -65,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -110,20 +122,20 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "תאריך חשבונית";
             // 
-            // label8
+            // Invocie_Num
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.Location = new System.Drawing.Point(809, 22);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(255, 34);
-            this.label8.TabIndex = 15;
-            this.label8.Text = ": חשבונית מס מספר";
+            this.Invocie_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Invocie_Num.AutoSize = true;
+            this.Invocie_Num.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Invocie_Num.Location = new System.Drawing.Point(809, 22);
+            this.Invocie_Num.Name = "Invocie_Num";
+            this.Invocie_Num.Size = new System.Drawing.Size(255, 34);
+            this.Invocie_Num.TabIndex = 15;
+            this.Invocie_Num.Text = ": חשבונית מס מספר";
             // 
             // customerBindingSource
             // 
-            this.customerBindingSource.DataSource = typeof(TMS.Customer);
+            this.customerBindingSource.DataSource = typeof(TMS.Customers);
             // 
             // label9
             // 
@@ -162,9 +174,9 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.textBox7);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.To_Pay);
+            this.panel2.Controls.Add(this.Tax);
+            this.panel2.Controls.Add(this.Sum);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label10);
@@ -173,29 +185,35 @@
             this.panel2.Size = new System.Drawing.Size(220, 125);
             this.panel2.TabIndex = 20;
             // 
-            // textBox8
+            // To_Pay
             // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox8.Location = new System.Drawing.Point(0, 77);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(95, 20);
-            this.textBox8.TabIndex = 23;
+            this.To_Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.To_Pay.Enabled = false;
+            this.To_Pay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.To_Pay.Location = new System.Drawing.Point(0, 77);
+            this.To_Pay.Name = "To_Pay";
+            this.To_Pay.Size = new System.Drawing.Size(95, 26);
+            this.To_Pay.TabIndex = 23;
             // 
-            // textBox7
+            // Tax
             // 
-            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox7.Location = new System.Drawing.Point(0, 48);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(95, 20);
-            this.textBox7.TabIndex = 22;
+            this.Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Tax.Enabled = false;
+            this.Tax.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Tax.Location = new System.Drawing.Point(0, 48);
+            this.Tax.Name = "Tax";
+            this.Tax.Size = new System.Drawing.Size(95, 26);
+            this.Tax.TabIndex = 22;
             // 
-            // textBox1
+            // Sum
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox1.Location = new System.Drawing.Point(0, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(95, 20);
-            this.textBox1.TabIndex = 21;
+            this.Sum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.Sum.Enabled = false;
+            this.Sum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Sum.Location = new System.Drawing.Point(0, 15);
+            this.Sum.Name = "Sum";
+            this.Sum.Size = new System.Drawing.Size(95, 26);
+            this.Sum.TabIndex = 21;
             // 
             // dataSet1
             // 
@@ -241,8 +259,9 @@
             this.CusName.Location = new System.Drawing.Point(775, 86);
             this.CusName.Name = "CusName";
             this.CusName.Size = new System.Drawing.Size(160, 21);
-            this.CusName.TabIndex = 16;
+            this.CusName.TabIndex = 0;
             this.CusName.ValueMember = "Customer_Num";
+            this.CusName.SelectedIndexChanged += new System.EventHandler(this.CusName_SelectedIndexChanged);
             // 
             // customerBindingSource1
             // 
@@ -262,7 +281,7 @@
             this.CusEmail.Location = new System.Drawing.Point(609, 129);
             this.CusEmail.Name = "CusEmail";
             this.CusEmail.Size = new System.Drawing.Size(328, 30);
-            this.CusEmail.TabIndex = 30;
+            this.CusEmail.TabIndex = 1;
             this.CusEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InvoiceDate
@@ -274,7 +293,7 @@
             this.InvoiceDate.Location = new System.Drawing.Point(788, 195);
             this.InvoiceDate.Name = "InvoiceDate";
             this.InvoiceDate.Size = new System.Drawing.Size(145, 29);
-            this.InvoiceDate.TabIndex = 31;
+            this.InvoiceDate.TabIndex = 2;
             // 
             // customerDataSet
             // 
@@ -294,18 +313,130 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(225, 120);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Save_Bt";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel1.Controls.Add(this.In_Sum);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.In_Dt);
+            this.panel1.Controls.Add(this.In_Q);
+            this.panel1.Controls.Add(this.In_A);
+            this.panel1.Location = new System.Drawing.Point(150, 310);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1082, 38);
+            this.panel1.TabIndex = 33;
+            // 
+            // In_Sum
+            // 
+            this.In_Sum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Sum.Location = new System.Drawing.Point(30, 8);
+            this.In_Sum.Name = "In_Sum";
+            this.In_Sum.Size = new System.Drawing.Size(78, 26);
+            this.In_Sum.TabIndex = 4;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.Location = new System.Drawing.Point(120, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 19);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "סהכ לפני מעמ";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.Location = new System.Drawing.Point(335, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(105, 19);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "מחיר לפני מעמ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(545, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(42, 19);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "כמות";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Location = new System.Drawing.Point(1025, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 19);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "פרטים";
+            // 
+            // In_Dt
+            // 
+            this.In_Dt.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.In_Dt.Location = new System.Drawing.Point(620, 8);
+            this.In_Dt.Name = "In_Dt";
+            this.In_Dt.Size = new System.Drawing.Size(394, 26);
+            this.In_Dt.TabIndex = 1;
+            // 
+            // In_Q
+            // 
+            this.In_Q.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Q.Location = new System.Drawing.Point(450, 8);
+            this.In_Q.Name = "In_Q";
+            this.In_Q.Size = new System.Drawing.Size(78, 26);
+            this.In_Q.TabIndex = 2;
+            // 
+            // In_A
+            // 
+            this.In_A.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_A.Location = new System.Drawing.Point(240, 8);
+            this.In_A.Name = "In_A";
+            this.In_A.ShortcutsEnabled = false;
+            this.In_A.Size = new System.Drawing.Size(78, 26);
+            this.In_A.TabIndex = 3;
+            this.In_A.Leave += new System.EventHandler(this.In_A_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "label4";
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 563);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.InvoiceDate);
             this.Controls.Add(this.CusEmail);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.CusName);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Invocie_Num);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -323,6 +454,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -334,14 +467,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Invocie_Num;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox To_Pay;
+        private System.Windows.Forms.TextBox Tax;
+        private System.Windows.Forms.TextBox Sum;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
@@ -357,5 +490,16 @@
         private TmsDbDataSet1 tmsDbDataSet1;
         private System.Windows.Forms.BindingSource customerBindingSource1;
         private TmsDbDataSet1TableAdapters.CustomerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox In_Dt;
+        private System.Windows.Forms.TextBox In_Sum;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.TextBox In_Q;
+        public System.Windows.Forms.TextBox In_A;
     }
 }

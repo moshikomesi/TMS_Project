@@ -104,5 +104,15 @@ namespace TMS.Properties {
                 return ((string)(this["TmsDbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://api.invoice4u.co.il/Services/ApiService.svc/Soap")]
+        public string TMS_il_co_invoice4u_api_ApiService {
+            get {
+                return ((string)(this["TMS_il_co_invoice4u_api_ApiService"]));
+            }
+        }
     }
 }

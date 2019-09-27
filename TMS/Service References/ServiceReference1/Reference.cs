@@ -44,6 +44,12 @@ namespace TMS.ServiceReference1 {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ApiClearingRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ClearingLog))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.OrganizationTokenDetails))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ClearingProducts))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ClearingProductCatalogItemsMapping))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ProductCouponCode))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.ClearingProductsOrder))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.MeshulamClearingApi))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(TMS.ServiceReference1.User))]
     public partial class CommonObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -599,6 +605,9 @@ namespace TMS.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsCreateDocField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsCreditTransactionTypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsDeliveryField;
@@ -1285,6 +1294,19 @@ namespace TMS.ServiceReference1 {
                 if ((this.IsCreateDocField.Equals(value) != true)) {
                     this.IsCreateDocField = value;
                     this.RaisePropertyChanged("IsCreateDoc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsCreditTransactionType {
+            get {
+                return this.IsCreditTransactionTypeField;
+            }
+            set {
+                if ((this.IsCreditTransactionTypeField.Equals(value) != true)) {
+                    this.IsCreditTransactionTypeField = value;
+                    this.RaisePropertyChanged("IsCreditTransactionType");
                 }
             }
         }
@@ -2258,6 +2280,9 @@ namespace TMS.ServiceReference1 {
         private System.Nullable<bool> IsEmailCommentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsNewDesignField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> IsReplaceCompanyNameWithBranchNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2600,6 +2625,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsNewDesign {
+            get {
+                return this.IsNewDesignField;
+            }
+            set {
+                if ((this.IsNewDesignField.Equals(value) != true)) {
+                    this.IsNewDesignField = value;
+                    this.RaisePropertyChanged("IsNewDesign");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> IsReplaceCompanyNameWithBranchName {
             get {
                 return this.IsReplaceCompanyNameWithBranchNameField;
@@ -2881,6 +2919,9 @@ namespace TMS.ServiceReference1 {
         private int AmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ApiDuplicityTimeValidationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ApiIdentifierField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -2995,13 +3036,22 @@ namespace TMS.ServiceReference1 {
         private TMS.ServiceReference1.Document[] InvoicesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> Is2SignDocField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsDiscountNominalField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool IsOldSystemDocumentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsPreviewDocumentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> IsSendUserMailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsSignedBy2SignField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<System.DateTime> IssueDateField;
@@ -3043,7 +3093,7 @@ namespace TMS.ServiceReference1 {
         private double ReceiptAmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int RootOranizationIdField;
+        private int RootOrganizationIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double RoundAmountField;
@@ -3074,6 +3124,9 @@ namespace TMS.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double TotalTaxAmountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<double> TotalTaxExemptField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private double TotalWithoutTaxField;
@@ -3119,6 +3172,19 @@ namespace TMS.ServiceReference1 {
                 if ((this.AmountField.Equals(value) != true)) {
                     this.AmountField = value;
                     this.RaisePropertyChanged("Amount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ApiDuplicityTimeValidation {
+            get {
+                return this.ApiDuplicityTimeValidationField;
+            }
+            set {
+                if ((this.ApiDuplicityTimeValidationField.Equals(value) != true)) {
+                    this.ApiDuplicityTimeValidationField = value;
+                    this.RaisePropertyChanged("ApiDuplicityTimeValidation");
                 }
             }
         }
@@ -3618,6 +3684,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> Is2SignDoc {
+            get {
+                return this.Is2SignDocField;
+            }
+            set {
+                if ((this.Is2SignDocField.Equals(value) != true)) {
+                    this.Is2SignDocField = value;
+                    this.RaisePropertyChanged("Is2SignDoc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public bool IsDiscountNominal {
             get {
                 return this.IsDiscountNominalField;
@@ -3644,6 +3723,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsPreviewDocument {
+            get {
+                return this.IsPreviewDocumentField;
+            }
+            set {
+                if ((this.IsPreviewDocumentField.Equals(value) != true)) {
+                    this.IsPreviewDocumentField = value;
+                    this.RaisePropertyChanged("IsPreviewDocument");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> IsSendUserMail {
             get {
                 return this.IsSendUserMailField;
@@ -3652,6 +3744,19 @@ namespace TMS.ServiceReference1 {
                 if ((this.IsSendUserMailField.Equals(value) != true)) {
                     this.IsSendUserMailField = value;
                     this.RaisePropertyChanged("IsSendUserMail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsSignedBy2Sign {
+            get {
+                return this.IsSignedBy2SignField;
+            }
+            set {
+                if ((this.IsSignedBy2SignField.Equals(value) != true)) {
+                    this.IsSignedBy2SignField = value;
+                    this.RaisePropertyChanged("IsSignedBy2Sign");
                 }
             }
         }
@@ -3826,14 +3931,14 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int RootOranizationId {
+        public int RootOrganizationId {
             get {
-                return this.RootOranizationIdField;
+                return this.RootOrganizationIdField;
             }
             set {
-                if ((this.RootOranizationIdField.Equals(value) != true)) {
-                    this.RootOranizationIdField = value;
-                    this.RaisePropertyChanged("RootOranizationId");
+                if ((this.RootOrganizationIdField.Equals(value) != true)) {
+                    this.RootOrganizationIdField = value;
+                    this.RaisePropertyChanged("RootOrganizationId");
                 }
             }
         }
@@ -3964,6 +4069,19 @@ namespace TMS.ServiceReference1 {
                 if ((this.TotalTaxAmountField.Equals(value) != true)) {
                     this.TotalTaxAmountField = value;
                     this.RaisePropertyChanged("TotalTaxAmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<double> TotalTaxExempt {
+            get {
+                return this.TotalTaxExemptField;
+            }
+            set {
+                if ((this.TotalTaxExemptField.Equals(value) != true)) {
+                    this.TotalTaxExemptField = value;
+                    this.RaisePropertyChanged("TotalTaxExempt");
                 }
             }
         }
@@ -4477,6 +4595,9 @@ namespace TMS.ServiceReference1 {
         private string PaymentTypeLiteralField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentTypeOtherIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> Ucan2CreditCompanyIdField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
@@ -4727,6 +4848,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentTypeOtherId {
+            get {
+                return this.PaymentTypeOtherIdField;
+            }
+            set {
+                if ((this.PaymentTypeOtherIdField.Equals(value) != true)) {
+                    this.PaymentTypeOtherIdField = value;
+                    this.RaisePropertyChanged("PaymentTypeOtherId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<int> Ucan2CreditCompanyId {
             get {
                 return this.Ucan2CreditCompanyIdField;
@@ -4896,6 +5030,9 @@ namespace TMS.ServiceReference1 {
         private string ItemDescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> ItemsIncludedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int LimitField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -4911,7 +5048,16 @@ namespace TMS.ServiceReference1 {
         private System.Nullable<bool> PaymentTypeDeductionOnlyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> PaymentTypeOtherIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> PaymentsIncludedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<TMS.ServiceReference1.ReportTypes> ReportTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> ReportTypeIntField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int StatusField;
@@ -5273,6 +5419,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> ItemsIncluded {
+            get {
+                return this.ItemsIncludedField;
+            }
+            set {
+                if ((this.ItemsIncludedField.Equals(value) != true)) {
+                    this.ItemsIncludedField = value;
+                    this.RaisePropertyChanged("ItemsIncluded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Limit {
             get {
                 return this.LimitField;
@@ -5338,6 +5497,32 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> PaymentTypeOtherId {
+            get {
+                return this.PaymentTypeOtherIdField;
+            }
+            set {
+                if ((this.PaymentTypeOtherIdField.Equals(value) != true)) {
+                    this.PaymentTypeOtherIdField = value;
+                    this.RaisePropertyChanged("PaymentTypeOtherId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> PaymentsIncluded {
+            get {
+                return this.PaymentsIncludedField;
+            }
+            set {
+                if ((this.PaymentsIncludedField.Equals(value) != true)) {
+                    this.PaymentsIncludedField = value;
+                    this.RaisePropertyChanged("PaymentsIncluded");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<TMS.ServiceReference1.ReportTypes> ReportType {
             get {
                 return this.ReportTypeField;
@@ -5346,6 +5531,19 @@ namespace TMS.ServiceReference1 {
                 if ((this.ReportTypeField.Equals(value) != true)) {
                     this.ReportTypeField = value;
                     this.RaisePropertyChanged("ReportType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> ReportTypeInt {
+            get {
+                return this.ReportTypeIntField;
+            }
+            set {
+                if ((this.ReportTypeIntField.Equals(value) != true)) {
+                    this.ReportTypeIntField = value;
+                    this.RaisePropertyChanged("ReportTypeInt");
                 }
             }
         }
@@ -6971,6 +7169,9 @@ namespace TMS.ServiceReference1 {
         private string ClientNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime DateCreatedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -7089,6 +7290,19 @@ namespace TMS.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ClientNameField, value) != true)) {
                     this.ClientNameField = value;
                     this.RaisePropertyChanged("ClientName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
                 }
             }
         }
@@ -8295,6 +8509,1568 @@ namespace TMS.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CommonCollectionOfArrayOfClearingProductsJHiVxprS", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class CommonCollectionOfArrayOfClearingProductsJHiVxprS : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ClearingProducts[] ResponseField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ClearingProducts[] Response {
+            get {
+                return this.ResponseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResponseField, value) != true)) {
+                    this.ResponseField = value;
+                    this.RaisePropertyChanged("Response");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClearingProducts", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class ClearingProducts : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool AllowPaymentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AnalyticsClearingPageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string AnalyticsThankUPageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ClearingProductCatalogItemsMapping[] CatalogItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ClearingCompanyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ProductCouponCode[] CouponCodesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DeliveryFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DeliveryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DiscountEndDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DiscountStartDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool DynamicPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasCouponsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeadLine1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeadLine2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeadLine3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeadLine4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string HeadlineNewDesignField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> IsInsertPurchaseAsClientField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsOrganizationValidNotExpiredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsStandingOrderField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> MailingListIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MaxPaymentsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool MultipleItemsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrganizationBusinessTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrganizationIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrganizationNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrganizationNameEngField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PageUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double PriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RegulationsLinkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> ReturnParamsInUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ReturnUrlField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ClearingProductCatalogItemsMapping SelectedCatalogItemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ProductCouponCode SelectedCouponField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescription1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescription2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescription3Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortDescription4Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ShowDeliveryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ShowDeliveryByDefaultField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ShowLogoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ShowProductImageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StandingOrderDurationsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TemplateIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int UsageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string YoutubeLinkField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Active {
+            get {
+                return this.ActiveField;
+            }
+            set {
+                if ((this.ActiveField.Equals(value) != true)) {
+                    this.ActiveField = value;
+                    this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool AllowPayments {
+            get {
+                return this.AllowPaymentsField;
+            }
+            set {
+                if ((this.AllowPaymentsField.Equals(value) != true)) {
+                    this.AllowPaymentsField = value;
+                    this.RaisePropertyChanged("AllowPayments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AnalyticsClearingPage {
+            get {
+                return this.AnalyticsClearingPageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnalyticsClearingPageField, value) != true)) {
+                    this.AnalyticsClearingPageField = value;
+                    this.RaisePropertyChanged("AnalyticsClearingPage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string AnalyticsThankUPage {
+            get {
+                return this.AnalyticsThankUPageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AnalyticsThankUPageField, value) != true)) {
+                    this.AnalyticsThankUPageField = value;
+                    this.RaisePropertyChanged("AnalyticsThankUPage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ClearingProductCatalogItemsMapping[] CatalogItems {
+            get {
+                return this.CatalogItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatalogItemsField, value) != true)) {
+                    this.CatalogItemsField = value;
+                    this.RaisePropertyChanged("CatalogItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ClearingCompany {
+            get {
+                return this.ClearingCompanyField;
+            }
+            set {
+                if ((this.ClearingCompanyField.Equals(value) != true)) {
+                    this.ClearingCompanyField = value;
+                    this.RaisePropertyChanged("ClearingCompany");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ProductCouponCode[] CouponCodes {
+            get {
+                return this.CouponCodesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CouponCodesField, value) != true)) {
+                    this.CouponCodesField = value;
+                    this.RaisePropertyChanged("CouponCodes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DeliveryFee {
+            get {
+                return this.DeliveryFeeField;
+            }
+            set {
+                if ((this.DeliveryFeeField.Equals(value) != true)) {
+                    this.DeliveryFeeField = value;
+                    this.RaisePropertyChanged("DeliveryFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DeliveryType {
+            get {
+                return this.DeliveryTypeField;
+            }
+            set {
+                if ((this.DeliveryTypeField.Equals(value) != true)) {
+                    this.DeliveryTypeField = value;
+                    this.RaisePropertyChanged("DeliveryType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DiscountEndDate {
+            get {
+                return this.DiscountEndDateField;
+            }
+            set {
+                if ((this.DiscountEndDateField.Equals(value) != true)) {
+                    this.DiscountEndDateField = value;
+                    this.RaisePropertyChanged("DiscountEndDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DiscountStartDate {
+            get {
+                return this.DiscountStartDateField;
+            }
+            set {
+                if ((this.DiscountStartDateField.Equals(value) != true)) {
+                    this.DiscountStartDateField = value;
+                    this.RaisePropertyChanged("DiscountStartDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool DynamicPrice {
+            get {
+                return this.DynamicPriceField;
+            }
+            set {
+                if ((this.DynamicPriceField.Equals(value) != true)) {
+                    this.DynamicPriceField = value;
+                    this.RaisePropertyChanged("DynamicPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasCoupons {
+            get {
+                return this.HasCouponsField;
+            }
+            set {
+                if ((this.HasCouponsField.Equals(value) != true)) {
+                    this.HasCouponsField = value;
+                    this.RaisePropertyChanged("HasCoupons");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HeadLine1 {
+            get {
+                return this.HeadLine1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeadLine1Field, value) != true)) {
+                    this.HeadLine1Field = value;
+                    this.RaisePropertyChanged("HeadLine1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HeadLine2 {
+            get {
+                return this.HeadLine2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeadLine2Field, value) != true)) {
+                    this.HeadLine2Field = value;
+                    this.RaisePropertyChanged("HeadLine2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HeadLine3 {
+            get {
+                return this.HeadLine3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeadLine3Field, value) != true)) {
+                    this.HeadLine3Field = value;
+                    this.RaisePropertyChanged("HeadLine3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HeadLine4 {
+            get {
+                return this.HeadLine4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeadLine4Field, value) != true)) {
+                    this.HeadLine4Field = value;
+                    this.RaisePropertyChanged("HeadLine4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string HeadlineNewDesign {
+            get {
+                return this.HeadlineNewDesignField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HeadlineNewDesignField, value) != true)) {
+                    this.HeadlineNewDesignField = value;
+                    this.RaisePropertyChanged("HeadlineNewDesign");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ImageUrl {
+            get {
+                return this.ImageUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageUrlField, value) != true)) {
+                    this.ImageUrlField = value;
+                    this.RaisePropertyChanged("ImageUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> IsInsertPurchaseAsClient {
+            get {
+                return this.IsInsertPurchaseAsClientField;
+            }
+            set {
+                if ((this.IsInsertPurchaseAsClientField.Equals(value) != true)) {
+                    this.IsInsertPurchaseAsClientField = value;
+                    this.RaisePropertyChanged("IsInsertPurchaseAsClient");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsOrganizationValidNotExpired {
+            get {
+                return this.IsOrganizationValidNotExpiredField;
+            }
+            set {
+                if ((this.IsOrganizationValidNotExpiredField.Equals(value) != true)) {
+                    this.IsOrganizationValidNotExpiredField = value;
+                    this.RaisePropertyChanged("IsOrganizationValidNotExpired");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsStandingOrder {
+            get {
+                return this.IsStandingOrderField;
+            }
+            set {
+                if ((this.IsStandingOrderField.Equals(value) != true)) {
+                    this.IsStandingOrderField = value;
+                    this.RaisePropertyChanged("IsStandingOrder");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> MailingListId {
+            get {
+                return this.MailingListIdField;
+            }
+            set {
+                if ((this.MailingListIdField.Equals(value) != true)) {
+                    this.MailingListIdField = value;
+                    this.RaisePropertyChanged("MailingListId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaxPayments {
+            get {
+                return this.MaxPaymentsField;
+            }
+            set {
+                if ((this.MaxPaymentsField.Equals(value) != true)) {
+                    this.MaxPaymentsField = value;
+                    this.RaisePropertyChanged("MaxPayments");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool MultipleItems {
+            get {
+                return this.MultipleItemsField;
+            }
+            set {
+                if ((this.MultipleItemsField.Equals(value) != true)) {
+                    this.MultipleItemsField = value;
+                    this.RaisePropertyChanged("MultipleItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrganizationBusinessType {
+            get {
+                return this.OrganizationBusinessTypeField;
+            }
+            set {
+                if ((this.OrganizationBusinessTypeField.Equals(value) != true)) {
+                    this.OrganizationBusinessTypeField = value;
+                    this.RaisePropertyChanged("OrganizationBusinessType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrganizationId {
+            get {
+                return this.OrganizationIdField;
+            }
+            set {
+                if ((this.OrganizationIdField.Equals(value) != true)) {
+                    this.OrganizationIdField = value;
+                    this.RaisePropertyChanged("OrganizationId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrganizationName {
+            get {
+                return this.OrganizationNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrganizationNameField, value) != true)) {
+                    this.OrganizationNameField = value;
+                    this.RaisePropertyChanged("OrganizationName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrganizationNameEng {
+            get {
+                return this.OrganizationNameEngField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrganizationNameEngField, value) != true)) {
+                    this.OrganizationNameEngField = value;
+                    this.RaisePropertyChanged("OrganizationNameEng");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string PageUrl {
+            get {
+                return this.PageUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PageUrlField, value) != true)) {
+                    this.PageUrlField = value;
+                    this.RaisePropertyChanged("PageUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Price {
+            get {
+                return this.PriceField;
+            }
+            set {
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RegulationsLink {
+            get {
+                return this.RegulationsLinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RegulationsLinkField, value) != true)) {
+                    this.RegulationsLinkField = value;
+                    this.RaisePropertyChanged("RegulationsLink");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> ReturnParamsInUrl {
+            get {
+                return this.ReturnParamsInUrlField;
+            }
+            set {
+                if ((this.ReturnParamsInUrlField.Equals(value) != true)) {
+                    this.ReturnParamsInUrlField = value;
+                    this.RaisePropertyChanged("ReturnParamsInUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ReturnUrl {
+            get {
+                return this.ReturnUrlField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnUrlField, value) != true)) {
+                    this.ReturnUrlField = value;
+                    this.RaisePropertyChanged("ReturnUrl");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ClearingProductCatalogItemsMapping SelectedCatalogItem {
+            get {
+                return this.SelectedCatalogItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SelectedCatalogItemField, value) != true)) {
+                    this.SelectedCatalogItemField = value;
+                    this.RaisePropertyChanged("SelectedCatalogItem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ProductCouponCode SelectedCoupon {
+            get {
+                return this.SelectedCouponField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SelectedCouponField, value) != true)) {
+                    this.SelectedCouponField = value;
+                    this.RaisePropertyChanged("SelectedCoupon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortDescription1 {
+            get {
+                return this.ShortDescription1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescription1Field, value) != true)) {
+                    this.ShortDescription1Field = value;
+                    this.RaisePropertyChanged("ShortDescription1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortDescription2 {
+            get {
+                return this.ShortDescription2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescription2Field, value) != true)) {
+                    this.ShortDescription2Field = value;
+                    this.RaisePropertyChanged("ShortDescription2");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortDescription3 {
+            get {
+                return this.ShortDescription3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescription3Field, value) != true)) {
+                    this.ShortDescription3Field = value;
+                    this.RaisePropertyChanged("ShortDescription3");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortDescription4 {
+            get {
+                return this.ShortDescription4Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortDescription4Field, value) != true)) {
+                    this.ShortDescription4Field = value;
+                    this.RaisePropertyChanged("ShortDescription4");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ShowDelivery {
+            get {
+                return this.ShowDeliveryField;
+            }
+            set {
+                if ((this.ShowDeliveryField.Equals(value) != true)) {
+                    this.ShowDeliveryField = value;
+                    this.RaisePropertyChanged("ShowDelivery");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ShowDeliveryByDefault {
+            get {
+                return this.ShowDeliveryByDefaultField;
+            }
+            set {
+                if ((this.ShowDeliveryByDefaultField.Equals(value) != true)) {
+                    this.ShowDeliveryByDefaultField = value;
+                    this.RaisePropertyChanged("ShowDeliveryByDefault");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ShowLogo {
+            get {
+                return this.ShowLogoField;
+            }
+            set {
+                if ((this.ShowLogoField.Equals(value) != true)) {
+                    this.ShowLogoField = value;
+                    this.RaisePropertyChanged("ShowLogo");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool ShowProductImage {
+            get {
+                return this.ShowProductImageField;
+            }
+            set {
+                if ((this.ShowProductImageField.Equals(value) != true)) {
+                    this.ShowProductImageField = value;
+                    this.RaisePropertyChanged("ShowProductImage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string StandingOrderDurations {
+            get {
+                return this.StandingOrderDurationsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StandingOrderDurationsField, value) != true)) {
+                    this.StandingOrderDurationsField = value;
+                    this.RaisePropertyChanged("StandingOrderDurations");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TemplateId {
+            get {
+                return this.TemplateIdField;
+            }
+            set {
+                if ((this.TemplateIdField.Equals(value) != true)) {
+                    this.TemplateIdField = value;
+                    this.RaisePropertyChanged("TemplateId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Usage {
+            get {
+                return this.UsageField;
+            }
+            set {
+                if ((this.UsageField.Equals(value) != true)) {
+                    this.UsageField = value;
+                    this.RaisePropertyChanged("Usage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string YoutubeLink {
+            get {
+                return this.YoutubeLinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.YoutubeLinkField, value) != true)) {
+                    this.YoutubeLinkField = value;
+                    this.RaisePropertyChanged("YoutubeLink");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClearingProductCatalogItemsMapping", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class ClearingProductCatalogItemsMapping : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.CatalogItem CatalogItemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int CatalogItemIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ClearingProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> DateCreatedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ItemNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ItemPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.CatalogItem CatalogItem {
+            get {
+                return this.CatalogItemField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatalogItemField, value) != true)) {
+                    this.CatalogItemField = value;
+                    this.RaisePropertyChanged("CatalogItem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int CatalogItemId {
+            get {
+                return this.CatalogItemIdField;
+            }
+            set {
+                if ((this.CatalogItemIdField.Equals(value) != true)) {
+                    this.CatalogItemIdField = value;
+                    this.RaisePropertyChanged("CatalogItemId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ClearingProductId {
+            get {
+                return this.ClearingProductIdField;
+            }
+            set {
+                if ((this.ClearingProductIdField.Equals(value) != true)) {
+                    this.ClearingProductIdField = value;
+                    this.RaisePropertyChanged("ClearingProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> DateCreated {
+            get {
+                return this.DateCreatedField;
+            }
+            set {
+                if ((this.DateCreatedField.Equals(value) != true)) {
+                    this.DateCreatedField = value;
+                    this.RaisePropertyChanged("DateCreated");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ItemName {
+            get {
+                return this.ItemNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ItemNameField, value) != true)) {
+                    this.ItemNameField = value;
+                    this.RaisePropertyChanged("ItemName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ItemPrice {
+            get {
+                return this.ItemPriceField;
+            }
+            set {
+                if ((this.ItemPriceField.Equals(value) != true)) {
+                    this.ItemPriceField = value;
+                    this.RaisePropertyChanged("ItemPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductCouponCode", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class ProductCouponCode : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CouponValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DescriptionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime ExpirationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MaxUsageField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CouponValue {
+            get {
+                return this.CouponValueField;
+            }
+            set {
+                if ((this.CouponValueField.Equals(value) != true)) {
+                    this.CouponValueField = value;
+                    this.RaisePropertyChanged("CouponValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Description {
+            get {
+                return this.DescriptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime ExpirationDate {
+            get {
+                return this.ExpirationDateField;
+            }
+            set {
+                if ((this.ExpirationDateField.Equals(value) != true)) {
+                    this.ExpirationDateField = value;
+                    this.RaisePropertyChanged("ExpirationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int MaxUsage {
+            get {
+                return this.MaxUsageField;
+            }
+            set {
+                if ((this.MaxUsageField.Equals(value) != true)) {
+                    this.MaxUsageField = value;
+                    this.RaisePropertyChanged("MaxUsage");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private TMS.ServiceReference1.ClearingProductsOrder[] ResponseField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public TMS.ServiceReference1.ClearingProductsOrder[] Response {
+            get {
+                return this.ResponseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResponseField, value) != true)) {
+                    this.ResponseField = value;
+                    this.RaisePropertyChanged("Response");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ClearingProductsOrder", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
+    [System.SerializableAttribute()]
+    public partial class ClearingProductsOrder : TMS.ServiceReference1.CommonObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double CouponValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CurrencyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerCCFourDigitsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerCellField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerCityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerEmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerMailBoxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerStreetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerStreetNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CustomerZipField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateCreatedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DeliveryFeeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int DeliveryTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double DiscountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string OrderConfirmationNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int OrgIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int PaymentsNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ProductIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ProductNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double ProductPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double QuantityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private double TotalPriceField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double CouponValue {
+            get {
+                return this.CouponValueField;
+            }
+            set {
+                if ((this.CouponValueField.Equals(value) != true)) {
+                    this.CouponValueField = value;
+                    this.RaisePropertyChanged("CouponValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Currency {
+            get {
+                return this.CurrencyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrencyField, value) != true)) {
+                    this.CurrencyField = value;
+                    this.RaisePropertyChanged("Currency");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerCCFourDigits {
+            get {
+                return this.CustomerCCFourDigitsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerCCFourDigitsField, value) != true)) {
+                    this.CustomerCCFourDigitsField = value;
+                    this.RaisePropertyChanged("CustomerCCFourDigits");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerCell {
+            get {
+                return this.CustomerCellField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerCellField, value) != true)) {
+                    this.CustomerCellField = value;
+                    this.RaisePropertyChanged("CustomerCell");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerCity {
+            get {
+                return this.CustomerCityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerCityField, value) != true)) {
+                    this.CustomerCityField = value;
+                    this.RaisePropertyChanged("CustomerCity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerEmail {
+            get {
+                return this.CustomerEmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerEmailField, value) != true)) {
+                    this.CustomerEmailField = value;
+                    this.RaisePropertyChanged("CustomerEmail");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerMailBox {
+            get {
+                return this.CustomerMailBoxField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerMailBoxField, value) != true)) {
+                    this.CustomerMailBoxField = value;
+                    this.RaisePropertyChanged("CustomerMailBox");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerName {
+            get {
+                return this.CustomerNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerNameField, value) != true)) {
+                    this.CustomerNameField = value;
+                    this.RaisePropertyChanged("CustomerName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerStreet {
+            get {
+                return this.CustomerStreetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerStreetField, value) != true)) {
+                    this.CustomerStreetField = value;
+                    this.RaisePropertyChanged("CustomerStreet");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerStreetNumber {
+            get {
+                return this.CustomerStreetNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerStreetNumberField, value) != true)) {
+                    this.CustomerStreetNumberField = value;
+                    this.RaisePropertyChanged("CustomerStreetNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string CustomerZip {
+            get {
+                return this.CustomerZipField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CustomerZipField, value) != true)) {
+                    this.CustomerZipField = value;
+                    this.RaisePropertyChanged("CustomerZip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateCreated {
+            get {
+                return this.DateCreatedField;
+            }
+            set {
+                if ((this.DateCreatedField.Equals(value) != true)) {
+                    this.DateCreatedField = value;
+                    this.RaisePropertyChanged("DateCreated");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double DeliveryFee {
+            get {
+                return this.DeliveryFeeField;
+            }
+            set {
+                if ((this.DeliveryFeeField.Equals(value) != true)) {
+                    this.DeliveryFeeField = value;
+                    this.RaisePropertyChanged("DeliveryFee");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int DeliveryType {
+            get {
+                return this.DeliveryTypeField;
+            }
+            set {
+                if ((this.DeliveryTypeField.Equals(value) != true)) {
+                    this.DeliveryTypeField = value;
+                    this.RaisePropertyChanged("DeliveryType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Discount {
+            get {
+                return this.DiscountField;
+            }
+            set {
+                if ((this.DiscountField.Equals(value) != true)) {
+                    this.DiscountField = value;
+                    this.RaisePropertyChanged("Discount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string OrderConfirmationNumber {
+            get {
+                return this.OrderConfirmationNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OrderConfirmationNumberField, value) != true)) {
+                    this.OrderConfirmationNumberField = value;
+                    this.RaisePropertyChanged("OrderConfirmationNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int OrgId {
+            get {
+                return this.OrgIdField;
+            }
+            set {
+                if ((this.OrgIdField.Equals(value) != true)) {
+                    this.OrgIdField = value;
+                    this.RaisePropertyChanged("OrgId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int PaymentsNumber {
+            get {
+                return this.PaymentsNumberField;
+            }
+            set {
+                if ((this.PaymentsNumberField.Equals(value) != true)) {
+                    this.PaymentsNumberField = value;
+                    this.RaisePropertyChanged("PaymentsNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int ProductId {
+            get {
+                return this.ProductIdField;
+            }
+            set {
+                if ((this.ProductIdField.Equals(value) != true)) {
+                    this.ProductIdField = value;
+                    this.RaisePropertyChanged("ProductId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ProductName {
+            get {
+                return this.ProductNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductNameField, value) != true)) {
+                    this.ProductNameField = value;
+                    this.RaisePropertyChanged("ProductName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double ProductPrice {
+            get {
+                return this.ProductPriceField;
+            }
+            set {
+                if ((this.ProductPriceField.Equals(value) != true)) {
+                    this.ProductPriceField = value;
+                    this.RaisePropertyChanged("ProductPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double Quantity {
+            get {
+                return this.QuantityField;
+            }
+            set {
+                if ((this.QuantityField.Equals(value) != true)) {
+                    this.QuantityField = value;
+                    this.RaisePropertyChanged("Quantity");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public double TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="MeshulamClearingApi", Namespace="http://schemas.datacontract.org/2004/07/Invoice.Common")]
     [System.SerializableAttribute()]
     public partial class MeshulamClearingApi : TMS.ServiceReference1.CommonObject {
@@ -8597,6 +10373,9 @@ namespace TMS.ServiceReference1 {
         private bool IsOldInvoiceSyncField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSeparateVatIncomeReportField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<bool> IsStandingOrderUserField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8636,6 +10415,21 @@ namespace TMS.ServiceReference1 {
         private int OldInvoiceIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> Org2SignActiveField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> Org2SignBundleIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> Org2SignExpirationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Org2SignPasswordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string Org2SignUsernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string OrganizationCurrencyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -8673,6 +10467,9 @@ namespace TMS.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ShortExpirationDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ShortOrg2SignExpirationDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ShowOldInvoiceLinkField;
@@ -9193,6 +10990,19 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSeparateVatIncomeReport {
+            get {
+                return this.IsSeparateVatIncomeReportField;
+            }
+            set {
+                if ((this.IsSeparateVatIncomeReportField.Equals(value) != true)) {
+                    this.IsSeparateVatIncomeReportField = value;
+                    this.RaisePropertyChanged("IsSeparateVatIncomeReport");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public System.Nullable<bool> IsStandingOrderUser {
             get {
                 return this.IsStandingOrderUserField;
@@ -9362,6 +11172,71 @@ namespace TMS.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> Org2SignActive {
+            get {
+                return this.Org2SignActiveField;
+            }
+            set {
+                if ((this.Org2SignActiveField.Equals(value) != true)) {
+                    this.Org2SignActiveField = value;
+                    this.RaisePropertyChanged("Org2SignActive");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> Org2SignBundleId {
+            get {
+                return this.Org2SignBundleIdField;
+            }
+            set {
+                if ((this.Org2SignBundleIdField.Equals(value) != true)) {
+                    this.Org2SignBundleIdField = value;
+                    this.RaisePropertyChanged("Org2SignBundleId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> Org2SignExpirationDate {
+            get {
+                return this.Org2SignExpirationDateField;
+            }
+            set {
+                if ((this.Org2SignExpirationDateField.Equals(value) != true)) {
+                    this.Org2SignExpirationDateField = value;
+                    this.RaisePropertyChanged("Org2SignExpirationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Org2SignPassword {
+            get {
+                return this.Org2SignPasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Org2SignPasswordField, value) != true)) {
+                    this.Org2SignPasswordField = value;
+                    this.RaisePropertyChanged("Org2SignPassword");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Org2SignUsername {
+            get {
+                return this.Org2SignUsernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Org2SignUsernameField, value) != true)) {
+                    this.Org2SignUsernameField = value;
+                    this.RaisePropertyChanged("Org2SignUsername");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string OrganizationCurrency {
             get {
                 return this.OrganizationCurrencyField;
@@ -9526,6 +11401,19 @@ namespace TMS.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ShortExpirationDateField, value) != true)) {
                     this.ShortExpirationDateField = value;
                     this.RaisePropertyChanged("ShortExpirationDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string ShortOrg2SignExpirationDate {
+            get {
+                return this.ShortOrg2SignExpirationDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ShortOrg2SignExpirationDateField, value) != true)) {
+                    this.ShortOrg2SignExpirationDateField = value;
+                    this.RaisePropertyChanged("ShortOrg2SignExpirationDate");
                 }
             }
         }
@@ -10239,296 +12127,442 @@ namespace TMS.ServiceReference1 {
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/VerifyLogin", ReplyAction="Invoice/ApiService/VerifyLoginResponse")]
         string VerifyLogin(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/VerifyLogin", ReplyAction="Invoice/ApiService/VerifyLoginResponse")]
-        System.Threading.Tasks.Task<string> VerifyLoginAsync(string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/VerifyLogin", ReplyAction="Invoice/ApiService/VerifyLoginResponse")]
+        System.IAsyncResult BeginVerifyLogin(string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        string EndVerifyLogin(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/VerifyLoginREST", ReplyAction="Invoice/ApiService/VerifyLoginRESTResponse")]
         string VerifyLoginREST(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/VerifyLoginREST", ReplyAction="Invoice/ApiService/VerifyLoginRESTResponse")]
-        System.Threading.Tasks.Task<string> VerifyLoginRESTAsync(string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/VerifyLoginREST", ReplyAction="Invoice/ApiService/VerifyLoginRESTResponse")]
+        System.IAsyncResult BeginVerifyLoginREST(string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        string EndVerifyLoginREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/IsAuthenticated", ReplyAction="Invoice/ApiService/IsAuthenticatedResponse")]
         TMS.ServiceReference1.User IsAuthenticated(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/IsAuthenticated", ReplyAction="Invoice/ApiService/IsAuthenticatedResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.User> IsAuthenticatedAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/IsAuthenticated", ReplyAction="Invoice/ApiService/IsAuthenticatedResponse")]
+        System.IAsyncResult BeginIsAuthenticated(string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.User EndIsAuthenticated(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/Logout", ReplyAction="Invoice/ApiService/LogoutResponse")]
         void Logout();
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/Logout", ReplyAction="Invoice/ApiService/LogoutResponse")]
-        System.Threading.Tasks.Task LogoutAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/Logout", ReplyAction="Invoice/ApiService/LogoutResponse")]
+        System.IAsyncResult BeginLogout(System.AsyncCallback callback, object asyncState);
+        
+        void EndLogout(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetBranches", ReplyAction="Invoice/ApiService/GetBranchesResponse")]
         TMS.ServiceReference1.Branch[] GetBranches(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetBranches", ReplyAction="Invoice/ApiService/GetBranchesResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Branch[]> GetBranchesAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetBranches", ReplyAction="Invoice/ApiService/GetBranchesResponse")]
+        System.IAsyncResult BeginGetBranches(string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Branch[] EndGetBranches(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateDocument", ReplyAction="Invoice/ApiService/CreateDocumentResponse")]
         TMS.ServiceReference1.Document CreateDocument(TMS.ServiceReference1.Document doc, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateDocument", ReplyAction="Invoice/ApiService/CreateDocumentResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> CreateDocumentAsync(TMS.ServiceReference1.Document doc, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateDocument", ReplyAction="Invoice/ApiService/CreateDocumentResponse")]
+        System.IAsyncResult BeginCreateDocument(TMS.ServiceReference1.Document doc, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndCreateDocument(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateDocumentREST", ReplyAction="Invoice/ApiService/CreateDocumentRESTResponse")]
         TMS.ServiceReference1.Document CreateDocumentREST(TMS.ServiceReference1.Document doc, string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateDocumentREST", ReplyAction="Invoice/ApiService/CreateDocumentRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> CreateDocumentRESTAsync(TMS.ServiceReference1.Document doc, string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateDocumentREST", ReplyAction="Invoice/ApiService/CreateDocumentRESTResponse")]
+        System.IAsyncResult BeginCreateDocumentREST(TMS.ServiceReference1.Document doc, string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndCreateDocumentREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByApiIdentifier", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierResponse")]
         TMS.ServiceReference1.Document GetDocumentByApiIdentifier(string apiIdentifier, int docType, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByApiIdentifier", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByApiIdentifierAsync(string apiIdentifier, int docType, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocumentByApiIdentifier", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierResponse")]
+        System.IAsyncResult BeginGetDocumentByApiIdentifier(string apiIdentifier, int docType, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndGetDocumentByApiIdentifier(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByApiIdentifierREST", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierRESTResponse")]
         TMS.ServiceReference1.Document GetDocumentByApiIdentifierREST(string apiIdentifier, int docType, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByApiIdentifierREST", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByApiIdentifierRESTAsync(string apiIdentifier, int docType, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocumentByApiIdentifierREST", ReplyAction="Invoice/ApiService/GetDocumentByApiIdentifierRESTResponse")]
+        System.IAsyncResult BeginGetDocumentByApiIdentifierREST(string apiIdentifier, int docType, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndGetDocumentByApiIdentifierREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocuments", ReplyAction="Invoice/ApiService/GetDocumentsResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetDocuments(TMS.ServiceReference1.DocumentsRequest dr, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocuments", ReplyAction="Invoice/ApiService/GetDocumentsResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetDocumentsAsync(TMS.ServiceReference1.DocumentsRequest dr, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocuments", ReplyAction="Invoice/ApiService/GetDocumentsResponse")]
+        System.IAsyncResult BeginGetDocuments(TMS.ServiceReference1.DocumentsRequest dr, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetDocuments(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentsREST", ReplyAction="Invoice/ApiService/GetDocumentsRESTResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetDocumentsREST(TMS.ServiceReference1.DocumentsRequest dr, string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentsREST", ReplyAction="Invoice/ApiService/GetDocumentsRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetDocumentsRESTAsync(TMS.ServiceReference1.DocumentsRequest dr, string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocumentsREST", ReplyAction="Invoice/ApiService/GetDocumentsRESTResponse")]
+        System.IAsyncResult BeginGetDocumentsREST(TMS.ServiceReference1.DocumentsRequest dr, string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetDocumentsREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/InitDocument", ReplyAction="Invoice/ApiService/InitDocumentResponse")]
         TMS.ServiceReference1.Document InitDocument(int docType, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/InitDocument", ReplyAction="Invoice/ApiService/InitDocumentResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> InitDocumentAsync(int docType, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/InitDocument", ReplyAction="Invoice/ApiService/InitDocumentResponse")]
+        System.IAsyncResult BeginInitDocument(int docType, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndInitDocument(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ChangeDocumentStatus", ReplyAction="Invoice/ApiService/ChangeDocumentStatusResponse")]
         TMS.ServiceReference1.CommonObject ChangeDocumentStatus(TMS.ServiceReference1.Document[] docs, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ChangeDocumentStatus", ReplyAction="Invoice/ApiService/ChangeDocumentStatusResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonObject> ChangeDocumentStatusAsync(TMS.ServiceReference1.Document[] docs, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ChangeDocumentStatus", ReplyAction="Invoice/ApiService/ChangeDocumentStatusResponse")]
+        System.IAsyncResult BeginChangeDocumentStatus(TMS.ServiceReference1.Document[] docs, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonObject EndChangeDocumentStatus(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocument", ReplyAction="Invoice/ApiService/GetDocumentResponse")]
         TMS.ServiceReference1.Document GetDocument(string docId, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocument", ReplyAction="Invoice/ApiService/GetDocumentResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentAsync(string docId, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocument", ReplyAction="Invoice/ApiService/GetDocumentResponse")]
+        System.IAsyncResult BeginGetDocument(string docId, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndGetDocument(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByNumber", ReplyAction="Invoice/ApiService/GetDocumentByNumberResponse")]
         TMS.ServiceReference1.Document GetDocumentByNumber(int docNumber, int documentType, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByNumber", ReplyAction="Invoice/ApiService/GetDocumentByNumberResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByNumberAsync(int docNumber, int documentType, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocumentByNumber", ReplyAction="Invoice/ApiService/GetDocumentByNumberResponse")]
+        System.IAsyncResult BeginGetDocumentByNumber(int docNumber, int documentType, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndGetDocumentByNumber(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerReport", ReplyAction="Invoice/ApiService/GetCustomerReportResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetCustomerReport(TMS.ServiceReference1.DocumentsRequest dr, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerReport", ReplyAction="Invoice/ApiService/GetCustomerReportResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetCustomerReportAsync(TMS.ServiceReference1.DocumentsRequest dr, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerReport", ReplyAction="Invoice/ApiService/GetCustomerReportResponse")]
+        System.IAsyncResult BeginGetCustomerReport(TMS.ServiceReference1.DocumentsRequest dr, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetCustomerReport(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByNumberREST", ReplyAction="Invoice/ApiService/GetDocumentByNumberRESTResponse")]
         TMS.ServiceReference1.Document GetDocumentByNumberREST(int docNumber, int documentType, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetDocumentByNumberREST", ReplyAction="Invoice/ApiService/GetDocumentByNumberRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByNumberRESTAsync(int docNumber, int documentType, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetDocumentByNumberREST", ReplyAction="Invoice/ApiService/GetDocumentByNumberRESTResponse")]
+        System.IAsyncResult BeginGetDocumentByNumberREST(int docNumber, int documentType, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Document EndGetDocumentByNumberREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCreditCard", ReplyAction="Invoice/ApiService/CreateCreditCardResponse")]
         TMS.ServiceReference1.CreditCompany CreateCreditCard(TMS.ServiceReference1.CreditCompany credit, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCreditCard", ReplyAction="Invoice/ApiService/CreateCreditCardResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CreditCompany> CreateCreditCardAsync(TMS.ServiceReference1.CreditCompany credit, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateCreditCard", ReplyAction="Invoice/ApiService/CreateCreditCardResponse")]
+        System.IAsyncResult BeginCreateCreditCard(TMS.ServiceReference1.CreditCompany credit, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CreditCompany EndCreateCreditCard(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetList", ReplyAction="Invoice/ApiService/GetListResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS GetList();
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetList", ReplyAction="Invoice/ApiService/GetListResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS> GetListAsync();
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetList", ReplyAction="Invoice/ApiService/GetListResponse")]
+        System.IAsyncResult BeginGetList(System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS EndGetList(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCustomer", ReplyAction="Invoice/ApiService/CreateCustomerResponse")]
         TMS.ServiceReference1.Customer CreateCustomer(TMS.ServiceReference1.Customer cu, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCustomer", ReplyAction="Invoice/ApiService/CreateCustomerResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> CreateCustomerAsync(TMS.ServiceReference1.Customer cu, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateCustomer", ReplyAction="Invoice/ApiService/CreateCustomerResponse")]
+        System.IAsyncResult BeginCreateCustomer(TMS.ServiceReference1.Customer cu, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndCreateCustomer(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCustomerREST", ReplyAction="Invoice/ApiService/CreateCustomerRESTResponse")]
         TMS.ServiceReference1.Customer CreateCustomerREST(TMS.ServiceReference1.Customer cu, string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCustomerREST", ReplyAction="Invoice/ApiService/CreateCustomerRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> CreateCustomerRESTAsync(TMS.ServiceReference1.Customer cu, string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateCustomerREST", ReplyAction="Invoice/ApiService/CreateCustomerRESTResponse")]
+        System.IAsyncResult BeginCreateCustomerREST(TMS.ServiceReference1.Customer cu, string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndCreateCustomerREST(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/CreateCustomerParamsREST", ReplyAction="Invoice/ApiService/CreateCustomerParamsRESTResponse")]
+        TMS.ServiceReference1.Customer CreateCustomerParamsREST(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/CreateCustomerParamsREST", ReplyAction="Invoice/ApiService/CreateCustomerParamsRESTResponse")]
+        System.IAsyncResult BeginCreateCustomerParamsREST(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndCreateCustomerParamsREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/UpdateCustomer", ReplyAction="Invoice/ApiService/UpdateCustomerResponse")]
         TMS.ServiceReference1.Customer UpdateCustomer(TMS.ServiceReference1.Customer cu, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/UpdateCustomer", ReplyAction="Invoice/ApiService/UpdateCustomerResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> UpdateCustomerAsync(TMS.ServiceReference1.Customer cu, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/UpdateCustomer", ReplyAction="Invoice/ApiService/UpdateCustomerResponse")]
+        System.IAsyncResult BeginUpdateCustomer(TMS.ServiceReference1.Customer cu, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndUpdateCustomer(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetFullCustomer", ReplyAction="Invoice/ApiService/GetFullCustomerResponse")]
         TMS.ServiceReference1.Customer GetFullCustomer(int id, int orgID, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetFullCustomer", ReplyAction="Invoice/ApiService/GetFullCustomerResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetFullCustomerAsync(int id, int orgID, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetFullCustomer", ReplyAction="Invoice/ApiService/GetFullCustomerResponse")]
+        System.IAsyncResult BeginGetFullCustomer(int id, int orgID, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetFullCustomer(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersByOrgId", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersByOrgId(string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersByOrgId", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersByOrgIdAsync(string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomersByOrgId", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdResponse")]
+        System.IAsyncResult BeginGetCustomersByOrgId(string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersByOrgId(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersByOrgIdREST", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdRESTResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersByOrgIdREST(string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersByOrgIdREST", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersByOrgIdRESTAsync(string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomersByOrgIdREST", ReplyAction="Invoice/ApiService/GetCustomersByOrgIdRESTResponse")]
+        System.IAsyncResult BeginGetCustomersByOrgIdREST(string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersByOrgIdREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomers", ReplyAction="Invoice/ApiService/GetCustomersResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomers(TMS.ServiceReference1.Customer cust, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomers", ReplyAction="Invoice/ApiService/GetCustomersResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersAsync(TMS.ServiceReference1.Customer cust, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomers", ReplyAction="Invoice/ApiService/GetCustomersResponse")]
+        System.IAsyncResult BeginGetCustomers(TMS.ServiceReference1.Customer cust, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomers(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersREST", ReplyAction="Invoice/ApiService/GetCustomersRESTResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersREST(TMS.ServiceReference1.Customer cust, string email, string password);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomersREST", ReplyAction="Invoice/ApiService/GetCustomersRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersRESTAsync(TMS.ServiceReference1.Customer cust, string email, string password);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomersREST", ReplyAction="Invoice/ApiService/GetCustomersRESTResponse")]
+        System.IAsyncResult BeginGetCustomersREST(TMS.ServiceReference1.Customer cust, string email, string password, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByName", ReplyAction="Invoice/ApiService/GetCustomerByNameResponse")]
         TMS.ServiceReference1.Customer GetCustomerByName(string name, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByName", ReplyAction="Invoice/ApiService/GetCustomerByNameResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByNameAsync(string name, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerByName", ReplyAction="Invoice/ApiService/GetCustomerByNameResponse")]
+        System.IAsyncResult BeginGetCustomerByName(string name, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetCustomerByName(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByClientCode", ReplyAction="Invoice/ApiService/GetCustomerByClientCodeResponse")]
         TMS.ServiceReference1.Customer GetCustomerByClientCode(int clientCode, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByClientCode", ReplyAction="Invoice/ApiService/GetCustomerByClientCodeResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByClientCodeAsync(int clientCode, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerByClientCode", ReplyAction="Invoice/ApiService/GetCustomerByClientCodeResponse")]
+        System.IAsyncResult BeginGetCustomerByClientCode(int clientCode, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetCustomerByClientCode(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByGuid", ReplyAction="Invoice/ApiService/GetCustomerByGuidResponse")]
         TMS.ServiceReference1.Customer GetCustomerByGuid(string guid, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByGuid", ReplyAction="Invoice/ApiService/GetCustomerByGuidResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByGuidAsync(string guid, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerByGuid", ReplyAction="Invoice/ApiService/GetCustomerByGuidResponse")]
+        System.IAsyncResult BeginGetCustomerByGuid(string guid, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetCustomerByGuid(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByGuidInnerSearch", ReplyAction="Invoice/ApiService/GetCustomerByGuidInnerSearchResponse")]
         TMS.ServiceReference1.Customer GetCustomerByGuidInnerSearch(string guid, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByGuidInnerSearch", ReplyAction="Invoice/ApiService/GetCustomerByGuidInnerSearchResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByGuidInnerSearchAsync(string guid, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerByGuidInnerSearch", ReplyAction="Invoice/ApiService/GetCustomerByGuidInnerSearchResponse")]
+        System.IAsyncResult BeginGetCustomerByGuidInnerSearch(string guid, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetCustomerByGuidInnerSearch(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetByClientCode", ReplyAction="Invoice/ApiService/GetByClientCodeResponse")]
         TMS.ServiceReference1.Customer GetByClientCode(int clientCode, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetByClientCode", ReplyAction="Invoice/ApiService/GetByClientCodeResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetByClientCodeAsync(int clientCode, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetByClientCode", ReplyAction="Invoice/ApiService/GetByClientCodeResponse")]
+        System.IAsyncResult BeginGetByClientCode(int clientCode, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetByClientCode(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByExternalNumber", ReplyAction="Invoice/ApiService/GetCustomerByExternalNumberResponse")]
         TMS.ServiceReference1.Customer GetCustomerByExternalNumber(long number, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCustomerByExternalNumber", ReplyAction="Invoice/ApiService/GetCustomerByExternalNumberResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByExternalNumberAsync(long number, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCustomerByExternalNumber", ReplyAction="Invoice/ApiService/GetCustomerByExternalNumberResponse")]
+        System.IAsyncResult BeginGetCustomerByExternalNumber(long number, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.Customer EndGetCustomerByExternalNumber(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetAssociatedEmailsByClientOnly", ReplyAction="Invoice/ApiService/GetAssociatedEmailsByClientOnlyResponse")]
         TMS.ServiceReference1.AssociatedEmail[] GetAssociatedEmailsByClientOnly(System.Nullable<int> clientid, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetAssociatedEmailsByClientOnly", ReplyAction="Invoice/ApiService/GetAssociatedEmailsByClientOnlyResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.AssociatedEmail[]> GetAssociatedEmailsByClientOnlyAsync(System.Nullable<int> clientid, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetAssociatedEmailsByClientOnly", ReplyAction="Invoice/ApiService/GetAssociatedEmailsByClientOnlyResponse")]
+        System.IAsyncResult BeginGetAssociatedEmailsByClientOnly(System.Nullable<int> clientid, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.AssociatedEmail[] EndGetAssociatedEmailsByClientOnly(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCatalogItemByCode", ReplyAction="Invoice/ApiService/GetCatalogItemByCodeResponse")]
         TMS.ServiceReference1.CatalogItem GetCatalogItemByCode(string code, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCatalogItemByCode", ReplyAction="Invoice/ApiService/GetCatalogItemByCodeResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CatalogItem> GetCatalogItemByCodeAsync(string code, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCatalogItemByCode", ReplyAction="Invoice/ApiService/GetCatalogItemByCodeResponse")]
+        System.IAsyncResult BeginGetCatalogItemByCode(string code, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CatalogItem EndGetCatalogItemByCode(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCatalogItems", ReplyAction="Invoice/ApiService/GetCatalogItemsResponse")]
         TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS GetCatalogItems(bool GetAll, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetCatalogItems", ReplyAction="Invoice/ApiService/GetCatalogItemsResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS> GetCatalogItemsAsync(bool GetAll, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetCatalogItems", ReplyAction="Invoice/ApiService/GetCatalogItemsResponse")]
+        System.IAsyncResult BeginGetCatalogItems(bool GetAll, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS EndGetCatalogItems(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetUserClearingAccount", ReplyAction="Invoice/ApiService/GetUserClearingAccountResponse")]
         TMS.ServiceReference1.ClearingAccount GetUserClearingAccount(int orgId, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetUserClearingAccount", ReplyAction="Invoice/ApiService/GetUserClearingAccountResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.ClearingAccount> GetUserClearingAccountAsync(int orgId, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetUserClearingAccount", ReplyAction="Invoice/ApiService/GetUserClearingAccountResponse")]
+        System.IAsyncResult BeginGetUserClearingAccount(int orgId, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ClearingAccount EndGetUserClearingAccount(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/SendDocumentByMail", ReplyAction="Invoice/ApiService/SendDocumentByMailResponse")]
         TMS.ServiceReference1.CommonObject SendDocumentByMail(TMS.ServiceReference1.Document doc, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/SendDocumentByMail", ReplyAction="Invoice/ApiService/SendDocumentByMailResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.CommonObject> SendDocumentByMailAsync(TMS.ServiceReference1.Document doc, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/SendDocumentByMail", ReplyAction="Invoice/ApiService/SendDocumentByMailResponse")]
+        System.IAsyncResult BeginSendDocumentByMail(TMS.ServiceReference1.Document doc, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonObject EndSendDocumentByMail(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/SendStandingOrderSummary", ReplyAction="Invoice/ApiService/SendStandingOrderSummaryResponse")]
         bool SendStandingOrderSummary(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/SendStandingOrderSummary", ReplyAction="Invoice/ApiService/SendStandingOrderSummaryResponse")]
-        System.Threading.Tasks.Task<bool> SendStandingOrderSummaryAsync(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/SendStandingOrderSummary", ReplyAction="Invoice/ApiService/SendStandingOrderSummaryResponse")]
+        System.IAsyncResult BeginSendStandingOrderSummary(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline, System.AsyncCallback callback, object asyncState);
+        
+        bool EndSendStandingOrderSummary(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessCard", ReplyAction="Invoice/ApiService/ProcessCardResponse")]
         TMS.ServiceReference1.DocumentCsv ProcessCard(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessCard", ReplyAction="Invoice/ApiService/ProcessCardResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.DocumentCsv> ProcessCardAsync(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessCard", ReplyAction="Invoice/ApiService/ProcessCardResponse")]
+        System.IAsyncResult BeginProcessCard(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.DocumentCsv EndProcessCard(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessClearingDocOnly", ReplyAction="Invoice/ApiService/ProcessClearingDocOnlyResponse")]
         TMS.ServiceReference1.DocumentCsv ProcessClearingDocOnly(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessClearingDocOnly", ReplyAction="Invoice/ApiService/ProcessClearingDocOnlyResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.DocumentCsv> ProcessClearingDocOnlyAsync(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessClearingDocOnly", ReplyAction="Invoice/ApiService/ProcessClearingDocOnlyResponse")]
+        System.IAsyncResult BeginProcessClearingDocOnly(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.DocumentCsv EndProcessClearingDocOnly(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/InsertToLogFullParamsREST", ReplyAction="Invoice/ApiService/InsertToLogFullParamsRESTResponse")]
         int InsertToLogFullParamsREST(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/InsertToLogFullParamsREST", ReplyAction="Invoice/ApiService/InsertToLogFullParamsRESTResponse")]
-        System.Threading.Tasks.Task<int> InsertToLogFullParamsRESTAsync(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/InsertToLogFullParamsREST", ReplyAction="Invoice/ApiService/InsertToLogFullParamsRESTResponse")]
+        System.IAsyncResult BeginInsertToLogFullParamsREST(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token, System.AsyncCallback callback, object asyncState);
+        
+        int EndInsertToLogFullParamsREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessApiRequest", ReplyAction="Invoice/ApiService/ProcessApiRequestResponse")]
         TMS.ServiceReference1.ApiClearingRequest ProcessApiRequest(TMS.ServiceReference1.ApiClearingRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessApiRequest", ReplyAction="Invoice/ApiService/ProcessApiRequestResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.ApiClearingRequest> ProcessApiRequestAsync(TMS.ServiceReference1.ApiClearingRequest request);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessApiRequest", ReplyAction="Invoice/ApiService/ProcessApiRequestResponse")]
+        System.IAsyncResult BeginProcessApiRequest(TMS.ServiceReference1.ApiClearingRequest request, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ApiClearingRequest EndProcessApiRequest(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessApiRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessApiRequestFullContentsRESTResponse")]
         TMS.ServiceReference1.ApiClearingRequest ProcessApiRequestFullContentsREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessApiRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessApiRequestFullContentsRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.ApiClearingRequest> ProcessApiRequestFullContentsRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessApiRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessApiRequestFullContentsRESTResponse")]
+        System.IAsyncResult BeginProcessApiRequestFullContentsREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ApiClearingRequest EndProcessApiRequestFullContentsREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProccessApiRequestClearingLogInsertREST", ReplyAction="Invoice/ApiService/ProccessApiRequestClearingLogInsertRESTResponse")]
         TMS.ServiceReference1.ClearingLog ProccessApiRequestClearingLogInsertREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProccessApiRequestClearingLogInsertREST", ReplyAction="Invoice/ApiService/ProccessApiRequestClearingLogInsertRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.ClearingLog> ProccessApiRequestClearingLogInsertRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProccessApiRequestClearingLogInsertREST", ReplyAction="Invoice/ApiService/ProccessApiRequestClearingLogInsertRESTResponse")]
+        System.IAsyncResult BeginProccessApiRequestClearingLogInsertREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ClearingLog EndProccessApiRequestClearingLogInsertREST(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/TokenAddForClient", ReplyAction="Invoice/ApiService/TokenAddForClientResponse")]
         TMS.ServiceReference1.OrganizationTokenDetails TokenAddForClient(TMS.ServiceReference1.OrganizationTokenDetails otd, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/TokenAddForClient", ReplyAction="Invoice/ApiService/TokenAddForClientResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.OrganizationTokenDetails> TokenAddForClientAsync(TMS.ServiceReference1.OrganizationTokenDetails otd, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/TokenAddForClient", ReplyAction="Invoice/ApiService/TokenAddForClientResponse")]
+        System.IAsyncResult BeginTokenAddForClient(TMS.ServiceReference1.OrganizationTokenDetails otd, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.OrganizationTokenDetails EndTokenAddForClient(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/AddStandingOrder", ReplyAction="Invoice/ApiService/AddStandingOrderResponse")]
         TMS.ServiceReference1.ClientsStandingOrder AddStandingOrder(TMS.ServiceReference1.ClientsStandingOrder cso, string token);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/AddStandingOrder", ReplyAction="Invoice/ApiService/AddStandingOrderResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.ClientsStandingOrder> AddStandingOrderAsync(TMS.ServiceReference1.ClientsStandingOrder cso, string token);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/AddStandingOrder", ReplyAction="Invoice/ApiService/AddStandingOrderResponse")]
+        System.IAsyncResult BeginAddStandingOrder(TMS.ServiceReference1.ClientsStandingOrder cso, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ClientsStandingOrder EndAddStandingOrder(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetProducts", ReplyAction="Invoice/ApiService/GetProductsResponse")]
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS GetProducts(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetProducts", ReplyAction="Invoice/ApiService/GetProductsResponse")]
+        System.IAsyncResult BeginGetProducts(string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS EndGetProducts(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetProductById", ReplyAction="Invoice/ApiService/GetProductByIdResponse")]
+        TMS.ServiceReference1.ClearingProducts GetProductById(int id, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetProductById", ReplyAction="Invoice/ApiService/GetProductByIdResponse")]
+        System.IAsyncResult BeginGetProductById(int id, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.ClearingProducts EndGetProductById(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetClearingProductOrdersByToken", ReplyAction="Invoice/ApiService/GetClearingProductOrdersByTokenResponse")]
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS GetClearingProductOrdersByToken(string token);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetClearingProductOrdersByToken", ReplyAction="Invoice/ApiService/GetClearingProductOrdersByTokenResponse")]
+        System.IAsyncResult BeginGetClearingProductOrdersByToken(string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS EndGetClearingProductOrdersByToken(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/GetClearingProductOrdersByProductId", ReplyAction="Invoice/ApiService/GetClearingProductOrdersByProductIdResponse")]
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS GetClearingProductOrdersByProductId(int productId, string token);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/GetClearingProductOrdersByProductId", ReplyAction="Invoice/ApiService/GetClearingProductOrdersByProductIdResponse")]
+        System.IAsyncResult BeginGetClearingProductOrdersByProductId(int productId, string token, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS EndGetClearingProductOrdersByProductId(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessRequestFullContents", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsResponse")]
         TMS.ServiceReference1.MeshulamClearingApi ProcessRequestFullContents(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessRequestFullContents", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.MeshulamClearingApi> ProcessRequestFullContentsAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessRequestFullContents", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsResponse")]
+        System.IAsyncResult BeginProcessRequestFullContents(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.MeshulamClearingApi EndProcessRequestFullContents(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsRESTResponse")]
         TMS.ServiceReference1.MeshulamClearingApi ProcessRequestFullContentsREST(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl);
         
-        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/ProcessRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsRESTResponse")]
-        System.Threading.Tasks.Task<TMS.ServiceReference1.MeshulamClearingApi> ProcessRequestFullContentsRESTAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl);
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/ProcessRequestFullContentsREST", ReplyAction="Invoice/ApiService/ProcessRequestFullContentsRESTResponse")]
+        System.IAsyncResult BeginProcessRequestFullContentsREST(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.MeshulamClearingApi EndProcessRequestFullContentsREST(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="Invoice/ApiService/UserRegistration", ReplyAction="Invoice/ApiService/UserRegistrationResponse")]
+        TMS.ServiceReference1.CommonObject UserRegistration(TMS.ServiceReference1.User user, string token, string isracardToken);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="Invoice/ApiService/UserRegistration", ReplyAction="Invoice/ApiService/UserRegistrationResponse")]
+        System.IAsyncResult BeginUserRegistration(TMS.ServiceReference1.User user, string token, string isracardToken, System.AsyncCallback callback, object asyncState);
+        
+        TMS.ServiceReference1.CommonObject EndUserRegistration(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -10537,7 +12571,1363 @@ namespace TMS.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class VerifyLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public VerifyLoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class VerifyLoginRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public VerifyLoginRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class IsAuthenticatedCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public IsAuthenticatedCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.User Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.User)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetBranchesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetBranchesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Branch[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Branch[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateDocumentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateDocumentRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateDocumentRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentByApiIdentifierCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentByApiIdentifierCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentByApiIdentifierRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentByApiIdentifierRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentsRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentsRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InitDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InitDocumentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ChangeDocumentStatusCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ChangeDocumentStatusCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonObject Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonObject)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentByNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentByNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerReportCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerReportCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetDocumentByNumberRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetDocumentByNumberRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Document Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Document)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateCreditCardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateCreditCardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CreditCompany Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CreditCompany)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateCustomerRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateCustomerRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateCustomerParamsRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateCustomerParamsRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetFullCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetFullCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomersByOrgIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomersByOrgIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomersByOrgIdRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomersByOrgIdRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomersCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomersCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomersRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomersRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerByNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerByClientCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerByClientCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerByGuidCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerByGuidCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerByGuidInnerSearchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerByGuidInnerSearchCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetByClientCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetByClientCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCustomerByExternalNumberCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCustomerByExternalNumberCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.Customer Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.Customer)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetAssociatedEmailsByClientOnlyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetAssociatedEmailsByClientOnlyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.AssociatedEmail[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.AssociatedEmail[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCatalogItemByCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCatalogItemByCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CatalogItem Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CatalogItem)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCatalogItemsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCatalogItemsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetUserClearingAccountCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetUserClearingAccountCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ClearingAccount Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ClearingAccount)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SendDocumentByMailCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SendDocumentByMailCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonObject Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonObject)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class SendStandingOrderSummaryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public SendStandingOrderSummaryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessCardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessCardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.DocumentCsv Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.DocumentCsv)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessClearingDocOnlyCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessClearingDocOnlyCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.DocumentCsv Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.DocumentCsv)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class InsertToLogFullParamsRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public InsertToLogFullParamsRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public int Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessApiRequestCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessApiRequestCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ApiClearingRequest Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ApiClearingRequest)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessApiRequestFullContentsRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessApiRequestFullContentsRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ApiClearingRequest Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ApiClearingRequest)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProccessApiRequestClearingLogInsertRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProccessApiRequestClearingLogInsertRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ClearingLog Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ClearingLog)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class TokenAddForClientCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public TokenAddForClientCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.OrganizationTokenDetails Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.OrganizationTokenDetails)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddStandingOrderCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddStandingOrderCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ClientsStandingOrder Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ClientsStandingOrder)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetProductsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetProductsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetProductByIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetProductByIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.ClearingProducts Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.ClearingProducts)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetClearingProductOrdersByTokenCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetClearingProductOrdersByTokenCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetClearingProductOrdersByProductIdCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetClearingProductOrdersByProductIdCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessRequestFullContentsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessRequestFullContentsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.MeshulamClearingApi Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.MeshulamClearingApi)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class ProcessRequestFullContentsRESTCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public ProcessRequestFullContentsRESTCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.MeshulamClearingApi Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.MeshulamClearingApi)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UserRegistrationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UserRegistrationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public TMS.ServiceReference1.CommonObject Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((TMS.ServiceReference1.CommonObject)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class ApiServiceClient : System.ServiceModel.ClientBase<TMS.ServiceReference1.ApiService>, TMS.ServiceReference1.ApiService {
+        
+        private BeginOperationDelegate onBeginVerifyLoginDelegate;
+        
+        private EndOperationDelegate onEndVerifyLoginDelegate;
+        
+        private System.Threading.SendOrPostCallback onVerifyLoginCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginVerifyLoginRESTDelegate;
+        
+        private EndOperationDelegate onEndVerifyLoginRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onVerifyLoginRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginIsAuthenticatedDelegate;
+        
+        private EndOperationDelegate onEndIsAuthenticatedDelegate;
+        
+        private System.Threading.SendOrPostCallback onIsAuthenticatedCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginLogoutDelegate;
+        
+        private EndOperationDelegate onEndLogoutDelegate;
+        
+        private System.Threading.SendOrPostCallback onLogoutCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetBranchesDelegate;
+        
+        private EndOperationDelegate onEndGetBranchesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetBranchesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateDocumentDelegate;
+        
+        private EndOperationDelegate onEndCreateDocumentDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateDocumentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateDocumentRESTDelegate;
+        
+        private EndOperationDelegate onEndCreateDocumentRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateDocumentRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentByApiIdentifierDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentByApiIdentifierDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentByApiIdentifierCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentByApiIdentifierRESTDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentByApiIdentifierRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentByApiIdentifierRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentsDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentsRESTDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentsRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentsRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInitDocumentDelegate;
+        
+        private EndOperationDelegate onEndInitDocumentDelegate;
+        
+        private System.Threading.SendOrPostCallback onInitDocumentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginChangeDocumentStatusDelegate;
+        
+        private EndOperationDelegate onEndChangeDocumentStatusDelegate;
+        
+        private System.Threading.SendOrPostCallback onChangeDocumentStatusCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentByNumberDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentByNumberDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentByNumberCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerReportDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerReportDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerReportCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetDocumentByNumberRESTDelegate;
+        
+        private EndOperationDelegate onEndGetDocumentByNumberRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetDocumentByNumberRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateCreditCardDelegate;
+        
+        private EndOperationDelegate onEndCreateCreditCardDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateCreditCardCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListDelegate;
+        
+        private EndOperationDelegate onEndGetListDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateCustomerDelegate;
+        
+        private EndOperationDelegate onEndCreateCustomerDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateCustomerCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateCustomerRESTDelegate;
+        
+        private EndOperationDelegate onEndCreateCustomerRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateCustomerRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginCreateCustomerParamsRESTDelegate;
+        
+        private EndOperationDelegate onEndCreateCustomerParamsRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateCustomerParamsRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateCustomerDelegate;
+        
+        private EndOperationDelegate onEndUpdateCustomerDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateCustomerCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetFullCustomerDelegate;
+        
+        private EndOperationDelegate onEndGetFullCustomerDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetFullCustomerCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomersByOrgIdDelegate;
+        
+        private EndOperationDelegate onEndGetCustomersByOrgIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomersByOrgIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomersByOrgIdRESTDelegate;
+        
+        private EndOperationDelegate onEndGetCustomersByOrgIdRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomersByOrgIdRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomersDelegate;
+        
+        private EndOperationDelegate onEndGetCustomersDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomersCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomersRESTDelegate;
+        
+        private EndOperationDelegate onEndGetCustomersRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomersRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerByNameDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerByNameDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerByNameCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerByClientCodeDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerByClientCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerByClientCodeCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerByGuidDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerByGuidDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerByGuidCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerByGuidInnerSearchDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerByGuidInnerSearchDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerByGuidInnerSearchCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetByClientCodeDelegate;
+        
+        private EndOperationDelegate onEndGetByClientCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetByClientCodeCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCustomerByExternalNumberDelegate;
+        
+        private EndOperationDelegate onEndGetCustomerByExternalNumberDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCustomerByExternalNumberCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetAssociatedEmailsByClientOnlyDelegate;
+        
+        private EndOperationDelegate onEndGetAssociatedEmailsByClientOnlyDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetAssociatedEmailsByClientOnlyCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCatalogItemByCodeDelegate;
+        
+        private EndOperationDelegate onEndGetCatalogItemByCodeDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCatalogItemByCodeCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCatalogItemsDelegate;
+        
+        private EndOperationDelegate onEndGetCatalogItemsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCatalogItemsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetUserClearingAccountDelegate;
+        
+        private EndOperationDelegate onEndGetUserClearingAccountDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetUserClearingAccountCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSendDocumentByMailDelegate;
+        
+        private EndOperationDelegate onEndSendDocumentByMailDelegate;
+        
+        private System.Threading.SendOrPostCallback onSendDocumentByMailCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginSendStandingOrderSummaryDelegate;
+        
+        private EndOperationDelegate onEndSendStandingOrderSummaryDelegate;
+        
+        private System.Threading.SendOrPostCallback onSendStandingOrderSummaryCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessCardDelegate;
+        
+        private EndOperationDelegate onEndProcessCardDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessCardCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessClearingDocOnlyDelegate;
+        
+        private EndOperationDelegate onEndProcessClearingDocOnlyDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessClearingDocOnlyCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginInsertToLogFullParamsRESTDelegate;
+        
+        private EndOperationDelegate onEndInsertToLogFullParamsRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onInsertToLogFullParamsRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessApiRequestDelegate;
+        
+        private EndOperationDelegate onEndProcessApiRequestDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessApiRequestCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessApiRequestFullContentsRESTDelegate;
+        
+        private EndOperationDelegate onEndProcessApiRequestFullContentsRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessApiRequestFullContentsRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProccessApiRequestClearingLogInsertRESTDelegate;
+        
+        private EndOperationDelegate onEndProccessApiRequestClearingLogInsertRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onProccessApiRequestClearingLogInsertRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginTokenAddForClientDelegate;
+        
+        private EndOperationDelegate onEndTokenAddForClientDelegate;
+        
+        private System.Threading.SendOrPostCallback onTokenAddForClientCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddStandingOrderDelegate;
+        
+        private EndOperationDelegate onEndAddStandingOrderDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddStandingOrderCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetProductsDelegate;
+        
+        private EndOperationDelegate onEndGetProductsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetProductsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetProductByIdDelegate;
+        
+        private EndOperationDelegate onEndGetProductByIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetProductByIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetClearingProductOrdersByTokenDelegate;
+        
+        private EndOperationDelegate onEndGetClearingProductOrdersByTokenDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetClearingProductOrdersByTokenCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetClearingProductOrdersByProductIdDelegate;
+        
+        private EndOperationDelegate onEndGetClearingProductOrdersByProductIdDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetClearingProductOrdersByProductIdCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessRequestFullContentsDelegate;
+        
+        private EndOperationDelegate onEndProcessRequestFullContentsDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessRequestFullContentsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginProcessRequestFullContentsRESTDelegate;
+        
+        private EndOperationDelegate onEndProcessRequestFullContentsRESTDelegate;
+        
+        private System.Threading.SendOrPostCallback onProcessRequestFullContentsRESTCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUserRegistrationDelegate;
+        
+        private EndOperationDelegate onEndUserRegistrationDelegate;
+        
+        private System.Threading.SendOrPostCallback onUserRegistrationCompletedDelegate;
         
         public ApiServiceClient() {
         }
@@ -10558,401 +13948,3083 @@ namespace TMS.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
+        public event System.EventHandler<VerifyLoginCompletedEventArgs> VerifyLoginCompleted;
+        
+        public event System.EventHandler<VerifyLoginRESTCompletedEventArgs> VerifyLoginRESTCompleted;
+        
+        public event System.EventHandler<IsAuthenticatedCompletedEventArgs> IsAuthenticatedCompleted;
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> LogoutCompleted;
+        
+        public event System.EventHandler<GetBranchesCompletedEventArgs> GetBranchesCompleted;
+        
+        public event System.EventHandler<CreateDocumentCompletedEventArgs> CreateDocumentCompleted;
+        
+        public event System.EventHandler<CreateDocumentRESTCompletedEventArgs> CreateDocumentRESTCompleted;
+        
+        public event System.EventHandler<GetDocumentByApiIdentifierCompletedEventArgs> GetDocumentByApiIdentifierCompleted;
+        
+        public event System.EventHandler<GetDocumentByApiIdentifierRESTCompletedEventArgs> GetDocumentByApiIdentifierRESTCompleted;
+        
+        public event System.EventHandler<GetDocumentsCompletedEventArgs> GetDocumentsCompleted;
+        
+        public event System.EventHandler<GetDocumentsRESTCompletedEventArgs> GetDocumentsRESTCompleted;
+        
+        public event System.EventHandler<InitDocumentCompletedEventArgs> InitDocumentCompleted;
+        
+        public event System.EventHandler<ChangeDocumentStatusCompletedEventArgs> ChangeDocumentStatusCompleted;
+        
+        public event System.EventHandler<GetDocumentCompletedEventArgs> GetDocumentCompleted;
+        
+        public event System.EventHandler<GetDocumentByNumberCompletedEventArgs> GetDocumentByNumberCompleted;
+        
+        public event System.EventHandler<GetCustomerReportCompletedEventArgs> GetCustomerReportCompleted;
+        
+        public event System.EventHandler<GetDocumentByNumberRESTCompletedEventArgs> GetDocumentByNumberRESTCompleted;
+        
+        public event System.EventHandler<CreateCreditCardCompletedEventArgs> CreateCreditCardCompleted;
+        
+        public event System.EventHandler<GetListCompletedEventArgs> GetListCompleted;
+        
+        public event System.EventHandler<CreateCustomerCompletedEventArgs> CreateCustomerCompleted;
+        
+        public event System.EventHandler<CreateCustomerRESTCompletedEventArgs> CreateCustomerRESTCompleted;
+        
+        public event System.EventHandler<CreateCustomerParamsRESTCompletedEventArgs> CreateCustomerParamsRESTCompleted;
+        
+        public event System.EventHandler<UpdateCustomerCompletedEventArgs> UpdateCustomerCompleted;
+        
+        public event System.EventHandler<GetFullCustomerCompletedEventArgs> GetFullCustomerCompleted;
+        
+        public event System.EventHandler<GetCustomersByOrgIdCompletedEventArgs> GetCustomersByOrgIdCompleted;
+        
+        public event System.EventHandler<GetCustomersByOrgIdRESTCompletedEventArgs> GetCustomersByOrgIdRESTCompleted;
+        
+        public event System.EventHandler<GetCustomersCompletedEventArgs> GetCustomersCompleted;
+        
+        public event System.EventHandler<GetCustomersRESTCompletedEventArgs> GetCustomersRESTCompleted;
+        
+        public event System.EventHandler<GetCustomerByNameCompletedEventArgs> GetCustomerByNameCompleted;
+        
+        public event System.EventHandler<GetCustomerByClientCodeCompletedEventArgs> GetCustomerByClientCodeCompleted;
+        
+        public event System.EventHandler<GetCustomerByGuidCompletedEventArgs> GetCustomerByGuidCompleted;
+        
+        public event System.EventHandler<GetCustomerByGuidInnerSearchCompletedEventArgs> GetCustomerByGuidInnerSearchCompleted;
+        
+        public event System.EventHandler<GetByClientCodeCompletedEventArgs> GetByClientCodeCompleted;
+        
+        public event System.EventHandler<GetCustomerByExternalNumberCompletedEventArgs> GetCustomerByExternalNumberCompleted;
+        
+        public event System.EventHandler<GetAssociatedEmailsByClientOnlyCompletedEventArgs> GetAssociatedEmailsByClientOnlyCompleted;
+        
+        public event System.EventHandler<GetCatalogItemByCodeCompletedEventArgs> GetCatalogItemByCodeCompleted;
+        
+        public event System.EventHandler<GetCatalogItemsCompletedEventArgs> GetCatalogItemsCompleted;
+        
+        public event System.EventHandler<GetUserClearingAccountCompletedEventArgs> GetUserClearingAccountCompleted;
+        
+        public event System.EventHandler<SendDocumentByMailCompletedEventArgs> SendDocumentByMailCompleted;
+        
+        public event System.EventHandler<SendStandingOrderSummaryCompletedEventArgs> SendStandingOrderSummaryCompleted;
+        
+        public event System.EventHandler<ProcessCardCompletedEventArgs> ProcessCardCompleted;
+        
+        public event System.EventHandler<ProcessClearingDocOnlyCompletedEventArgs> ProcessClearingDocOnlyCompleted;
+        
+        public event System.EventHandler<InsertToLogFullParamsRESTCompletedEventArgs> InsertToLogFullParamsRESTCompleted;
+        
+        public event System.EventHandler<ProcessApiRequestCompletedEventArgs> ProcessApiRequestCompleted;
+        
+        public event System.EventHandler<ProcessApiRequestFullContentsRESTCompletedEventArgs> ProcessApiRequestFullContentsRESTCompleted;
+        
+        public event System.EventHandler<ProccessApiRequestClearingLogInsertRESTCompletedEventArgs> ProccessApiRequestClearingLogInsertRESTCompleted;
+        
+        public event System.EventHandler<TokenAddForClientCompletedEventArgs> TokenAddForClientCompleted;
+        
+        public event System.EventHandler<AddStandingOrderCompletedEventArgs> AddStandingOrderCompleted;
+        
+        public event System.EventHandler<GetProductsCompletedEventArgs> GetProductsCompleted;
+        
+        public event System.EventHandler<GetProductByIdCompletedEventArgs> GetProductByIdCompleted;
+        
+        public event System.EventHandler<GetClearingProductOrdersByTokenCompletedEventArgs> GetClearingProductOrdersByTokenCompleted;
+        
+        public event System.EventHandler<GetClearingProductOrdersByProductIdCompletedEventArgs> GetClearingProductOrdersByProductIdCompleted;
+        
+        public event System.EventHandler<ProcessRequestFullContentsCompletedEventArgs> ProcessRequestFullContentsCompleted;
+        
+        public event System.EventHandler<ProcessRequestFullContentsRESTCompletedEventArgs> ProcessRequestFullContentsRESTCompleted;
+        
+        public event System.EventHandler<UserRegistrationCompletedEventArgs> UserRegistrationCompleted;
+        
         public string VerifyLogin(string email, string password) {
             return base.Channel.VerifyLogin(email, password);
         }
         
-        public System.Threading.Tasks.Task<string> VerifyLoginAsync(string email, string password) {
-            return base.Channel.VerifyLoginAsync(email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginVerifyLogin(string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginVerifyLogin(email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndVerifyLogin(System.IAsyncResult result) {
+            return base.Channel.EndVerifyLogin(result);
+        }
+        
+        private System.IAsyncResult OnBeginVerifyLogin(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string email = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginVerifyLogin(email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndVerifyLogin(System.IAsyncResult result) {
+            string retVal = this.EndVerifyLogin(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnVerifyLoginCompleted(object state) {
+            if ((this.VerifyLoginCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.VerifyLoginCompleted(this, new VerifyLoginCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void VerifyLoginAsync(string email, string password) {
+            this.VerifyLoginAsync(email, password, null);
+        }
+        
+        public void VerifyLoginAsync(string email, string password, object userState) {
+            if ((this.onBeginVerifyLoginDelegate == null)) {
+                this.onBeginVerifyLoginDelegate = new BeginOperationDelegate(this.OnBeginVerifyLogin);
+            }
+            if ((this.onEndVerifyLoginDelegate == null)) {
+                this.onEndVerifyLoginDelegate = new EndOperationDelegate(this.OnEndVerifyLogin);
+            }
+            if ((this.onVerifyLoginCompletedDelegate == null)) {
+                this.onVerifyLoginCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnVerifyLoginCompleted);
+            }
+            base.InvokeAsync(this.onBeginVerifyLoginDelegate, new object[] {
+                        email,
+                        password}, this.onEndVerifyLoginDelegate, this.onVerifyLoginCompletedDelegate, userState);
         }
         
         public string VerifyLoginREST(string email, string password) {
             return base.Channel.VerifyLoginREST(email, password);
         }
         
-        public System.Threading.Tasks.Task<string> VerifyLoginRESTAsync(string email, string password) {
-            return base.Channel.VerifyLoginRESTAsync(email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginVerifyLoginREST(string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginVerifyLoginREST(email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndVerifyLoginREST(System.IAsyncResult result) {
+            return base.Channel.EndVerifyLoginREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginVerifyLoginREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string email = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginVerifyLoginREST(email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndVerifyLoginREST(System.IAsyncResult result) {
+            string retVal = this.EndVerifyLoginREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnVerifyLoginRESTCompleted(object state) {
+            if ((this.VerifyLoginRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.VerifyLoginRESTCompleted(this, new VerifyLoginRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void VerifyLoginRESTAsync(string email, string password) {
+            this.VerifyLoginRESTAsync(email, password, null);
+        }
+        
+        public void VerifyLoginRESTAsync(string email, string password, object userState) {
+            if ((this.onBeginVerifyLoginRESTDelegate == null)) {
+                this.onBeginVerifyLoginRESTDelegate = new BeginOperationDelegate(this.OnBeginVerifyLoginREST);
+            }
+            if ((this.onEndVerifyLoginRESTDelegate == null)) {
+                this.onEndVerifyLoginRESTDelegate = new EndOperationDelegate(this.OnEndVerifyLoginREST);
+            }
+            if ((this.onVerifyLoginRESTCompletedDelegate == null)) {
+                this.onVerifyLoginRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnVerifyLoginRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginVerifyLoginRESTDelegate, new object[] {
+                        email,
+                        password}, this.onEndVerifyLoginRESTDelegate, this.onVerifyLoginRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.User IsAuthenticated(string token) {
             return base.Channel.IsAuthenticated(token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.User> IsAuthenticatedAsync(string token) {
-            return base.Channel.IsAuthenticatedAsync(token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginIsAuthenticated(string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginIsAuthenticated(token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.User EndIsAuthenticated(System.IAsyncResult result) {
+            return base.Channel.EndIsAuthenticated(result);
+        }
+        
+        private System.IAsyncResult OnBeginIsAuthenticated(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string token = ((string)(inValues[0]));
+            return this.BeginIsAuthenticated(token, callback, asyncState);
+        }
+        
+        private object[] OnEndIsAuthenticated(System.IAsyncResult result) {
+            TMS.ServiceReference1.User retVal = this.EndIsAuthenticated(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnIsAuthenticatedCompleted(object state) {
+            if ((this.IsAuthenticatedCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.IsAuthenticatedCompleted(this, new IsAuthenticatedCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void IsAuthenticatedAsync(string token) {
+            this.IsAuthenticatedAsync(token, null);
+        }
+        
+        public void IsAuthenticatedAsync(string token, object userState) {
+            if ((this.onBeginIsAuthenticatedDelegate == null)) {
+                this.onBeginIsAuthenticatedDelegate = new BeginOperationDelegate(this.OnBeginIsAuthenticated);
+            }
+            if ((this.onEndIsAuthenticatedDelegate == null)) {
+                this.onEndIsAuthenticatedDelegate = new EndOperationDelegate(this.OnEndIsAuthenticated);
+            }
+            if ((this.onIsAuthenticatedCompletedDelegate == null)) {
+                this.onIsAuthenticatedCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnIsAuthenticatedCompleted);
+            }
+            base.InvokeAsync(this.onBeginIsAuthenticatedDelegate, new object[] {
+                        token}, this.onEndIsAuthenticatedDelegate, this.onIsAuthenticatedCompletedDelegate, userState);
         }
         
         public void Logout() {
             base.Channel.Logout();
         }
         
-        public System.Threading.Tasks.Task LogoutAsync() {
-            return base.Channel.LogoutAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginLogout(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginLogout(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndLogout(System.IAsyncResult result) {
+            base.Channel.EndLogout(result);
+        }
+        
+        private System.IAsyncResult OnBeginLogout(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginLogout(callback, asyncState);
+        }
+        
+        private object[] OnEndLogout(System.IAsyncResult result) {
+            this.EndLogout(result);
+            return null;
+        }
+        
+        private void OnLogoutCompleted(object state) {
+            if ((this.LogoutCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.LogoutCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void LogoutAsync() {
+            this.LogoutAsync(null);
+        }
+        
+        public void LogoutAsync(object userState) {
+            if ((this.onBeginLogoutDelegate == null)) {
+                this.onBeginLogoutDelegate = new BeginOperationDelegate(this.OnBeginLogout);
+            }
+            if ((this.onEndLogoutDelegate == null)) {
+                this.onEndLogoutDelegate = new EndOperationDelegate(this.OnEndLogout);
+            }
+            if ((this.onLogoutCompletedDelegate == null)) {
+                this.onLogoutCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnLogoutCompleted);
+            }
+            base.InvokeAsync(this.onBeginLogoutDelegate, null, this.onEndLogoutDelegate, this.onLogoutCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Branch[] GetBranches(string token) {
             return base.Channel.GetBranches(token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Branch[]> GetBranchesAsync(string token) {
-            return base.Channel.GetBranchesAsync(token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetBranches(string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetBranches(token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Branch[] EndGetBranches(System.IAsyncResult result) {
+            return base.Channel.EndGetBranches(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetBranches(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string token = ((string)(inValues[0]));
+            return this.BeginGetBranches(token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetBranches(System.IAsyncResult result) {
+            TMS.ServiceReference1.Branch[] retVal = this.EndGetBranches(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetBranchesCompleted(object state) {
+            if ((this.GetBranchesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetBranchesCompleted(this, new GetBranchesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetBranchesAsync(string token) {
+            this.GetBranchesAsync(token, null);
+        }
+        
+        public void GetBranchesAsync(string token, object userState) {
+            if ((this.onBeginGetBranchesDelegate == null)) {
+                this.onBeginGetBranchesDelegate = new BeginOperationDelegate(this.OnBeginGetBranches);
+            }
+            if ((this.onEndGetBranchesDelegate == null)) {
+                this.onEndGetBranchesDelegate = new EndOperationDelegate(this.OnEndGetBranches);
+            }
+            if ((this.onGetBranchesCompletedDelegate == null)) {
+                this.onGetBranchesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetBranchesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetBranchesDelegate, new object[] {
+                        token}, this.onEndGetBranchesDelegate, this.onGetBranchesCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document CreateDocument(TMS.ServiceReference1.Document doc, string token) {
             return base.Channel.CreateDocument(doc, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> CreateDocumentAsync(TMS.ServiceReference1.Document doc, string token) {
-            return base.Channel.CreateDocumentAsync(doc, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateDocument(TMS.ServiceReference1.Document doc, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateDocument(doc, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndCreateDocument(System.IAsyncResult result) {
+            return base.Channel.EndCreateDocument(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateDocument(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Document doc = ((TMS.ServiceReference1.Document)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginCreateDocument(doc, token, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateDocument(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndCreateDocument(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateDocumentCompleted(object state) {
+            if ((this.CreateDocumentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateDocumentCompleted(this, new CreateDocumentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateDocumentAsync(TMS.ServiceReference1.Document doc, string token) {
+            this.CreateDocumentAsync(doc, token, null);
+        }
+        
+        public void CreateDocumentAsync(TMS.ServiceReference1.Document doc, string token, object userState) {
+            if ((this.onBeginCreateDocumentDelegate == null)) {
+                this.onBeginCreateDocumentDelegate = new BeginOperationDelegate(this.OnBeginCreateDocument);
+            }
+            if ((this.onEndCreateDocumentDelegate == null)) {
+                this.onEndCreateDocumentDelegate = new EndOperationDelegate(this.OnEndCreateDocument);
+            }
+            if ((this.onCreateDocumentCompletedDelegate == null)) {
+                this.onCreateDocumentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateDocumentCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateDocumentDelegate, new object[] {
+                        doc,
+                        token}, this.onEndCreateDocumentDelegate, this.onCreateDocumentCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document CreateDocumentREST(TMS.ServiceReference1.Document doc, string email, string password) {
             return base.Channel.CreateDocumentREST(doc, email, password);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> CreateDocumentRESTAsync(TMS.ServiceReference1.Document doc, string email, string password) {
-            return base.Channel.CreateDocumentRESTAsync(doc, email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateDocumentREST(TMS.ServiceReference1.Document doc, string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateDocumentREST(doc, email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndCreateDocumentREST(System.IAsyncResult result) {
+            return base.Channel.EndCreateDocumentREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateDocumentREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Document doc = ((TMS.ServiceReference1.Document)(inValues[0]));
+            string email = ((string)(inValues[1]));
+            string password = ((string)(inValues[2]));
+            return this.BeginCreateDocumentREST(doc, email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateDocumentREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndCreateDocumentREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateDocumentRESTCompleted(object state) {
+            if ((this.CreateDocumentRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateDocumentRESTCompleted(this, new CreateDocumentRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateDocumentRESTAsync(TMS.ServiceReference1.Document doc, string email, string password) {
+            this.CreateDocumentRESTAsync(doc, email, password, null);
+        }
+        
+        public void CreateDocumentRESTAsync(TMS.ServiceReference1.Document doc, string email, string password, object userState) {
+            if ((this.onBeginCreateDocumentRESTDelegate == null)) {
+                this.onBeginCreateDocumentRESTDelegate = new BeginOperationDelegate(this.OnBeginCreateDocumentREST);
+            }
+            if ((this.onEndCreateDocumentRESTDelegate == null)) {
+                this.onEndCreateDocumentRESTDelegate = new EndOperationDelegate(this.OnEndCreateDocumentREST);
+            }
+            if ((this.onCreateDocumentRESTCompletedDelegate == null)) {
+                this.onCreateDocumentRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateDocumentRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateDocumentRESTDelegate, new object[] {
+                        doc,
+                        email,
+                        password}, this.onEndCreateDocumentRESTDelegate, this.onCreateDocumentRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document GetDocumentByApiIdentifier(string apiIdentifier, int docType, string token) {
             return base.Channel.GetDocumentByApiIdentifier(apiIdentifier, docType, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByApiIdentifierAsync(string apiIdentifier, int docType, string token) {
-            return base.Channel.GetDocumentByApiIdentifierAsync(apiIdentifier, docType, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocumentByApiIdentifier(string apiIdentifier, int docType, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocumentByApiIdentifier(apiIdentifier, docType, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndGetDocumentByApiIdentifier(System.IAsyncResult result) {
+            return base.Channel.EndGetDocumentByApiIdentifier(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocumentByApiIdentifier(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string apiIdentifier = ((string)(inValues[0]));
+            int docType = ((int)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginGetDocumentByApiIdentifier(apiIdentifier, docType, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocumentByApiIdentifier(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndGetDocumentByApiIdentifier(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentByApiIdentifierCompleted(object state) {
+            if ((this.GetDocumentByApiIdentifierCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentByApiIdentifierCompleted(this, new GetDocumentByApiIdentifierCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentByApiIdentifierAsync(string apiIdentifier, int docType, string token) {
+            this.GetDocumentByApiIdentifierAsync(apiIdentifier, docType, token, null);
+        }
+        
+        public void GetDocumentByApiIdentifierAsync(string apiIdentifier, int docType, string token, object userState) {
+            if ((this.onBeginGetDocumentByApiIdentifierDelegate == null)) {
+                this.onBeginGetDocumentByApiIdentifierDelegate = new BeginOperationDelegate(this.OnBeginGetDocumentByApiIdentifier);
+            }
+            if ((this.onEndGetDocumentByApiIdentifierDelegate == null)) {
+                this.onEndGetDocumentByApiIdentifierDelegate = new EndOperationDelegate(this.OnEndGetDocumentByApiIdentifier);
+            }
+            if ((this.onGetDocumentByApiIdentifierCompletedDelegate == null)) {
+                this.onGetDocumentByApiIdentifierCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentByApiIdentifierCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentByApiIdentifierDelegate, new object[] {
+                        apiIdentifier,
+                        docType,
+                        token}, this.onEndGetDocumentByApiIdentifierDelegate, this.onGetDocumentByApiIdentifierCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document GetDocumentByApiIdentifierREST(string apiIdentifier, int docType, string token) {
             return base.Channel.GetDocumentByApiIdentifierREST(apiIdentifier, docType, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByApiIdentifierRESTAsync(string apiIdentifier, int docType, string token) {
-            return base.Channel.GetDocumentByApiIdentifierRESTAsync(apiIdentifier, docType, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocumentByApiIdentifierREST(string apiIdentifier, int docType, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocumentByApiIdentifierREST(apiIdentifier, docType, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndGetDocumentByApiIdentifierREST(System.IAsyncResult result) {
+            return base.Channel.EndGetDocumentByApiIdentifierREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocumentByApiIdentifierREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string apiIdentifier = ((string)(inValues[0]));
+            int docType = ((int)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginGetDocumentByApiIdentifierREST(apiIdentifier, docType, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocumentByApiIdentifierREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndGetDocumentByApiIdentifierREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentByApiIdentifierRESTCompleted(object state) {
+            if ((this.GetDocumentByApiIdentifierRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentByApiIdentifierRESTCompleted(this, new GetDocumentByApiIdentifierRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentByApiIdentifierRESTAsync(string apiIdentifier, int docType, string token) {
+            this.GetDocumentByApiIdentifierRESTAsync(apiIdentifier, docType, token, null);
+        }
+        
+        public void GetDocumentByApiIdentifierRESTAsync(string apiIdentifier, int docType, string token, object userState) {
+            if ((this.onBeginGetDocumentByApiIdentifierRESTDelegate == null)) {
+                this.onBeginGetDocumentByApiIdentifierRESTDelegate = new BeginOperationDelegate(this.OnBeginGetDocumentByApiIdentifierREST);
+            }
+            if ((this.onEndGetDocumentByApiIdentifierRESTDelegate == null)) {
+                this.onEndGetDocumentByApiIdentifierRESTDelegate = new EndOperationDelegate(this.OnEndGetDocumentByApiIdentifierREST);
+            }
+            if ((this.onGetDocumentByApiIdentifierRESTCompletedDelegate == null)) {
+                this.onGetDocumentByApiIdentifierRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentByApiIdentifierRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentByApiIdentifierRESTDelegate, new object[] {
+                        apiIdentifier,
+                        docType,
+                        token}, this.onEndGetDocumentByApiIdentifierRESTDelegate, this.onGetDocumentByApiIdentifierRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetDocuments(TMS.ServiceReference1.DocumentsRequest dr, string token) {
             return base.Channel.GetDocuments(dr, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetDocumentsAsync(TMS.ServiceReference1.DocumentsRequest dr, string token) {
-            return base.Channel.GetDocumentsAsync(dr, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocuments(TMS.ServiceReference1.DocumentsRequest dr, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocuments(dr, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetDocuments(System.IAsyncResult result) {
+            return base.Channel.EndGetDocuments(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocuments(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.DocumentsRequest dr = ((TMS.ServiceReference1.DocumentsRequest)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetDocuments(dr, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocuments(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS retVal = this.EndGetDocuments(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentsCompleted(object state) {
+            if ((this.GetDocumentsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentsCompleted(this, new GetDocumentsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentsAsync(TMS.ServiceReference1.DocumentsRequest dr, string token) {
+            this.GetDocumentsAsync(dr, token, null);
+        }
+        
+        public void GetDocumentsAsync(TMS.ServiceReference1.DocumentsRequest dr, string token, object userState) {
+            if ((this.onBeginGetDocumentsDelegate == null)) {
+                this.onBeginGetDocumentsDelegate = new BeginOperationDelegate(this.OnBeginGetDocuments);
+            }
+            if ((this.onEndGetDocumentsDelegate == null)) {
+                this.onEndGetDocumentsDelegate = new EndOperationDelegate(this.OnEndGetDocuments);
+            }
+            if ((this.onGetDocumentsCompletedDelegate == null)) {
+                this.onGetDocumentsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentsDelegate, new object[] {
+                        dr,
+                        token}, this.onEndGetDocumentsDelegate, this.onGetDocumentsCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetDocumentsREST(TMS.ServiceReference1.DocumentsRequest dr, string email, string password) {
             return base.Channel.GetDocumentsREST(dr, email, password);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetDocumentsRESTAsync(TMS.ServiceReference1.DocumentsRequest dr, string email, string password) {
-            return base.Channel.GetDocumentsRESTAsync(dr, email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocumentsREST(TMS.ServiceReference1.DocumentsRequest dr, string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocumentsREST(dr, email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetDocumentsREST(System.IAsyncResult result) {
+            return base.Channel.EndGetDocumentsREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocumentsREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.DocumentsRequest dr = ((TMS.ServiceReference1.DocumentsRequest)(inValues[0]));
+            string email = ((string)(inValues[1]));
+            string password = ((string)(inValues[2]));
+            return this.BeginGetDocumentsREST(dr, email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocumentsREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS retVal = this.EndGetDocumentsREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentsRESTCompleted(object state) {
+            if ((this.GetDocumentsRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentsRESTCompleted(this, new GetDocumentsRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentsRESTAsync(TMS.ServiceReference1.DocumentsRequest dr, string email, string password) {
+            this.GetDocumentsRESTAsync(dr, email, password, null);
+        }
+        
+        public void GetDocumentsRESTAsync(TMS.ServiceReference1.DocumentsRequest dr, string email, string password, object userState) {
+            if ((this.onBeginGetDocumentsRESTDelegate == null)) {
+                this.onBeginGetDocumentsRESTDelegate = new BeginOperationDelegate(this.OnBeginGetDocumentsREST);
+            }
+            if ((this.onEndGetDocumentsRESTDelegate == null)) {
+                this.onEndGetDocumentsRESTDelegate = new EndOperationDelegate(this.OnEndGetDocumentsREST);
+            }
+            if ((this.onGetDocumentsRESTCompletedDelegate == null)) {
+                this.onGetDocumentsRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentsRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentsRESTDelegate, new object[] {
+                        dr,
+                        email,
+                        password}, this.onEndGetDocumentsRESTDelegate, this.onGetDocumentsRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document InitDocument(int docType, string token) {
             return base.Channel.InitDocument(docType, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> InitDocumentAsync(int docType, string token) {
-            return base.Channel.InitDocumentAsync(docType, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInitDocument(int docType, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInitDocument(docType, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndInitDocument(System.IAsyncResult result) {
+            return base.Channel.EndInitDocument(result);
+        }
+        
+        private System.IAsyncResult OnBeginInitDocument(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int docType = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginInitDocument(docType, token, callback, asyncState);
+        }
+        
+        private object[] OnEndInitDocument(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndInitDocument(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInitDocumentCompleted(object state) {
+            if ((this.InitDocumentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InitDocumentCompleted(this, new InitDocumentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InitDocumentAsync(int docType, string token) {
+            this.InitDocumentAsync(docType, token, null);
+        }
+        
+        public void InitDocumentAsync(int docType, string token, object userState) {
+            if ((this.onBeginInitDocumentDelegate == null)) {
+                this.onBeginInitDocumentDelegate = new BeginOperationDelegate(this.OnBeginInitDocument);
+            }
+            if ((this.onEndInitDocumentDelegate == null)) {
+                this.onEndInitDocumentDelegate = new EndOperationDelegate(this.OnEndInitDocument);
+            }
+            if ((this.onInitDocumentCompletedDelegate == null)) {
+                this.onInitDocumentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInitDocumentCompleted);
+            }
+            base.InvokeAsync(this.onBeginInitDocumentDelegate, new object[] {
+                        docType,
+                        token}, this.onEndInitDocumentDelegate, this.onInitDocumentCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonObject ChangeDocumentStatus(TMS.ServiceReference1.Document[] docs, string token) {
             return base.Channel.ChangeDocumentStatus(docs, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonObject> ChangeDocumentStatusAsync(TMS.ServiceReference1.Document[] docs, string token) {
-            return base.Channel.ChangeDocumentStatusAsync(docs, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginChangeDocumentStatus(TMS.ServiceReference1.Document[] docs, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginChangeDocumentStatus(docs, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonObject EndChangeDocumentStatus(System.IAsyncResult result) {
+            return base.Channel.EndChangeDocumentStatus(result);
+        }
+        
+        private System.IAsyncResult OnBeginChangeDocumentStatus(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Document[] docs = ((TMS.ServiceReference1.Document[])(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginChangeDocumentStatus(docs, token, callback, asyncState);
+        }
+        
+        private object[] OnEndChangeDocumentStatus(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonObject retVal = this.EndChangeDocumentStatus(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnChangeDocumentStatusCompleted(object state) {
+            if ((this.ChangeDocumentStatusCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ChangeDocumentStatusCompleted(this, new ChangeDocumentStatusCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ChangeDocumentStatusAsync(TMS.ServiceReference1.Document[] docs, string token) {
+            this.ChangeDocumentStatusAsync(docs, token, null);
+        }
+        
+        public void ChangeDocumentStatusAsync(TMS.ServiceReference1.Document[] docs, string token, object userState) {
+            if ((this.onBeginChangeDocumentStatusDelegate == null)) {
+                this.onBeginChangeDocumentStatusDelegate = new BeginOperationDelegate(this.OnBeginChangeDocumentStatus);
+            }
+            if ((this.onEndChangeDocumentStatusDelegate == null)) {
+                this.onEndChangeDocumentStatusDelegate = new EndOperationDelegate(this.OnEndChangeDocumentStatus);
+            }
+            if ((this.onChangeDocumentStatusCompletedDelegate == null)) {
+                this.onChangeDocumentStatusCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnChangeDocumentStatusCompleted);
+            }
+            base.InvokeAsync(this.onBeginChangeDocumentStatusDelegate, new object[] {
+                        docs,
+                        token}, this.onEndChangeDocumentStatusDelegate, this.onChangeDocumentStatusCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document GetDocument(string docId, string token) {
             return base.Channel.GetDocument(docId, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentAsync(string docId, string token) {
-            return base.Channel.GetDocumentAsync(docId, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocument(string docId, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocument(docId, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndGetDocument(System.IAsyncResult result) {
+            return base.Channel.EndGetDocument(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocument(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string docId = ((string)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetDocument(docId, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocument(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndGetDocument(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentCompleted(object state) {
+            if ((this.GetDocumentCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentCompleted(this, new GetDocumentCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentAsync(string docId, string token) {
+            this.GetDocumentAsync(docId, token, null);
+        }
+        
+        public void GetDocumentAsync(string docId, string token, object userState) {
+            if ((this.onBeginGetDocumentDelegate == null)) {
+                this.onBeginGetDocumentDelegate = new BeginOperationDelegate(this.OnBeginGetDocument);
+            }
+            if ((this.onEndGetDocumentDelegate == null)) {
+                this.onEndGetDocumentDelegate = new EndOperationDelegate(this.OnEndGetDocument);
+            }
+            if ((this.onGetDocumentCompletedDelegate == null)) {
+                this.onGetDocumentCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentDelegate, new object[] {
+                        docId,
+                        token}, this.onEndGetDocumentDelegate, this.onGetDocumentCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document GetDocumentByNumber(int docNumber, int documentType, string token) {
             return base.Channel.GetDocumentByNumber(docNumber, documentType, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByNumberAsync(int docNumber, int documentType, string token) {
-            return base.Channel.GetDocumentByNumberAsync(docNumber, documentType, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocumentByNumber(int docNumber, int documentType, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocumentByNumber(docNumber, documentType, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndGetDocumentByNumber(System.IAsyncResult result) {
+            return base.Channel.EndGetDocumentByNumber(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocumentByNumber(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int docNumber = ((int)(inValues[0]));
+            int documentType = ((int)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginGetDocumentByNumber(docNumber, documentType, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocumentByNumber(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndGetDocumentByNumber(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentByNumberCompleted(object state) {
+            if ((this.GetDocumentByNumberCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentByNumberCompleted(this, new GetDocumentByNumberCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentByNumberAsync(int docNumber, int documentType, string token) {
+            this.GetDocumentByNumberAsync(docNumber, documentType, token, null);
+        }
+        
+        public void GetDocumentByNumberAsync(int docNumber, int documentType, string token, object userState) {
+            if ((this.onBeginGetDocumentByNumberDelegate == null)) {
+                this.onBeginGetDocumentByNumberDelegate = new BeginOperationDelegate(this.OnBeginGetDocumentByNumber);
+            }
+            if ((this.onEndGetDocumentByNumberDelegate == null)) {
+                this.onEndGetDocumentByNumberDelegate = new EndOperationDelegate(this.OnEndGetDocumentByNumber);
+            }
+            if ((this.onGetDocumentByNumberCompletedDelegate == null)) {
+                this.onGetDocumentByNumberCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentByNumberCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentByNumberDelegate, new object[] {
+                        docNumber,
+                        documentType,
+                        token}, this.onEndGetDocumentByNumberDelegate, this.onGetDocumentByNumberCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS GetCustomerReport(TMS.ServiceReference1.DocumentsRequest dr, string token) {
             return base.Channel.GetCustomerReport(dr, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS> GetCustomerReportAsync(TMS.ServiceReference1.DocumentsRequest dr, string token) {
-            return base.Channel.GetCustomerReportAsync(dr, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerReport(TMS.ServiceReference1.DocumentsRequest dr, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerReport(dr, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS EndGetCustomerReport(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerReport(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerReport(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.DocumentsRequest dr = ((TMS.ServiceReference1.DocumentsRequest)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerReport(dr, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerReport(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfDocumentJHiVxprS retVal = this.EndGetCustomerReport(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerReportCompleted(object state) {
+            if ((this.GetCustomerReportCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerReportCompleted(this, new GetCustomerReportCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerReportAsync(TMS.ServiceReference1.DocumentsRequest dr, string token) {
+            this.GetCustomerReportAsync(dr, token, null);
+        }
+        
+        public void GetCustomerReportAsync(TMS.ServiceReference1.DocumentsRequest dr, string token, object userState) {
+            if ((this.onBeginGetCustomerReportDelegate == null)) {
+                this.onBeginGetCustomerReportDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerReport);
+            }
+            if ((this.onEndGetCustomerReportDelegate == null)) {
+                this.onEndGetCustomerReportDelegate = new EndOperationDelegate(this.OnEndGetCustomerReport);
+            }
+            if ((this.onGetCustomerReportCompletedDelegate == null)) {
+                this.onGetCustomerReportCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerReportCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerReportDelegate, new object[] {
+                        dr,
+                        token}, this.onEndGetCustomerReportDelegate, this.onGetCustomerReportCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Document GetDocumentByNumberREST(int docNumber, int documentType, string token) {
             return base.Channel.GetDocumentByNumberREST(docNumber, documentType, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Document> GetDocumentByNumberRESTAsync(int docNumber, int documentType, string token) {
-            return base.Channel.GetDocumentByNumberRESTAsync(docNumber, documentType, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetDocumentByNumberREST(int docNumber, int documentType, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetDocumentByNumberREST(docNumber, documentType, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Document EndGetDocumentByNumberREST(System.IAsyncResult result) {
+            return base.Channel.EndGetDocumentByNumberREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetDocumentByNumberREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int docNumber = ((int)(inValues[0]));
+            int documentType = ((int)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginGetDocumentByNumberREST(docNumber, documentType, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetDocumentByNumberREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.Document retVal = this.EndGetDocumentByNumberREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetDocumentByNumberRESTCompleted(object state) {
+            if ((this.GetDocumentByNumberRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetDocumentByNumberRESTCompleted(this, new GetDocumentByNumberRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetDocumentByNumberRESTAsync(int docNumber, int documentType, string token) {
+            this.GetDocumentByNumberRESTAsync(docNumber, documentType, token, null);
+        }
+        
+        public void GetDocumentByNumberRESTAsync(int docNumber, int documentType, string token, object userState) {
+            if ((this.onBeginGetDocumentByNumberRESTDelegate == null)) {
+                this.onBeginGetDocumentByNumberRESTDelegate = new BeginOperationDelegate(this.OnBeginGetDocumentByNumberREST);
+            }
+            if ((this.onEndGetDocumentByNumberRESTDelegate == null)) {
+                this.onEndGetDocumentByNumberRESTDelegate = new EndOperationDelegate(this.OnEndGetDocumentByNumberREST);
+            }
+            if ((this.onGetDocumentByNumberRESTCompletedDelegate == null)) {
+                this.onGetDocumentByNumberRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetDocumentByNumberRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetDocumentByNumberRESTDelegate, new object[] {
+                        docNumber,
+                        documentType,
+                        token}, this.onEndGetDocumentByNumberRESTDelegate, this.onGetDocumentByNumberRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CreditCompany CreateCreditCard(TMS.ServiceReference1.CreditCompany credit, string token) {
             return base.Channel.CreateCreditCard(credit, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CreditCompany> CreateCreditCardAsync(TMS.ServiceReference1.CreditCompany credit, string token) {
-            return base.Channel.CreateCreditCardAsync(credit, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateCreditCard(TMS.ServiceReference1.CreditCompany credit, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateCreditCard(credit, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CreditCompany EndCreateCreditCard(System.IAsyncResult result) {
+            return base.Channel.EndCreateCreditCard(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateCreditCard(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.CreditCompany credit = ((TMS.ServiceReference1.CreditCompany)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginCreateCreditCard(credit, token, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateCreditCard(System.IAsyncResult result) {
+            TMS.ServiceReference1.CreditCompany retVal = this.EndCreateCreditCard(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateCreditCardCompleted(object state) {
+            if ((this.CreateCreditCardCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateCreditCardCompleted(this, new CreateCreditCardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateCreditCardAsync(TMS.ServiceReference1.CreditCompany credit, string token) {
+            this.CreateCreditCardAsync(credit, token, null);
+        }
+        
+        public void CreateCreditCardAsync(TMS.ServiceReference1.CreditCompany credit, string token, object userState) {
+            if ((this.onBeginCreateCreditCardDelegate == null)) {
+                this.onBeginCreateCreditCardDelegate = new BeginOperationDelegate(this.OnBeginCreateCreditCard);
+            }
+            if ((this.onEndCreateCreditCardDelegate == null)) {
+                this.onEndCreateCreditCardDelegate = new EndOperationDelegate(this.OnEndCreateCreditCard);
+            }
+            if ((this.onCreateCreditCardCompletedDelegate == null)) {
+                this.onCreateCreditCardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateCreditCardCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateCreditCardDelegate, new object[] {
+                        credit,
+                        token}, this.onEndCreateCreditCardDelegate, this.onCreateCreditCardCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS GetList() {
             return base.Channel.GetList();
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS> GetListAsync() {
-            return base.Channel.GetListAsync();
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetList(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetList(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS EndGetList(System.IAsyncResult result) {
+            return base.Channel.EndGetList(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetList(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetList(callback, asyncState);
+        }
+        
+        private object[] OnEndGetList(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS retVal = this.EndGetList(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListCompleted(object state) {
+            if ((this.GetListCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListCompleted(this, new GetListCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAsync() {
+            this.GetListAsync(null);
+        }
+        
+        public void GetListAsync(object userState) {
+            if ((this.onBeginGetListDelegate == null)) {
+                this.onBeginGetListDelegate = new BeginOperationDelegate(this.OnBeginGetList);
+            }
+            if ((this.onEndGetListDelegate == null)) {
+                this.onEndGetListDelegate = new EndOperationDelegate(this.OnEndGetList);
+            }
+            if ((this.onGetListCompletedDelegate == null)) {
+                this.onGetListCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListDelegate, null, this.onEndGetListDelegate, this.onGetListCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer CreateCustomer(TMS.ServiceReference1.Customer cu, string token) {
             return base.Channel.CreateCustomer(cu, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> CreateCustomerAsync(TMS.ServiceReference1.Customer cu, string token) {
-            return base.Channel.CreateCustomerAsync(cu, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateCustomer(TMS.ServiceReference1.Customer cu, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateCustomer(cu, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndCreateCustomer(System.IAsyncResult result) {
+            return base.Channel.EndCreateCustomer(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateCustomer(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Customer cu = ((TMS.ServiceReference1.Customer)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginCreateCustomer(cu, token, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateCustomer(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndCreateCustomer(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateCustomerCompleted(object state) {
+            if ((this.CreateCustomerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateCustomerCompleted(this, new CreateCustomerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateCustomerAsync(TMS.ServiceReference1.Customer cu, string token) {
+            this.CreateCustomerAsync(cu, token, null);
+        }
+        
+        public void CreateCustomerAsync(TMS.ServiceReference1.Customer cu, string token, object userState) {
+            if ((this.onBeginCreateCustomerDelegate == null)) {
+                this.onBeginCreateCustomerDelegate = new BeginOperationDelegate(this.OnBeginCreateCustomer);
+            }
+            if ((this.onEndCreateCustomerDelegate == null)) {
+                this.onEndCreateCustomerDelegate = new EndOperationDelegate(this.OnEndCreateCustomer);
+            }
+            if ((this.onCreateCustomerCompletedDelegate == null)) {
+                this.onCreateCustomerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateCustomerCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateCustomerDelegate, new object[] {
+                        cu,
+                        token}, this.onEndCreateCustomerDelegate, this.onCreateCustomerCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer CreateCustomerREST(TMS.ServiceReference1.Customer cu, string email, string password) {
             return base.Channel.CreateCustomerREST(cu, email, password);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> CreateCustomerRESTAsync(TMS.ServiceReference1.Customer cu, string email, string password) {
-            return base.Channel.CreateCustomerRESTAsync(cu, email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateCustomerREST(TMS.ServiceReference1.Customer cu, string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateCustomerREST(cu, email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndCreateCustomerREST(System.IAsyncResult result) {
+            return base.Channel.EndCreateCustomerREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateCustomerREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Customer cu = ((TMS.ServiceReference1.Customer)(inValues[0]));
+            string email = ((string)(inValues[1]));
+            string password = ((string)(inValues[2]));
+            return this.BeginCreateCustomerREST(cu, email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateCustomerREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndCreateCustomerREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateCustomerRESTCompleted(object state) {
+            if ((this.CreateCustomerRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateCustomerRESTCompleted(this, new CreateCustomerRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateCustomerRESTAsync(TMS.ServiceReference1.Customer cu, string email, string password) {
+            this.CreateCustomerRESTAsync(cu, email, password, null);
+        }
+        
+        public void CreateCustomerRESTAsync(TMS.ServiceReference1.Customer cu, string email, string password, object userState) {
+            if ((this.onBeginCreateCustomerRESTDelegate == null)) {
+                this.onBeginCreateCustomerRESTDelegate = new BeginOperationDelegate(this.OnBeginCreateCustomerREST);
+            }
+            if ((this.onEndCreateCustomerRESTDelegate == null)) {
+                this.onEndCreateCustomerRESTDelegate = new EndOperationDelegate(this.OnEndCreateCustomerREST);
+            }
+            if ((this.onCreateCustomerRESTCompletedDelegate == null)) {
+                this.onCreateCustomerRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateCustomerRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateCustomerRESTDelegate, new object[] {
+                        cu,
+                        email,
+                        password}, this.onEndCreateCustomerRESTDelegate, this.onCreateCustomerRESTCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.Customer CreateCustomerParamsREST(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber) {
+            return base.Channel.CreateCustomerParamsREST(i4uEmail, i4uPassword, id, name, customerEmail, uniqueId, phone, cell, externalNumber);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateCustomerParamsREST(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateCustomerParamsREST(i4uEmail, i4uPassword, id, name, customerEmail, uniqueId, phone, cell, externalNumber, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndCreateCustomerParamsREST(System.IAsyncResult result) {
+            return base.Channel.EndCreateCustomerParamsREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateCustomerParamsREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string i4uEmail = ((string)(inValues[0]));
+            string i4uPassword = ((string)(inValues[1]));
+            int id = ((int)(inValues[2]));
+            string name = ((string)(inValues[3]));
+            string customerEmail = ((string)(inValues[4]));
+            string uniqueId = ((string)(inValues[5]));
+            string phone = ((string)(inValues[6]));
+            string cell = ((string)(inValues[7]));
+            long externalNumber = ((long)(inValues[8]));
+            return this.BeginCreateCustomerParamsREST(i4uEmail, i4uPassword, id, name, customerEmail, uniqueId, phone, cell, externalNumber, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateCustomerParamsREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndCreateCustomerParamsREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateCustomerParamsRESTCompleted(object state) {
+            if ((this.CreateCustomerParamsRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateCustomerParamsRESTCompleted(this, new CreateCustomerParamsRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateCustomerParamsRESTAsync(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber) {
+            this.CreateCustomerParamsRESTAsync(i4uEmail, i4uPassword, id, name, customerEmail, uniqueId, phone, cell, externalNumber, null);
+        }
+        
+        public void CreateCustomerParamsRESTAsync(string i4uEmail, string i4uPassword, int id, string name, string customerEmail, string uniqueId, string phone, string cell, long externalNumber, object userState) {
+            if ((this.onBeginCreateCustomerParamsRESTDelegate == null)) {
+                this.onBeginCreateCustomerParamsRESTDelegate = new BeginOperationDelegate(this.OnBeginCreateCustomerParamsREST);
+            }
+            if ((this.onEndCreateCustomerParamsRESTDelegate == null)) {
+                this.onEndCreateCustomerParamsRESTDelegate = new EndOperationDelegate(this.OnEndCreateCustomerParamsREST);
+            }
+            if ((this.onCreateCustomerParamsRESTCompletedDelegate == null)) {
+                this.onCreateCustomerParamsRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateCustomerParamsRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateCustomerParamsRESTDelegate, new object[] {
+                        i4uEmail,
+                        i4uPassword,
+                        id,
+                        name,
+                        customerEmail,
+                        uniqueId,
+                        phone,
+                        cell,
+                        externalNumber}, this.onEndCreateCustomerParamsRESTDelegate, this.onCreateCustomerParamsRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer UpdateCustomer(TMS.ServiceReference1.Customer cu, string token) {
             return base.Channel.UpdateCustomer(cu, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> UpdateCustomerAsync(TMS.ServiceReference1.Customer cu, string token) {
-            return base.Channel.UpdateCustomerAsync(cu, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdateCustomer(TMS.ServiceReference1.Customer cu, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateCustomer(cu, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndUpdateCustomer(System.IAsyncResult result) {
+            return base.Channel.EndUpdateCustomer(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateCustomer(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Customer cu = ((TMS.ServiceReference1.Customer)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginUpdateCustomer(cu, token, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateCustomer(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndUpdateCustomer(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateCustomerCompleted(object state) {
+            if ((this.UpdateCustomerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateCustomerCompleted(this, new UpdateCustomerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateCustomerAsync(TMS.ServiceReference1.Customer cu, string token) {
+            this.UpdateCustomerAsync(cu, token, null);
+        }
+        
+        public void UpdateCustomerAsync(TMS.ServiceReference1.Customer cu, string token, object userState) {
+            if ((this.onBeginUpdateCustomerDelegate == null)) {
+                this.onBeginUpdateCustomerDelegate = new BeginOperationDelegate(this.OnBeginUpdateCustomer);
+            }
+            if ((this.onEndUpdateCustomerDelegate == null)) {
+                this.onEndUpdateCustomerDelegate = new EndOperationDelegate(this.OnEndUpdateCustomer);
+            }
+            if ((this.onUpdateCustomerCompletedDelegate == null)) {
+                this.onUpdateCustomerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateCustomerCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateCustomerDelegate, new object[] {
+                        cu,
+                        token}, this.onEndUpdateCustomerDelegate, this.onUpdateCustomerCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetFullCustomer(int id, int orgID, string token) {
             return base.Channel.GetFullCustomer(id, orgID, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetFullCustomerAsync(int id, int orgID, string token) {
-            return base.Channel.GetFullCustomerAsync(id, orgID, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetFullCustomer(int id, int orgID, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetFullCustomer(id, orgID, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetFullCustomer(System.IAsyncResult result) {
+            return base.Channel.EndGetFullCustomer(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetFullCustomer(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            int orgID = ((int)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginGetFullCustomer(id, orgID, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetFullCustomer(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetFullCustomer(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetFullCustomerCompleted(object state) {
+            if ((this.GetFullCustomerCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetFullCustomerCompleted(this, new GetFullCustomerCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetFullCustomerAsync(int id, int orgID, string token) {
+            this.GetFullCustomerAsync(id, orgID, token, null);
+        }
+        
+        public void GetFullCustomerAsync(int id, int orgID, string token, object userState) {
+            if ((this.onBeginGetFullCustomerDelegate == null)) {
+                this.onBeginGetFullCustomerDelegate = new BeginOperationDelegate(this.OnBeginGetFullCustomer);
+            }
+            if ((this.onEndGetFullCustomerDelegate == null)) {
+                this.onEndGetFullCustomerDelegate = new EndOperationDelegate(this.OnEndGetFullCustomer);
+            }
+            if ((this.onGetFullCustomerCompletedDelegate == null)) {
+                this.onGetFullCustomerCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetFullCustomerCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetFullCustomerDelegate, new object[] {
+                        id,
+                        orgID,
+                        token}, this.onEndGetFullCustomerDelegate, this.onGetFullCustomerCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersByOrgId(string token) {
             return base.Channel.GetCustomersByOrgId(token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersByOrgIdAsync(string token) {
-            return base.Channel.GetCustomersByOrgIdAsync(token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomersByOrgId(string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomersByOrgId(token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersByOrgId(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomersByOrgId(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomersByOrgId(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string token = ((string)(inValues[0]));
+            return this.BeginGetCustomersByOrgId(token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomersByOrgId(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS retVal = this.EndGetCustomersByOrgId(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomersByOrgIdCompleted(object state) {
+            if ((this.GetCustomersByOrgIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomersByOrgIdCompleted(this, new GetCustomersByOrgIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomersByOrgIdAsync(string token) {
+            this.GetCustomersByOrgIdAsync(token, null);
+        }
+        
+        public void GetCustomersByOrgIdAsync(string token, object userState) {
+            if ((this.onBeginGetCustomersByOrgIdDelegate == null)) {
+                this.onBeginGetCustomersByOrgIdDelegate = new BeginOperationDelegate(this.OnBeginGetCustomersByOrgId);
+            }
+            if ((this.onEndGetCustomersByOrgIdDelegate == null)) {
+                this.onEndGetCustomersByOrgIdDelegate = new EndOperationDelegate(this.OnEndGetCustomersByOrgId);
+            }
+            if ((this.onGetCustomersByOrgIdCompletedDelegate == null)) {
+                this.onGetCustomersByOrgIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomersByOrgIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomersByOrgIdDelegate, new object[] {
+                        token}, this.onEndGetCustomersByOrgIdDelegate, this.onGetCustomersByOrgIdCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersByOrgIdREST(string email, string password) {
             return base.Channel.GetCustomersByOrgIdREST(email, password);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersByOrgIdRESTAsync(string email, string password) {
-            return base.Channel.GetCustomersByOrgIdRESTAsync(email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomersByOrgIdREST(string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomersByOrgIdREST(email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersByOrgIdREST(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomersByOrgIdREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomersByOrgIdREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string email = ((string)(inValues[0]));
+            string password = ((string)(inValues[1]));
+            return this.BeginGetCustomersByOrgIdREST(email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomersByOrgIdREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS retVal = this.EndGetCustomersByOrgIdREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomersByOrgIdRESTCompleted(object state) {
+            if ((this.GetCustomersByOrgIdRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomersByOrgIdRESTCompleted(this, new GetCustomersByOrgIdRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomersByOrgIdRESTAsync(string email, string password) {
+            this.GetCustomersByOrgIdRESTAsync(email, password, null);
+        }
+        
+        public void GetCustomersByOrgIdRESTAsync(string email, string password, object userState) {
+            if ((this.onBeginGetCustomersByOrgIdRESTDelegate == null)) {
+                this.onBeginGetCustomersByOrgIdRESTDelegate = new BeginOperationDelegate(this.OnBeginGetCustomersByOrgIdREST);
+            }
+            if ((this.onEndGetCustomersByOrgIdRESTDelegate == null)) {
+                this.onEndGetCustomersByOrgIdRESTDelegate = new EndOperationDelegate(this.OnEndGetCustomersByOrgIdREST);
+            }
+            if ((this.onGetCustomersByOrgIdRESTCompletedDelegate == null)) {
+                this.onGetCustomersByOrgIdRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomersByOrgIdRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomersByOrgIdRESTDelegate, new object[] {
+                        email,
+                        password}, this.onEndGetCustomersByOrgIdRESTDelegate, this.onGetCustomersByOrgIdRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomers(TMS.ServiceReference1.Customer cust, string token) {
             return base.Channel.GetCustomers(cust, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersAsync(TMS.ServiceReference1.Customer cust, string token) {
-            return base.Channel.GetCustomersAsync(cust, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomers(TMS.ServiceReference1.Customer cust, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomers(cust, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomers(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomers(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomers(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Customer cust = ((TMS.ServiceReference1.Customer)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomers(cust, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomers(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS retVal = this.EndGetCustomers(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomersCompleted(object state) {
+            if ((this.GetCustomersCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomersCompleted(this, new GetCustomersCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomersAsync(TMS.ServiceReference1.Customer cust, string token) {
+            this.GetCustomersAsync(cust, token, null);
+        }
+        
+        public void GetCustomersAsync(TMS.ServiceReference1.Customer cust, string token, object userState) {
+            if ((this.onBeginGetCustomersDelegate == null)) {
+                this.onBeginGetCustomersDelegate = new BeginOperationDelegate(this.OnBeginGetCustomers);
+            }
+            if ((this.onEndGetCustomersDelegate == null)) {
+                this.onEndGetCustomersDelegate = new EndOperationDelegate(this.OnEndGetCustomers);
+            }
+            if ((this.onGetCustomersCompletedDelegate == null)) {
+                this.onGetCustomersCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomersCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomersDelegate, new object[] {
+                        cust,
+                        token}, this.onEndGetCustomersDelegate, this.onGetCustomersCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS GetCustomersREST(TMS.ServiceReference1.Customer cust, string email, string password) {
             return base.Channel.GetCustomersREST(cust, email, password);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS> GetCustomersRESTAsync(TMS.ServiceReference1.Customer cust, string email, string password) {
-            return base.Channel.GetCustomersRESTAsync(cust, email, password);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomersREST(TMS.ServiceReference1.Customer cust, string email, string password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomersREST(cust, email, password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS EndGetCustomersREST(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomersREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomersREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Customer cust = ((TMS.ServiceReference1.Customer)(inValues[0]));
+            string email = ((string)(inValues[1]));
+            string password = ((string)(inValues[2]));
+            return this.BeginGetCustomersREST(cust, email, password, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomersREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCustomerJHiVxprS retVal = this.EndGetCustomersREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomersRESTCompleted(object state) {
+            if ((this.GetCustomersRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomersRESTCompleted(this, new GetCustomersRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomersRESTAsync(TMS.ServiceReference1.Customer cust, string email, string password) {
+            this.GetCustomersRESTAsync(cust, email, password, null);
+        }
+        
+        public void GetCustomersRESTAsync(TMS.ServiceReference1.Customer cust, string email, string password, object userState) {
+            if ((this.onBeginGetCustomersRESTDelegate == null)) {
+                this.onBeginGetCustomersRESTDelegate = new BeginOperationDelegate(this.OnBeginGetCustomersREST);
+            }
+            if ((this.onEndGetCustomersRESTDelegate == null)) {
+                this.onEndGetCustomersRESTDelegate = new EndOperationDelegate(this.OnEndGetCustomersREST);
+            }
+            if ((this.onGetCustomersRESTCompletedDelegate == null)) {
+                this.onGetCustomersRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomersRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomersRESTDelegate, new object[] {
+                        cust,
+                        email,
+                        password}, this.onEndGetCustomersRESTDelegate, this.onGetCustomersRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetCustomerByName(string name, string token) {
             return base.Channel.GetCustomerByName(name, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByNameAsync(string name, string token) {
-            return base.Channel.GetCustomerByNameAsync(name, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerByName(string name, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerByName(name, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetCustomerByName(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerByName(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerByName(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name = ((string)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerByName(name, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerByName(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetCustomerByName(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerByNameCompleted(object state) {
+            if ((this.GetCustomerByNameCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerByNameCompleted(this, new GetCustomerByNameCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerByNameAsync(string name, string token) {
+            this.GetCustomerByNameAsync(name, token, null);
+        }
+        
+        public void GetCustomerByNameAsync(string name, string token, object userState) {
+            if ((this.onBeginGetCustomerByNameDelegate == null)) {
+                this.onBeginGetCustomerByNameDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerByName);
+            }
+            if ((this.onEndGetCustomerByNameDelegate == null)) {
+                this.onEndGetCustomerByNameDelegate = new EndOperationDelegate(this.OnEndGetCustomerByName);
+            }
+            if ((this.onGetCustomerByNameCompletedDelegate == null)) {
+                this.onGetCustomerByNameCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerByNameCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerByNameDelegate, new object[] {
+                        name,
+                        token}, this.onEndGetCustomerByNameDelegate, this.onGetCustomerByNameCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetCustomerByClientCode(int clientCode, string token) {
             return base.Channel.GetCustomerByClientCode(clientCode, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByClientCodeAsync(int clientCode, string token) {
-            return base.Channel.GetCustomerByClientCodeAsync(clientCode, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerByClientCode(int clientCode, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerByClientCode(clientCode, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetCustomerByClientCode(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerByClientCode(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerByClientCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int clientCode = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerByClientCode(clientCode, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerByClientCode(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetCustomerByClientCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerByClientCodeCompleted(object state) {
+            if ((this.GetCustomerByClientCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerByClientCodeCompleted(this, new GetCustomerByClientCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerByClientCodeAsync(int clientCode, string token) {
+            this.GetCustomerByClientCodeAsync(clientCode, token, null);
+        }
+        
+        public void GetCustomerByClientCodeAsync(int clientCode, string token, object userState) {
+            if ((this.onBeginGetCustomerByClientCodeDelegate == null)) {
+                this.onBeginGetCustomerByClientCodeDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerByClientCode);
+            }
+            if ((this.onEndGetCustomerByClientCodeDelegate == null)) {
+                this.onEndGetCustomerByClientCodeDelegate = new EndOperationDelegate(this.OnEndGetCustomerByClientCode);
+            }
+            if ((this.onGetCustomerByClientCodeCompletedDelegate == null)) {
+                this.onGetCustomerByClientCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerByClientCodeCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerByClientCodeDelegate, new object[] {
+                        clientCode,
+                        token}, this.onEndGetCustomerByClientCodeDelegate, this.onGetCustomerByClientCodeCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetCustomerByGuid(string guid, string token) {
             return base.Channel.GetCustomerByGuid(guid, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByGuidAsync(string guid, string token) {
-            return base.Channel.GetCustomerByGuidAsync(guid, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerByGuid(string guid, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerByGuid(guid, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetCustomerByGuid(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerByGuid(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerByGuid(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string guid = ((string)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerByGuid(guid, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerByGuid(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetCustomerByGuid(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerByGuidCompleted(object state) {
+            if ((this.GetCustomerByGuidCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerByGuidCompleted(this, new GetCustomerByGuidCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerByGuidAsync(string guid, string token) {
+            this.GetCustomerByGuidAsync(guid, token, null);
+        }
+        
+        public void GetCustomerByGuidAsync(string guid, string token, object userState) {
+            if ((this.onBeginGetCustomerByGuidDelegate == null)) {
+                this.onBeginGetCustomerByGuidDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerByGuid);
+            }
+            if ((this.onEndGetCustomerByGuidDelegate == null)) {
+                this.onEndGetCustomerByGuidDelegate = new EndOperationDelegate(this.OnEndGetCustomerByGuid);
+            }
+            if ((this.onGetCustomerByGuidCompletedDelegate == null)) {
+                this.onGetCustomerByGuidCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerByGuidCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerByGuidDelegate, new object[] {
+                        guid,
+                        token}, this.onEndGetCustomerByGuidDelegate, this.onGetCustomerByGuidCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetCustomerByGuidInnerSearch(string guid, string token) {
             return base.Channel.GetCustomerByGuidInnerSearch(guid, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByGuidInnerSearchAsync(string guid, string token) {
-            return base.Channel.GetCustomerByGuidInnerSearchAsync(guid, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerByGuidInnerSearch(string guid, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerByGuidInnerSearch(guid, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetCustomerByGuidInnerSearch(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerByGuidInnerSearch(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerByGuidInnerSearch(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string guid = ((string)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerByGuidInnerSearch(guid, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerByGuidInnerSearch(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetCustomerByGuidInnerSearch(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerByGuidInnerSearchCompleted(object state) {
+            if ((this.GetCustomerByGuidInnerSearchCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerByGuidInnerSearchCompleted(this, new GetCustomerByGuidInnerSearchCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerByGuidInnerSearchAsync(string guid, string token) {
+            this.GetCustomerByGuidInnerSearchAsync(guid, token, null);
+        }
+        
+        public void GetCustomerByGuidInnerSearchAsync(string guid, string token, object userState) {
+            if ((this.onBeginGetCustomerByGuidInnerSearchDelegate == null)) {
+                this.onBeginGetCustomerByGuidInnerSearchDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerByGuidInnerSearch);
+            }
+            if ((this.onEndGetCustomerByGuidInnerSearchDelegate == null)) {
+                this.onEndGetCustomerByGuidInnerSearchDelegate = new EndOperationDelegate(this.OnEndGetCustomerByGuidInnerSearch);
+            }
+            if ((this.onGetCustomerByGuidInnerSearchCompletedDelegate == null)) {
+                this.onGetCustomerByGuidInnerSearchCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerByGuidInnerSearchCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerByGuidInnerSearchDelegate, new object[] {
+                        guid,
+                        token}, this.onEndGetCustomerByGuidInnerSearchDelegate, this.onGetCustomerByGuidInnerSearchCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetByClientCode(int clientCode, string token) {
             return base.Channel.GetByClientCode(clientCode, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetByClientCodeAsync(int clientCode, string token) {
-            return base.Channel.GetByClientCodeAsync(clientCode, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetByClientCode(int clientCode, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetByClientCode(clientCode, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetByClientCode(System.IAsyncResult result) {
+            return base.Channel.EndGetByClientCode(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetByClientCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int clientCode = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetByClientCode(clientCode, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetByClientCode(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetByClientCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetByClientCodeCompleted(object state) {
+            if ((this.GetByClientCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetByClientCodeCompleted(this, new GetByClientCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetByClientCodeAsync(int clientCode, string token) {
+            this.GetByClientCodeAsync(clientCode, token, null);
+        }
+        
+        public void GetByClientCodeAsync(int clientCode, string token, object userState) {
+            if ((this.onBeginGetByClientCodeDelegate == null)) {
+                this.onBeginGetByClientCodeDelegate = new BeginOperationDelegate(this.OnBeginGetByClientCode);
+            }
+            if ((this.onEndGetByClientCodeDelegate == null)) {
+                this.onEndGetByClientCodeDelegate = new EndOperationDelegate(this.OnEndGetByClientCode);
+            }
+            if ((this.onGetByClientCodeCompletedDelegate == null)) {
+                this.onGetByClientCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetByClientCodeCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetByClientCodeDelegate, new object[] {
+                        clientCode,
+                        token}, this.onEndGetByClientCodeDelegate, this.onGetByClientCodeCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.Customer GetCustomerByExternalNumber(long number, string token) {
             return base.Channel.GetCustomerByExternalNumber(number, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.Customer> GetCustomerByExternalNumberAsync(long number, string token) {
-            return base.Channel.GetCustomerByExternalNumberAsync(number, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCustomerByExternalNumber(long number, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCustomerByExternalNumber(number, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.Customer EndGetCustomerByExternalNumber(System.IAsyncResult result) {
+            return base.Channel.EndGetCustomerByExternalNumber(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCustomerByExternalNumber(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            long number = ((long)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCustomerByExternalNumber(number, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCustomerByExternalNumber(System.IAsyncResult result) {
+            TMS.ServiceReference1.Customer retVal = this.EndGetCustomerByExternalNumber(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCustomerByExternalNumberCompleted(object state) {
+            if ((this.GetCustomerByExternalNumberCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCustomerByExternalNumberCompleted(this, new GetCustomerByExternalNumberCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCustomerByExternalNumberAsync(long number, string token) {
+            this.GetCustomerByExternalNumberAsync(number, token, null);
+        }
+        
+        public void GetCustomerByExternalNumberAsync(long number, string token, object userState) {
+            if ((this.onBeginGetCustomerByExternalNumberDelegate == null)) {
+                this.onBeginGetCustomerByExternalNumberDelegate = new BeginOperationDelegate(this.OnBeginGetCustomerByExternalNumber);
+            }
+            if ((this.onEndGetCustomerByExternalNumberDelegate == null)) {
+                this.onEndGetCustomerByExternalNumberDelegate = new EndOperationDelegate(this.OnEndGetCustomerByExternalNumber);
+            }
+            if ((this.onGetCustomerByExternalNumberCompletedDelegate == null)) {
+                this.onGetCustomerByExternalNumberCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCustomerByExternalNumberCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCustomerByExternalNumberDelegate, new object[] {
+                        number,
+                        token}, this.onEndGetCustomerByExternalNumberDelegate, this.onGetCustomerByExternalNumberCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.AssociatedEmail[] GetAssociatedEmailsByClientOnly(System.Nullable<int> clientid, string token) {
             return base.Channel.GetAssociatedEmailsByClientOnly(clientid, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.AssociatedEmail[]> GetAssociatedEmailsByClientOnlyAsync(System.Nullable<int> clientid, string token) {
-            return base.Channel.GetAssociatedEmailsByClientOnlyAsync(clientid, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetAssociatedEmailsByClientOnly(System.Nullable<int> clientid, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetAssociatedEmailsByClientOnly(clientid, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.AssociatedEmail[] EndGetAssociatedEmailsByClientOnly(System.IAsyncResult result) {
+            return base.Channel.EndGetAssociatedEmailsByClientOnly(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetAssociatedEmailsByClientOnly(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            System.Nullable<int> clientid = ((System.Nullable<int>)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetAssociatedEmailsByClientOnly(clientid, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetAssociatedEmailsByClientOnly(System.IAsyncResult result) {
+            TMS.ServiceReference1.AssociatedEmail[] retVal = this.EndGetAssociatedEmailsByClientOnly(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetAssociatedEmailsByClientOnlyCompleted(object state) {
+            if ((this.GetAssociatedEmailsByClientOnlyCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetAssociatedEmailsByClientOnlyCompleted(this, new GetAssociatedEmailsByClientOnlyCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetAssociatedEmailsByClientOnlyAsync(System.Nullable<int> clientid, string token) {
+            this.GetAssociatedEmailsByClientOnlyAsync(clientid, token, null);
+        }
+        
+        public void GetAssociatedEmailsByClientOnlyAsync(System.Nullable<int> clientid, string token, object userState) {
+            if ((this.onBeginGetAssociatedEmailsByClientOnlyDelegate == null)) {
+                this.onBeginGetAssociatedEmailsByClientOnlyDelegate = new BeginOperationDelegate(this.OnBeginGetAssociatedEmailsByClientOnly);
+            }
+            if ((this.onEndGetAssociatedEmailsByClientOnlyDelegate == null)) {
+                this.onEndGetAssociatedEmailsByClientOnlyDelegate = new EndOperationDelegate(this.OnEndGetAssociatedEmailsByClientOnly);
+            }
+            if ((this.onGetAssociatedEmailsByClientOnlyCompletedDelegate == null)) {
+                this.onGetAssociatedEmailsByClientOnlyCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetAssociatedEmailsByClientOnlyCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetAssociatedEmailsByClientOnlyDelegate, new object[] {
+                        clientid,
+                        token}, this.onEndGetAssociatedEmailsByClientOnlyDelegate, this.onGetAssociatedEmailsByClientOnlyCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CatalogItem GetCatalogItemByCode(string code, string token) {
             return base.Channel.GetCatalogItemByCode(code, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CatalogItem> GetCatalogItemByCodeAsync(string code, string token) {
-            return base.Channel.GetCatalogItemByCodeAsync(code, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCatalogItemByCode(string code, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCatalogItemByCode(code, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CatalogItem EndGetCatalogItemByCode(System.IAsyncResult result) {
+            return base.Channel.EndGetCatalogItemByCode(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCatalogItemByCode(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string code = ((string)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCatalogItemByCode(code, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCatalogItemByCode(System.IAsyncResult result) {
+            TMS.ServiceReference1.CatalogItem retVal = this.EndGetCatalogItemByCode(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCatalogItemByCodeCompleted(object state) {
+            if ((this.GetCatalogItemByCodeCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCatalogItemByCodeCompleted(this, new GetCatalogItemByCodeCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCatalogItemByCodeAsync(string code, string token) {
+            this.GetCatalogItemByCodeAsync(code, token, null);
+        }
+        
+        public void GetCatalogItemByCodeAsync(string code, string token, object userState) {
+            if ((this.onBeginGetCatalogItemByCodeDelegate == null)) {
+                this.onBeginGetCatalogItemByCodeDelegate = new BeginOperationDelegate(this.OnBeginGetCatalogItemByCode);
+            }
+            if ((this.onEndGetCatalogItemByCodeDelegate == null)) {
+                this.onEndGetCatalogItemByCodeDelegate = new EndOperationDelegate(this.OnEndGetCatalogItemByCode);
+            }
+            if ((this.onGetCatalogItemByCodeCompletedDelegate == null)) {
+                this.onGetCatalogItemByCodeCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCatalogItemByCodeCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCatalogItemByCodeDelegate, new object[] {
+                        code,
+                        token}, this.onEndGetCatalogItemByCodeDelegate, this.onGetCatalogItemByCodeCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS GetCatalogItems(bool GetAll, string token) {
             return base.Channel.GetCatalogItems(GetAll, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS> GetCatalogItemsAsync(bool GetAll, string token) {
-            return base.Channel.GetCatalogItemsAsync(GetAll, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCatalogItems(bool GetAll, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCatalogItems(GetAll, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS EndGetCatalogItems(System.IAsyncResult result) {
+            return base.Channel.EndGetCatalogItems(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCatalogItems(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            bool GetAll = ((bool)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetCatalogItems(GetAll, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCatalogItems(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS retVal = this.EndGetCatalogItems(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCatalogItemsCompleted(object state) {
+            if ((this.GetCatalogItemsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCatalogItemsCompleted(this, new GetCatalogItemsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCatalogItemsAsync(bool GetAll, string token) {
+            this.GetCatalogItemsAsync(GetAll, token, null);
+        }
+        
+        public void GetCatalogItemsAsync(bool GetAll, string token, object userState) {
+            if ((this.onBeginGetCatalogItemsDelegate == null)) {
+                this.onBeginGetCatalogItemsDelegate = new BeginOperationDelegate(this.OnBeginGetCatalogItems);
+            }
+            if ((this.onEndGetCatalogItemsDelegate == null)) {
+                this.onEndGetCatalogItemsDelegate = new EndOperationDelegate(this.OnEndGetCatalogItems);
+            }
+            if ((this.onGetCatalogItemsCompletedDelegate == null)) {
+                this.onGetCatalogItemsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCatalogItemsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCatalogItemsDelegate, new object[] {
+                        GetAll,
+                        token}, this.onEndGetCatalogItemsDelegate, this.onGetCatalogItemsCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.ClearingAccount GetUserClearingAccount(int orgId, string token) {
             return base.Channel.GetUserClearingAccount(orgId, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.ClearingAccount> GetUserClearingAccountAsync(int orgId, string token) {
-            return base.Channel.GetUserClearingAccountAsync(orgId, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetUserClearingAccount(int orgId, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetUserClearingAccount(orgId, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ClearingAccount EndGetUserClearingAccount(System.IAsyncResult result) {
+            return base.Channel.EndGetUserClearingAccount(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetUserClearingAccount(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int orgId = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetUserClearingAccount(orgId, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetUserClearingAccount(System.IAsyncResult result) {
+            TMS.ServiceReference1.ClearingAccount retVal = this.EndGetUserClearingAccount(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetUserClearingAccountCompleted(object state) {
+            if ((this.GetUserClearingAccountCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetUserClearingAccountCompleted(this, new GetUserClearingAccountCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetUserClearingAccountAsync(int orgId, string token) {
+            this.GetUserClearingAccountAsync(orgId, token, null);
+        }
+        
+        public void GetUserClearingAccountAsync(int orgId, string token, object userState) {
+            if ((this.onBeginGetUserClearingAccountDelegate == null)) {
+                this.onBeginGetUserClearingAccountDelegate = new BeginOperationDelegate(this.OnBeginGetUserClearingAccount);
+            }
+            if ((this.onEndGetUserClearingAccountDelegate == null)) {
+                this.onEndGetUserClearingAccountDelegate = new EndOperationDelegate(this.OnEndGetUserClearingAccount);
+            }
+            if ((this.onGetUserClearingAccountCompletedDelegate == null)) {
+                this.onGetUserClearingAccountCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetUserClearingAccountCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetUserClearingAccountDelegate, new object[] {
+                        orgId,
+                        token}, this.onEndGetUserClearingAccountDelegate, this.onGetUserClearingAccountCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.CommonObject SendDocumentByMail(TMS.ServiceReference1.Document doc, string token) {
             return base.Channel.SendDocumentByMail(doc, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.CommonObject> SendDocumentByMailAsync(TMS.ServiceReference1.Document doc, string token) {
-            return base.Channel.SendDocumentByMailAsync(doc, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginSendDocumentByMail(TMS.ServiceReference1.Document doc, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSendDocumentByMail(doc, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonObject EndSendDocumentByMail(System.IAsyncResult result) {
+            return base.Channel.EndSendDocumentByMail(result);
+        }
+        
+        private System.IAsyncResult OnBeginSendDocumentByMail(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.Document doc = ((TMS.ServiceReference1.Document)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginSendDocumentByMail(doc, token, callback, asyncState);
+        }
+        
+        private object[] OnEndSendDocumentByMail(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonObject retVal = this.EndSendDocumentByMail(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSendDocumentByMailCompleted(object state) {
+            if ((this.SendDocumentByMailCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SendDocumentByMailCompleted(this, new SendDocumentByMailCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SendDocumentByMailAsync(TMS.ServiceReference1.Document doc, string token) {
+            this.SendDocumentByMailAsync(doc, token, null);
+        }
+        
+        public void SendDocumentByMailAsync(TMS.ServiceReference1.Document doc, string token, object userState) {
+            if ((this.onBeginSendDocumentByMailDelegate == null)) {
+                this.onBeginSendDocumentByMailDelegate = new BeginOperationDelegate(this.OnBeginSendDocumentByMail);
+            }
+            if ((this.onEndSendDocumentByMailDelegate == null)) {
+                this.onEndSendDocumentByMailDelegate = new EndOperationDelegate(this.OnEndSendDocumentByMail);
+            }
+            if ((this.onSendDocumentByMailCompletedDelegate == null)) {
+                this.onSendDocumentByMailCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSendDocumentByMailCompleted);
+            }
+            base.InvokeAsync(this.onBeginSendDocumentByMailDelegate, new object[] {
+                        doc,
+                        token}, this.onEndSendDocumentByMailDelegate, this.onSendDocumentByMailCompletedDelegate, userState);
         }
         
         public bool SendStandingOrderSummary(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline) {
             return base.Channel.SendStandingOrderSummary(csoLogs, email, headline);
         }
         
-        public System.Threading.Tasks.Task<bool> SendStandingOrderSummaryAsync(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline) {
-            return base.Channel.SendStandingOrderSummaryAsync(csoLogs, email, headline);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginSendStandingOrderSummary(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginSendStandingOrderSummary(csoLogs, email, headline, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndSendStandingOrderSummary(System.IAsyncResult result) {
+            return base.Channel.EndSendStandingOrderSummary(result);
+        }
+        
+        private System.IAsyncResult OnBeginSendStandingOrderSummary(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs = ((TMS.ServiceReference1.ClientsStandingOrderLog[])(inValues[0]));
+            string email = ((string)(inValues[1]));
+            string headline = ((string)(inValues[2]));
+            return this.BeginSendStandingOrderSummary(csoLogs, email, headline, callback, asyncState);
+        }
+        
+        private object[] OnEndSendStandingOrderSummary(System.IAsyncResult result) {
+            bool retVal = this.EndSendStandingOrderSummary(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnSendStandingOrderSummaryCompleted(object state) {
+            if ((this.SendStandingOrderSummaryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.SendStandingOrderSummaryCompleted(this, new SendStandingOrderSummaryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void SendStandingOrderSummaryAsync(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline) {
+            this.SendStandingOrderSummaryAsync(csoLogs, email, headline, null);
+        }
+        
+        public void SendStandingOrderSummaryAsync(TMS.ServiceReference1.ClientsStandingOrderLog[] csoLogs, string email, string headline, object userState) {
+            if ((this.onBeginSendStandingOrderSummaryDelegate == null)) {
+                this.onBeginSendStandingOrderSummaryDelegate = new BeginOperationDelegate(this.OnBeginSendStandingOrderSummary);
+            }
+            if ((this.onEndSendStandingOrderSummaryDelegate == null)) {
+                this.onEndSendStandingOrderSummaryDelegate = new EndOperationDelegate(this.OnEndSendStandingOrderSummary);
+            }
+            if ((this.onSendStandingOrderSummaryCompletedDelegate == null)) {
+                this.onSendStandingOrderSummaryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnSendStandingOrderSummaryCompleted);
+            }
+            base.InvokeAsync(this.onBeginSendStandingOrderSummaryDelegate, new object[] {
+                        csoLogs,
+                        email,
+                        headline}, this.onEndSendStandingOrderSummaryDelegate, this.onSendStandingOrderSummaryCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.DocumentCsv ProcessCard(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token) {
             return base.Channel.ProcessCard(payment, creatInvoiceReceipt, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.DocumentCsv> ProcessCardAsync(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token) {
-            return base.Channel.ProcessCardAsync(payment, creatInvoiceReceipt, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessCard(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessCard(payment, creatInvoiceReceipt, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.DocumentCsv EndProcessCard(System.IAsyncResult result) {
+            return base.Channel.EndProcessCard(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessCard(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.DocumentCsv payment = ((TMS.ServiceReference1.DocumentCsv)(inValues[0]));
+            bool creatInvoiceReceipt = ((bool)(inValues[1]));
+            string token = ((string)(inValues[2]));
+            return this.BeginProcessCard(payment, creatInvoiceReceipt, token, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessCard(System.IAsyncResult result) {
+            TMS.ServiceReference1.DocumentCsv retVal = this.EndProcessCard(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessCardCompleted(object state) {
+            if ((this.ProcessCardCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessCardCompleted(this, new ProcessCardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessCardAsync(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token) {
+            this.ProcessCardAsync(payment, creatInvoiceReceipt, token, null);
+        }
+        
+        public void ProcessCardAsync(TMS.ServiceReference1.DocumentCsv payment, bool creatInvoiceReceipt, string token, object userState) {
+            if ((this.onBeginProcessCardDelegate == null)) {
+                this.onBeginProcessCardDelegate = new BeginOperationDelegate(this.OnBeginProcessCard);
+            }
+            if ((this.onEndProcessCardDelegate == null)) {
+                this.onEndProcessCardDelegate = new EndOperationDelegate(this.OnEndProcessCard);
+            }
+            if ((this.onProcessCardCompletedDelegate == null)) {
+                this.onProcessCardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessCardCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessCardDelegate, new object[] {
+                        payment,
+                        creatInvoiceReceipt,
+                        token}, this.onEndProcessCardDelegate, this.onProcessCardCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.DocumentCsv ProcessClearingDocOnly(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc) {
             return base.Channel.ProcessClearingDocOnly(payment, isNotifyOnly, isCreateDoc);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.DocumentCsv> ProcessClearingDocOnlyAsync(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc) {
-            return base.Channel.ProcessClearingDocOnlyAsync(payment, isNotifyOnly, isCreateDoc);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessClearingDocOnly(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessClearingDocOnly(payment, isNotifyOnly, isCreateDoc, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.DocumentCsv EndProcessClearingDocOnly(System.IAsyncResult result) {
+            return base.Channel.EndProcessClearingDocOnly(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessClearingDocOnly(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.DocumentCsv payment = ((TMS.ServiceReference1.DocumentCsv)(inValues[0]));
+            bool isNotifyOnly = ((bool)(inValues[1]));
+            bool isCreateDoc = ((bool)(inValues[2]));
+            return this.BeginProcessClearingDocOnly(payment, isNotifyOnly, isCreateDoc, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessClearingDocOnly(System.IAsyncResult result) {
+            TMS.ServiceReference1.DocumentCsv retVal = this.EndProcessClearingDocOnly(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessClearingDocOnlyCompleted(object state) {
+            if ((this.ProcessClearingDocOnlyCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessClearingDocOnlyCompleted(this, new ProcessClearingDocOnlyCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessClearingDocOnlyAsync(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc) {
+            this.ProcessClearingDocOnlyAsync(payment, isNotifyOnly, isCreateDoc, null);
+        }
+        
+        public void ProcessClearingDocOnlyAsync(TMS.ServiceReference1.DocumentCsv payment, bool isNotifyOnly, bool isCreateDoc, object userState) {
+            if ((this.onBeginProcessClearingDocOnlyDelegate == null)) {
+                this.onBeginProcessClearingDocOnlyDelegate = new BeginOperationDelegate(this.OnBeginProcessClearingDocOnly);
+            }
+            if ((this.onEndProcessClearingDocOnlyDelegate == null)) {
+                this.onEndProcessClearingDocOnlyDelegate = new EndOperationDelegate(this.OnEndProcessClearingDocOnly);
+            }
+            if ((this.onProcessClearingDocOnlyCompletedDelegate == null)) {
+                this.onProcessClearingDocOnlyCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessClearingDocOnlyCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessClearingDocOnlyDelegate, new object[] {
+                        payment,
+                        isNotifyOnly,
+                        isCreateDoc}, this.onEndProcessClearingDocOnlyDelegate, this.onProcessClearingDocOnlyCompletedDelegate, userState);
         }
         
         public int InsertToLogFullParamsREST(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token) {
             return base.Channel.InsertToLogFullParamsREST(clientName, amount, paymentNumber, currency, creditType, creditNumber, clearingCompany, isSuccess, errorMessage, clearingConfirmationNumber, token);
         }
         
-        public System.Threading.Tasks.Task<int> InsertToLogFullParamsRESTAsync(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token) {
-            return base.Channel.InsertToLogFullParamsRESTAsync(clientName, amount, paymentNumber, currency, creditType, creditNumber, clearingCompany, isSuccess, errorMessage, clearingConfirmationNumber, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginInsertToLogFullParamsREST(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginInsertToLogFullParamsREST(clientName, amount, paymentNumber, currency, creditType, creditNumber, clearingCompany, isSuccess, errorMessage, clearingConfirmationNumber, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public int EndInsertToLogFullParamsREST(System.IAsyncResult result) {
+            return base.Channel.EndInsertToLogFullParamsREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginInsertToLogFullParamsREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string clientName = ((string)(inValues[0]));
+            double amount = ((double)(inValues[1]));
+            int paymentNumber = ((int)(inValues[2]));
+            int currency = ((int)(inValues[3]));
+            int creditType = ((int)(inValues[4]));
+            string creditNumber = ((string)(inValues[5]));
+            int clearingCompany = ((int)(inValues[6]));
+            bool isSuccess = ((bool)(inValues[7]));
+            string errorMessage = ((string)(inValues[8]));
+            string clearingConfirmationNumber = ((string)(inValues[9]));
+            string token = ((string)(inValues[10]));
+            return this.BeginInsertToLogFullParamsREST(clientName, amount, paymentNumber, currency, creditType, creditNumber, clearingCompany, isSuccess, errorMessage, clearingConfirmationNumber, token, callback, asyncState);
+        }
+        
+        private object[] OnEndInsertToLogFullParamsREST(System.IAsyncResult result) {
+            int retVal = this.EndInsertToLogFullParamsREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnInsertToLogFullParamsRESTCompleted(object state) {
+            if ((this.InsertToLogFullParamsRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.InsertToLogFullParamsRESTCompleted(this, new InsertToLogFullParamsRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void InsertToLogFullParamsRESTAsync(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token) {
+            this.InsertToLogFullParamsRESTAsync(clientName, amount, paymentNumber, currency, creditType, creditNumber, clearingCompany, isSuccess, errorMessage, clearingConfirmationNumber, token, null);
+        }
+        
+        public void InsertToLogFullParamsRESTAsync(string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, int clearingCompany, bool isSuccess, string errorMessage, string clearingConfirmationNumber, string token, object userState) {
+            if ((this.onBeginInsertToLogFullParamsRESTDelegate == null)) {
+                this.onBeginInsertToLogFullParamsRESTDelegate = new BeginOperationDelegate(this.OnBeginInsertToLogFullParamsREST);
+            }
+            if ((this.onEndInsertToLogFullParamsRESTDelegate == null)) {
+                this.onEndInsertToLogFullParamsRESTDelegate = new EndOperationDelegate(this.OnEndInsertToLogFullParamsREST);
+            }
+            if ((this.onInsertToLogFullParamsRESTCompletedDelegate == null)) {
+                this.onInsertToLogFullParamsRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnInsertToLogFullParamsRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginInsertToLogFullParamsRESTDelegate, new object[] {
+                        clientName,
+                        amount,
+                        paymentNumber,
+                        currency,
+                        creditType,
+                        creditNumber,
+                        clearingCompany,
+                        isSuccess,
+                        errorMessage,
+                        clearingConfirmationNumber,
+                        token}, this.onEndInsertToLogFullParamsRESTDelegate, this.onInsertToLogFullParamsRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.ApiClearingRequest ProcessApiRequest(TMS.ServiceReference1.ApiClearingRequest request) {
             return base.Channel.ProcessApiRequest(request);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.ApiClearingRequest> ProcessApiRequestAsync(TMS.ServiceReference1.ApiClearingRequest request) {
-            return base.Channel.ProcessApiRequestAsync(request);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessApiRequest(TMS.ServiceReference1.ApiClearingRequest request, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessApiRequest(request, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ApiClearingRequest EndProcessApiRequest(System.IAsyncResult result) {
+            return base.Channel.EndProcessApiRequest(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessApiRequest(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.ApiClearingRequest request = ((TMS.ServiceReference1.ApiClearingRequest)(inValues[0]));
+            return this.BeginProcessApiRequest(request, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessApiRequest(System.IAsyncResult result) {
+            TMS.ServiceReference1.ApiClearingRequest retVal = this.EndProcessApiRequest(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessApiRequestCompleted(object state) {
+            if ((this.ProcessApiRequestCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessApiRequestCompleted(this, new ProcessApiRequestCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessApiRequestAsync(TMS.ServiceReference1.ApiClearingRequest request) {
+            this.ProcessApiRequestAsync(request, null);
+        }
+        
+        public void ProcessApiRequestAsync(TMS.ServiceReference1.ApiClearingRequest request, object userState) {
+            if ((this.onBeginProcessApiRequestDelegate == null)) {
+                this.onBeginProcessApiRequestDelegate = new BeginOperationDelegate(this.OnBeginProcessApiRequest);
+            }
+            if ((this.onEndProcessApiRequestDelegate == null)) {
+                this.onEndProcessApiRequestDelegate = new EndOperationDelegate(this.OnEndProcessApiRequest);
+            }
+            if ((this.onProcessApiRequestCompletedDelegate == null)) {
+                this.onProcessApiRequestCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessApiRequestCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessApiRequestDelegate, new object[] {
+                        request}, this.onEndProcessApiRequestDelegate, this.onProcessApiRequestCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.ApiClearingRequest ProcessApiRequestFullContentsREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode) {
             return base.Channel.ProcessApiRequestFullContentsREST(invoice4uUserEmail, invoice4uUserPassword, clientFullName, clientPhone, clientEmail, sum, description, currency, type, paymentsNum, returnUrl, callBackUrl, isQaMode);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.ApiClearingRequest> ProcessApiRequestFullContentsRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode) {
-            return base.Channel.ProcessApiRequestFullContentsRESTAsync(invoice4uUserEmail, invoice4uUserPassword, clientFullName, clientPhone, clientEmail, sum, description, currency, type, paymentsNum, returnUrl, callBackUrl, isQaMode);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessApiRequestFullContentsREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessApiRequestFullContentsREST(invoice4uUserEmail, invoice4uUserPassword, clientFullName, clientPhone, clientEmail, sum, description, currency, type, paymentsNum, returnUrl, callBackUrl, isQaMode, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ApiClearingRequest EndProcessApiRequestFullContentsREST(System.IAsyncResult result) {
+            return base.Channel.EndProcessApiRequestFullContentsREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessApiRequestFullContentsREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string invoice4uUserEmail = ((string)(inValues[0]));
+            string invoice4uUserPassword = ((string)(inValues[1]));
+            string clientFullName = ((string)(inValues[2]));
+            string clientPhone = ((string)(inValues[3]));
+            string clientEmail = ((string)(inValues[4]));
+            double sum = ((double)(inValues[5]));
+            string description = ((string)(inValues[6]));
+            string currency = ((string)(inValues[7]));
+            int type = ((int)(inValues[8]));
+            int paymentsNum = ((int)(inValues[9]));
+            string returnUrl = ((string)(inValues[10]));
+            string callBackUrl = ((string)(inValues[11]));
+            bool isQaMode = ((bool)(inValues[12]));
+            return this.BeginProcessApiRequestFullContentsREST(invoice4uUserEmail, invoice4uUserPassword, clientFullName, clientPhone, clientEmail, sum, description, currency, type, paymentsNum, returnUrl, callBackUrl, isQaMode, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessApiRequestFullContentsREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.ApiClearingRequest retVal = this.EndProcessApiRequestFullContentsREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessApiRequestFullContentsRESTCompleted(object state) {
+            if ((this.ProcessApiRequestFullContentsRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessApiRequestFullContentsRESTCompleted(this, new ProcessApiRequestFullContentsRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessApiRequestFullContentsRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode) {
+            this.ProcessApiRequestFullContentsRESTAsync(invoice4uUserEmail, invoice4uUserPassword, clientFullName, clientPhone, clientEmail, sum, description, currency, type, paymentsNum, returnUrl, callBackUrl, isQaMode, null);
+        }
+        
+        public void ProcessApiRequestFullContentsRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientFullName, string clientPhone, string clientEmail, double sum, string description, string currency, int type, int paymentsNum, string returnUrl, string callBackUrl, bool isQaMode, object userState) {
+            if ((this.onBeginProcessApiRequestFullContentsRESTDelegate == null)) {
+                this.onBeginProcessApiRequestFullContentsRESTDelegate = new BeginOperationDelegate(this.OnBeginProcessApiRequestFullContentsREST);
+            }
+            if ((this.onEndProcessApiRequestFullContentsRESTDelegate == null)) {
+                this.onEndProcessApiRequestFullContentsRESTDelegate = new EndOperationDelegate(this.OnEndProcessApiRequestFullContentsREST);
+            }
+            if ((this.onProcessApiRequestFullContentsRESTCompletedDelegate == null)) {
+                this.onProcessApiRequestFullContentsRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessApiRequestFullContentsRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessApiRequestFullContentsRESTDelegate, new object[] {
+                        invoice4uUserEmail,
+                        invoice4uUserPassword,
+                        clientFullName,
+                        clientPhone,
+                        clientEmail,
+                        sum,
+                        description,
+                        currency,
+                        type,
+                        paymentsNum,
+                        returnUrl,
+                        callBackUrl,
+                        isQaMode}, this.onEndProcessApiRequestFullContentsRESTDelegate, this.onProcessApiRequestFullContentsRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.ClearingLog ProccessApiRequestClearingLogInsertREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber) {
             return base.Channel.ProccessApiRequestClearingLogInsertREST(invoice4uUserEmail, invoice4uUserPassword, clientName, amount, paymentNumber, currency, creditType, creditNumber, isSuccess, errorMessage, clearingConfirmationNumber);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.ClearingLog> ProccessApiRequestClearingLogInsertRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber) {
-            return base.Channel.ProccessApiRequestClearingLogInsertRESTAsync(invoice4uUserEmail, invoice4uUserPassword, clientName, amount, paymentNumber, currency, creditType, creditNumber, isSuccess, errorMessage, clearingConfirmationNumber);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProccessApiRequestClearingLogInsertREST(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProccessApiRequestClearingLogInsertREST(invoice4uUserEmail, invoice4uUserPassword, clientName, amount, paymentNumber, currency, creditType, creditNumber, isSuccess, errorMessage, clearingConfirmationNumber, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ClearingLog EndProccessApiRequestClearingLogInsertREST(System.IAsyncResult result) {
+            return base.Channel.EndProccessApiRequestClearingLogInsertREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginProccessApiRequestClearingLogInsertREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string invoice4uUserEmail = ((string)(inValues[0]));
+            string invoice4uUserPassword = ((string)(inValues[1]));
+            string clientName = ((string)(inValues[2]));
+            double amount = ((double)(inValues[3]));
+            int paymentNumber = ((int)(inValues[4]));
+            int currency = ((int)(inValues[5]));
+            int creditType = ((int)(inValues[6]));
+            string creditNumber = ((string)(inValues[7]));
+            bool isSuccess = ((bool)(inValues[8]));
+            string errorMessage = ((string)(inValues[9]));
+            string clearingConfirmationNumber = ((string)(inValues[10]));
+            return this.BeginProccessApiRequestClearingLogInsertREST(invoice4uUserEmail, invoice4uUserPassword, clientName, amount, paymentNumber, currency, creditType, creditNumber, isSuccess, errorMessage, clearingConfirmationNumber, callback, asyncState);
+        }
+        
+        private object[] OnEndProccessApiRequestClearingLogInsertREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.ClearingLog retVal = this.EndProccessApiRequestClearingLogInsertREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProccessApiRequestClearingLogInsertRESTCompleted(object state) {
+            if ((this.ProccessApiRequestClearingLogInsertRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProccessApiRequestClearingLogInsertRESTCompleted(this, new ProccessApiRequestClearingLogInsertRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProccessApiRequestClearingLogInsertRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber) {
+            this.ProccessApiRequestClearingLogInsertRESTAsync(invoice4uUserEmail, invoice4uUserPassword, clientName, amount, paymentNumber, currency, creditType, creditNumber, isSuccess, errorMessage, clearingConfirmationNumber, null);
+        }
+        
+        public void ProccessApiRequestClearingLogInsertRESTAsync(string invoice4uUserEmail, string invoice4uUserPassword, string clientName, double amount, int paymentNumber, int currency, int creditType, string creditNumber, bool isSuccess, string errorMessage, string clearingConfirmationNumber, object userState) {
+            if ((this.onBeginProccessApiRequestClearingLogInsertRESTDelegate == null)) {
+                this.onBeginProccessApiRequestClearingLogInsertRESTDelegate = new BeginOperationDelegate(this.OnBeginProccessApiRequestClearingLogInsertREST);
+            }
+            if ((this.onEndProccessApiRequestClearingLogInsertRESTDelegate == null)) {
+                this.onEndProccessApiRequestClearingLogInsertRESTDelegate = new EndOperationDelegate(this.OnEndProccessApiRequestClearingLogInsertREST);
+            }
+            if ((this.onProccessApiRequestClearingLogInsertRESTCompletedDelegate == null)) {
+                this.onProccessApiRequestClearingLogInsertRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProccessApiRequestClearingLogInsertRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginProccessApiRequestClearingLogInsertRESTDelegate, new object[] {
+                        invoice4uUserEmail,
+                        invoice4uUserPassword,
+                        clientName,
+                        amount,
+                        paymentNumber,
+                        currency,
+                        creditType,
+                        creditNumber,
+                        isSuccess,
+                        errorMessage,
+                        clearingConfirmationNumber}, this.onEndProccessApiRequestClearingLogInsertRESTDelegate, this.onProccessApiRequestClearingLogInsertRESTCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.OrganizationTokenDetails TokenAddForClient(TMS.ServiceReference1.OrganizationTokenDetails otd, string token) {
             return base.Channel.TokenAddForClient(otd, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.OrganizationTokenDetails> TokenAddForClientAsync(TMS.ServiceReference1.OrganizationTokenDetails otd, string token) {
-            return base.Channel.TokenAddForClientAsync(otd, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginTokenAddForClient(TMS.ServiceReference1.OrganizationTokenDetails otd, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginTokenAddForClient(otd, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.OrganizationTokenDetails EndTokenAddForClient(System.IAsyncResult result) {
+            return base.Channel.EndTokenAddForClient(result);
+        }
+        
+        private System.IAsyncResult OnBeginTokenAddForClient(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.OrganizationTokenDetails otd = ((TMS.ServiceReference1.OrganizationTokenDetails)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginTokenAddForClient(otd, token, callback, asyncState);
+        }
+        
+        private object[] OnEndTokenAddForClient(System.IAsyncResult result) {
+            TMS.ServiceReference1.OrganizationTokenDetails retVal = this.EndTokenAddForClient(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnTokenAddForClientCompleted(object state) {
+            if ((this.TokenAddForClientCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.TokenAddForClientCompleted(this, new TokenAddForClientCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void TokenAddForClientAsync(TMS.ServiceReference1.OrganizationTokenDetails otd, string token) {
+            this.TokenAddForClientAsync(otd, token, null);
+        }
+        
+        public void TokenAddForClientAsync(TMS.ServiceReference1.OrganizationTokenDetails otd, string token, object userState) {
+            if ((this.onBeginTokenAddForClientDelegate == null)) {
+                this.onBeginTokenAddForClientDelegate = new BeginOperationDelegate(this.OnBeginTokenAddForClient);
+            }
+            if ((this.onEndTokenAddForClientDelegate == null)) {
+                this.onEndTokenAddForClientDelegate = new EndOperationDelegate(this.OnEndTokenAddForClient);
+            }
+            if ((this.onTokenAddForClientCompletedDelegate == null)) {
+                this.onTokenAddForClientCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnTokenAddForClientCompleted);
+            }
+            base.InvokeAsync(this.onBeginTokenAddForClientDelegate, new object[] {
+                        otd,
+                        token}, this.onEndTokenAddForClientDelegate, this.onTokenAddForClientCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.ClientsStandingOrder AddStandingOrder(TMS.ServiceReference1.ClientsStandingOrder cso, string token) {
             return base.Channel.AddStandingOrder(cso, token);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.ClientsStandingOrder> AddStandingOrderAsync(TMS.ServiceReference1.ClientsStandingOrder cso, string token) {
-            return base.Channel.AddStandingOrderAsync(cso, token);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddStandingOrder(TMS.ServiceReference1.ClientsStandingOrder cso, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddStandingOrder(cso, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ClientsStandingOrder EndAddStandingOrder(System.IAsyncResult result) {
+            return base.Channel.EndAddStandingOrder(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddStandingOrder(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.ClientsStandingOrder cso = ((TMS.ServiceReference1.ClientsStandingOrder)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginAddStandingOrder(cso, token, callback, asyncState);
+        }
+        
+        private object[] OnEndAddStandingOrder(System.IAsyncResult result) {
+            TMS.ServiceReference1.ClientsStandingOrder retVal = this.EndAddStandingOrder(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddStandingOrderCompleted(object state) {
+            if ((this.AddStandingOrderCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddStandingOrderCompleted(this, new AddStandingOrderCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddStandingOrderAsync(TMS.ServiceReference1.ClientsStandingOrder cso, string token) {
+            this.AddStandingOrderAsync(cso, token, null);
+        }
+        
+        public void AddStandingOrderAsync(TMS.ServiceReference1.ClientsStandingOrder cso, string token, object userState) {
+            if ((this.onBeginAddStandingOrderDelegate == null)) {
+                this.onBeginAddStandingOrderDelegate = new BeginOperationDelegate(this.OnBeginAddStandingOrder);
+            }
+            if ((this.onEndAddStandingOrderDelegate == null)) {
+                this.onEndAddStandingOrderDelegate = new EndOperationDelegate(this.OnEndAddStandingOrder);
+            }
+            if ((this.onAddStandingOrderCompletedDelegate == null)) {
+                this.onAddStandingOrderCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddStandingOrderCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddStandingOrderDelegate, new object[] {
+                        cso,
+                        token}, this.onEndAddStandingOrderDelegate, this.onAddStandingOrderCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS GetProducts(string token) {
+            return base.Channel.GetProducts(token);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetProducts(string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetProducts(token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS EndGetProducts(System.IAsyncResult result) {
+            return base.Channel.EndGetProducts(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetProducts(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string token = ((string)(inValues[0]));
+            return this.BeginGetProducts(token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetProducts(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS retVal = this.EndGetProducts(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetProductsCompleted(object state) {
+            if ((this.GetProductsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetProductsCompleted(this, new GetProductsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetProductsAsync(string token) {
+            this.GetProductsAsync(token, null);
+        }
+        
+        public void GetProductsAsync(string token, object userState) {
+            if ((this.onBeginGetProductsDelegate == null)) {
+                this.onBeginGetProductsDelegate = new BeginOperationDelegate(this.OnBeginGetProducts);
+            }
+            if ((this.onEndGetProductsDelegate == null)) {
+                this.onEndGetProductsDelegate = new EndOperationDelegate(this.OnEndGetProducts);
+            }
+            if ((this.onGetProductsCompletedDelegate == null)) {
+                this.onGetProductsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetProductsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetProductsDelegate, new object[] {
+                        token}, this.onEndGetProductsDelegate, this.onGetProductsCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.ClearingProducts GetProductById(int id, string token) {
+            return base.Channel.GetProductById(id, token);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetProductById(int id, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetProductById(id, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.ClearingProducts EndGetProductById(System.IAsyncResult result) {
+            return base.Channel.EndGetProductById(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetProductById(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetProductById(id, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetProductById(System.IAsyncResult result) {
+            TMS.ServiceReference1.ClearingProducts retVal = this.EndGetProductById(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetProductByIdCompleted(object state) {
+            if ((this.GetProductByIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetProductByIdCompleted(this, new GetProductByIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetProductByIdAsync(int id, string token) {
+            this.GetProductByIdAsync(id, token, null);
+        }
+        
+        public void GetProductByIdAsync(int id, string token, object userState) {
+            if ((this.onBeginGetProductByIdDelegate == null)) {
+                this.onBeginGetProductByIdDelegate = new BeginOperationDelegate(this.OnBeginGetProductById);
+            }
+            if ((this.onEndGetProductByIdDelegate == null)) {
+                this.onEndGetProductByIdDelegate = new EndOperationDelegate(this.OnEndGetProductById);
+            }
+            if ((this.onGetProductByIdCompletedDelegate == null)) {
+                this.onGetProductByIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetProductByIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetProductByIdDelegate, new object[] {
+                        id,
+                        token}, this.onEndGetProductByIdDelegate, this.onGetProductByIdCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS GetClearingProductOrdersByToken(string token) {
+            return base.Channel.GetClearingProductOrdersByToken(token);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetClearingProductOrdersByToken(string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetClearingProductOrdersByToken(token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS EndGetClearingProductOrdersByToken(System.IAsyncResult result) {
+            return base.Channel.EndGetClearingProductOrdersByToken(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetClearingProductOrdersByToken(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string token = ((string)(inValues[0]));
+            return this.BeginGetClearingProductOrdersByToken(token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetClearingProductOrdersByToken(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS retVal = this.EndGetClearingProductOrdersByToken(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetClearingProductOrdersByTokenCompleted(object state) {
+            if ((this.GetClearingProductOrdersByTokenCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetClearingProductOrdersByTokenCompleted(this, new GetClearingProductOrdersByTokenCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetClearingProductOrdersByTokenAsync(string token) {
+            this.GetClearingProductOrdersByTokenAsync(token, null);
+        }
+        
+        public void GetClearingProductOrdersByTokenAsync(string token, object userState) {
+            if ((this.onBeginGetClearingProductOrdersByTokenDelegate == null)) {
+                this.onBeginGetClearingProductOrdersByTokenDelegate = new BeginOperationDelegate(this.OnBeginGetClearingProductOrdersByToken);
+            }
+            if ((this.onEndGetClearingProductOrdersByTokenDelegate == null)) {
+                this.onEndGetClearingProductOrdersByTokenDelegate = new EndOperationDelegate(this.OnEndGetClearingProductOrdersByToken);
+            }
+            if ((this.onGetClearingProductOrdersByTokenCompletedDelegate == null)) {
+                this.onGetClearingProductOrdersByTokenCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetClearingProductOrdersByTokenCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetClearingProductOrdersByTokenDelegate, new object[] {
+                        token}, this.onEndGetClearingProductOrdersByTokenDelegate, this.onGetClearingProductOrdersByTokenCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS GetClearingProductOrdersByProductId(int productId, string token) {
+            return base.Channel.GetClearingProductOrdersByProductId(productId, token);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetClearingProductOrdersByProductId(int productId, string token, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetClearingProductOrdersByProductId(productId, token, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS EndGetClearingProductOrdersByProductId(System.IAsyncResult result) {
+            return base.Channel.EndGetClearingProductOrdersByProductId(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetClearingProductOrdersByProductId(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int productId = ((int)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            return this.BeginGetClearingProductOrdersByProductId(productId, token, callback, asyncState);
+        }
+        
+        private object[] OnEndGetClearingProductOrdersByProductId(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS retVal = this.EndGetClearingProductOrdersByProductId(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetClearingProductOrdersByProductIdCompleted(object state) {
+            if ((this.GetClearingProductOrdersByProductIdCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetClearingProductOrdersByProductIdCompleted(this, new GetClearingProductOrdersByProductIdCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetClearingProductOrdersByProductIdAsync(int productId, string token) {
+            this.GetClearingProductOrdersByProductIdAsync(productId, token, null);
+        }
+        
+        public void GetClearingProductOrdersByProductIdAsync(int productId, string token, object userState) {
+            if ((this.onBeginGetClearingProductOrdersByProductIdDelegate == null)) {
+                this.onBeginGetClearingProductOrdersByProductIdDelegate = new BeginOperationDelegate(this.OnBeginGetClearingProductOrdersByProductId);
+            }
+            if ((this.onEndGetClearingProductOrdersByProductIdDelegate == null)) {
+                this.onEndGetClearingProductOrdersByProductIdDelegate = new EndOperationDelegate(this.OnEndGetClearingProductOrdersByProductId);
+            }
+            if ((this.onGetClearingProductOrdersByProductIdCompletedDelegate == null)) {
+                this.onGetClearingProductOrdersByProductIdCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetClearingProductOrdersByProductIdCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetClearingProductOrdersByProductIdDelegate, new object[] {
+                        productId,
+                        token}, this.onEndGetClearingProductOrdersByProductIdDelegate, this.onGetClearingProductOrdersByProductIdCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.MeshulamClearingApi ProcessRequestFullContents(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
             return base.Channel.ProcessRequestFullContents(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.MeshulamClearingApi> ProcessRequestFullContentsAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
-            return base.Channel.ProcessRequestFullContentsAsync(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessRequestFullContents(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessRequestFullContents(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.MeshulamClearingApi EndProcessRequestFullContents(System.IAsyncResult result) {
+            return base.Channel.EndProcessRequestFullContents(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessRequestFullContents(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string fullName = ((string)(inValues[0]));
+            string phone = ((string)(inValues[1]));
+            string email = ((string)(inValues[2]));
+            double sum = ((double)(inValues[3]));
+            string description = ((string)(inValues[4]));
+            int type = ((int)(inValues[5]));
+            int paymentsNum = ((int)(inValues[6]));
+            string userEmail = ((string)(inValues[7]));
+            string userPassword = ((string)(inValues[8]));
+            string returnUrl = ((string)(inValues[9]));
+            return this.BeginProcessRequestFullContents(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessRequestFullContents(System.IAsyncResult result) {
+            TMS.ServiceReference1.MeshulamClearingApi retVal = this.EndProcessRequestFullContents(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessRequestFullContentsCompleted(object state) {
+            if ((this.ProcessRequestFullContentsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessRequestFullContentsCompleted(this, new ProcessRequestFullContentsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessRequestFullContentsAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
+            this.ProcessRequestFullContentsAsync(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, null);
+        }
+        
+        public void ProcessRequestFullContentsAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, object userState) {
+            if ((this.onBeginProcessRequestFullContentsDelegate == null)) {
+                this.onBeginProcessRequestFullContentsDelegate = new BeginOperationDelegate(this.OnBeginProcessRequestFullContents);
+            }
+            if ((this.onEndProcessRequestFullContentsDelegate == null)) {
+                this.onEndProcessRequestFullContentsDelegate = new EndOperationDelegate(this.OnEndProcessRequestFullContents);
+            }
+            if ((this.onProcessRequestFullContentsCompletedDelegate == null)) {
+                this.onProcessRequestFullContentsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessRequestFullContentsCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessRequestFullContentsDelegate, new object[] {
+                        fullName,
+                        phone,
+                        email,
+                        sum,
+                        description,
+                        type,
+                        paymentsNum,
+                        userEmail,
+                        userPassword,
+                        returnUrl}, this.onEndProcessRequestFullContentsDelegate, this.onProcessRequestFullContentsCompletedDelegate, userState);
         }
         
         public TMS.ServiceReference1.MeshulamClearingApi ProcessRequestFullContentsREST(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
             return base.Channel.ProcessRequestFullContentsREST(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl);
         }
         
-        public System.Threading.Tasks.Task<TMS.ServiceReference1.MeshulamClearingApi> ProcessRequestFullContentsRESTAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
-            return base.Channel.ProcessRequestFullContentsRESTAsync(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl);
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginProcessRequestFullContentsREST(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginProcessRequestFullContentsREST(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, callback, asyncState);
         }
-
-        internal TMS.Customer CreateCustomer(TMS.Customer customer, string token)
-        {
-            throw new NotImplementedException();
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.MeshulamClearingApi EndProcessRequestFullContentsREST(System.IAsyncResult result) {
+            return base.Channel.EndProcessRequestFullContentsREST(result);
+        }
+        
+        private System.IAsyncResult OnBeginProcessRequestFullContentsREST(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string fullName = ((string)(inValues[0]));
+            string phone = ((string)(inValues[1]));
+            string email = ((string)(inValues[2]));
+            double sum = ((double)(inValues[3]));
+            string description = ((string)(inValues[4]));
+            int type = ((int)(inValues[5]));
+            int paymentsNum = ((int)(inValues[6]));
+            string userEmail = ((string)(inValues[7]));
+            string userPassword = ((string)(inValues[8]));
+            string returnUrl = ((string)(inValues[9]));
+            return this.BeginProcessRequestFullContentsREST(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, callback, asyncState);
+        }
+        
+        private object[] OnEndProcessRequestFullContentsREST(System.IAsyncResult result) {
+            TMS.ServiceReference1.MeshulamClearingApi retVal = this.EndProcessRequestFullContentsREST(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnProcessRequestFullContentsRESTCompleted(object state) {
+            if ((this.ProcessRequestFullContentsRESTCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.ProcessRequestFullContentsRESTCompleted(this, new ProcessRequestFullContentsRESTCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void ProcessRequestFullContentsRESTAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl) {
+            this.ProcessRequestFullContentsRESTAsync(fullName, phone, email, sum, description, type, paymentsNum, userEmail, userPassword, returnUrl, null);
+        }
+        
+        public void ProcessRequestFullContentsRESTAsync(string fullName, string phone, string email, double sum, string description, int type, int paymentsNum, string userEmail, string userPassword, string returnUrl, object userState) {
+            if ((this.onBeginProcessRequestFullContentsRESTDelegate == null)) {
+                this.onBeginProcessRequestFullContentsRESTDelegate = new BeginOperationDelegate(this.OnBeginProcessRequestFullContentsREST);
+            }
+            if ((this.onEndProcessRequestFullContentsRESTDelegate == null)) {
+                this.onEndProcessRequestFullContentsRESTDelegate = new EndOperationDelegate(this.OnEndProcessRequestFullContentsREST);
+            }
+            if ((this.onProcessRequestFullContentsRESTCompletedDelegate == null)) {
+                this.onProcessRequestFullContentsRESTCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnProcessRequestFullContentsRESTCompleted);
+            }
+            base.InvokeAsync(this.onBeginProcessRequestFullContentsRESTDelegate, new object[] {
+                        fullName,
+                        phone,
+                        email,
+                        sum,
+                        description,
+                        type,
+                        paymentsNum,
+                        userEmail,
+                        userPassword,
+                        returnUrl}, this.onEndProcessRequestFullContentsRESTDelegate, this.onProcessRequestFullContentsRESTCompletedDelegate, userState);
+        }
+        
+        public TMS.ServiceReference1.CommonObject UserRegistration(TMS.ServiceReference1.User user, string token, string isracardToken) {
+            return base.Channel.UserRegistration(user, token, isracardToken);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUserRegistration(TMS.ServiceReference1.User user, string token, string isracardToken, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUserRegistration(user, token, isracardToken, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public TMS.ServiceReference1.CommonObject EndUserRegistration(System.IAsyncResult result) {
+            return base.Channel.EndUserRegistration(result);
+        }
+        
+        private System.IAsyncResult OnBeginUserRegistration(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            TMS.ServiceReference1.User user = ((TMS.ServiceReference1.User)(inValues[0]));
+            string token = ((string)(inValues[1]));
+            string isracardToken = ((string)(inValues[2]));
+            return this.BeginUserRegistration(user, token, isracardToken, callback, asyncState);
+        }
+        
+        private object[] OnEndUserRegistration(System.IAsyncResult result) {
+            TMS.ServiceReference1.CommonObject retVal = this.EndUserRegistration(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUserRegistrationCompleted(object state) {
+            if ((this.UserRegistrationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UserRegistrationCompleted(this, new UserRegistrationCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UserRegistrationAsync(TMS.ServiceReference1.User user, string token, string isracardToken) {
+            this.UserRegistrationAsync(user, token, isracardToken, null);
+        }
+        
+        public void UserRegistrationAsync(TMS.ServiceReference1.User user, string token, string isracardToken, object userState) {
+            if ((this.onBeginUserRegistrationDelegate == null)) {
+                this.onBeginUserRegistrationDelegate = new BeginOperationDelegate(this.OnBeginUserRegistration);
+            }
+            if ((this.onEndUserRegistrationDelegate == null)) {
+                this.onEndUserRegistrationDelegate = new EndOperationDelegate(this.OnEndUserRegistration);
+            }
+            if ((this.onUserRegistrationCompletedDelegate == null)) {
+                this.onUserRegistrationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUserRegistrationCompleted);
+            }
+            base.InvokeAsync(this.onBeginUserRegistrationDelegate, new object[] {
+                        user,
+                        token,
+                        isracardToken}, this.onEndUserRegistrationDelegate, this.onUserRegistrationCompletedDelegate, userState);
         }
     }
 }

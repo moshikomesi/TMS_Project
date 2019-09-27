@@ -67,6 +67,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
       <Private>True</Private>
@@ -99,7 +100,8 @@
     <Compile Include="CityTbl.Designer.cs">
       <DependentUpon>CityTbl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer .cs" />
+    <Compile Include="CreateCustomers.cs" />
+    <Compile Include="CreateInvoice.cs" />
     <Compile Include="CustomerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -252,6 +254,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>V_T.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Web References\il.co.invoice4u.api\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CityTbl.resx">
       <DependentUpon>CityTbl.cs</DependentUpon>
     </EmbeddedResource>
@@ -403,10 +410,19 @@
     <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClearingLog.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClearingProducts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\TMS.ServiceReference1.ClientsStandingOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfCatalogItemJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsJHiVxprS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\TMS.ServiceReference1.CommonCollectionOfArrayOfCurrencyJHiVxprS.datasource">
@@ -486,6 +502,77 @@
     <None Include="V_T.xss">
       <DependentUpon>V_T.xsd</DependentUpon>
     </None>
+    <None Include="Web References\il.co.invoice4u.api\ApiClearingRequest.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\ApiService.wsdl" />
+    <None Include="Web References\il.co.invoice4u.api\AssociatedEmail.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\Branch.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CatalogItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\ClearingAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\ClearingLog.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\ClearingProducts.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\ClientsStandingOrder.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfCatalogItemJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfClearingProductsJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfClearingProductsOrderJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfCurrencyJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfCustomerJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonCollectionOfArrayOfDocumentJHiVxprS.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CommonObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\CreditCompany.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\Customer.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\Document.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\DocumentCsv.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\MeshulamClearingApi.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\OrganizationTokenDetails.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\il.co.invoice4u.api\User.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -512,16 +599,16 @@
       <DependentUpon>Model2.edmx</DependentUpon>
       <LastGenOutput>Model2.cs</LastGenOutput>
     </Content>
-    <None Include="Resources\gobtn3.png" />
-    <None Include="Resources\gobtn2.png" />
-    <None Include="Resources\gobtn1.png" />
-    <None Include="Resources\gobtn.png" />
     <None Include="Service References\ServiceReference1\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\ServiceReference1\configuration.svcinfo" />
     <None Include="Service References\ServiceReference1\configuration91.svcinfo" />
+    <None Include="Resources\gobtn3.png" />
+    <None Include="Resources\gobtn2.png" />
+    <None Include="Resources\gobtn1.png" />
+    <None Include="Resources\gobtn.png" />
     <None Include="Resources\logo1.jpeg" />
     <None Include="Resources\logo.jpeg" />
     <None Include="Resources\serchicn1.png" />
@@ -545,6 +632,22 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://api.invoice4u.co.il/Services/ApiService.svc%3fsingleWsdl">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\il.co.invoice4u.api\</RelPath>
+      <UpdateFromURL>https://api.invoice4u.co.il/Services/ApiService.svc%3fsingleWsdl</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>TMS_il_co_invoice4u_api_ApiService</CachedSettingsPropName>
+    </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />

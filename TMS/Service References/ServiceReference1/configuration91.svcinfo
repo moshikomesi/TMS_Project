@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="o8Pf8QDIcP++AFEsTIFAfjWJLrA=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="P810cojuKZW7s9w5yGwuV9xUj8s=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ApiService">
       <properties>
@@ -221,10 +221,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ApiService" contract="ServiceReference1.ApiService" bindingType="basicHttpBinding" address="http://apiqa.invoice4u.co.il/Services/ApiService.svc/Soap" bindingConfiguration="BasicHttpBinding_ApiService">
+    <endpoint name="BasicHttpBinding_ApiService" contract="ServiceReference1.ApiService" bindingType="basicHttpBinding" address="http://api.invoice4u.co.il/Services/ApiService.svc/Soap" bindingConfiguration="BasicHttpBinding_ApiService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://apiqa.invoice4u.co.il/Services/ApiService.svc/Soap</serializedValue>
+          <serializedValue>http://api.invoice4u.co.il/Services/ApiService.svc/Soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -306,10 +306,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ApiService1" contract="ServiceReference1.ApiService" bindingType="basicHttpBinding" address="https://apiqa.invoice4u.co.il/Services/ApiService.svc/Soap" bindingConfiguration="BasicHttpBinding_ApiService1">
+    <endpoint name="BasicHttpBinding_ApiService1" contract="ServiceReference1.ApiService" bindingType="basicHttpBinding" address="https://api.invoice4u.co.il/Services/ApiService.svc/Soap" bindingConfiguration="BasicHttpBinding_ApiService1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>https://apiqa.invoice4u.co.il/Services/ApiService.svc/Soap</serializedValue>
+          <serializedValue>https://api.invoice4u.co.il/Services/ApiService.svc/Soap</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

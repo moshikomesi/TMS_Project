@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,8 +35,8 @@ namespace TMS
         {
             this.reportViewer1.RefreshReport();
             string s = C_N.Text;
-
-            using(ShippReportTmsDbEntities db = new ShippReportTmsDbEntities() )
+    
+            using (ShippReportTmsDbEntities db = new ShippReportTmsDbEntities() )
             {
        GetShippReport_ResultBindingSource.DataSource  =  db.GetShippReport(FromD_P.Value, ToDate_P.Value, s, F_Employee.Text, To_Employee.Text).ToList();
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
@@ -50,6 +51,18 @@ namespace TMS
                 reportViewer1.RefreshReport();
                 splitContainer1.Visible = false;
                 this.WindowState = FormWindowState.Maximized;
+                
+                System.Drawing.Printing.PageSettings newPageSttings = new System.Drawing.Printing.PageSettings();
+                newPageSttings.Margins = new System.Drawing.Printing.Margins(40,40,40,40);
+                reportViewer1.SetPageSettings(newPageSttings);
+                
+                ReportPageSettings rpt = reportViewer1.LocalReport.GetDefaultPageSettings();
+                if (reportViewer1.ParentForm.Width > rpt.PaperSize.Width)
+                {
+                    int hPad = (reportViewer1.ParentForm.Width - rpt.PaperSize.Width) / 4;
+              
+                    reportViewer1.Padding = new Padding(hPad, 1, hPad, 1);
+                }
                 reportViewer1.Visible = true;
             }
         }
@@ -74,8 +87,15 @@ namespace TMS
                 reportViewer2.LocalReport.SetParameters(rParams);
                 reportViewer2.RefreshReport();
                 splitContainer1.Visible = false;
-               this.WindowState = FormWindowState.Maximized;
-               reportViewer2.Visible = true;
+                this.WindowState = FormWindowState.Maximized;
+                ReportPageSettings rt = reportViewer2.LocalReport.GetDefaultPageSettings();
+                if (reportViewer2.ParentForm.Width > rt.PaperSize.Width)
+                {
+                    int hPad = (reportViewer2.ParentForm.Width - rt.PaperSize.Width) / 4;
+
+                    reportViewer2.Padding = new Padding(hPad, 1, hPad, 1);
+                }
+                reportViewer2.Visible = true;
             }
         }
     }

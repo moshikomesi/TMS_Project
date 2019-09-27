@@ -280,6 +280,7 @@
             this.SaveBtn.Size = new System.Drawing.Size(48, 39);
             this.SaveBtn.TabIndex = 68;
             this.SaveBtn.UseVisualStyleBackColor = true;
+            this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
             // 
             // label1
             // 
@@ -437,7 +438,7 @@
             this.Controls.Add(this.Address);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Margin = new System.Windows.Forms.Padding(6);
-       
+         //   Name = "Customers";
             this.Padding = new System.Windows.Forms.Padding(40, 111, 40, 37);
             this.Text = "כרטסת לקוחות";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;

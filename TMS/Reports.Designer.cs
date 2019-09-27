@@ -128,7 +128,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            
             this.splitContainer1.Size = new System.Drawing.Size(410, 270);
             this.splitContainer1.SplitterDistance = 214;
             this.splitContainer1.TabIndex = 8;
@@ -308,7 +307,7 @@
             // 
             // customerBindingSource
             // 
-            this.customerBindingSource.DataSource = typeof(TMS.Customer);
+            this.customerBindingSource.DataSource = typeof(TMS.Customers);
             // 
             // customerTableAdapter
             // 

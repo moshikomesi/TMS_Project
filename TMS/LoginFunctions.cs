@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TMS.ServiceReference1;
 
+
 namespace TMS
 {
     class LoginFunctions
@@ -15,6 +16,7 @@ namespace TMS
         public string GetToken(string email, string password)
         {
             return apiSrv.VerifyLogin(email, password);
+            
         }
      
         public User isAuthenticated(string token)

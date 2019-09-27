@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="3e4e0849-91b3-4f56-85d2-eb492bb36a80" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d65e92a0-e1f4-42de-9000-c9317ac93e9e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
-    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
-    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
@@ -19,10 +18,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="https://apiqa.invoice4u.co.il/Services/ApiService.svc?singleWsdl" Protocol="http" SourceId="1" />
+    <MetadataSource Address="https://api.invoice4u.co.il/Services/ApiService.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ApiService.wsdl" MetadataType="Wsdl" ID="c2276c73-6843-469d-8bae-debe8a51dfa2" SourceId="1" SourceUrl="https://apiqa.invoice4u.co.il/Services/ApiService.svc?singleWsdl" />
+    <MetadataFile FileName="ApiService.wsdl" MetadataType="Wsdl" ID="5465588a-12be-43d7-a268-7fc74bfbcbf3" SourceId="1" SourceUrl="https://api.invoice4u.co.il/Services/ApiService.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
