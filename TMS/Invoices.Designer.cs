@@ -67,6 +67,9 @@
             this.In_Q = new System.Windows.Forms.TextBox();
             this.In_A = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.In_Sub = new MetroFramework.Controls.MetroTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.New_Bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -422,11 +425,47 @@
             this.label4.TabIndex = 34;
             this.label4.Text = "label4";
             // 
+            // In_Sub
+            // 
+            this.In_Sub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.In_Sub.BackColor = System.Drawing.Color.White;
+            this.In_Sub.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.In_Sub.Location = new System.Drawing.Point(605, 263);
+            this.In_Sub.Name = "In_Sub";
+            this.In_Sub.Size = new System.Drawing.Size(328, 30);
+            this.In_Sub.TabIndex = 35;
+            this.In_Sub.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label12.Location = new System.Drawing.Point(956, 263);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(147, 24);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "נושא החשבונית ";
+            // 
+            // New_Bt
+            // 
+            this.New_Bt.Enabled = false;
+            this.New_Bt.Location = new System.Drawing.Point(33, 174);
+            this.New_Bt.Name = "New_Bt";
+            this.New_Bt.Size = new System.Drawing.Size(75, 23);
+            this.New_Bt.TabIndex = 37;
+            this.New_Bt.Text = "New_Bt";
+            this.New_Bt.UseVisualStyleBackColor = true;
+            this.New_Bt.Click += new System.EventHandler(this.New_Bt_Click);
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 563);
+            this.Controls.Add(this.New_Bt);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.In_Sub);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
@@ -501,5 +540,8 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox In_Q;
         public System.Windows.Forms.TextBox In_A;
+        private MetroFramework.Controls.MetroTextBox In_Sub;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button New_Bt;
     }
 }

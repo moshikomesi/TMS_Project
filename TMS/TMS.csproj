@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="CreateCustomers.cs" />
     <Compile Include="CreateInvoice.cs" />
+    <Compile Include="CreateReceipt.cs" />
     <Compile Include="CustomerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -226,6 +227,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TmsDbDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TmsDbDataSetCus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TmsDbDataSetCus.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TmsDbDataVehicles_T.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +265,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Bills.resx">
+      <DependentUpon>Bills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CityTbl.resx">
       <DependentUpon>CityTbl.cs</DependentUpon>
     </EmbeddedResource>
@@ -479,6 +488,17 @@
     </None>
     <None Include="TmsDbDataSet1.xss">
       <DependentUpon>TmsDbDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSetCus.xsc">
+      <DependentUpon>TmsDbDataSetCus.xsd</DependentUpon>
+    </None>
+    <None Include="TmsDbDataSetCus.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TmsDbDataSetCus.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TmsDbDataSetCus.xss">
+      <DependentUpon>TmsDbDataSetCus.xsd</DependentUpon>
     </None>
     <None Include="TmsDbDataVehicles_T.xsc">
       <DependentUpon>TmsDbDataVehicles_T.xsd</DependentUpon>

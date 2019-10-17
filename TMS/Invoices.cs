@@ -156,11 +156,11 @@ namespace TMS
             con.Close();
             return C_Email;
         }
-       
+        System.Windows.Forms.Panel pnl = new System.Windows.Forms.Panel();
         public System.Windows.Forms.Panel AddNewLine()
         {
           
-            System.Windows.Forms.Panel pnl = new System.Windows.Forms.Panel();
+          
             if (a == 6) return pnl;
             this.Controls.Add(pnl);
             if (a==1) pnl.Location = new Point(150, 350);
@@ -176,61 +176,61 @@ namespace TMS
             System.Windows.Forms.TextBox txt = new System.Windows.Forms.TextBox();
             pnl.Controls.Add(txt);
             txt.Size = new Size(394, 20);
-            txt.Text = "txt";
+            txt.Text = "";
             txt.Location = new Point(620, 8);
             txt.Anchor = AnchorStyles.Right;
             System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
             pnl.Controls.Add(lbl);
             lbl.Size = new Size(54, 19);
             lbl.Font = new Font("Arial",12,FontStyle.Bold);
-            lbl.Text = "פרטים";
+            lbl.Text = "";
             lbl.Location = new Point(1025, 8);
             lbl.Anchor = AnchorStyles.Right;
             System.Windows.Forms.Label lbl1 = new System.Windows.Forms.Label();
             pnl.Controls.Add(lbl1);
             lbl1.Size = new Size(54, 19);
             lbl1.Font = new Font("Arial", 12, FontStyle.Bold);
-            lbl1.Text = "כמות";
+            lbl1.Text = "";
             lbl1.Location = new Point(545, 8);
             System.Windows.Forms.TextBox txt1 = new System.Windows.Forms.TextBox();
             pnl.Controls.Add(txt1);
             txt1.Size = new Size(78, 20);
-            txt1.Text = "txt";
+            txt1.Text = "";
             txt1.Location = new Point(450, 8);
             txt1.Anchor = AnchorStyles.Left;
             System.Windows.Forms.Label lbl2 = new System.Windows.Forms.Label();
             pnl.Controls.Add(lbl2);
             lbl2.Size = new Size(113, 19);
             lbl2.Font = new Font("Arial", 12, FontStyle.Bold);
-            lbl2.Text = "מחיר לפני מעמ";
+            lbl2.Text = "";
             lbl2.Location = new Point(335, 8);
             System.Windows.Forms.TextBox txt2 = new System.Windows.Forms.TextBox();
             pnl.Controls.Add(txt2);
             txt2.Size = new Size(78, 20);
-            txt2.Text = "txt";
+            txt2.Text = "";
             txt2.Location = new Point(240, 8);
             txt2.Anchor = AnchorStyles.Left;
             System.Windows.Forms.Label lbl3 = new System.Windows.Forms.Label();
             pnl.Controls.Add(lbl3);
             lbl3.Size = new Size(113, 19);
             lbl3.Font = new Font("Arial", 12, FontStyle.Bold);
-            lbl3.Text = "סהכ לפני מעמ";
+            lbl3.Text = "";
             lbl3.Location = new Point(120, 8);
             System.Windows.Forms.TextBox txt3 = new System.Windows.Forms.TextBox();
             pnl.Controls.Add(txt3);
             txt3.Size = new Size(78, 20);
-            txt3.Text = "txt";
+            txt3.Text = "";
             txt3.Location = new Point(30, 8);
             txt3.Anchor = AnchorStyles.Left;
             a = a + 1;
            return pnl;
         }
 
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-
             AddNewLine();
+          
         }
       public  bool isremove;
 
@@ -267,16 +267,20 @@ namespace TMS
                 return;
             }
         }
-        
+
+        string Doc_ID;
+        string doc_num;
         private void button4_Click(object sender, EventArgs e)
         {
             CreateInvoice cri = new CreateInvoice();
 
-            Document doc = cri.CreateDocumentGeneralClient(number,In_Dt.Text);
-        //    CreateDocumentGeneralClient();
-                
+            Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value,GetCustomerId().ToString(),CusName.Text,In_Dt.Text,double.Parse(In_A.Text), double.Parse(In_Q.Text),CusEmail.Text,In_Sub.Text);
+            //    CreateDocumentGeneralClient();
+            Doc_ID = doc.ID.ToString();
+            doc_num = doc.DocumentNumber.ToString();
+           string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid="+ Doc_ID + "&docNumber="+doc_num;
 
-            string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "');";
+            string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "','" +url+ "');";
 
             SqlConnection con = new SqlConnection(constring);
             SqlCommand cmdDataBase = new SqlCommand(Query, con);
@@ -287,15 +291,19 @@ namespace TMS
             {
                 if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "" )
                 {
-                    MessageBox.Show(" לא ניתן להפיק חשבונית הזמנה ללא כל נתונים ");
+                    MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
                     return;
                 }
 
 
                 myReader = cmdDataBase.ExecuteReader();
-                MessageBox.Show("חשבונית הופקה  בהצלחה");
+                MessageBox.Show("חשבונית נשמרה בהצלחה");
                 while (myReader.Read()) { }
                 con.Close();
+                button4.Enabled = false;
+                button2.Enabled = false;
+                button3.Enabled = false;
+                New_Bt.Enabled = true;
             }
 
             catch (Exception ex)
@@ -332,9 +340,82 @@ namespace TMS
                 double p = s + t;
                 To_Pay.Text = p.ToString() +" "+ "₪" ;
                 button4.Visible = true;
+                
 
         }
-        
+
+        public static int check_date(string date_start, string date_over)
+        {
+            string Daystart;
+            string Monthstart;
+            string Yearstart;
+            int d1 = 0;
+            int m1 = 0;
+            int y1 = 0;
+
+            int count = 0;
+            string[] Words = date_start.Split(new char[] { '/' });
+            foreach (string Word in Words)
+            {
+
+                count += 1;
+                if (count == 1) { Daystart = Word; d1 = int.Parse(Daystart); }
+                if (count == 2) { Monthstart = Word; m1 = int.Parse(Monthstart); }
+                if (count == 3) { Yearstart = Word; y1 = int.Parse(Yearstart); }
+            }
+
+            string Dayover;
+            string Monthover;
+            string Yearover;
+            int d2 = 0;
+            int m2 = 0;
+            int y2 = 0;
+
+            int count1 = 0;
+            string[] Words2 = date_over.Split(new char[] { '/' });
+            foreach (string Word2 in Words2)
+            {
+
+                count1 += 1;
+                if (count1 == 1) { Dayover = Word2; d2 = int.Parse(Dayover); }
+                if (count1 == 2) { Monthover = Word2; m2 = int.Parse(Monthover); }
+                if (count1 == 3) { Yearover = Word2; y2 = int.Parse(Yearover); }
+            }
+
+            if (y1 < y2)
+            {
+                return 0;
+
+            }
+            else if (y1 == y2)
+            {
+                if (m1 < m2)
+                {
+                    return 0;
+                }
+                else if (m1 == m2)
+                {
+                    if (d1 < d2)
+                    {
+                        return 0;
+                    }
+                }
+            }
+
+            return -1;
+
+
+
+        }
+
+        private void New_Bt_Click(object sender, EventArgs e)
+        {
+            Invoices inv = new Invoices();
+            this.Close();
+            inv.ShowDialog();
+        }
+
+
         /*
         public Document CreateDocumentGeneralClient()
         {

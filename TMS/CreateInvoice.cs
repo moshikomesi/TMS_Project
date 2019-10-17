@@ -14,63 +14,72 @@ namespace TMS
         string token = new
          LoginFunctions().GetToken("projecttms2019@gmail.com", "m6080405");
 
-        public Document CreateDocumentGeneralClient(int x , string y )
+        public Document CreateDocumentGeneralClient( DateTime date, string id , string name, string details,double price, double quantity,string Cmail,string sub)
         {
-            
-           
+
+
             Document doc = new Document()
             {
-                ClientID =  x ,
+                GeneralCustomer = new GenerelCustomer()
+                {
+                    Name = name,
+                    Identifier = id,
+
+
+                },
                 Currency = "ILS",
-                
-                /* calculate the tax backwards , for example ,
-                if your price input is 100 , this would be the total
-                sum and the tax would be -100 / 1.17
-                TaxIncluded = true,
-                */
-                DocumentType = (int)DocumentType.InvoiceOrder,
+
+                DocumentType = (int)DocumentType.Invoice,
+                IssueDate = date,
                 Items = new DocumentItem[]
             {
                 new DocumentItem(){
-                    Code ="",// inv.number.ToString(), // catalog item code
-                    Name = y,
-                    Price = 100,//double.Parse(inv.In_A.Text),
-                    Quantity =2, //double.Parse(inv.In_Q.Text)
+                    Code = "", // catalog item code
+                    Name = details,
+                    Price = price,
+                    Quantity = quantity,      
                 }
+                
+                
             },
-                // you can round the total items sum up to 0.5
-                RoundAmount = 0,
-                Subject = "Document Subject",
-                TaxPercentage = 17,
-                AssociatedEmails = new AssociatedEmail[]
+                
+            // you can round the total items sum up to 0.5
+            RoundAmount = 0, 
+            Subject = sub,
+            TaxPercentage = 17,
+            AssociatedEmails = new AssociatedEmail[]
             {
                 // send info mail to user account mail
                 new AssociatedEmail()
                 {
-                    Mail = "test@test.com",
+                    Mail = "projecttms2019@gmail.com",
                     IsUserMail = true
                 },
                 // send mail to customer
                 new AssociatedEmail()
                 {
-                    Mail = "moshikomesi@gmail.com",//inv.C_Email,
+                    Mail = Cmail,
                     IsUserMail = false
                 }
             },
             // You can add your own guide 
-            
+          //  to track the documents later on your side
+            ApiIdentifier = Guid.NewGuid().ToString()
         };
 
+       
+
        doc = apiSrv.CreateDocument(doc, token);
+            
 
         if (doc.Errors.Length > 0)
         {
-            // HANDLE ERROR
-        }
+                System.Windows.Forms.MessageBox.Show("בעיה בהפקת חשבונית");
+            }
         else
         {
-            // HANDLE SUCCESS
-        }
+                System.Windows.Forms.MessageBox.Show("חשבונית הופקה ונשלחה בהצלחה ללקוח");
+            }
         return doc;
     }
 
