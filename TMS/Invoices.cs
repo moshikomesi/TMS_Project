@@ -330,9 +330,9 @@ namespace TMS
                 return;
             }
 
-              int q = int.Parse(In_Q.Text);      
-                int a = int.Parse(In_A.Text);
-                int s = a * q;
+              double q = double.Parse(In_Q.Text);      
+                double a = double.Parse(In_A.Text);
+                double s = a * q;
                 In_Sum.Text = s.ToString();
                 Sum.Text = In_Sum.Text;
                 double t = s * 0.17;
@@ -415,6 +415,74 @@ namespace TMS
             inv.ShowDialog();
         }
 
+        private void Serch_Btn_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            string query = "select count (*) from Invoices where Invoice_Num =" + Sherch_Txt.Text ;
+            string select = "select * from Invoices where Invoice_Num = " + Sherch_Txt.Text;
+            SqlCommand cmd3 = new SqlCommand(query, con);
+            SqlCommand cmd4 = new SqlCommand(select, con);
+            string output = cmd3.ExecuteScalar().ToString();
+
+            if (output == "1")
+            {
+               
+
+                SqlDataReader dr = cmd4.ExecuteReader();
+                if (dr.Read())
+                {
+                    Invocie_Num.Text = "חשבונית מס :" + (dr["Invoice_Num"].ToString());
+                    CusName.Text = (dr["Customer_Number"].ToString());
+                    InvoiceDate.Text = (dr["Invoice_date"].ToString());
+                  //  In_Sub.Text = (dr["Employee_BD"].ToString());
+                    In_Dt.Text = (dr["Invoice_Details"].ToString());
+                    In_Q.Text = (dr["Quantity_Items"].ToString());
+                    In_A.Text = (dr["Invoice_Amount"].ToString());
+                    invoice_Link = (dr["Invoice_Url"].ToString());
+                    linkTo_Invoice.Visible = true;
+                    pictureBox1.Visible = true;
+                    string am;
+                    In_A.Text.Remove(0,4);
+                    label12.Visible = false;
+                    In_Sub.Visible = false;
+                }
+                con.Close();
+                double q = double.Parse(In_Q.Text);
+                double a = double.Parse(In_A.Text);
+                double s = a * q;
+                In_Sum.Text = s.ToString();
+                Sum.Text = In_Sum.Text;
+                double t = s * 0.17;
+                Tax.Text = t.ToString();
+                double p = s + t;
+                To_Pay.Text = p.ToString() + " " + "₪";
+                button4.Enabled = false;
+                New_Bt.Enabled = true;
+
+            }
+            else
+            {
+                MessageBox.Show("מספר חשבונית לא מופיע במערכת");
+                return;
+            }
+
+        }
+        string invoice_Link;
+        private void linkTo_Invoice_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+           
+            this.linkTo_Invoice.LinkVisited = true;
+            System.Diagnostics.Process.Start(invoice_Link);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.linkTo_Invoice.LinkVisited = true;
+            System.Diagnostics.Process.Start(invoice_Link);
+        }
+    }
+
 
         /*
         public Document CreateDocumentGeneralClient()
@@ -496,4 +564,4 @@ namespace TMS
 
     }
     
-}
+

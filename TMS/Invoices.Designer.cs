@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Invoices));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -70,6 +70,11 @@
             this.In_Sub = new MetroFramework.Controls.MetroTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.New_Bt = new System.Windows.Forms.Button();
+            this.Sherch_Txt = new MetroFramework.Controls.MetroTextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.Serch_Btn = new System.Windows.Forms.Button();
+            this.linkTo_Invoice = new System.Windows.Forms.LinkLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -80,17 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(204, 84);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
@@ -318,7 +314,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(225, 120);
+            this.button4.Location = new System.Drawing.Point(22, 169);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 4;
@@ -450,7 +446,7 @@
             // New_Bt
             // 
             this.New_Bt.Enabled = false;
-            this.New_Bt.Location = new System.Drawing.Point(33, 174);
+            this.New_Bt.Location = new System.Drawing.Point(114, 169);
             this.New_Bt.Name = "New_Bt";
             this.New_Bt.Size = new System.Drawing.Size(75, 23);
             this.New_Bt.TabIndex = 37;
@@ -458,11 +454,72 @@
             this.New_Bt.UseVisualStyleBackColor = true;
             this.New_Bt.Click += new System.EventHandler(this.New_Bt_Click);
             // 
+            // Sherch_Txt
+            // 
+            this.Sherch_Txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sherch_Txt.BackColor = System.Drawing.Color.White;
+            this.Sherch_Txt.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.Sherch_Txt.Location = new System.Drawing.Point(363, 26);
+            this.Sherch_Txt.Name = "Sherch_Txt";
+            this.Sherch_Txt.Size = new System.Drawing.Size(175, 30);
+            this.Sherch_Txt.TabIndex = 38;
+            this.Sherch_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label13.Location = new System.Drawing.Point(565, 30);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(143, 24);
+            this.label13.TabIndex = 39;
+            this.label13.Text = "מספר חשבונית ";
+            // 
+            // Serch_Btn
+            // 
+            this.Serch_Btn.Location = new System.Drawing.Point(274, 30);
+            this.Serch_Btn.Name = "Serch_Btn";
+            this.Serch_Btn.Size = new System.Drawing.Size(75, 23);
+            this.Serch_Btn.TabIndex = 40;
+            this.Serch_Btn.Text = "חיפוש";
+            this.Serch_Btn.UseVisualStyleBackColor = true;
+            this.Serch_Btn.Click += new System.EventHandler(this.Serch_Btn_Click);
+            // 
+            // linkTo_Invoice
+            // 
+            this.linkTo_Invoice.AutoSize = true;
+            this.linkTo_Invoice.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.linkTo_Invoice.Location = new System.Drawing.Point(87, 239);
+            this.linkTo_Invoice.Name = "linkTo_Invoice";
+            this.linkTo_Invoice.Size = new System.Drawing.Size(102, 16);
+            this.linkTo_Invoice.TabIndex = 41;
+            this.linkTo_Invoice.TabStop = true;
+            this.linkTo_Invoice.Text = "קישור לחשבונית ";
+            this.linkTo_Invoice.Visible = false;
+            this.linkTo_Invoice.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkTo_Invoice_LinkClicked);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(47, 231);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox1.TabIndex = 42;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 563);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.linkTo_Invoice);
+            this.Controls.Add(this.Serch_Btn);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.Sherch_Txt);
             this.Controls.Add(this.New_Bt);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.In_Sub);
@@ -479,7 +536,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "Invoices";
             this.Text = "Invoices";
             this.Load += new System.EventHandler(this.Invoices_Load);
@@ -495,14 +551,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -543,5 +598,10 @@
         private MetroFramework.Controls.MetroTextBox In_Sub;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button New_Bt;
+        private MetroFramework.Controls.MetroTextBox Sherch_Txt;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button Serch_Btn;
+        private System.Windows.Forms.LinkLabel linkTo_Invoice;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
