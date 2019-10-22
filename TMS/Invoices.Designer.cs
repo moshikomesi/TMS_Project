@@ -66,7 +66,6 @@
             this.In_Dt = new System.Windows.Forms.TextBox();
             this.In_Q = new System.Windows.Forms.TextBox();
             this.In_A = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.In_Sub = new MetroFramework.Controls.MetroTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.New_Bt = new System.Windows.Forms.Button();
@@ -75,6 +74,17 @@
             this.Serch_Btn = new System.Windows.Forms.Button();
             this.linkTo_Invoice = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoicesDataSet = new TMS.InvoicesDataSet();
+            this.invoicesTableAdapter = new TMS.InvoicesDataSetTableAdapters.InvoicesTableAdapter();
+            this.invoiceUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoicedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -86,6 +96,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -232,6 +245,7 @@
             this.button2.TabIndex = 28;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
@@ -242,6 +256,7 @@
             this.button3.TabIndex = 29;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // contextMenuStrip1
@@ -293,6 +308,7 @@
             this.InvoiceDate.Name = "InvoiceDate";
             this.InvoiceDate.Size = new System.Drawing.Size(145, 29);
             this.InvoiceDate.TabIndex = 2;
+            this.InvoiceDate.Leave += new System.EventHandler(this.InvoiceDate_Leave);
             // 
             // customerDataSet
             // 
@@ -314,11 +330,12 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(22, 169);
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Location = new System.Drawing.Point(56, 169);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(41, 40);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Save_Bt";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -340,6 +357,7 @@
             // 
             // In_Sum
             // 
+            this.In_Sum.Enabled = false;
             this.In_Sum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.In_Sum.Location = new System.Drawing.Point(30, 8);
             this.In_Sum.Name = "In_Sum";
@@ -360,11 +378,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label7.Location = new System.Drawing.Point(335, 8);
+            this.label7.Location = new System.Drawing.Point(330, 10);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 19);
+            this.label7.Size = new System.Drawing.Size(113, 19);
             this.label7.TabIndex = 5;
-            this.label7.Text = "מחיר לפני מעמ";
+            this.label7.Text = "מחיר לפני מע\"מ";
             // 
             // label6
             // 
@@ -401,6 +419,7 @@
             this.In_Q.Name = "In_Q";
             this.In_Q.Size = new System.Drawing.Size(78, 26);
             this.In_Q.TabIndex = 2;
+            this.In_Q.Leave += new System.EventHandler(this.In_Q_Leave);
             // 
             // In_A
             // 
@@ -411,15 +430,6 @@
             this.In_A.Size = new System.Drawing.Size(78, 26);
             this.In_A.TabIndex = 3;
             this.In_A.Leave += new System.EventHandler(this.In_A_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "label4";
             // 
             // In_Sub
             // 
@@ -445,44 +455,50 @@
             // 
             // New_Bt
             // 
+            this.New_Bt.BackColor = System.Drawing.Color.White;
+            this.New_Bt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("New_Bt.BackgroundImage")));
+            this.New_Bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.New_Bt.Enabled = false;
-            this.New_Bt.Location = new System.Drawing.Point(114, 169);
+            this.New_Bt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.New_Bt.Location = new System.Drawing.Point(105, 170);
             this.New_Bt.Name = "New_Bt";
-            this.New_Bt.Size = new System.Drawing.Size(75, 23);
+            this.New_Bt.Size = new System.Drawing.Size(42, 40);
             this.New_Bt.TabIndex = 37;
-            this.New_Bt.Text = "New_Bt";
-            this.New_Bt.UseVisualStyleBackColor = true;
+            this.New_Bt.UseVisualStyleBackColor = false;
             this.New_Bt.Click += new System.EventHandler(this.New_Bt_Click);
             // 
             // Sherch_Txt
             // 
-            this.Sherch_Txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Sherch_Txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Sherch_Txt.BackColor = System.Drawing.Color.White;
             this.Sherch_Txt.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.Sherch_Txt.Location = new System.Drawing.Point(363, 26);
+            this.Sherch_Txt.Location = new System.Drawing.Point(448, 24);
             this.Sherch_Txt.Name = "Sherch_Txt";
-            this.Sherch_Txt.Size = new System.Drawing.Size(175, 30);
+            this.Sherch_Txt.Size = new System.Drawing.Size(162, 30);
             this.Sherch_Txt.TabIndex = 38;
             this.Sherch_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label13.Location = new System.Drawing.Point(565, 30);
+            this.label13.Location = new System.Drawing.Point(616, 28);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(143, 24);
             this.label13.TabIndex = 39;
             this.label13.Text = "מספר חשבונית ";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // Serch_Btn
             // 
-            this.Serch_Btn.Location = new System.Drawing.Point(274, 30);
+            this.Serch_Btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Serch_Btn.BackgroundImage = global::TMS.Properties.Resources.serchicn;
+            this.Serch_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Serch_Btn.Location = new System.Drawing.Point(399, 20);
             this.Serch_Btn.Name = "Serch_Btn";
-            this.Serch_Btn.Size = new System.Drawing.Size(75, 23);
+            this.Serch_Btn.Size = new System.Drawing.Size(37, 36);
             this.Serch_Btn.TabIndex = 40;
-            this.Serch_Btn.Text = "חיפוש";
             this.Serch_Btn.UseVisualStyleBackColor = true;
             this.Serch_Btn.Click += new System.EventHandler(this.Serch_Btn_Click);
             // 
@@ -510,11 +526,88 @@
             this.pictureBox1.Visible = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.invoiceUrlDataGridViewTextBoxColumn,
+            this.invoiceAmountDataGridViewTextBoxColumn,
+            this.quantityItemsDataGridViewTextBoxColumn,
+            this.invoiceDetailsDataGridViewTextBoxColumn,
+            this.customerNumberDataGridViewTextBoxColumn,
+            this.invoiceNumDataGridViewTextBoxColumn,
+            this.invoicedateDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.invoicesBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(372, 430);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(743, 125);
+            this.dataGridView1.TabIndex = 43;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // invoicesBindingSource
+            // 
+            this.invoicesBindingSource.DataMember = "Invoices";
+            this.invoicesBindingSource.DataSource = this.invoicesDataSet;
+            // 
+            // invoicesDataSet
+            // 
+            this.invoicesDataSet.DataSetName = "InvoicesDataSet";
+            this.invoicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
+            // 
+            // invoiceUrlDataGridViewTextBoxColumn
+            // 
+            this.invoiceUrlDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Url";
+            this.invoiceUrlDataGridViewTextBoxColumn.HeaderText = "קישור לחשבונית ";
+            this.invoiceUrlDataGridViewTextBoxColumn.Name = "invoiceUrlDataGridViewTextBoxColumn";
+            // 
+            // invoiceAmountDataGridViewTextBoxColumn
+            // 
+            this.invoiceAmountDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Amount";
+            this.invoiceAmountDataGridViewTextBoxColumn.HeaderText = "סה\"כ לפני מע\"מ";
+            this.invoiceAmountDataGridViewTextBoxColumn.Name = "invoiceAmountDataGridViewTextBoxColumn";
+            // 
+            // quantityItemsDataGridViewTextBoxColumn
+            // 
+            this.quantityItemsDataGridViewTextBoxColumn.DataPropertyName = "Quantity_Items";
+            this.quantityItemsDataGridViewTextBoxColumn.HeaderText = "כמות";
+            this.quantityItemsDataGridViewTextBoxColumn.Name = "quantityItemsDataGridViewTextBoxColumn";
+            // 
+            // invoiceDetailsDataGridViewTextBoxColumn
+            // 
+            this.invoiceDetailsDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Details";
+            this.invoiceDetailsDataGridViewTextBoxColumn.HeaderText = "פרטים";
+            this.invoiceDetailsDataGridViewTextBoxColumn.Name = "invoiceDetailsDataGridViewTextBoxColumn";
+            // 
+            // customerNumberDataGridViewTextBoxColumn
+            // 
+            this.customerNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Number";
+            this.customerNumberDataGridViewTextBoxColumn.HeaderText = "מספר לקוח ";
+            this.customerNumberDataGridViewTextBoxColumn.Name = "customerNumberDataGridViewTextBoxColumn";
+            // 
+            // invoiceNumDataGridViewTextBoxColumn
+            // 
+            this.invoiceNumDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Num";
+            this.invoiceNumDataGridViewTextBoxColumn.HeaderText = " מספר החשבונית ";
+            this.invoiceNumDataGridViewTextBoxColumn.Name = "invoiceNumDataGridViewTextBoxColumn";
+            // 
+            // invoicedateDataGridViewTextBoxColumn
+            // 
+            this.invoicedateDataGridViewTextBoxColumn.DataPropertyName = "Invoice_date";
+            this.invoicedateDataGridViewTextBoxColumn.HeaderText = "תאריך החשבונית";
+            this.invoicedateDataGridViewTextBoxColumn.Name = "invoicedateDataGridViewTextBoxColumn";
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 563);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkTo_Invoice);
             this.Controls.Add(this.Serch_Btn);
@@ -523,7 +616,6 @@
             this.Controls.Add(this.New_Bt);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.In_Sub);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.InvoiceDate);
@@ -537,7 +629,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Invoices";
-            this.Text = "Invoices";
             this.Load += new System.EventHandler(this.Invoices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -552,6 +643,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,7 +686,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         public System.Windows.Forms.TextBox In_Q;
         public System.Windows.Forms.TextBox In_A;
         private MetroFramework.Controls.MetroTextBox In_Sub;
@@ -603,5 +696,16 @@
         private System.Windows.Forms.Button Serch_Btn;
         private System.Windows.Forms.LinkLabel linkTo_Invoice;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private InvoicesDataSet invoicesDataSet;
+        private System.Windows.Forms.BindingSource invoicesBindingSource;
+        private InvoicesDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceUrlDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityItemsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceDetailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceNumDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoicedateDataGridViewTextBoxColumn;
     }
 }

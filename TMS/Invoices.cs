@@ -39,6 +39,8 @@ namespace TMS
        
         private void Invoices_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'invoicesDataSet.Invoices' table. You can move, or remove it, as needed.
+            this.invoicesTableAdapter.Fill(this.invoicesDataSet.Invoices);
             button4.Visible = false; 
            this.WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'tmsDbDataSet1.Customer' table. You can move, or remove it, as needed.
@@ -272,13 +274,22 @@ namespace TMS
         string doc_num;
         private void button4_Click(object sender, EventArgs e)
         {
+            if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "")
+            {
+                MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
+                return;
+            }
+            else
+            {
+                button2.Visible = true;
+                button3.Visible = true;
+            }
             CreateInvoice cri = new CreateInvoice();
-
-            Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value,GetCustomerId().ToString(),CusName.Text,In_Dt.Text,double.Parse(In_A.Text), double.Parse(In_Q.Text),CusEmail.Text,In_Sub.Text);
+            Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text);
             //    CreateDocumentGeneralClient();
             Doc_ID = doc.ID.ToString();
             doc_num = doc.DocumentNumber.ToString();
-           string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid="+ Doc_ID + "&docNumber="+doc_num;
+         string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
 
             string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "','" +url+ "');";
 
@@ -294,9 +305,8 @@ namespace TMS
                     MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
                     return;
                 }
-
-
                 myReader = cmdDataBase.ExecuteReader();
+            
                 MessageBox.Show("חשבונית נשמרה בהצלחה");
                 while (myReader.Read()) { }
                 con.Close();
@@ -322,7 +332,11 @@ namespace TMS
 
         private void In_A_Leave(object sender, EventArgs e)
         {
-          
+            if (System.Text.RegularExpressions.Regex.IsMatch(In_A.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                In_A.Text = "";
+            }
             if (In_A.Text == "" || In_A.Text == "0" || In_Q.Text == "" || In_Q.Text== "0")
             {
                 MessageBox.Show("השדות כמות ומחיר  אינם יכולים להכיל את הערך 0 או להישאר רקים  ");
@@ -354,14 +368,14 @@ namespace TMS
             int y1 = 0;
 
             int count = 0;
-            string[] Words = date_start.Split(new char[] { '/' });
+            string[] Words = date_start.Split(new char[] { '-' });
             foreach (string Word in Words)
             {
 
                 count += 1;
-                if (count == 1) { Daystart = Word; d1 = int.Parse(Daystart); }
+                if (count == 3) { Daystart = Word; d1 = int.Parse(Daystart); }
                 if (count == 2) { Monthstart = Word; m1 = int.Parse(Monthstart); }
-                if (count == 3) { Yearstart = Word; y1 = int.Parse(Yearstart); }
+                if (count == 1) { Yearstart = Word; y1 = int.Parse(Yearstart); }
             }
 
             string Dayover;
@@ -372,14 +386,14 @@ namespace TMS
             int y2 = 0;
 
             int count1 = 0;
-            string[] Words2 = date_over.Split(new char[] { '/' });
+            string[] Words2 = date_over.Split(new char[] { '/',':',' ' });
             foreach (string Word2 in Words2)
             {
 
                 count1 += 1;
                 if (count1 == 1) { Dayover = Word2; d2 = int.Parse(Dayover); }
                 if (count1 == 2) { Monthover = Word2; m2 = int.Parse(Monthover); }
-                if (count1 == 3) { Yearover = Word2; y2 = int.Parse(Yearover); }
+                if (count1 == 3) { Yearover = Word2; y2 = int.Parse(Yearover.Trim()); }
             }
 
             if (y1 < y2)
@@ -417,10 +431,14 @@ namespace TMS
 
         private void Serch_Btn_Click(object sender, EventArgs e)
         {
+            button2.Visible = false;
+            button3.Visible = false;
+            CusName.Enabled = false;
+            InvoiceDate.Enabled = false;
             SqlConnection con = new SqlConnection(constring);
             con.Open();
             string query = "select count (*) from Invoices where Invoice_Num =" + Sherch_Txt.Text ;
-            string select = "select * from Invoices where Invoice_Num = " + Sherch_Txt.Text;
+            string select = "select * from Invoices inv inner join Customer cus on inv.Customer_Number = cus.Customer_Num where Invoice_Num = " + Sherch_Txt.Text;
             SqlCommand cmd3 = new SqlCommand(query, con);
             SqlCommand cmd4 = new SqlCommand(select, con);
             string output = cmd3.ExecuteScalar().ToString();
@@ -433,17 +451,20 @@ namespace TMS
                 if (dr.Read())
                 {
                     Invocie_Num.Text = "חשבונית מס :" + (dr["Invoice_Num"].ToString());
-                    CusName.Text = (dr["Customer_Number"].ToString());
+                    CusName.Text = (dr["Customer_Name"].ToString());
                     InvoiceDate.Text = (dr["Invoice_date"].ToString());
                   //  In_Sub.Text = (dr["Employee_BD"].ToString());
                     In_Dt.Text = (dr["Invoice_Details"].ToString());
                     In_Q.Text = (dr["Quantity_Items"].ToString());
-                    In_A.Text = (dr["Invoice_Amount"].ToString());
+                    In_A.Text =(dr["Invoice_Amount"].ToString());
+                    double n = double.Parse(In_A.Text);
+                    int x = (int)n;
+                    In_A.Text = x.ToString();
                     invoice_Link = (dr["Invoice_Url"].ToString());
                     linkTo_Invoice.Visible = true;
                     pictureBox1.Visible = true;
-                    string am;
-                    In_A.Text.Remove(0,4);
+                  //  string am;
+                 //   In_A.Text.Remove(0,4);
                     label12.Visible = false;
                     In_Sub.Visible = false;
                 }
@@ -480,6 +501,75 @@ namespace TMS
         {
             this.linkTo_Invoice.LinkVisited = true;
             System.Diagnostics.Process.Start(invoice_Link);
+        }
+        public static string getmaxdate(string date_start)
+        {
+            string date = "";
+            string Daystart;
+            string Monthstart;
+            string Yearstart;
+            int d1 = 0;
+            int m1 = 0;
+            int y1 = 0;
+
+            int count = 0;
+            string[] Words = date_start.Split(new char[] { '/', ':', ' ' });
+            foreach (string Word in Words)
+            {
+
+                count += 1;
+                if (count == 3) { Daystart = Word; d1 = int.Parse(Daystart);date += Daystart; }
+                if (count == 2) { Monthstart = Word; m1 = int.Parse(Monthstart); date +="/"+ Monthstart; }
+                if (count == 1) { Yearstart = Word; y1 = int.Parse(Yearstart); date += Yearstart; }
+                
+            }
+            return date;
+        }
+
+
+
+
+        private void InvoiceDate_Leave(object sender, EventArgs e)
+        {
+            string date = "";
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            string SqlSelectQuery = "SELECT MAX(Invoice_date)  MaxDate from Invoices ";
+            SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                 date = (dr["MaxDate"].ToString());
+            }
+            con.Close();
+
+            string mxd = "";
+             int r = check_date(InvoiceDate.Text, date);
+              if(r == 0)
+            {
+                mxd = getmaxdate(date);
+              MessageBox.Show( mxd+ " : תאריך לא ברצף באפשרותך לבחור מתאריך  ");
+                InvoiceDate.Text = date;
+            }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void In_Q_Leave(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(In_Q.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                In_Q.Text = "";
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 

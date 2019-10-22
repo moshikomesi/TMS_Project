@@ -160,6 +160,11 @@
     <Compile Include="Invoices.Designer.cs">
       <DependentUpon>Invoices.cs</DependentUpon>
     </Compile>
+    <Compile Include="InvoicesDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InvoicesDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +360,17 @@
     </None>
     <None Include="DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="InvoicesDataSet.xsc">
+      <DependentUpon>InvoicesDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InvoicesDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InvoicesDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InvoicesDataSet.xss">
+      <DependentUpon>InvoicesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
