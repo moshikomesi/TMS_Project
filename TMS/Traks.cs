@@ -21,6 +21,7 @@ namespace TMS
 
         private void Traks_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'v_T.Vehicles_Treatments' table. You can move, or remove it, as needed.
             this.vehicles_TreatmentsTableAdapter.Fill(this.v_T.Vehicles_Treatments);
             // TODO: This line of code loads data into the 'tmsDbDataSet1.Treatments_Type' table. You can move, or remove it, as needed.

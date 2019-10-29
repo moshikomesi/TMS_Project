@@ -102,6 +102,7 @@
     </Compile>
     <Compile Include="CreateCustomers.cs" />
     <Compile Include="CreateInvoice.cs" />
+    <Compile Include="CreateInvoiceCredit .cs" />
     <Compile Include="CreateReceipt.cs" />
     <Compile Include="CustomerDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

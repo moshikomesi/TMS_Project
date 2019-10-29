@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bills));
             this.tmsDbDataSet1 = new TMS.TmsDbDataSet1();
             this.Bill_Date = new System.Windows.Forms.DateTimePicker();
             this.customerDataSet = new TMS.CustomerDataSet();
@@ -51,17 +52,14 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Bill_Sub = new MetroFramework.Controls.MetroTextBox();
             this.dataSet1 = new TMS.DataSet1();
             this.dataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.Invocie_Num = new System.Windows.Forms.Label();
+            this.Rec_Num = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.MT_P = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.Mt_Amount = new System.Windows.Forms.TextBox();
@@ -75,7 +73,7 @@
             this.Mt_Br = new System.Windows.Forms.TextBox();
             this.Cash_P = new System.Windows.Forms.Panel();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.Cash_Amount = new System.Windows.Forms.TextBox();
             this.Cashe = new System.Windows.Forms.RadioButton();
             this.Check = new System.Windows.Forms.RadioButton();
             this.Mtransfer = new System.Windows.Forms.RadioButton();
@@ -98,6 +96,12 @@
             this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter1 = new TMS.TmsDbDataSetCusTableAdapters.CustomerTableAdapter();
             this.customerTableAdapter2 = new TMS.CustomerDataSetTableAdapters.CustomerTableAdapter();
+            this.Serch_Btn = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.SherchB_Txt = new MetroFramework.Controls.MetroTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.LinktoRec = new System.Windows.Forms.LinkLabel();
+            this.New_Bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
@@ -113,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetCus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tmsDbDataSet1
@@ -130,6 +135,7 @@
             this.Bill_Date.Name = "Bill_Date";
             this.Bill_Date.Size = new System.Drawing.Size(145, 29);
             this.Bill_Date.TabIndex = 41;
+            this.Bill_Date.Leave += new System.EventHandler(this.Bill_Date_Leave);
             // 
             // customerDataSet
             // 
@@ -151,11 +157,12 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(170, 124);
+            this.button4.BackgroundImage = global::TMS.Properties.Resources.recepit;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.Location = new System.Drawing.Point(57, 90);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.Size = new System.Drawing.Size(38, 40);
             this.button4.TabIndex = 43;
-            this.button4.Text = "Save_Bt";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -314,25 +321,6 @@
             // 
             this.customerBindingSource.DataSource = typeof(TMS.Customers);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(-22, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 48;
-            this.button3.Text = "-";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(59, 125);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 47;
-            this.button2.Text = "+";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // Bill_Sub
             // 
             this.Bill_Sub.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -359,16 +347,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // Invocie_Num
+            // Rec_Num
             // 
-            this.Invocie_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Invocie_Num.AutoSize = true;
-            this.Invocie_Num.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Invocie_Num.Location = new System.Drawing.Point(917, 21);
-            this.Invocie_Num.Name = "Invocie_Num";
-            this.Invocie_Num.Size = new System.Drawing.Size(167, 34);
-            this.Invocie_Num.TabIndex = 45;
-            this.Invocie_Num.Text = ":קבלה מספר";
+            this.Rec_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Rec_Num.AutoSize = true;
+            this.Rec_Num.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Rec_Num.Location = new System.Drawing.Point(843, 22);
+            this.Rec_Num.Name = "Rec_Num";
+            this.Rec_Num.Size = new System.Drawing.Size(167, 34);
+            this.Rec_Num.TabIndex = 45;
+            this.Rec_Num.Text = ":קבלה מספר";
             // 
             // label3
             // 
@@ -402,15 +390,6 @@
             this.label1.Size = new System.Drawing.Size(97, 24);
             this.label1.TabIndex = 40;
             this.label1.Text = "שם הלקוח";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(149, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 38;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // MT_P
             // 
@@ -529,7 +508,7 @@
             // 
             this.Cash_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Cash_P.Controls.Add(this.label16);
-            this.Cash_P.Controls.Add(this.textBox4);
+            this.Cash_P.Controls.Add(this.Cash_Amount);
             this.Cash_P.Location = new System.Drawing.Point(23, 406);
             this.Cash_P.Name = "Cash_P";
             this.Cash_P.Size = new System.Drawing.Size(1158, 38);
@@ -546,13 +525,13 @@
             this.label16.Tag = "סכום";
             this.label16.Text = "סכום";
             // 
-            // textBox4
+            // Cash_Amount
             // 
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox4.Location = new System.Drawing.Point(449, 5);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(602, 26);
-            this.textBox4.TabIndex = 57;
+            this.Cash_Amount.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Cash_Amount.Location = new System.Drawing.Point(449, 5);
+            this.Cash_Amount.Name = "Cash_Amount";
+            this.Cash_Amount.Size = new System.Drawing.Size(602, 26);
+            this.Cash_Amount.TabIndex = 57;
             // 
             // Cashe
             // 
@@ -762,11 +741,88 @@
             // 
             this.customerTableAdapter2.ClearBeforeFill = true;
             // 
+            // Serch_Btn
+            // 
+            this.Serch_Btn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.Serch_Btn.BackgroundImage = global::TMS.Properties.Resources.serchicn;
+            this.Serch_Btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.Serch_Btn.Location = new System.Drawing.Point(353, 20);
+            this.Serch_Btn.Name = "Serch_Btn";
+            this.Serch_Btn.Size = new System.Drawing.Size(37, 36);
+            this.Serch_Btn.TabIndex = 67;
+            this.Serch_Btn.UseVisualStyleBackColor = true;
+            this.Serch_Btn.Click += new System.EventHandler(this.Serch_Btn_Click);
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label21.Location = new System.Drawing.Point(570, 28);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(112, 24);
+            this.label21.TabIndex = 66;
+            this.label21.Text = "מספר קבלה";
+            // 
+            // SherchB_Txt
+            // 
+            this.SherchB_Txt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.SherchB_Txt.BackColor = System.Drawing.Color.White;
+            this.SherchB_Txt.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.SherchB_Txt.Location = new System.Drawing.Point(402, 24);
+            this.SherchB_Txt.Name = "SherchB_Txt";
+            this.SherchB_Txt.Size = new System.Drawing.Size(162, 30);
+            this.SherchB_Txt.TabIndex = 65;
+            this.SherchB_Txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(5, 166);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(34, 33);
+            this.pictureBox2.TabIndex = 69;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // LinktoRec
+            // 
+            this.LinktoRec.AutoSize = true;
+            this.LinktoRec.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LinktoRec.Location = new System.Drawing.Point(45, 174);
+            this.LinktoRec.Name = "LinktoRec";
+            this.LinktoRec.Size = new System.Drawing.Size(80, 16);
+            this.LinktoRec.TabIndex = 68;
+            this.LinktoRec.TabStop = true;
+            this.LinktoRec.Text = "קישור לקבלה";
+            this.LinktoRec.Visible = false;
+            this.LinktoRec.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinktoRec_LinkClicked);
+            // 
+            // New_Bt
+            // 
+            this.New_Bt.BackColor = System.Drawing.Color.White;
+            this.New_Bt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("New_Bt.BackgroundImage")));
+            this.New_Bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.New_Bt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.New_Bt.Location = new System.Drawing.Point(9, 90);
+            this.New_Bt.Name = "New_Bt";
+            this.New_Bt.Size = new System.Drawing.Size(42, 40);
+            this.New_Bt.TabIndex = 70;
+            this.New_Bt.UseVisualStyleBackColor = false;
+            this.New_Bt.Click += new System.EventHandler(this.New_Bt_Click);
+            // 
             // Bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
+            this.Controls.Add(this.New_Bt);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.LinktoRec);
+            this.Controls.Add(this.Serch_Btn);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.SherchB_Txt);
             this.Controls.Add(this.CusName);
             this.Controls.Add(this.Mtransfer);
             this.Controls.Add(this.Check);
@@ -780,14 +836,11 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.Bill_Sub);
-            this.Controls.Add(this.Invocie_Num);
+            this.Controls.Add(this.Rec_Num);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "Bills";
             this.Text = "Bills";
             this.Load += new System.EventHandler(this.Bills_Load);
@@ -810,6 +863,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetCus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -836,17 +890,14 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private MetroFramework.Controls.MetroTextBox Bill_Sub;
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource dataSet1BindingSource;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Label Invocie_Num;
+        private System.Windows.Forms.Label Rec_Num;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel MT_P;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.TextBox Mt_Amount;
@@ -860,7 +911,7 @@
         public System.Windows.Forms.TextBox Mt_Br;
         private System.Windows.Forms.Panel Cash_P;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox Cash_Amount;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
@@ -886,5 +937,11 @@
         private TmsDbDataSetCusTableAdapters.CustomerTableAdapter customerTableAdapter1;
         private System.Windows.Forms.BindingSource customerBindingSource3;
         private CustomerDataSetTableAdapters.CustomerTableAdapter customerTableAdapter2;
+        private System.Windows.Forms.Button Serch_Btn;
+        private System.Windows.Forms.Label label21;
+        private MetroFramework.Controls.MetroTextBox SherchB_Txt;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.LinkLabel LinktoRec;
+        private System.Windows.Forms.Button New_Bt;
     }
 }

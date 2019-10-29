@@ -41,7 +41,7 @@ namespace TMS
         {
             // TODO: This line of code loads data into the 'invoicesDataSet.Invoices' table. You can move, or remove it, as needed.
             this.invoicesTableAdapter.Fill(this.invoicesDataSet.Invoices);
-            button4.Visible = false; 
+            button4.Enabled = false; 
            this.WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'tmsDbDataSet1.Customer' table. You can move, or remove it, as needed.
             this.customerTableAdapter.Fill(this.tmsDbDataSet1.Customer);
@@ -231,8 +231,20 @@ namespace TMS
         
         private void button2_Click(object sender, EventArgs e)
         {
-            AddNewLine();
-          
+            if (a == 1)
+            {
+                panel3.Visible = true;
+                a += 1;
+            }
+            else if (a == 2)
+            {
+                panel4.Visible = true;
+                a += 1;
+            }
+        
+            //  AddNewLine();
+
+
         }
       public  bool isremove;
 
@@ -253,21 +265,40 @@ namespace TMS
         {
             DeleteLine();
         }
+
+        /*
+         if (PnalAdded.Count  > 0)
+         {
+             Panel pnl;
+             pnl = PnalAdded[PnalAdded.Count - 1];
+             this.Controls.Remove(pnl);
+             PnalAdded.Remove(pnl);
+             a = a - 1;
+         }
+         else
+         {
+             MessageBox.Show("לא ניתן למחוק");
+             return;
+         }
+         */
+
         public void DeleteLine()
         {
-            if (PnalAdded.Count  > 0)
+            if (a == 4)
             {
-                Panel pnl;
-                pnl = PnalAdded[PnalAdded.Count - 1];
-                this.Controls.Remove(pnl);
-                PnalAdded.Remove(pnl);
-                a = a - 1;
+
             }
-            else
+            else if (a == 3)
             {
-                MessageBox.Show("לא ניתן למחוק");
-                return;
+                panel4.Visible = false;
+                a -= 1;
             }
+            else if (a == 2)
+            {
+                panel3.Visible = false;
+                a -= 1;
+            }
+
         }
 
         string Doc_ID;
@@ -290,7 +321,7 @@ namespace TMS
             Doc_ID = doc.ID.ToString();
             doc_num = doc.DocumentNumber.ToString();
          string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
-
+            invoice_Link = url;
             string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "','" +url+ "');";
 
             SqlConnection con = new SqlConnection(constring);
@@ -310,6 +341,8 @@ namespace TMS
                 MessageBox.Show("חשבונית נשמרה בהצלחה");
                 while (myReader.Read()) { }
                 con.Close();
+                linkTo_Invoice.Visible = true;
+                pictureBox1.Visible = true;
                 button4.Enabled = false;
                 button2.Enabled = false;
                 button3.Enabled = false;
@@ -353,7 +386,9 @@ namespace TMS
                 Tax.Text = t.ToString();
                 double p = s + t;
                 To_Pay.Text = p.ToString() +" "+ "₪" ;
-                button4.Visible = true;
+                button4.Enabled = true;
+                button2.Enabled = true;
+                button3.Enabled = true;
                 
 
         }
@@ -431,10 +466,15 @@ namespace TMS
 
         private void Serch_Btn_Click(object sender, EventArgs e)
         {
-            button2.Visible = false;
-            button3.Visible = false;
+            button2.Enabled = false;
+            button3.Enabled = false;
             CusName.Enabled = false;
             InvoiceDate.Enabled = false;
+            if(Sherch_Txt.Text== "")
+            {
+                MessageBox.Show("אין אפרות לחפש חשבונית ללא מספר חשבונית ");
+                return;
+            }
             SqlConnection con = new SqlConnection(constring);
             con.Open();
             string query = "select count (*) from Invoices where Invoice_Num =" + Sherch_Txt.Text ;
@@ -480,6 +520,7 @@ namespace TMS
                 To_Pay.Text = p.ToString() + " " + "₪";
                 button4.Enabled = false;
                 New_Bt.Enabled = true;
+                CraditInvoiceB.Enabled = true;
 
             }
             else
@@ -571,6 +612,17 @@ namespace TMS
         {
 
         }
+
+        private void In_A_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        
+        private void CraditInvoiceB_Click(object sender, EventArgs e)
+        {
+            CreateInvoiceCredit cric = new CreateInvoiceCredit();
+            cric.CreateDocumentRegularCustomer(CusName.Text, GetCustomerId(), Sherch_Txt.Text, double.Parse(To_Pay.Text), CusEmail.Text);
+        }
     }
 
 
@@ -653,5 +705,5 @@ namespace TMS
 
 
     }
-    
+
 

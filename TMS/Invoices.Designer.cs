@@ -34,7 +34,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.Invocie_Num = new System.Windows.Forms.Label();
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             this.InvoiceDate = new System.Windows.Forms.DateTimePicker();
             this.customerDataSet = new TMS.CustomerDataSet();
             this.customerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customersTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new TMS.TmsDbDataSet1TableAdapters.CustomerTableAdapter();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -75,9 +73,6 @@
             this.linkTo_Invoice = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.invoicesDataSet = new TMS.InvoicesDataSet();
-            this.invoicesTableAdapter = new TMS.InvoicesDataSetTableAdapters.InvoicesTableAdapter();
             this.invoiceUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,7 +80,30 @@
             this.customerNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoicedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoicesDataSet = new TMS.InvoicesDataSet();
+            this.invoicesTableAdapter = new TMS.InvoicesDataSetTableAdapters.InvoicesTableAdapter();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.In_Sum2 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.In_Dt2 = new System.Windows.Forms.TextBox();
+            this.In_Q2 = new System.Windows.Forms.TextBox();
+            this.In_A2 = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.In_Sum3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.In_Dt3 = new System.Windows.Forms.TextBox();
+            this.In_Q3 = new System.Windows.Forms.TextBox();
+            this.In_A3 = new System.Windows.Forms.TextBox();
+            this.CraditInvoiceB = new System.Windows.Forms.Button();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customersTblBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -93,12 +111,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataSet)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -144,10 +165,6 @@
             this.Invocie_Num.Size = new System.Drawing.Size(255, 34);
             this.Invocie_Num.TabIndex = 15;
             this.Invocie_Num.Text = ": חשבונית מס מספר";
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(TMS.Customers);
             // 
             // label9
             // 
@@ -239,24 +256,24 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(114, 121);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 28;
             this.button2.Text = "+";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(33, 121);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 29;
             this.button3.Text = "-";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // contextMenuStrip1
@@ -269,10 +286,11 @@
             this.CusName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CusName.DataSource = this.customerBindingSource1;
             this.CusName.DisplayMember = "Customer_Name";
+            this.CusName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.CusName.FormattingEnabled = true;
-            this.CusName.Location = new System.Drawing.Point(775, 86);
+            this.CusName.Location = new System.Drawing.Point(609, 86);
             this.CusName.Name = "CusName";
-            this.CusName.Size = new System.Drawing.Size(160, 21);
+            this.CusName.Size = new System.Drawing.Size(326, 28);
             this.CusName.TabIndex = 0;
             this.CusName.ValueMember = "Customer_Num";
             this.CusName.SelectedIndexChanged += new System.EventHandler(this.CusName_SelectedIndexChanged);
@@ -319,10 +337,6 @@
             // 
             this.customerDataSetBindingSource.DataSource = this.customerDataSet;
             this.customerDataSetBindingSource.Position = 0;
-            // 
-            // customersTblBindingSource
-            // 
-            this.customersTblBindingSource.DataSource = typeof(TMS.CustomersTbl);
             // 
             // customerTableAdapter
             // 
@@ -429,6 +443,7 @@
             this.In_A.ShortcutsEnabled = false;
             this.In_A.Size = new System.Drawing.Size(78, 26);
             this.In_A.TabIndex = 3;
+            this.In_A.TextChanged += new System.EventHandler(this.In_A_TextChanged);
             this.In_A.Leave += new System.EventHandler(this.In_A_Leave);
             // 
             // In_Sub
@@ -546,20 +561,6 @@
             this.dataGridView1.TabIndex = 43;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // invoicesBindingSource
-            // 
-            this.invoicesBindingSource.DataMember = "Invoices";
-            this.invoicesBindingSource.DataSource = this.invoicesDataSet;
-            // 
-            // invoicesDataSet
-            // 
-            this.invoicesDataSet.DataSetName = "InvoicesDataSet";
-            this.invoicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // invoicesTableAdapter
-            // 
-            this.invoicesTableAdapter.ClearBeforeFill = true;
-            // 
             // invoiceUrlDataGridViewTextBoxColumn
             // 
             this.invoiceUrlDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Url";
@@ -602,11 +603,229 @@
             this.invoicedateDataGridViewTextBoxColumn.HeaderText = "תאריך החשבונית";
             this.invoicedateDataGridViewTextBoxColumn.Name = "invoicedateDataGridViewTextBoxColumn";
             // 
+            // invoicesBindingSource
+            // 
+            this.invoicesBindingSource.DataMember = "Invoices";
+            this.invoicesBindingSource.DataSource = this.invoicesDataSet;
+            // 
+            // invoicesDataSet
+            // 
+            this.invoicesDataSet.DataSetName = "InvoicesDataSet";
+            this.invoicesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel3.Controls.Add(this.In_Sum2);
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label16);
+            this.panel3.Controls.Add(this.In_Dt2);
+            this.panel3.Controls.Add(this.In_Q2);
+            this.panel3.Controls.Add(this.In_A2);
+            this.panel3.Location = new System.Drawing.Point(150, 350);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1082, 38);
+            this.panel3.TabIndex = 34;
+            this.panel3.Visible = false;
+            // 
+            // In_Sum2
+            // 
+            this.In_Sum2.Enabled = false;
+            this.In_Sum2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Sum2.Location = new System.Drawing.Point(30, 8);
+            this.In_Sum2.Name = "In_Sum2";
+            this.In_Sum2.Size = new System.Drawing.Size(78, 26);
+            this.In_Sum2.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(120, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "סהכ לפני מעמ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label14.Location = new System.Drawing.Point(330, 10);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(113, 19);
+            this.label14.TabIndex = 5;
+            this.label14.Text = "מחיר לפני מע\"מ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(545, 8);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(42, 19);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "כמות";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label16.Location = new System.Drawing.Point(1025, 8);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(50, 19);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "פרטים";
+            // 
+            // In_Dt2
+            // 
+            this.In_Dt2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.In_Dt2.Location = new System.Drawing.Point(620, 8);
+            this.In_Dt2.Name = "In_Dt2";
+            this.In_Dt2.Size = new System.Drawing.Size(394, 26);
+            this.In_Dt2.TabIndex = 1;
+            // 
+            // In_Q2
+            // 
+            this.In_Q2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Q2.Location = new System.Drawing.Point(450, 8);
+            this.In_Q2.Name = "In_Q2";
+            this.In_Q2.Size = new System.Drawing.Size(78, 26);
+            this.In_Q2.TabIndex = 2;
+            // 
+            // In_A2
+            // 
+            this.In_A2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_A2.Location = new System.Drawing.Point(240, 8);
+            this.In_A2.Name = "In_A2";
+            this.In_A2.ShortcutsEnabled = false;
+            this.In_A2.Size = new System.Drawing.Size(78, 26);
+            this.In_A2.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.panel4.Controls.Add(this.In_Sum3);
+            this.panel4.Controls.Add(this.label17);
+            this.panel4.Controls.Add(this.label18);
+            this.panel4.Controls.Add(this.label19);
+            this.panel4.Controls.Add(this.label20);
+            this.panel4.Controls.Add(this.In_Dt3);
+            this.panel4.Controls.Add(this.In_Q3);
+            this.panel4.Controls.Add(this.In_A3);
+            this.panel4.Location = new System.Drawing.Point(150, 390);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1082, 38);
+            this.panel4.TabIndex = 35;
+            this.panel4.Visible = false;
+            // 
+            // In_Sum3
+            // 
+            this.In_Sum3.Enabled = false;
+            this.In_Sum3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Sum3.Location = new System.Drawing.Point(30, 8);
+            this.In_Sum3.Name = "In_Sum3";
+            this.In_Sum3.Size = new System.Drawing.Size(78, 26);
+            this.In_Sum3.TabIndex = 4;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label17.Location = new System.Drawing.Point(120, 8);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(101, 19);
+            this.label17.TabIndex = 6;
+            this.label17.Text = "סהכ לפני מעמ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label18.Location = new System.Drawing.Point(330, 10);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(113, 19);
+            this.label18.TabIndex = 5;
+            this.label18.Text = "מחיר לפני מע\"מ";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(545, 8);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(42, 19);
+            this.label19.TabIndex = 7;
+            this.label19.Text = "כמות";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label20.Location = new System.Drawing.Point(1025, 8);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(50, 19);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "פרטים";
+            // 
+            // In_Dt3
+            // 
+            this.In_Dt3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.In_Dt3.Location = new System.Drawing.Point(620, 8);
+            this.In_Dt3.Name = "In_Dt3";
+            this.In_Dt3.Size = new System.Drawing.Size(394, 26);
+            this.In_Dt3.TabIndex = 1;
+            // 
+            // In_Q3
+            // 
+            this.In_Q3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_Q3.Location = new System.Drawing.Point(450, 8);
+            this.In_Q3.Name = "In_Q3";
+            this.In_Q3.Size = new System.Drawing.Size(78, 26);
+            this.In_Q3.TabIndex = 2;
+            // 
+            // In_A3
+            // 
+            this.In_A3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.In_A3.Location = new System.Drawing.Point(240, 8);
+            this.In_A3.Name = "In_A3";
+            this.In_A3.ShortcutsEnabled = false;
+            this.In_A3.Size = new System.Drawing.Size(78, 26);
+            this.In_A3.TabIndex = 3;
+            // 
+            // CraditInvoiceB
+            // 
+            this.CraditInvoiceB.Enabled = false;
+            this.CraditInvoiceB.Location = new System.Drawing.Point(153, 169);
+            this.CraditInvoiceB.Name = "CraditInvoiceB";
+            this.CraditInvoiceB.Size = new System.Drawing.Size(43, 40);
+            this.CraditInvoiceB.TabIndex = 44;
+            this.CraditInvoiceB.Text = "הפק זיכוי";
+            this.CraditInvoiceB.UseVisualStyleBackColor = true;
+            this.CraditInvoiceB.Click += new System.EventHandler(this.CraditInvoiceB_Click);
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataSource = typeof(TMS.Customers);
+            // 
+            // customersTblBindingSource
+            // 
+            this.customersTblBindingSource.DataSource = typeof(TMS.CustomersTbl);
+            // 
             // Invoices
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1123, 563);
+            this.Controls.Add(this.CraditInvoiceB);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkTo_Invoice);
@@ -630,7 +849,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Invoices";
             this.Load += new System.EventHandler(this.Invoices_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
@@ -639,13 +857,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesDataSet)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -707,5 +930,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn customerNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoiceNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoicedateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox In_Sum2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox In_Dt2;
+        public System.Windows.Forms.TextBox In_Q2;
+        public System.Windows.Forms.TextBox In_A2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.TextBox In_Sum3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox In_Dt3;
+        public System.Windows.Forms.TextBox In_Q3;
+        public System.Windows.Forms.TextBox In_A3;
+        private System.Windows.Forms.Button CraditInvoiceB;
     }
 }

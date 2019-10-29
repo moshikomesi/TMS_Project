@@ -22,6 +22,7 @@ namespace TMS
 
         private void Drivers_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             SqlConnection con = new SqlConnection(constring);
             string SlectEQ = "SELECT MAX(Employee_Num) as num from Employee";
             con.Open();

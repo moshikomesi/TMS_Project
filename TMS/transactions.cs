@@ -53,6 +53,7 @@ namespace TMS
 
         private void transactions_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             // הקפאת סוג הובלה 
             Isred = Properties.Settings.Default.Isred;
             if(Isred)
