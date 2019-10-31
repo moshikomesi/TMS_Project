@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TMS.ServiceReference1;
@@ -18,10 +19,18 @@ namespace TMS
     {
         public Invoices()
         {
+    
             InitializeComponent();
+         
 
         }
-     
+
+        public void StartForm()
+        {
+            Application.Run(new SplashScrean());
+        }
+
+
         string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
         
         int a = 1;
@@ -305,6 +314,11 @@ namespace TMS
         string doc_num;
         private void button4_Click(object sender, EventArgs e)
         {
+            Thread timer = new Thread(new ThreadStart(StartForm));
+            timer.Start();
+            Thread.Sleep(5000);
+            
+
             if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "")
             {
                 MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
@@ -317,13 +331,23 @@ namespace TMS
             }
             CreateInvoice cri = new CreateInvoice();
             Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text);
-            //    CreateDocumentGeneralClient();
-            Doc_ID = doc.ID.ToString();
-            doc_num = doc.DocumentNumber.ToString();
-         string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
+            timer.Abort();
+            if (doc.Errors.Length > 0)
+            {
+                MessageBox.Show(doc.Errors[0].Error.ToString());
+                return;
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(" חשבונית  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                Doc_ID = doc.ID.ToString();
+                doc_num = doc.DocumentNumber.ToString();
+               
+            }
+            string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
             invoice_Link = url;
             string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "','" +url+ "');";
-
             SqlConnection con = new SqlConnection(constring);
             SqlCommand cmdDataBase = new SqlCommand(Query, con);
             SqlDataReader myReader;
@@ -337,7 +361,7 @@ namespace TMS
                     return;
                 }
                 myReader = cmdDataBase.ExecuteReader();
-            
+               
                 MessageBox.Show("חשבונית נשמרה בהצלחה");
                 while (myReader.Read()) { }
                 con.Close();
@@ -463,9 +487,10 @@ namespace TMS
             this.Close();
             inv.ShowDialog();
         }
-
+        double ToPay;
         private void Serch_Btn_Click(object sender, EventArgs e)
         {
+            
             button2.Enabled = false;
             button3.Enabled = false;
             CusName.Enabled = false;
@@ -509,14 +534,15 @@ namespace TMS
                     In_Sub.Visible = false;
                 }
                 con.Close();
-                double q = double.Parse(In_Q.Text);
+                
                 double a = double.Parse(In_A.Text);
-                double s = a * q;
+                double s = a;
                 In_Sum.Text = s.ToString();
                 Sum.Text = In_Sum.Text;
                 double t = s * 0.17;
                 Tax.Text = t.ToString();
                 double p = s + t;
+                ToPay = p;
                 To_Pay.Text = p.ToString() + " " + "₪";
                 button4.Enabled = false;
                 New_Bt.Enabled = true;
@@ -620,8 +646,21 @@ namespace TMS
         
         private void CraditInvoiceB_Click(object sender, EventArgs e)
         {
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(6000);
             CreateInvoiceCredit cric = new CreateInvoiceCredit();
-            cric.CreateDocumentRegularCustomer(CusName.Text, GetCustomerId(), Sherch_Txt.Text, double.Parse(To_Pay.Text), CusEmail.Text);
+            Document docc = cric.CreateDocumentRegularCustomer(CusName.Text, GetCustomerId(), Sherch_Txt.Text,ToPay, CusEmail.Text);
+            t.Abort();
+            if (docc.Errors.Length > 0)
+            {
+                MessageBox.Show(docc.Errors[0].Error.ToString());
+            }
+            else
+            {
+                System.Windows.Forms.MessageBox.Show(" חשבונית זיכוי מס : " + docc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+            }
+            
         }
     }
 

@@ -53,7 +53,7 @@ namespace TMS
             };
 
             doc = apiSrv.CreateDocument(doc, token);
-
+            /*
             if (doc.Errors.Length > 0)
             {
                 // HANDLE ERROR
@@ -62,6 +62,7 @@ namespace TMS
             {
                 System.Windows.Forms.MessageBox.Show("חשבונית זיכוי מס : " +doc.DocumentNumber +"הופקה ונשלחה אל הלקוח בהצלחה");
             }
+            */
             return doc;
         }
 

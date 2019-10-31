@@ -16,6 +16,7 @@ namespace TMS
        
         public Form1()
         {
+            
             InitializeComponent();
             
         }
@@ -24,7 +25,7 @@ namespace TMS
         private void Form1_Load(object sender, EventArgs e)
         {
 
-
+           
         }
 
         private void transactionsbtn_Click(object sender, EventArgs e)

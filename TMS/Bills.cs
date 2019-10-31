@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
 using System.Windows.Forms;
@@ -143,10 +144,16 @@ namespace TMS
         private void button2_Click(object sender, EventArgs e)
         {
 
-        }
+             }
         string Doc_ID;
         string doc_num;
         string Bill_link = "";
+
+        public void StartForm()
+        {
+            Application.Run(new SplashScrean());
+        }
+
         private void button4_Click(object sender, EventArgs e)
         {
             if (cashe_s)
@@ -173,14 +180,29 @@ namespace TMS
                     return;
                 }
             }
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(6000);
             string url = "";
             CreateReceipt cri = new CreateReceipt();
             if (check_s)
             {
                 
                 Document doc = cri.CreateDocumentGeneralClient(Ck_num.Text, Ck_Anum.Text, Ck_B.Text, Ck_Br.Text, CusName.Text, GetCustomerId().ToString(), Bill_Date.Value, Check_Date.Value, double.Parse(Ck_Amount.Text), Bill_Sub.Text, CusEmail.Text);
-                Doc_ID = doc.ID.ToString();
-                doc_num = doc.DocumentNumber.ToString();
+                t.Abort();
+                if (doc.Errors.Length > 0)
+                {
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
+                    return;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" 'קבלה  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
                 url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
                 Bill_link = url;
                 string Query = "insert into Receipts(Receipt_Num,Receipts_Date,Customer_Number,Payment_type,Payment_Amount,Receipts_Detaills,Receipt_Url) values('" + number + "','" + Bill_Date.Text + "','" + GetCustomerNum() + "','" + "Check" + "','" + Ck_Amount.Text + "','" + Bill_Sub.Text + "','" + url + "');";
@@ -205,8 +227,20 @@ namespace TMS
             if (mtransfer_s)
             {
                 Document doc = cri.CreateDocumentGeneralClient(Mt_AcNum.Text, Mt_B.Text, Mt_Br.Text, CusName.Text, GetCustomerId().ToString(), Bill_Date.Value, Mt_Date.Value, double.Parse(Mt_Amount.Text), Bill_Sub.Text, CusEmail.Text);
-                Doc_ID = doc.ID.ToString();
-                doc_num = doc.DocumentNumber.ToString();
+                t.Abort();
+                if (doc.Errors.Length > 0)
+                {
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
+                    return;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" 'קבלה  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
                 url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
                 Bill_link = url;
              
@@ -238,8 +272,20 @@ namespace TMS
             if (cashe_s)
             {
                 Document doc = cri.CreateDocumentGeneralClient(CusName.Text, GetCustomerId().ToString(), Bill_Date.Value, Bill_Date.Value, double.Parse(Cash_Amount.Text), Bill_Sub.Text, CusEmail.Text);
-                Doc_ID = doc.ID.ToString();
-                doc_num = doc.DocumentNumber.ToString();
+                t.Abort();
+                if (doc.Errors.Length > 0)
+                {
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
+                    return;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" 'קבלה  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
                 url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
                 Bill_link = url;
                 string Query = "insert into Receipts(Receipt_Num,Receipts_Date,Customer_Number,Payment_type,Payment_Amount,Receipts_Detaills,Receipt_Url) values('" + number + "','" + Bill_Date.Text + "','" + GetCustomerNum() + "','" + "Cash" + "','" + Cash_Amount.Text + "','" + Bill_Sub.Text + "','" + url + "');";
@@ -545,7 +591,7 @@ namespace TMS
             }
             else
             {
-                MessageBox.Show("מספר חשבונית לא מופיע במערכת");
+                MessageBox.Show("קבלה מספר : " +SherchB_Txt+ " לא מופיעה במערכת");
                 return;
             }
         }

@@ -75,7 +75,7 @@ namespace TMS
             };
 
             doc = apiSrv.CreateDocument(doc, token);
-
+            /*
             if (doc.Errors.Length > 0)
             {
                 System.Windows.Forms.MessageBox.Show("ישנה טעות בהפקת המסמך");
@@ -84,6 +84,7 @@ namespace TMS
             {
                 System.Windows.Forms.MessageBox.Show("מסמך הופק ונשלח אל הלקוח בהצלחה");
             }
+            */
             return doc;
         }
 
@@ -149,7 +150,7 @@ namespace TMS
             };
 
             doc = apiSrv.CreateDocument(doc, token);
-
+            /*
             if (doc.Errors.Length > 0)
             {
                 System.Windows.Forms.MessageBox.Show("ישנה טעות בהפקת המסמך");
@@ -158,6 +159,7 @@ namespace TMS
             {
                 System.Windows.Forms.MessageBox.Show("מסמך הופק ונשלח אל הלקוח בהצלחה");
             }
+            */
             return doc;
         }
         // bill for cash
@@ -217,7 +219,7 @@ namespace TMS
             };
 
             doc = apiSrv.CreateDocument(doc, token);
-
+            /*
             if (doc.Errors.Length > 0)
             {
                 System.Windows.Forms.MessageBox.Show("ישנה טעות בהפקת המסמך");
@@ -226,6 +228,7 @@ namespace TMS
             {
                 System.Windows.Forms.MessageBox.Show("מסמך הופק ונשלח אל הלקוח בהצלחה");
             }
+            */
             return doc;
         }
 

@@ -71,7 +71,7 @@ namespace TMS
 
        doc = apiSrv.CreateDocument(doc, token);
             
-
+            /*
         if (doc.Errors.Length > 0)
         {
                 System.Windows.Forms.MessageBox.Show("בעיה בהפקת חשבונית");
@@ -80,6 +80,7 @@ namespace TMS
         {
                 System.Windows.Forms.MessageBox.Show("חשבונית הופקה ונשלחה בהצלחה ללקוח");
             }
+            */
         return doc;
     }
 

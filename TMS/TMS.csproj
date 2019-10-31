@@ -223,6 +223,12 @@
     <Compile Include="ShippTypeTbl.Designer.cs">
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScrean.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScrean.Designer.cs">
+      <DependentUpon>SplashScrean.cs</DependentUpon>
+    </Compile>
     <Compile Include="TmsDbDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -314,6 +320,9 @@
     <EmbeddedResource Include="ShippReport.rdlc" />
     <EmbeddedResource Include="ShippTypeTbl.resx">
       <DependentUpon>ShippTypeTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScrean.resx">
+      <DependentUpon>SplashScrean.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SumShippReport.rdlc" />
     <EmbeddedResource Include="Traks.resx">

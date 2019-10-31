@@ -170,6 +170,7 @@
             // 
             this.CusEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CusEmail.BackColor = System.Drawing.Color.White;
+            this.CusEmail.Enabled = false;
             this.CusEmail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.CusEmail.Location = new System.Drawing.Point(637, 133);
             this.CusEmail.Name = "CusEmail";

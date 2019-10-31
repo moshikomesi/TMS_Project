@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -35,7 +36,9 @@ namespace TMS
         {
             this.reportViewer1.RefreshReport();
             string s = C_N.Text;
-    
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(6000);
             using (ShippReportTmsDbEntities db = new ShippReportTmsDbEntities() )
             {
        GetShippReport_ResultBindingSource.DataSource  =  db.GetShippReport(FromD_P.Value, ToDate_P.Value, s, F_Employee.Text, To_Employee.Text).ToList();
@@ -64,15 +67,21 @@ namespace TMS
                     reportViewer1.Padding = new Padding(hPad, 1, hPad, 1);
                 }
                 reportViewer1.Visible = true;
+                t.Abort();
             }
         }
+        public void StartForm()
+        {
+            Application.Run(new SplashScrean());
+        }
 
-      
         private void SumBtn_Click(object sender, EventArgs e)
         {
             this.reportViewer2.RefreshReport();
             string s = C_N.Text;
-
+            Thread t = new Thread(new ThreadStart(StartForm));
+            t.Start();
+            Thread.Sleep(6000);
             using (SumShippReportTmsDbEntities db = new SumShippReportTmsDbEntities())
             {
                 GetSumShippReport_ResultBindingSource.DataSource = db.GetSumShippReport(FromD_P.Value, ToDate_P.Value, s, F_Employee.Text, To_Employee.Text).ToList();
@@ -96,6 +105,7 @@ namespace TMS
                     reportViewer2.Padding = new Padding(hPad, 1, hPad, 1);
                 }
                 reportViewer2.Visible = true;
+                t.Abort();
             }
         }
     }
