@@ -38,7 +38,7 @@ namespace TMS
             string s = C_N.Text;
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(6000);
+            Thread.Sleep(3000);
             using (ShippReportTmsDbEntities db = new ShippReportTmsDbEntities() )
             {
        GetShippReport_ResultBindingSource.DataSource  =  db.GetShippReport(FromD_P.Value, ToDate_P.Value, s, F_Employee.Text, To_Employee.Text).ToList();
@@ -53,12 +53,12 @@ namespace TMS
                 reportViewer1.LocalReport.SetParameters(rParams);
                 reportViewer1.RefreshReport();
                 splitContainer1.Visible = false;
-                this.WindowState = FormWindowState.Maximized;
+                
                 
                 System.Drawing.Printing.PageSettings newPageSttings = new System.Drawing.Printing.PageSettings();
                 newPageSttings.Margins = new System.Drawing.Printing.Margins(40,40,40,40);
                 reportViewer1.SetPageSettings(newPageSttings);
-                
+                this.WindowState = FormWindowState.Maximized;
                 ReportPageSettings rpt = reportViewer1.LocalReport.GetDefaultPageSettings();
                 if (reportViewer1.ParentForm.Width > rpt.PaperSize.Width)
                 {
@@ -81,7 +81,7 @@ namespace TMS
             string s = C_N.Text;
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(6000);
+            Thread.Sleep(3000);
             using (SumShippReportTmsDbEntities db = new SumShippReportTmsDbEntities())
             {
                 GetSumShippReport_ResultBindingSource.DataSource = db.GetSumShippReport(FromD_P.Value, ToDate_P.Value, s, F_Employee.Text, To_Employee.Text).ToList();

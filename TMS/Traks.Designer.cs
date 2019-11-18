@@ -65,6 +65,9 @@
             this.T_Last_lb = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Vnum = new System.Windows.Forms.ComboBox();
+            this.vehicleBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tmsDbDataSetVehicle = new TMS.TmsDbDataSetVehicle();
             this.Tdate = new System.Windows.Forms.DateTimePicker();
             this.SaveB = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
@@ -75,7 +78,6 @@
             this.T_Type = new System.Windows.Forms.ComboBox();
             this.treatmentsTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tmsDbDataSet = new TMS.TmsDbDataSet();
-            this.Vnum = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.vehicleNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,12 +92,16 @@
             this.tmsDbDataVehicles_T = new TMS.TmsDbDataVehicles_T();
             this.tmsDbDataVehiclesTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vehicles_TreatmentsTableAdapter = new TMS.V_TTableAdapters.Vehicles_TreatmentsTableAdapter();
+            this.vehicleTableAdapter = new TMS.TmsDbDataSetVehicleTableAdapters.VehicleTableAdapter();
+            this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
             this.tabControl1.SuspendLayout();
             this.קליטה.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetVehicle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet)).BeginInit();
             this.tabPage1.SuspendLayout();
@@ -149,34 +155,34 @@
             // 
             this.TrackType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TrackType.AutoSize = true;
-            this.TrackType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.TrackType.Location = new System.Drawing.Point(280, 230);
+            this.TrackType.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.TrackType.Location = new System.Drawing.Point(281, 229);
             this.TrackType.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TrackType.Name = "TrackType";
-            this.TrackType.Size = new System.Drawing.Size(72, 20);
+            this.TrackType.Size = new System.Drawing.Size(105, 32);
             this.TrackType.TabIndex = 83;
             this.TrackType.Text = "סוג רכב ";
             // 
             // Truck_Type
             // 
             this.Truck_Type.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Truck_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Truck_Type.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Truck_Type.Location = new System.Drawing.Point(62, 230);
             this.Truck_Type.Margin = new System.Windows.Forms.Padding(6);
             this.Truck_Type.Name = "Truck_Type";
             this.Truck_Type.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Truck_Type.Size = new System.Drawing.Size(136, 26);
+            this.Truck_Type.Size = new System.Drawing.Size(157, 39);
             this.Truck_Type.TabIndex = 77;
             // 
             // TrackYear
             // 
             this.TrackYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TrackYear.AutoSize = true;
-            this.TrackYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.TrackYear.Location = new System.Drawing.Point(269, 103);
+            this.TrackYear.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.TrackYear.Location = new System.Drawing.Point(264, 101);
             this.TrackYear.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TrackYear.Name = "TrackYear";
-            this.TrackYear.Size = new System.Drawing.Size(87, 20);
+            this.TrackYear.Size = new System.Drawing.Size(122, 32);
             this.TrackYear.TabIndex = 78;
             this.TrackYear.Text = "שנת ייצור ";
             this.TrackYear.Click += new System.EventHandler(this.TrackYear_Click);
@@ -185,24 +191,25 @@
             // 
             this.TrackNum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TrackNum.AutoSize = true;
-            this.TrackNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.TrackNum.Location = new System.Drawing.Point(269, 171);
+            this.TrackNum.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.TrackNum.Location = new System.Drawing.Point(256, 169);
             this.TrackNum.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TrackNum.Name = "TrackNum";
-            this.TrackNum.Size = new System.Drawing.Size(83, 20);
+            this.TrackNum.Size = new System.Drawing.Size(125, 32);
             this.TrackNum.TabIndex = 74;
             this.TrackNum.Text = "מספר רכב";
             // 
             // Trak_Num
             // 
             this.Trak_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.Trak_Num.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Trak_Num.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Trak_Num.Location = new System.Drawing.Point(62, 171);
             this.Trak_Num.Margin = new System.Windows.Forms.Padding(6);
             this.Trak_Num.Name = "Trak_Num";
             this.Trak_Num.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Trak_Num.Size = new System.Drawing.Size(136, 26);
+            this.Trak_Num.Size = new System.Drawing.Size(157, 39);
             this.Trak_Num.TabIndex = 75;
+            this.Trak_Num.TextChanged += new System.EventHandler(this.Trak_Num_TextChanged);
             // 
             // Driver_S
             // 
@@ -254,10 +261,10 @@
             // 
             this.SherchDriverBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.SherchDriverBtn.Image = global::TMS.Properties.Resources.serchicn1;
-            this.SherchDriverBtn.Location = new System.Drawing.Point(493, 53);
+            this.SherchDriverBtn.Location = new System.Drawing.Point(480, 55);
             this.SherchDriverBtn.Margin = new System.Windows.Forms.Padding(6);
             this.SherchDriverBtn.Name = "SherchDriverBtn";
-            this.SherchDriverBtn.Size = new System.Drawing.Size(39, 31);
+            this.SherchDriverBtn.Size = new System.Drawing.Size(46, 37);
             this.SherchDriverBtn.TabIndex = 85;
             this.SherchDriverBtn.UseVisualStyleBackColor = true;
             this.SherchDriverBtn.Click += new System.EventHandler(this.SherchDriverBtn_Click);
@@ -266,11 +273,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(105, 168);
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(103, 148);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 22);
+            this.label1.Size = new System.Drawing.Size(64, 32);
             this.label1.TabIndex = 98;
             this.label1.Text = "חדש";
             // 
@@ -278,11 +285,11 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(103, 88);
+            this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(103, 87);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 22);
+            this.label2.Size = new System.Drawing.Size(67, 32);
             this.label2.TabIndex = 97;
             this.label2.Text = "עדכון";
             // 
@@ -290,11 +297,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(88, 19);
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.Location = new System.Drawing.Point(88, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 22);
+            this.label3.Size = new System.Drawing.Size(86, 32);
             this.label3.TabIndex = 96;
             this.label3.Text = "שמירה";
             // 
@@ -303,10 +310,10 @@
             this.Update.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update.Image = global::TMS.Properties.Resources.updateicon;
-            this.Update.Location = new System.Drawing.Point(27, 85);
+            this.Update.Location = new System.Drawing.Point(27, 84);
             this.Update.Margin = new System.Windows.Forms.Padding(6);
             this.Update.Name = "Update";
-            this.Update.Size = new System.Drawing.Size(35, 43);
+            this.Update.Size = new System.Drawing.Size(44, 37);
             this.Update.TabIndex = 94;
             this.Update.UseVisualStyleBackColor = true;
             this.Update.Click += new System.EventHandler(this.Update_Click);
@@ -314,12 +321,12 @@
             // ResetBtn
             // 
             this.ResetBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.ResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.ResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResetBtn.Image = global::TMS.Properties.Resources.pluse;
-            this.ResetBtn.Location = new System.Drawing.Point(27, 165);
+            this.ResetBtn.Location = new System.Drawing.Point(27, 143);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ResetBtn.Name = "ResetBtn";
-            this.ResetBtn.Size = new System.Drawing.Size(35, 33);
+            this.ResetBtn.Size = new System.Drawing.Size(44, 37);
             this.ResetBtn.TabIndex = 95;
             this.ResetBtn.UseVisualStyleBackColor = true;
             this.ResetBtn.Click += new System.EventHandler(this.ResetBtn_Click);
@@ -327,12 +334,12 @@
             // Save
             // 
             this.Save.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Save.Image = global::TMS.Properties.Resources.okiconpng;
-            this.Save.Location = new System.Drawing.Point(27, 16);
+            this.Save.Location = new System.Drawing.Point(27, 15);
             this.Save.Margin = new System.Windows.Forms.Padding(6);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(35, 33);
+            this.Save.Size = new System.Drawing.Size(44, 37);
             this.Save.TabIndex = 93;
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
@@ -341,32 +348,33 @@
             // 
             this.Vhicle_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Vhicle_Date.CustomFormat = "yyyy-MM-dd";
-            this.Vhicle_Date.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Vhicle_Date.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Vhicle_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Vhicle_Date.Location = new System.Drawing.Point(62, 103);
             this.Vhicle_Date.Name = "Vhicle_Date";
-            this.Vhicle_Date.Size = new System.Drawing.Size(136, 29);
+            this.Vhicle_Date.Size = new System.Drawing.Size(157, 39);
             this.Vhicle_Date.TabIndex = 99;
             this.Vhicle_Date.ValueChanged += new System.EventHandler(this.Vhicle_Date_ValueChanged);
             // 
             // Serche_Trak
             // 
-            this.Serche_Trak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Serche_Trak.Location = new System.Drawing.Point(553, 54);
+            this.Serche_Trak.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Serche_Trak.Location = new System.Drawing.Point(538, 54);
             this.Serche_Trak.Margin = new System.Windows.Forms.Padding(6);
             this.Serche_Trak.Name = "Serche_Trak";
             this.Serche_Trak.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Serche_Trak.Size = new System.Drawing.Size(136, 26);
+            this.Serche_Trak.Size = new System.Drawing.Size(166, 38);
             this.Serche_Trak.TabIndex = 100;
+            this.Serche_Trak.TextChanged += new System.EventHandler(this.Serche_Trak_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(692, 57);
+            this.label4.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(710, 57);
             this.label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.Size = new System.Drawing.Size(134, 32);
             this.label4.TabIndex = 102;
             this.label4.Text = "חיפוש רכב ";
             // 
@@ -400,14 +408,15 @@
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.Update);
             this.panel3.Controls.Add(this.ResetBtn);
             this.panel3.Controls.Add(this.Save);
+            this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Location = new System.Drawing.Point(106, 209);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(193, 206);
@@ -416,7 +425,7 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.T_Type_T);
@@ -429,6 +438,7 @@
             this.panel2.Controls.Add(this.TrackYear);
             this.panel2.Controls.Add(this.TrackNum);
             this.panel2.Controls.Add(this.Trak_Num);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Location = new System.Drawing.Point(767, 139);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(391, 381);
@@ -438,23 +448,23 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.Location = new System.Drawing.Point(143, 31);
             this.label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 25);
+            this.label5.Size = new System.Drawing.Size(115, 32);
             this.label5.TabIndex = 117;
             this.label5.Text = "פרטי רכב";
             // 
             // T_Type_T
             // 
             this.T_Type_T.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.T_Type_T.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.T_Type_T.Location = new System.Drawing.Point(58, 329);
+            this.T_Type_T.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.T_Type_T.Location = new System.Drawing.Point(60, 329);
             this.T_Type_T.Margin = new System.Windows.Forms.Padding(6);
             this.T_Type_T.Name = "T_Type_T";
             this.T_Type_T.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.T_Type_T.Size = new System.Drawing.Size(136, 26);
+            this.T_Type_T.Size = new System.Drawing.Size(157, 39);
             this.T_Type_T.TabIndex = 110;
             this.T_Type_T.Visible = false;
             // 
@@ -462,11 +472,11 @@
             // 
             this.T_Type_L.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.T_Type_L.AutoSize = true;
-            this.T_Type_L.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.T_Type_L.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.T_Type_L.Location = new System.Drawing.Point(265, 329);
             this.T_Type_L.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.T_Type_L.Name = "T_Type_L";
-            this.T_Type_L.Size = new System.Drawing.Size(80, 20);
+            this.T_Type_L.Size = new System.Drawing.Size(112, 32);
             this.T_Type_L.TabIndex = 111;
             this.T_Type_L.Text = "סוג טיפול";
             this.T_Type_L.Visible = false;
@@ -476,11 +486,11 @@
             this.T_Date_V.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.T_Date_V.CustomFormat = "yyyy-MM-dd";
             this.T_Date_V.Enabled = false;
-            this.T_Date_V.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.T_Date_V.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.T_Date_V.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.T_Date_V.Location = new System.Drawing.Point(58, 279);
+            this.T_Date_V.Location = new System.Drawing.Point(60, 279);
             this.T_Date_V.Name = "T_Date_V";
-            this.T_Date_V.Size = new System.Drawing.Size(136, 29);
+            this.T_Date_V.Size = new System.Drawing.Size(159, 39);
             this.T_Date_V.TabIndex = 109;
             this.T_Date_V.Visible = false;
             // 
@@ -488,11 +498,11 @@
             // 
             this.T_Last_lb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.T_Last_lb.AutoSize = true;
-            this.T_Last_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.T_Last_lb.Location = new System.Drawing.Point(245, 286);
+            this.T_Last_lb.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.T_Last_lb.Location = new System.Drawing.Point(245, 281);
             this.T_Last_lb.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.T_Last_lb.Name = "T_Last_lb";
-            this.T_Last_lb.Size = new System.Drawing.Size(107, 20);
+            this.T_Last_lb.Size = new System.Drawing.Size(144, 32);
             this.T_Last_lb.TabIndex = 108;
             this.T_Last_lb.Text = "טיפול אחרון ";
             this.T_Last_lb.Visible = false;
@@ -511,8 +521,9 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.Gray;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.Vnum);
             this.panel1.Controls.Add(this.Tdate);
             this.panel1.Controls.Add(this.SaveB);
             this.panel1.Controls.Add(this.label11);
@@ -521,11 +532,35 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.T_Type);
-            this.panel1.Controls.Add(this.Vnum);
+            this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel1.Location = new System.Drawing.Point(408, 75);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(382, 340);
             this.panel1.TabIndex = 115;
+            // 
+            // Vnum
+            // 
+            this.Vnum.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Vnum.DataSource = this.vehicleBindingSource;
+            this.Vnum.DisplayMember = "Vehicle_Num";
+            this.Vnum.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Vnum.FormattingEnabled = true;
+            this.Vnum.Location = new System.Drawing.Point(61, 159);
+            this.Vnum.Name = "Vnum";
+            this.Vnum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.Vnum.Size = new System.Drawing.Size(136, 24);
+            this.Vnum.TabIndex = 115;
+            this.Vnum.ValueMember = "Vehicle_Num";
+            // 
+            // vehicleBindingSource
+            // 
+            this.vehicleBindingSource.DataMember = "Vehicle";
+            this.vehicleBindingSource.DataSource = this.tmsDbDataSetVehicle;
+            // 
+            // tmsDbDataSetVehicle
+            // 
+            this.tmsDbDataSetVehicle.DataSetName = "TmsDbDataSetVehicle";
+            this.tmsDbDataSetVehicle.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // Tdate
             // 
@@ -635,17 +670,6 @@
             this.tmsDbDataSet.DataSetName = "TmsDbDataSet";
             this.tmsDbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Vnum
-            // 
-            this.Vnum.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Vnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Vnum.Location = new System.Drawing.Point(61, 163);
-            this.Vnum.Margin = new System.Windows.Forms.Padding(6);
-            this.Vnum.Name = "Vnum";
-            this.Vnum.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.Vnum.Size = new System.Drawing.Size(136, 26);
-            this.Vnum.TabIndex = 109;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -655,6 +679,7 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "יומן טיפולים";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.tabPage1_PreviewKeyDown);
             // 
             // dataGridView1
             // 
@@ -671,6 +696,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(335, 371);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             // 
             // vehicleNumberDataGridViewTextBoxColumn
             // 
@@ -738,6 +764,10 @@
             // 
             this.vehicles_TreatmentsTableAdapter.ClearBeforeFill = true;
             // 
+            // vehicleTableAdapter
+            // 
+            this.vehicleTableAdapter.ClearBeforeFill = true;
+            // 
             // Traks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -751,6 +781,7 @@
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.SaveBtn);
             this.Controls.Add(this.Driver_S);
+            this.KeyPreview = true;
             this.Name = "Traks";
             this.Text = "קליטת רכב";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Right;
@@ -766,6 +797,8 @@
             this.tabPage2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vehicleBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetVehicle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.treatmentsTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet)).EndInit();
             this.tabPage1.ResumeLayout(false);
@@ -812,7 +845,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox T_Type;
-        private System.Windows.Forms.TextBox Vnum;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DateTimePicker Tdate;
         private System.Windows.Forms.Label label6;
@@ -846,5 +878,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vehicleNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn treatmentsNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn treatmentLastDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ComboBox Vnum;
+        private TmsDbDataSetVehicle tmsDbDataSetVehicle;
+        private System.Windows.Forms.BindingSource vehicleBindingSource;
+        private TmsDbDataSetVehicleTableAdapters.VehicleTableAdapter vehicleTableAdapter;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
     }
 }

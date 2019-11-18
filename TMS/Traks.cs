@@ -21,6 +21,8 @@ namespace TMS
 
         private void Traks_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'tmsDbDataSetVehicle.Vehicle' table. You can move, or remove it, as needed.
+            this.vehicleTableAdapter.Fill(this.tmsDbDataSetVehicle.Vehicle);
             WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'v_T.Vehicles_Treatments' table. You can move, or remove it, as needed.
             this.vehicles_TreatmentsTableAdapter.Fill(this.v_T.Vehicles_Treatments);
@@ -34,7 +36,7 @@ namespace TMS
         private void Save_Click(object sender, EventArgs e)
         {
 
-            string Query = "insert into Vehicle(Vehicle_Num,Vehicle_Year,Vehicle_Type) values('" + this.TrackNum.Text + "','" + this.Vhicle_Date.Text + "','" + this.Truck_Type.Text + "');";
+            string Query = "insert into Vehicle(Vehicle_Num,Vehicle_Year,Vehicle_Type) values('" + this.Trak_Num.Text + "','" + this.Vhicle_Date.Text + "','" + this.Truck_Type.Text + "');";
 
 
             SqlConnection con = new SqlConnection(constring);
@@ -46,12 +48,12 @@ namespace TMS
             con.Open();
             try
             {
-                if (Trak_Num.Text == "" || TrackYear.Text == "" || TrackType.Text == "")
-                {
+                 if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == "")
+                    {
                     MessageBox.Show(" לא ניתן להוסיף רכב ללא כל הנתונים ");
                     return;
                 }
-                if (Trak_Num.Text.Length != 8)
+                if (Trak_Num.Text.Length > 8|| Trak_Num.Text.Length < 7)
                 {
                     MessageBox.Show("מספר רכב לא תקין ");
                     return;
@@ -82,13 +84,55 @@ namespace TMS
 
         private void Update_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(" לא עשיתי עדיין עדכון ");
+            if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == "")
+            {
+
+                MessageBox.Show("אין אפשרות לעדכן פרטי רכב ללא כל הפרטים ");
+                return;
+            }
+
+            SqlConnection con = new SqlConnection(constring);
+            con.Open();
+            string query = "select count (*) from Vehicle where Vehicle_Num ='" + Trak_Num.Text + "'";
+            SqlCommand cmd1 = new SqlCommand(query, con);
+            string output = cmd1.ExecuteScalar().ToString();
+            con.Close();
+
+            if (output != "1")
+            {
+                MessageBox.Show(" מספר רכב לא מופיע במערכת כדי להוסיף את רכב מס :"+" "+Trak_Num.Text +" "+"הזן פרטי רכב ולחץ על שמירה");
+                Save.Enabled = true;
+                return;
+            }
+            
+            else
+            {
+                try
+                {
+                    string qem = "update Vehicle set Vehicle_Num ='"+ Trak_Num.Text + "', Vehicle_Type ='"+ Truck_Type.Text + "', Vehicle_Year ='"+ Vhicle_Date.Text + "'where Vehicle_Num ='"+Serche_Trak.Text+"'";
+                   
+                    
+                    SqlCommand cmdb = new SqlCommand(qem, con);
+                    SqlDataReader myReaderr;
+                    con.Open();
+                    myReaderr = cmdb.ExecuteReader();
+                    while (myReaderr.Read()) { }
+                    con.Close();
+                    MessageBox.Show("העדכון בוצע בצלחה");
+                    
+                }
+                catch (Exception exce)
+                {
+                    MessageBox.Show(exce.Message);
+                }
+            }
+
         }
 
         private void ResetBtn_Click(object sender, EventArgs e)
         {
             Traks trak = new Traks();
-            trak.Show();
+            trak.ShowDialog();
             this.Close();
         }
 
@@ -201,6 +245,59 @@ namespace TMS
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void tabPage1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+          
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == (char)Keys.F5)
+            {
+                Traks_Load(sender, e);
+
+            }
+        }
+
+        private void Trak_Num_TextChanged(object sender, EventArgs e)
+        {
+            if (Trak_Num.Text.Length > 8)
+            {
+                MessageBox.Show("שדה מספר רכב הובלה לא יכול להכיל יותר מ 8 תוים");
+                int l = Trak_Num.Text.Length;
+                int length = l - 8;
+                string tnum;
+                tnum = Trak_Num.Text.Remove(Trak_Num.Text.Length - length);
+                Trak_Num.Text = tnum;
+
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(Trak_Num.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                Trak_Num.Text = "";
+            }
+        }
+
+        private void Serche_Trak_TextChanged(object sender, EventArgs e)
+        {
+            Save.Enabled = false;
+            if (System.Text.RegularExpressions.Regex.IsMatch(Serche_Trak.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                Serche_Trak.Text = "";
+            }
+            if (Serche_Trak.Text.Length > 8)
+            {
+                MessageBox.Show("שדה חיפוש לפי מספר רכב  לא יכול להכיל יותר מ 8 תוים");
+                int l = Serche_Trak.Text.Length;
+                int length = l - 8;
+                string tnum;
+                tnum = Serche_Trak.Text.Remove(Serche_Trak.Text.Length - length);
+                Serche_Trak.Text = tnum;
+
+            }
         }
     }
 }

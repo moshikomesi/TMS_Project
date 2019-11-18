@@ -29,7 +29,15 @@ namespace TMS
 
         private void metroTextBox9_TextChanged(object sender, EventArgs e)
         {
-
+            if (OrdeNum.Text.Length > 10)
+            {
+                MessageBox.Show("שדה סוג הובלה לא יכול להכיל יותר מ 10 תוים");
+                return;
+               // l = OrdeNum.Text.Length;
+               // length = l - 10;
+               // OrdeNum.Text = KindTran.Text.Remove(l - length);
+                
+            }
             //בדיקת תקינות שהכנסו רק מספרים   
 
             if (System.Text.RegularExpressions.Regex.IsMatch(OrdeNum.Text, "[^0-9]"))
@@ -122,12 +130,16 @@ namespace TMS
 
         private void Driver_TextChanged(object sender, EventArgs e)
         {
-
+            if (Driver.Text.Length > 5)
+            {
+                MessageBox.Show("שדה סוג קוד נהג לא יכול להכיל יותר מ 5 תוים");
+                return;
+            }
             //בדיקת תקינות שהכנסו רק מספרים   
             if (System.Text.RegularExpressions.Regex.IsMatch(Driver.Text, "[^0-9]"))
             {
                 MessageBox.Show("נא להזין מספרים בלבד");
-                Driver.Text = Driver.Text.Remove(Driver.Text.Length - 1);
+                Driver.Text = "";
             }
 
 
@@ -149,14 +161,19 @@ namespace TMS
 
         private void CustomerNum_TextChanged(object sender, EventArgs e)
         {
+            if (CustomerNum.Text.Length > 5)
+            {
+                MessageBox.Show("שדה קוד לקוח לא יכול להכיל יותר מ 5 תוים");
+                return;
+
+            }
 
             if (System.Text.RegularExpressions.Regex.IsMatch(CustomerNum.Text, "[^0-9]"))
             {
                 MessageBox.Show("נא להזין מספרים בלבד");
-                CustomerNum.Text = CustomerNum.Text.Remove(CustomerNum.Text.Length - 1);
+                CustomerNum.Text = "";
             }
-            if (this.CustomerNum.Text.Length > 8)
-                MessageBox.Show("לא ניתן להכניס יותר מ 8 ספרות ");
+
 
         }
 
@@ -168,9 +185,9 @@ namespace TMS
                 MessageBox.Show("נא להזין מספרים בלבד");
                 quantity.Text = quantity.Text.Remove(quantity.Text.Length - 1);
             }
-            if (this.quantity.Text.Length > 8)
-                MessageBox.Show("לא ניתן להכניס יותר מ 8 ספרות ");
-
+            if (this.quantity.Text.Length > 5)
+                MessageBox.Show("לא ניתן להכניס יותר מ 5 ספרות ");
+                      return;
         }
         /*
         private void Amount_TextChanged(object sender, EventArgs e)
@@ -259,7 +276,7 @@ namespace TMS
 
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
 
-            string Query = "insert into dbo.Shipp(Customer_Number,Shipp_Date_Time,Shipp_DocNum,Transaction_Number,Shipp_origin,Shipp_Dest,Shipp_Quantity,Shipp_Amount,Employee_Number,Vehicle_Number) values('" + this.CustomerNum.Text + "','" + this.TranDate.Text + "','" + this.DocNum.Text + "','" + this.KindTran.Text + "','" + this.Exitt.Text + "','" + this.Targett.Text + "','" + this.quantity.Text + "','" + this.Amount.Text + "','" + this.Driver.Text + "','" + this.Car.Text + "');";
+            string Query = "insert into dbo.Shipp(Customer_Number,Shipp_Date_Time,Shipp_DocNum,Transaction_Number,Shipp_origin,Shipp_Dest,Shipp_Quantity,Shipp_Amount,Employee_Number,Vehicle_Number) values('" + this.CustomerNum.Text + "','" + this.TranDate.Text + "','" + this.DocNum.Text + "','"  + this.KindTran.Text + "','" + this.Exitt.Text + "','" + this.Targett.Text + "','" + this.quantity.Text + "','" + this.Amount.Text + "','" + this.Driver.Text + "','" + this.Car.Text + "');";
 
             SqlConnection con = new SqlConnection(constring);
             SqlCommand cmdDataBase = new SqlCommand(Query, con);
@@ -334,8 +351,8 @@ namespace TMS
             }
 
             transactions trn = new transactions();
-            trn.Show();
-            this.Hide();
+            trn.ShowDialog();
+            this.Close();
         }
 
         private void UpdateBt_Click(object sender, EventArgs e)
@@ -512,6 +529,11 @@ namespace TMS
 
         private void KindTran_Leave(object sender, EventArgs e)
         {
+            if (KindTran.Text == "")
+            {
+                MessageBox.Show("נא להזין סוג הובלה ");
+                return;
+            }
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
             SqlConnection con = new SqlConnection(constring);
             con.Open();
@@ -589,7 +611,7 @@ namespace TMS
                     CustomerNum.Text = (dr["Customer_Number"].ToString());
                     CustomerName.Text = (dr["Customer_Name"].ToString());
                     TranDate.Text = (dr["Shipp_Date_Time"].ToString());
-                    DocNum.Text = (dr["Shipp_DocNum"].ToString());
+                    DocNum.Text = (dr["Shipp_DocNum"].ToString().Trim());
                     KindTran.Text = (dr["Transaction_Number"].ToString());
                     ShipTypeText.Text = (dr["Transacion_Type"].ToString());
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
@@ -630,10 +652,6 @@ namespace TMS
 
             }
 
-
-
-
-
             else
             {
 
@@ -642,9 +660,6 @@ namespace TMS
                 return;
             }
             con.Close();
-
-
-
         }
 
         private void CustomerNum_KeyDown_1(object sender, KeyEventArgs e)
@@ -734,6 +749,12 @@ namespace TMS
 
         private void DocNum_TextChanged(object sender, EventArgs e)
         {
+            if (DocNum.Text.Length > 20)
+            {
+                MessageBox.Show("שדה מספר תעודה  לא יכול להכיל יותר מ 20 תוים");
+                return;
+
+            }
 
         }
 
@@ -820,6 +841,66 @@ namespace TMS
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void Amount_TextChanged(object sender, EventArgs e)
+        {
+            if (Amount.Text.Length > 10)
+            {
+                MessageBox.Show("שדה מחיר לא יכול להכיל יותר מ 10 תוים");
+                return;
+            }
+          
+        }
+      
+        private void KindTran_TextChanged(object sender, EventArgs e)
+        {
+            if (KindTran.Text.Length > 10)
+            {
+                MessageBox.Show("שדה סוג הובלה לא יכול להכיל יותר מ 10 תוים");
+                return;
+      
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(KindTran.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                KindTran.Text = "";
+            }
+        }
+
+        private void Exitt_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void Exitt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Targett_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -31,10 +31,14 @@ namespace TMS
         {
 
         }
-
+        
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
-            string Query = "insert into Customer(Customer_Name,Customer_LTD,Customer_Adress,Customer_Email,Customer_Tel,Customer_Fax) values('" + Cname.Text + "','" + C_Id.Text + "','" + C_Address.Text + "','" + C_Email.Text + "','" + C_Tell.Text + "','" + C_Fax.Text + "');";
+            string tel = Start_Tel.Text + C_Tell.Text;
+            string fax = Start_Fax.Text + C_Fax.Text;
+            string Query = "insert into Customer(Customer_Name,Customer_LTD,Customer_Adress,Customer_Email,Customer_Tel,Customer_Fax)values('" + Cname.Text + "','" + C_Id.Text + "','" + C_Address.Text + "','" + C_Email.Text 
+                + "','" + tel + "','" + fax + "');";
+
             SqlConnection con = new SqlConnection(constring);
             con.Open();
             SqlDataReader myReader;
@@ -45,7 +49,8 @@ namespace TMS
                     MessageBox.Show(" לא ניתן להוסיף לקוח  ללא כל נתונים ");
                     return;
                 }
-                if (C_Id.Text.Length < 9)
+                // לבדוק רק מספרים 
+                if (C_Id.Text.Length < 9|| C_Id.Text.Length>9)
                 {
                     MessageBox.Show("הערך בשדה ת.ז/ח.פ לא תקין");
                     return;
@@ -79,6 +84,19 @@ namespace TMS
             }
 
             MessageBox.Show("לקוח נוסף בהצלחה");
+            con.Open();
+            string SqlSelectQuery = "SELECT MAX(Customer_Num) as num from Customer";
+            SqlCommand cmdn = new SqlCommand(SqlSelectQuery, con);
+            SqlDataReader drn = cmdn.ExecuteReader();
+            if (drn.Read())
+            {
+               
+                    int number = int.Parse((drn["num"].ToString())) + 1;
+                    C_Num.Text = number.ToString();
+                
+                }
+            con.Close();
+            
         }
 
         private void Reset_Click(object sender, EventArgs e)
@@ -97,7 +115,7 @@ namespace TMS
             SqlCommand cmd3 = new SqlCommand(query, con);
             string output = cmd3.ExecuteScalar().ToString();
 
-            if (output == "1")
+            if (int.Parse(output) > 1 || int.Parse(output) == 1)
             {
                 string sq = "select * from Customer where Customer_Name LIKE '" + S_text.Text + "%'";
                 SqlCommand cmd4 = new SqlCommand(sq, con);
@@ -105,13 +123,77 @@ namespace TMS
                 SqlDataReader dr = cmd4.ExecuteReader();
                 if (dr.Read())
                 {
+                    string fx = "";
+                    string tell = "";
+                    string t = "";
+                    string f = "";
+                    string st = "";
+                    string sf = "";
                     Cname.Text = (dr["Customer_Name"].ToString());
                     C_Num.Text = (dr["Customer_Num"].ToString());
-                    C_Id.Text = (dr["Customer_LTD"].ToString());
+                    C_Id.Text = (dr["Customer_LTD"].ToString().Trim());
                     C_Address.Text = (dr["Customer_Adress"].ToString());
                     C_Email.Text = (dr["Customer_Email"].ToString());
-                    C_Tell.Text = (dr["Customer_Tel"].ToString());
-                    C_Fax.Text = (dr["Customer_Fax"].ToString());
+                    tell = (dr["Customer_Tel"].ToString());
+                    fx = (dr["Customer_Fax"].ToString());
+                    if (tell[1] == '9'|| tell[1] == '2'|| tell[1] == '4'|| tell[1] == '3'|| tell[1] == '8')
+                    {
+                        for (int i = 0; i < 2; i++)
+                        {
+                            st += tell[i];
+
+                        }
+                        Start_Tel.Text = st;
+                        for (int j =2; j <9; j++)
+                        {
+                            t += tell[j];
+                        }
+                        C_Tell.Text = t;
+                    }
+                    else
+                    {
+                        for (int i = 0; i < 3; i++)
+                        {
+                            st += tell[i];
+
+                        }
+                        Start_Tel.Text = st;
+                        for (int j = 3; j < 10; j++)
+                        {
+                            t += tell[j];
+                        }
+                        C_Tell.Text = t;
+                    }
+
+                    if (fx[1] == '9' || fx[1] == '2' || fx[1] == '4' || fx[1] == '3' || fx[1] == '8')
+                    {
+                        for (int x = 0; x < 2; x++)
+                        {
+                            sf += fx[x];
+
+                        }
+                        Start_Fax.Text = sf;
+                        for (int z = 2; z < 9; z++)
+                        {
+                            f += fx[z];
+                        }
+                        C_Fax.Text = f;
+                    }
+                    else
+                    {
+                        for (int x = 0; x < 3; x++)
+                        {
+                            sf += fx[x];
+
+                        }
+                        Start_Fax.Text = sf;
+                        for (int z = 3; z < 10; z++)
+                        {
+                            f += fx[z];
+                        }
+                        C_Fax.Text = f;
+                    }
+
 
                     UpdateBt.Enabled = true;
                     SaveBtn.Enabled = false;
@@ -130,9 +212,248 @@ namespace TMS
             }
         }
 
+        public bool Isdiff(string s, string s2)
+        {
+            
+            return s == s2;
+        }
+
+        string[] custdt_change = new string [7];
+
         private void S_text_Click(object sender, EventArgs e)
         {
             S_text.Text = "";
+        }
+
+        private void UpdateBt_Click(object sender, EventArgs e)
+        {
+            if  (Cname.Text == "" || C_Id.Text == "" || C_Address.Text == "" || C_Email.Text == "" || C_Tell.Text == "" || C_Fax.Text == "")
+                    MessageBox.Show("אין אפשרות לעדכן פרטי לקוח ללא כל הפרטים ");
+            else
+            {
+                
+
+                try
+                {
+                    string qem = "update Customer SET Customer_Name ='"+ Cname.Text+"',Customer_LTD='"+ C_Id.Text+"',Customer_Adress ='"+ C_Address.Text+"',Customer_Email='"+ C_Email.Text+"',Customer_Fax='"+ C_Fax.Text+"',Customer_Tel='"+ C_Tell.Text+ "'where Customer_Num ='" + C_Num.Text + "';";
+
+                    SqlConnection con = new SqlConnection(constring);
+                    SqlCommand cmdb = new SqlCommand(qem, con);
+                    SqlDataReader myReader;
+
+                    con.Open();
+                    myReader = cmdb.ExecuteReader();
+                    while (myReader.Read()) { }
+                    MessageBox.Show("העדכון בוצע בצלחה");
+                    con.Close();
+
+                }
+                catch (Exception exce)
+                {
+                    MessageBox.Show(exce.Message);
+                }
+            }
+        }
+
+        private void EraseBtn_Click(object sender, EventArgs e)
+        {
+            if (Cname.Text == "" || C_Id.Text == "" || C_Address.Text == "" || C_Email.Text == "" || C_Tell.Text == "" || C_Fax.Text == "")
+                
+
+            {
+                MessageBox.Show("אין אפשרות למחוק לקוח ללא כל הפרטים ");
+                return;
+            }
+
+            string Query = "delete from Customer where Customer_Num='" + C_Num.Text + "';";
+
+            SqlConnection con = new SqlConnection(constring);
+            SqlCommand cmdDataBase = new SqlCommand(Query, con);
+
+            SqlDataReader myReader;
+            try
+            {
+                DialogResult result = MessageBox.Show("?האם אתה בטוח שברצונך למחוק את הלקוח ", "אזהרה", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    return;
+                }
+
+                con.Open();
+                myReader = cmdDataBase.ExecuteReader();
+
+                MessageBox.Show("מחיקת לקוח בוצעה בהצלחה");
+                while (myReader.Read()) { }
+                Reset_Click(sender, e);
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        bool IsValidEmail(string mail)
+        {
+
+                System.Text.RegularExpressions.Regex rEmail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z\.]*[a-zA-Z]$");
+                if (!rEmail.IsMatch(mail))
+                    return false;
+                 
+                return true;
+            
+        }
+        private void C_Email_Leave(object sender, EventArgs e)
+        {
+            if (C_Email.Text=="")
+            {
+                MessageBox.Show("נא להזין כתובת מייל");
+            }
+            if (!IsValidEmail(C_Email.Text))
+            {
+                MessageBox.Show("כתובת המייל שהזנת אינה חוקית");
+                C_Email.Text = "";
+                return;
+            }
+            string Email_Q = "select COUNT(*) from Customer where Customer_Email ='" + C_Email.Text + "'";
+            SqlConnection con = new SqlConnection(constring);
+            SqlCommand cmde = new SqlCommand(Email_Q,con);
+            con.Open();
+            string output = cmde.ExecuteScalar().ToString();
+            if(output == "1")
+            {
+                MessageBox.Show("כתובת מייל זו קיימת במערכת");
+                return;               
+            }
+            con.Close();
+        }
+
+        private void C_Id_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(C_Id.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                C_Id.Text = "";
+                return;
+            }
+            if (C_Id.Text.Length > 9)
+            {
+                MessageBox.Show("השדה ת.ז/ח.פ לא יכול להכיל יותר מ 9 ספרות ");
+                int l = C_Id.Text.Length;
+                int length = l - 9;
+                C_Id.Text = C_Id.Text.Remove(C_Id.Text.Length - length);
+            }
+
+        }
+
+        private void C_Tell_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(C_Tell.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                C_Tell.Text = "";
+                return;
+            }
+            if (C_Tell.Text.Length > 7)
+            {
+                int l = C_Tell.Text.Length;
+                int length = l - 7;
+                MessageBox.Show("השדה טלפון לא יכול להכיל יותר מ 9 ספרות ");
+                C_Tell.Text = C_Tell.Text.Remove(C_Tell.Text.Length - length);
+            }
+        }
+
+        private void C_Id_Leave(object sender, EventArgs e)
+        {
+            
+            if (C_Id.Text.Length < 9)
+            {
+                MessageBox.Show("השדה ת.ז/ח.פ לא יכול להכיל  פחות מ 9 ספרות ");
+                C_Id.Text = "";
+                return;
+            }
+
+        }
+
+        private void C_Tell_Leave(object sender, EventArgs e)
+        {
+            if (C_Tell.Text.Length <7)
+            {
+
+                MessageBox.Show("השדה טלפון לא יכול להכיל פחות מ 9 ספרות ");
+                C_Tell.Text = "";
+            }
+        }
+
+        private void C_Fax_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(C_Fax.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                C_Fax.Text = "";
+                return;
+            }
+            if (C_Fax.Text.Length > 7)
+            {
+                MessageBox.Show("השדה פקס לא יכול להכיל יותר מ 9 ספרות ");
+                int l = C_Fax.Text.Length;
+                int length = l - 7;
+                C_Fax.Text = C_Fax.Text.Remove(C_Fax.Text.Length - length);
+            }
+        }
+
+        private void C_Fax_Leave(object sender, EventArgs e)
+        {
+            if (C_Fax.Text.Length < 7)
+            {
+                MessageBox.Show("השדה פקס לא יכול להכיל פחות מ 9 ספרות ");
+                C_Fax.Text = "";
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Start_Fax_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Start_Tel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void C_Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void C_Address_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cname_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void C_Num_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 

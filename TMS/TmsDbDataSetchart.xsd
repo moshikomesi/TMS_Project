@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="TmsDbDataSetchart" targetNamespace="http://tempuri.org/TmsDbDataSetchart.xsd" xmlns:mstns="http://tempuri.org/TmsDbDataSetchart.xsd" xmlns="http://tempuri.org/TmsDbDataSetchart.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="TmsDbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="TmsDbConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TMS.Properties.Settings.GlobalReference.Default.TmsDbConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InvoicesTableAdapter" GeneratorDataComponentClassName="InvoicesTableAdapter" Name="Invoices" UserDataComponentName="InvoicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="TmsDbConnectionString (Settings)" DbObjectName="TmsDb.dbo.Invoices" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Invoice_date, Invoice_Amount FROM dbo.Invoices</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Invoice_date" DataSetColumn="Invoice_date" />
+              <Mapping SourceColumn="Invoice_Amount" DataSetColumn="Invoice_Amount" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="TmsDbDataSetchart" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="TmsDbDataSetchart" msprop:Generator_UserDSName="TmsDbDataSetchart">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Invoices" msprop:Generator_TableClassName="InvoicesDataTable" msprop:Generator_TableVarName="tableInvoices" msprop:Generator_TablePropName="Invoices" msprop:Generator_RowDeletingName="InvoicesRowDeleting" msprop:Generator_RowChangingName="InvoicesRowChanging" msprop:Generator_RowEvHandlerName="InvoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoicesRowDeleted" msprop:Generator_UserTableName="Invoices" msprop:Generator_RowChangedName="InvoicesRowChanged" msprop:Generator_RowEvArgName="InvoicesRowChangeEvent" msprop:Generator_RowClassName="InvoicesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Invoice_date" msprop:Generator_ColumnVarNameInTable="columnInvoice_date" msprop:Generator_ColumnPropNameInRow="Invoice_date" msprop:Generator_ColumnPropNameInTable="Invoice_dateColumn" msprop:Generator_UserColumnName="Invoice_date" type="xs:dateTime" />
+              <xs:element name="Invoice_Amount" msprop:Generator_ColumnVarNameInTable="columnInvoice_Amount" msprop:Generator_ColumnPropNameInRow="Invoice_Amount" msprop:Generator_ColumnPropNameInTable="Invoice_AmountColumn" msprop:Generator_UserColumnName="Invoice_Amount" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -321,7 +321,6 @@
             this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.reportViewer1);
-            this.MaximizeBox = false;
             this.Name = "Reports";
             this.Text = "ד\"וח משלוחים";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;

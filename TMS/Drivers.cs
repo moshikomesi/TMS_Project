@@ -87,13 +87,13 @@ namespace TMS
                 {
                     MessageBox.Show("מספר זהות לא תקין ");
                     return;
-                } 
+                }
 
                 string query = "select count(*) from Employee where Employee_Id ='" + Driver_Id.Text + "'";
                 string qvn = "select count(*) from Vehicle where Vehicle_Num ='" + Driver_Vehicle.Text + "'";
                 SqlCommand cmd1 = new SqlCommand(query, con);
                 string output = cmd1.ExecuteScalar().ToString();
-               
+
                 if (output == "1")
                 {
                     MessageBox.Show(" מספר זהות  מופיע במערכת");
@@ -101,7 +101,7 @@ namespace TMS
                     Driver_Id.Text = "";
                     return;
                 }
-               
+
                 SqlCommand cmd0 = new SqlCommand(qvn, con);
                 string output12 = cmd0.ExecuteScalar().ToString();
 
@@ -141,7 +141,7 @@ namespace TMS
                 }
                 else
                 {
-                   
+
                     SqlCommand cmdDataBase = new SqlCommand(Query, con);
                     myReader = cmdDataBase.ExecuteReader();
                     while (myReader.Read()) { }
@@ -149,36 +149,36 @@ namespace TMS
                 }
 
                 try
-                    {
+                {
 
-                        string Q = "insert into Driver_Vehicles(Vehicle_Number,Employee_Number) values('" + Driver_Vehicle.Text + "','" + Driver_Num.Text + "');";
-                        con.Open();
-                        SqlCommand cmd2 = new SqlCommand(Q, con);
-                        myReader = cmd2.ExecuteReader();
-                        while (myReader.Read()) { }
-                        con.Close();
-                    }
-                    catch (Exception exx)
-                    {
-                        MessageBox.Show(exx.Message);
-                    }
-                  
+                    string Q = "insert into Driver_Vehicles(Vehicle_Number,Employee_Number) values('" + Driver_Vehicle.Text + "','" + Driver_Num.Text + "');";
+                    con.Open();
+                    SqlCommand cmd2 = new SqlCommand(Q, con);
+                    myReader = cmd2.ExecuteReader();
+                    while (myReader.Read()) { }
+                    con.Close();
+                }
+                catch (Exception exx)
+                {
+                    MessageBox.Show(exx.Message);
+                }
 
-                 
-                   MessageBox.Show("נהג נוסף  בהצלחה");
-                    Reset.Enabled = true;
-                    UpdateBt.Enabled = true;
-                    SaveBtn.Enabled = false;
-                    EraseBtn.Enabled = true;
 
-                
+
+                MessageBox.Show("נהג נוסף  בהצלחה");
+                Reset.Enabled = true;
+                UpdateBt.Enabled = true;
+                SaveBtn.Enabled = false;
+                EraseBtn.Enabled = true;
+
+
             }
 
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
 
         }
 
@@ -188,11 +188,11 @@ namespace TMS
             if (Driver_Fmane.Text == "" || Driver_Lname.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "")
                 MessageBox.Show("אין אפרות להזין נהג חדש ללא כל הפרטים ");
                 */
-            
-                Drivers dr = new Drivers();
-                this.Close();
-                dr.Show();
-            
+
+            Drivers dr = new Drivers();
+            this.Close();
+            dr.ShowDialog();
+
         }
 
         private void Driver_Vehicle_KeyDown(object sender, KeyEventArgs e)
@@ -237,14 +237,14 @@ namespace TMS
         {
             SqlConnection con = new SqlConnection(constring);
             con.Open();
-            string query = "select count(*) from Employee where Employee_Num  ='" + Driver_S.Text + "'";
+            string query = "select count(*) from Employee where Employee_Fname  LIKE'%" + Driver_S.Text + "%'";
 
             SqlCommand cmd3 = new SqlCommand(query, con);
             string output = cmd3.ExecuteScalar().ToString();
 
-            if (output == "1")
+            if (int.Parse(output) > 1|| int.Parse(output) == 1)
             {
-                string sq = "select * from Employee ,Driver_Vehicles where Employee_Num = '" + Driver_S.Text + "'";
+                string sq = "select * from Employee ,Driver_Vehicles where Employee_Fname  LIKE'%" + Driver_S.Text + "%'";
                 SqlCommand cmd4 = new SqlCommand(sq, con);
 
                 SqlDataReader dr = cmd4.ExecuteReader();
@@ -262,7 +262,7 @@ namespace TMS
                 }
                 con.Close();
 
-                string qq = "select * from Driver_Vehicles where Employee_Number = '" + Driver_S.Text + "'";
+                string qq = "select * from Driver_Vehicles where Employee_Number = '" + Driver_Num.Text + "'";
                 con.Open();
                 SqlCommand cmd5 = new SqlCommand(qq, con);
                 SqlDataReader drr = cmd5.ExecuteReader();
@@ -274,26 +274,57 @@ namespace TMS
             }
             else
             {
-                MessageBox.Show("מספר נהג לא נמצא במערכת ");
+                MessageBox.Show("שם הנהג"+" "+ Driver_S.Text + " לא נמצא במערכת");
+                con.Close();
                 return;
             }
 
             }
-        
+
         private void UpdateBt_Click(object sender, EventArgs e)
         {
+
+            SqlConnection con = new SqlConnection(constring);
+
             if (Driver_Fmane.Text == "" || Driver_Lname.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "")
+            {
                 MessageBox.Show("אין אפשרות לעדכן פרטי נהג ללא כל הפרטים ");
+                return;
+            }
+                
+            string qvn = "select count(*) from Vehicle where Vehicle_Num ='" + Driver_Vehicle.Text + "'";
+            SqlCommand cmd0 = new SqlCommand(qvn, con);
+            con.Open();
+            string output12 = cmd0.ExecuteScalar().ToString();
+            
+            if (output12 != "1")
+            {
+                MessageBox.Show(" רכב לא קיים במערכת ");
+
+                Driver_Vehicle.Text = "";
+                return;
+            }
+            con.Close();
+            string selcq = "select count (*) from Driver_Vehicles where  Vehicle_Number = '" + Driver_Vehicle.Text + "'";
+            con.Open();
+            SqlCommand cmd123 = new SqlCommand(selcq, con);
+            string output1 = cmd123.ExecuteScalar().ToString();
+            con.Close();
+            if (output1 == "1")
+            {
+                Driver_Vehicle.Text = "";
+                MessageBox.Show("רכב זה משויך לנהג לא ניתן לשייך רכב אחד לשני נהגים ");
+                return;
+            }
+
             else
             {
                 try
                 {
-                    string qem = "update Employee set Employee_Id='" + Driver_Id.Text + "', Employee_Fname ='" + Driver_Fmane.Text + "', Employee_Lname ='" + Driver_Lname.Text + "', Employee_BD ='" + Driver_Bd.Text + "'where Employee_Num ='"+Driver_Num.Text+"';";
-                    string Qup= "update Driver_Vehicles set Vehicle_Number='"+ Driver_Vehicle.Text+ "'where Employee_Number ='" + Driver_Num.Text + "';";
-                    SqlConnection con = new SqlConnection(constring);
+                    string qem = "update Employee set Employee_Id='" + Driver_Id.Text + "', Employee_Fname ='" + Driver_Fmane.Text + "', Employee_Lname ='" + Driver_Lname.Text + "', Employee_BD ='" + Driver_Bd.Text + "'where Employee_Num ='" + Driver_Num.Text + "';";
+                    string Qup = "update Driver_Vehicles set Vehicle_Number='" + Driver_Vehicle.Text + "'where Employee_Number ='" + Driver_Num.Text + "';";
                     SqlCommand cmdb = new SqlCommand(qem, con);
                     SqlDataReader myReader;
-
                     con.Open();
                     myReader = cmdb.ExecuteReader();
                     while (myReader.Read()) { }
@@ -305,7 +336,7 @@ namespace TMS
                     MessageBox.Show("העדכון בוצע בצלחה");
                     con.Close();
                 }
-                catch( Exception exce)
+                catch (Exception exce)
                 {
                     MessageBox.Show(exce.Message);
                 }
@@ -356,12 +387,21 @@ namespace TMS
 
         private void Driver_Vehicle_TextChanged(object sender, EventArgs e)
         {
-
+            if (Driver_Vehicle.Text.Length > 10)
+            {
+                MessageBox.Show("שדה סוג הובלה לא יכול להכיל יותר מ 10 תוים");
+                return;
+            }
+            if (System.Text.RegularExpressions.Regex.IsMatch(Driver_Vehicle.Text, "[^0-9]"))
+            {
+                MessageBox.Show("נא להזין מספרים בלבד");
+                Driver_Vehicle.Text = "";
+            }
         }
 
         private void Driver_S_Click(object sender, EventArgs e)
         {
-
+            Driver_S.Text = "";
         }
 
         private void EraseBtn_Click(object sender, EventArgs e)
@@ -435,13 +475,25 @@ namespace TMS
                 MessageBox.Show("תעודת זהות לא תקינה ");
                 Driver_Id.Text = Driver_Vehicle.Text.Substring(Driver_Id.Text.Length - 9);
             }
-            int id = int.Parse(Driver_Id.Text);
+       //     int id = int.Parse(Driver_Id.Text);
 
         }
 
-      
-  
-        
+        private void Driver_Fmane_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Driver_Lname_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
     
 

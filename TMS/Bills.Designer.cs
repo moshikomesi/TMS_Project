@@ -41,16 +41,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.To_Pay = new System.Windows.Forms.TextBox();
-            this.Tax = new System.Windows.Forms.TextBox();
-            this.Sum = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Bill_Sub = new MetroFramework.Controls.MetroTextBox();
             this.dataSet1 = new TMS.DataSet1();
@@ -102,12 +92,14 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.LinktoRec = new System.Windows.Forms.LinkLabel();
             this.New_Bt = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -118,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetCus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // tmsDbDataSet1
@@ -159,7 +152,7 @@
             // 
             this.button4.BackgroundImage = global::TMS.Properties.Resources.recepit;
             this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.Location = new System.Drawing.Point(57, 90);
+            this.button4.Location = new System.Drawing.Point(20, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(38, 40);
             this.button4.TabIndex = 43;
@@ -202,121 +195,6 @@
             // 
             this.customerBindingSource1.DataMember = "Customer";
             this.customerBindingSource1.DataSource = this.tmsDbDataSet1;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.panel2.Controls.Add(this.textBox8);
-            this.panel2.Controls.Add(this.label23);
-            this.panel2.Controls.Add(this.label22);
-            this.panel2.Controls.Add(this.To_Pay);
-            this.panel2.Controls.Add(this.Tax);
-            this.panel2.Controls.Add(this.Sum);
-            this.panel2.Controls.Add(this.label9);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Location = new System.Drawing.Point(5, 486);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(226, 158);
-            this.panel2.TabIndex = 46;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // textBox8
-            // 
-            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.textBox8.Location = new System.Drawing.Point(4, 126);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(95, 26);
-            this.textBox8.TabIndex = 26;
-            // 
-            // label23
-            // 
-            this.label23.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label23.Location = new System.Drawing.Point(117, 127);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(104, 19);
-            this.label23.TabIndex = 25;
-            this.label23.Text = "סה\"כ תקבולים";
-            // 
-            // label22
-            // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label22.Location = new System.Drawing.Point(-1, 104);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(270, 19);
-            this.label22.TabIndex = 24;
-            this.label22.Text = "_____________________________";
-            // 
-            // To_Pay
-            // 
-            this.To_Pay.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.To_Pay.Enabled = false;
-            this.To_Pay.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.To_Pay.Location = new System.Drawing.Point(5, 72);
-            this.To_Pay.Name = "To_Pay";
-            this.To_Pay.Size = new System.Drawing.Size(95, 26);
-            this.To_Pay.TabIndex = 23;
-            // 
-            // Tax
-            // 
-            this.Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Tax.Enabled = false;
-            this.Tax.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Tax.Location = new System.Drawing.Point(5, 42);
-            this.Tax.Name = "Tax";
-            this.Tax.Size = new System.Drawing.Size(95, 26);
-            this.Tax.TabIndex = 22;
-            // 
-            // Sum
-            // 
-            this.Sum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.Sum.Enabled = false;
-            this.Sum.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Sum.Location = new System.Drawing.Point(5, 9);
-            this.Sum.Name = "Sum";
-            this.Sum.Size = new System.Drawing.Size(95, 26);
-            this.Sum.TabIndex = 21;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.Location = new System.Drawing.Point(103, 12);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(107, 19);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "סה\"כ בהמחאה";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label11.Location = new System.Drawing.Point(118, 73);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 19);
-            this.label11.TabIndex = 19;
-            this.label11.Text = "סה\"כ במזומן";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.Location = new System.Drawing.Point(105, 43);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(108, 19);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "סה\"כ בהעברה ";
             // 
             // customerBindingSource
             // 
@@ -394,7 +272,8 @@
             // 
             // MT_P
             // 
-            this.MT_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.MT_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.MT_P.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.MT_P.Controls.Add(this.label5);
             this.MT_P.Controls.Add(this.Mt_Amount);
             this.MT_P.Controls.Add(this.label17);
@@ -405,7 +284,7 @@
             this.MT_P.Controls.Add(this.label20);
             this.MT_P.Controls.Add(this.Mt_B);
             this.MT_P.Controls.Add(this.Mt_Br);
-            this.MT_P.Location = new System.Drawing.Point(23, 358);
+            this.MT_P.Location = new System.Drawing.Point(4, 399);
             this.MT_P.Name = "MT_P";
             this.MT_P.Size = new System.Drawing.Size(1154, 38);
             this.MT_P.TabIndex = 59;
@@ -414,6 +293,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label5.Location = new System.Drawing.Point(273, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 19);
@@ -433,6 +313,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label17.Location = new System.Drawing.Point(1082, 11);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(49, 19);
@@ -445,7 +326,7 @@
             this.Mt_Date.CustomFormat = "yyyy-MM-dd";
             this.Mt_Date.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Mt_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Mt_Date.Location = new System.Drawing.Point(926, 5);
+            this.Mt_Date.Location = new System.Drawing.Point(922, 5);
             this.Mt_Date.Name = "Mt_Date";
             this.Mt_Date.Size = new System.Drawing.Size(145, 29);
             this.Mt_Date.TabIndex = 53;
@@ -462,6 +343,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label18.Location = new System.Drawing.Point(485, 8);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(89, 19);
@@ -472,6 +354,7 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label19.Location = new System.Drawing.Point(705, 8);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(39, 19);
@@ -482,6 +365,7 @@
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label20.Location = new System.Drawing.Point(868, 10);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(33, 19);
@@ -507,10 +391,11 @@
             // 
             // Cash_P
             // 
-            this.Cash_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Cash_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.Cash_P.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Cash_P.Controls.Add(this.label16);
             this.Cash_P.Controls.Add(this.Cash_Amount);
-            this.Cash_P.Location = new System.Drawing.Point(23, 406);
+            this.Cash_P.Location = new System.Drawing.Point(4, 446);
             this.Cash_P.Name = "Cash_P";
             this.Cash_P.Size = new System.Drawing.Size(1158, 38);
             this.Cash_P.TabIndex = 60;
@@ -519,6 +404,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label16.Location = new System.Drawing.Point(1086, 9);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(41, 19);
@@ -594,6 +480,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label6.Location = new System.Drawing.Point(862, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 19);
@@ -604,6 +491,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label7.Location = new System.Drawing.Point(699, 8);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(39, 19);
@@ -614,6 +502,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label8.Location = new System.Drawing.Point(479, 8);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 19);
@@ -634,7 +523,7 @@
             this.Check_Date.CustomFormat = "yyyy-MM-dd";
             this.Check_Date.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Check_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Check_Date.Location = new System.Drawing.Point(920, 5);
+            this.Check_Date.Location = new System.Drawing.Point(921, 5);
             this.Check_Date.Name = "Check_Date";
             this.Check_Date.Size = new System.Drawing.Size(145, 29);
             this.Check_Date.TabIndex = 53;
@@ -643,6 +532,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label13.Location = new System.Drawing.Point(1083, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(49, 19);
@@ -653,6 +543,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label14.Location = new System.Drawing.Point(258, 8);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(99, 19);
@@ -679,6 +570,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.label15.Location = new System.Drawing.Point(110, 9);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(41, 19);
@@ -688,7 +580,8 @@
             // 
             // Check_P
             // 
-            this.Check_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.Check_P.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.Check_P.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Check_P.Controls.Add(this.label15);
             this.Check_P.Controls.Add(this.Ck_Amount);
             this.Check_P.Controls.Add(this.Ck_num);
@@ -701,7 +594,7 @@
             this.Check_P.Controls.Add(this.label6);
             this.Check_P.Controls.Add(this.Ck_B);
             this.Check_P.Controls.Add(this.Ck_Br);
-            this.Check_P.Location = new System.Drawing.Point(23, 314);
+            this.Check_P.Location = new System.Drawing.Point(4, 355);
             this.Check_P.Name = "Check_P";
             this.Check_P.Size = new System.Drawing.Size(1154, 38);
             this.Check_P.TabIndex = 49;
@@ -779,7 +672,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(5, 166);
+            this.pictureBox2.Location = new System.Drawing.Point(402, 139);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(34, 33);
             this.pictureBox2.TabIndex = 69;
@@ -791,7 +684,7 @@
             // 
             this.LinktoRec.AutoSize = true;
             this.LinktoRec.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.LinktoRec.Location = new System.Drawing.Point(45, 174);
+            this.LinktoRec.Location = new System.Drawing.Point(442, 147);
             this.LinktoRec.Name = "LinktoRec";
             this.LinktoRec.Size = new System.Drawing.Size(80, 16);
             this.LinktoRec.TabIndex = 68;
@@ -806,19 +699,54 @@
             this.New_Bt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("New_Bt.BackgroundImage")));
             this.New_Bt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.New_Bt.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.New_Bt.Location = new System.Drawing.Point(9, 90);
+            this.New_Bt.Location = new System.Drawing.Point(20, 61);
             this.New_Bt.Name = "New_Bt";
             this.New_Bt.Size = new System.Drawing.Size(42, 40);
             this.New_Bt.TabIndex = 70;
             this.New_Bt.UseVisualStyleBackColor = false;
             this.New_Bt.Click += new System.EventHandler(this.New_Bt_Click);
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label22);
+            this.panel5.Controls.Add(this.label9);
+            this.panel5.Controls.Add(this.New_Bt);
+            this.panel5.Controls.Add(this.button4);
+            this.panel5.Location = new System.Drawing.Point(23, 96);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(138, 127);
+            this.panel5.TabIndex = 71;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label22.Location = new System.Drawing.Point(79, 71);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(40, 19);
+            this.label22.TabIndex = 45;
+            this.label22.Text = "חדש";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.label9.Location = new System.Drawing.Point(70, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(57, 19);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "שמירה ";
+            // 
             // Bills
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1158, 710);
-            this.Controls.Add(this.New_Bt);
+            this.Controls.Add(this.panel5);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.LinktoRec);
             this.Controls.Add(this.Serch_Btn);
@@ -832,11 +760,9 @@
             this.Controls.Add(this.MT_P);
             this.Controls.Add(this.Bill_Date);
             this.Controls.Add(this.Check_P);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.CusEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.Bill_Sub);
             this.Controls.Add(this.Rec_Num);
             this.Controls.Add(this.label3);
@@ -850,8 +776,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).EndInit();
@@ -865,6 +789,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetCus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -883,13 +809,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.BindingSource customerBindingSource1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox To_Pay;
-        private System.Windows.Forms.TextBox Tax;
-        private System.Windows.Forms.TextBox Sum;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.BindingSource customerBindingSource;
         private MetroFramework.Controls.MetroTextBox Bill_Sub;
         private DataSet1 dataSet1;
@@ -913,9 +832,6 @@
         private System.Windows.Forms.Panel Cash_P;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox Cash_Amount;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RadioButton Cashe;
         private System.Windows.Forms.RadioButton Check;
         private System.Windows.Forms.RadioButton Mtransfer;
@@ -944,5 +860,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.LinkLabel LinktoRec;
         private System.Windows.Forms.Button New_Bt;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label9;
     }
 }

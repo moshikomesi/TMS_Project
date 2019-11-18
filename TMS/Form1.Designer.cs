@@ -39,16 +39,21 @@
             this.transactionsbtn = new MetroFramework.Controls.MetroTile();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.tmsDbDataSetchart = new TMS.TmsDbDataSetchart();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.invoicesTableAdapter = new TMS.TmsDbDataSetchartTableAdapters.InvoicesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetchart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ReportsBtn
             // 
             this.ReportsBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ReportsBtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ReportsBtn.Location = new System.Drawing.Point(910, 241);
+            this.ReportsBtn.Location = new System.Drawing.Point(1030, 276);
             this.ReportsBtn.Name = "ReportsBtn";
-            this.ReportsBtn.Size = new System.Drawing.Size(121, 114);
+            this.ReportsBtn.Size = new System.Drawing.Size(153, 150);
             this.ReportsBtn.TabIndex = 6;
             this.ReportsBtn.Text = "דוחות";
             this.ReportsBtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -63,9 +68,9 @@
             // 
             this.billsbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.billsbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.billsbtn.Location = new System.Drawing.Point(770, 241);
+            this.billsbtn.Location = new System.Drawing.Point(866, 276);
             this.billsbtn.Name = "billsbtn";
-            this.billsbtn.Size = new System.Drawing.Size(121, 114);
+            this.billsbtn.Size = new System.Drawing.Size(153, 150);
             this.billsbtn.TabIndex = 5;
             this.billsbtn.Text = "קבלות";
             this.billsbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -80,9 +85,9 @@
             // 
             this.traksbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.traksbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.traksbtn.Location = new System.Drawing.Point(356, 241);
+            this.traksbtn.Location = new System.Drawing.Point(382, 276);
             this.traksbtn.Name = "traksbtn";
-            this.traksbtn.Size = new System.Drawing.Size(121, 114);
+            this.traksbtn.Size = new System.Drawing.Size(153, 150);
             this.traksbtn.TabIndex = 4;
             this.traksbtn.Text = "רכבים";
             this.traksbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -97,9 +102,9 @@
             // 
             this.invoicesbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.invoicesbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.invoicesbtn.Location = new System.Drawing.Point(631, 241);
+            this.invoicesbtn.Location = new System.Drawing.Point(704, 276);
             this.invoicesbtn.Name = "invoicesbtn";
-            this.invoicesbtn.Size = new System.Drawing.Size(121, 114);
+            this.invoicesbtn.Size = new System.Drawing.Size(153, 150);
             this.invoicesbtn.TabIndex = 3;
             this.invoicesbtn.Text = "חשבוניות";
             this.invoicesbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -115,9 +120,9 @@
             // 
             this.customersbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.customersbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.customersbtn.Location = new System.Drawing.Point(493, 241);
+            this.customersbtn.Location = new System.Drawing.Point(542, 276);
             this.customersbtn.Name = "customersbtn";
-            this.customersbtn.Size = new System.Drawing.Size(121, 114);
+            this.customersbtn.Size = new System.Drawing.Size(153, 150);
             this.customersbtn.TabIndex = 2;
             this.customersbtn.Text = "לקוחות";
             this.customersbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -132,9 +137,9 @@
             // 
             this.driversbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.driversbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.driversbtn.Location = new System.Drawing.Point(220, 241);
+            this.driversbtn.Location = new System.Drawing.Point(220, 276);
             this.driversbtn.Name = "driversbtn";
-            this.driversbtn.Size = new System.Drawing.Size(121, 114);
+            this.driversbtn.Size = new System.Drawing.Size(153, 150);
             this.driversbtn.TabIndex = 1;
             this.driversbtn.Text = "נהגים";
             this.driversbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -150,9 +155,9 @@
             this.transactionsbtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.transactionsbtn.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.transactionsbtn.ForeColor = System.Drawing.Color.Ivory;
-            this.transactionsbtn.Location = new System.Drawing.Point(83, 241);
+            this.transactionsbtn.Location = new System.Drawing.Point(56, 276);
             this.transactionsbtn.Name = "transactionsbtn";
-            this.transactionsbtn.Size = new System.Drawing.Size(121, 114);
+            this.transactionsbtn.Size = new System.Drawing.Size(153, 150);
             this.transactionsbtn.TabIndex = 0;
             this.transactionsbtn.Text = "נסיעות";
             this.transactionsbtn.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -171,11 +176,25 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(365, 63);
+            this.pictureBox1.Location = new System.Drawing.Point(360, 80);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(412, 112);
+            this.pictureBox1.Size = new System.Drawing.Size(489, 175);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            // 
+            // tmsDbDataSetchart
+            // 
+            this.tmsDbDataSetchart.DataSetName = "TmsDbDataSetchart";
+            this.tmsDbDataSetchart.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // invoicesBindingSource
+            // 
+            this.invoicesBindingSource.DataMember = "Invoices";
+            this.invoicesBindingSource.DataSource = this.tmsDbDataSetchart;
+            // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
             // 
             // Form1
             // 
@@ -183,7 +202,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1111, 542);
+            this.ClientSize = new System.Drawing.Size(1254, 591);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ReportsBtn);
             this.Controls.Add(this.billsbtn);
@@ -200,6 +219,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tmsDbDataSetchart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,6 +236,9 @@
         private MetroFramework.Controls.MetroTile ReportsBtn;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private TmsDbDataSetchart tmsDbDataSetchart;
+        private System.Windows.Forms.BindingSource invoicesBindingSource;
+        private TmsDbDataSetchartTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
     }
 }
 

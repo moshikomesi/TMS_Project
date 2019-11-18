@@ -141,10 +141,6 @@ namespace TMS
                 MessageBox.Show(exx.Message);
             }
         }
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-             }
         string Doc_ID;
         string doc_num;
         string Bill_link = "";
