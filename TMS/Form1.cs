@@ -70,7 +70,7 @@ namespace TMS
 
         private void ReportsBtn_Click(object sender, EventArgs e)
         {
-            Reports rep = new Reports();
+            Report rep = new Report();
             rep.ShowDialog();
         }
         
@@ -154,6 +154,13 @@ namespace TMS
         private void ReportsBtn_MouseLeave(object sender, EventArgs e)
         {
             ReportsBtn.Style = MetroFramework.MetroColorStyle.Default;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Login log = new Login();
+            this.Hide();
+            log.ShowDialog();
         }
     }
 }

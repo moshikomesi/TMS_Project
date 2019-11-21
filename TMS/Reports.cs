@@ -34,6 +34,7 @@ namespace TMS
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Maximized;
             this.reportViewer1.RefreshReport();
             string s = C_N.Text;
             Thread t = new Thread(new ThreadStart(StartForm));
@@ -58,7 +59,7 @@ namespace TMS
                 System.Drawing.Printing.PageSettings newPageSttings = new System.Drawing.Printing.PageSettings();
                 newPageSttings.Margins = new System.Drawing.Printing.Margins(40,40,40,40);
                 reportViewer1.SetPageSettings(newPageSttings);
-                this.WindowState = FormWindowState.Maximized;
+            
                 ReportPageSettings rpt = reportViewer1.LocalReport.GetDefaultPageSettings();
                 if (reportViewer1.ParentForm.Width > rpt.PaperSize.Width)
                 {

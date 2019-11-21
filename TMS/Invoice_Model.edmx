@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="InvoiceTmsDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="GetInvoiveByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Customer_Num" Type="int" Mode="In" />
+          <Parameter Name="FormDate" Type="datetime" Mode="In" />
+          <Parameter Name="TOdate" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="InvoiceTmsDbModelStoreContainer" />
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="InvoiceTmsDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="InvoicesTmsDbEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="GetInvoiveByCustomer" ReturnType="Collection(InvoiceTmsDbModel.GetInvoiveByCustomer_Result)">
+            <Parameter Name="Customer_Num" Mode="In" Type="Int32" />
+            <Parameter Name="FormDate" Mode="In" Type="DateTime" />
+            <Parameter Name="TOdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetInvoiveByCustomer_Result">
+          <Property Type="String" Name="Customer_Name" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Customer_LTD" Nullable="true" MaxLength="20" />
+          <Property Type="DateTime" Name="Invoice_date" Nullable="false" />
+          <Property Type="Decimal" Name="Invoice_Amount" Nullable="false" Precision="19" />
+          <Property Type="Int32" Name="Invoice_Num" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="InvoiceTmsDbModelStoreContainer" CdmEntityContainer="InvoicesTmsDbEntities" >
+          <FunctionImportMapping FunctionImportName="GetInvoiveByCustomer" FunctionName="InvoiceTmsDbModel.Store.GetInvoiveByCustomer">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="InvoiceTmsDbModel.GetInvoiveByCustomer_Result">
+                <ScalarProperty Name="Customer_Name" ColumnName="Customer_Name" />
+                <ScalarProperty Name="Customer_LTD" ColumnName="Customer_LTD" />
+                <ScalarProperty Name="Invoice_date" ColumnName="Invoice_date" />
+                <ScalarProperty Name="Invoice_Amount" ColumnName="Invoice_Amount" />
+                <ScalarProperty Name="Invoice_Num" ColumnName="Invoice_Num" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

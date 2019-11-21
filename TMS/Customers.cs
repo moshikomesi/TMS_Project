@@ -18,6 +18,7 @@ namespace TMS
         private void Customers_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+            
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
