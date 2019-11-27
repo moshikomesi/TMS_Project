@@ -14,6 +14,7 @@ namespace TMS
     {
         public Audit_Logs()
         {
+            WindowState = FormWindowState.Maximized;
             InitializeComponent();
         }
 

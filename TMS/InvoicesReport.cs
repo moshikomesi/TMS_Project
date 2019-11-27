@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace TMS
 {
@@ -30,6 +31,7 @@ namespace TMS
             using (InvoicesTmsDbEntities db = new InvoicesTmsDbEntities())
             {
                 GetInvoiveByCustomer_ResultBindingSource.DataSource = db.GetInvoiveByCustomer(int.Parse(Customer_Num.Text), FromDate.Value, ToDate.Value).ToList();
+              
                 Microsoft.Reporting.WinForms.ReportParameter[] rParams = new Microsoft.Reporting.WinForms.ReportParameter[]
                                {
                     new  Microsoft.Reporting.WinForms.ReportParameter ("FromDate",FromDate.Value.ToShortDateString()),
@@ -38,6 +40,13 @@ namespace TMS
 
                                  };
                 reportViewer1.LocalReport.SetParameters(rParams);
+                ReportPageSettings rt = reportViewer1.LocalReport.GetDefaultPageSettings();
+                if (reportViewer1.ParentForm.Width > rt.PaperSize.Width)
+                {
+                    int hPad = (reportViewer1.ParentForm.Width - rt.PaperSize.Width) / 4;
+
+                    reportViewer1.Padding = new Padding(hPad, 1, hPad, 1);
+                }
 
 
                 reportViewer1.RefreshReport();

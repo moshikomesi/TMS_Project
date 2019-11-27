@@ -23,18 +23,21 @@ namespace TMS
 
         private void Reports_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'employee_ListDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.employee_ListDataSet.Employee);
             // TODO: This line of code loads data into the 'customerDataSet.Customer' table. You can move, or remove it, as needed.
-          this.customerTableAdapter.Fill(this.customerDataSet.Customer);
+            this.customerTableAdapter.Fill(this.customerDataSet.Customer);
             // TODO: This line of code loads data into the 'dataSet1.Shipp' table. You can move, or remove it, as needed.
-        //    this.shippTableAdapter.Fill(this.dataSet1.Shipp);
+            //    this.shippTableAdapter.Fill(this.dataSet1.Shipp);
 
-            
 
+
+            this.reportViewer2.RefreshReport();
         }
 
         private void LoadBtn_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
+          
             this.reportViewer1.RefreshReport();
             string s = C_N.Text;
             Thread t = new Thread(new ThreadStart(StartForm));
@@ -68,6 +71,7 @@ namespace TMS
                     reportViewer1.Padding = new Padding(hPad, 1, hPad, 1);
                 }
                 reportViewer1.Visible = true;
+                this.WindowState = FormWindowState.Maximized;
                 t.Abort();
             }
         }
@@ -78,7 +82,7 @@ namespace TMS
 
         private void SumBtn_Click(object sender, EventArgs e)
         {
-            this.reportViewer2.RefreshReport();
+            reportViewer2.RefreshReport();
             string s = C_N.Text;
             Thread t = new Thread(new ThreadStart(StartForm));
             t.Start();

@@ -19,7 +19,7 @@ namespace TMS
             string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
             SqlConnection con = new SqlConnection(constring);
             con.Open();
-            SqlDataAdapter sqlDa = new SqlDataAdapter("select Employee_Num as 'מספר עובד', Employee_Fname as'שם פרטי', Employee_Lname as 'שם משפחה' from Employee", con);
+            SqlDataAdapter sqlDa = new SqlDataAdapter("select Employee_Num as 'מספר עובד', Employee_Fname as'שם פרטי', Employee_Lname as 'שם משפחה',dv.Vehicle_Number 'רכב' from Employee e inner  join Driver_Vehicles dv on e.Employee_Num = dv.Employee_Number", con);
             DataTable dtbl = new DataTable();
             sqlDa.Fill(dtbl);
             dataGridView1.DataSource = dtbl;

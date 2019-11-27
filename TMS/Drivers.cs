@@ -14,6 +14,7 @@ namespace TMS
     public partial class Drivers : MetroFramework.Forms.MetroForm
     {
         string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
+        string status = "";
 
         public Drivers()
         {
@@ -22,6 +23,8 @@ namespace TMS
 
         private void Drivers_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'employee_ListDataSet.Employee' table. You can move, or remove it, as needed.
+            this.employeeTableAdapter.Fill(this.employee_ListDataSet.Employee);
             WindowState = FormWindowState.Maximized;
             SqlConnection con = new SqlConnection(constring);
             string SlectEQ = "SELECT MAX(Employee_Num) as num from Employee";
@@ -72,13 +75,13 @@ namespace TMS
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
-            string Query = "insert into Employee(Employee_Id,Employee_Fname,Employee_Lname,Employee_BD) values('" + this.Driver_Id.Text + "','" + this.Driver_Fmane.Text + "','" + this.Driver_Lname.Text + "','" + this.Driver_Bd.Text + "');";
+            string Query = "insert into Employee(Employee_Id,Employee_Fname,Employee_Lname,Employee_BD,Employee_Status) values('" + this.Driver_Id.Text + "','" + this.Driver_Fmane.Text + "','" + this.Driver_Lname.Text + "','" + this.Driver_Bd.Text + "','" +status+ "');";
             SqlConnection con = new SqlConnection(constring);
             con.Open();
             SqlDataReader myReader;
             try
             {
-                if (Driver_Fmane.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "" || Driver_Lname.Text == "")
+                if (Driver_Fmane.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "" || Driver_Lname.Text == ""||status == "")
                 {
                     MessageBox.Show(" לא ניתן להוסיף נהג  ללא כל נתונים ");
                     return;
@@ -169,7 +172,7 @@ namespace TMS
                 Reset.Enabled = true;
                 UpdateBt.Enabled = true;
                 SaveBtn.Enabled = false;
-                EraseBtn.Enabled = true;
+               
 
 
             }
@@ -199,7 +202,7 @@ namespace TMS
         {
             if (e.KeyValue == (char)Keys.F1)
             {
-                VehicleTbl vt = new VehicleTbl();
+                EmployeeTbl vt = new EmployeeTbl();
                 vt.ShowDialog();
                 Driver_Vehicle.Text = vt.getS();
 
@@ -255,9 +258,13 @@ namespace TMS
                     Driver_Fmane.Text = (dr["Employee_Fname"].ToString());
                     Driver_Lname.Text = (dr["Employee_Lname"].ToString());
                     Driver_Bd.Text = (dr["Employee_BD"].ToString());
+                    status= (dr["employee_status"].ToString());
+                    if (status == "on") Driver_On.Checked = true;
+                    if (status == "off") Driver_Off.Checked = true;
+                    
                     UpdateBt.Enabled = true;
                     SaveBtn.Enabled = false;
-                    EraseBtn.Enabled = true;
+                   
                     Reset.Enabled = true;
                 }
                 con.Close();
@@ -286,7 +293,7 @@ namespace TMS
 
             SqlConnection con = new SqlConnection(constring);
 
-            if (Driver_Fmane.Text == "" || Driver_Lname.Text == "" || Driver_Id.Text == "" || Driver_Vehicle.Text == "")
+            if (Driver_Fmane.Text == "" || Driver_Lname.Text == "" || Driver_Id.Text == "" ||status == "")
             {
                 MessageBox.Show("אין אפשרות לעדכן פרטי נהג ללא כל הפרטים ");
                 return;
@@ -310,18 +317,32 @@ namespace TMS
             SqlCommand cmd123 = new SqlCommand(selcq, con);
             string output1 = cmd123.ExecuteScalar().ToString();
             con.Close();
+            string select_emv = "select Vehicle_Number from Driver_Vehicles where Employee_Number =" + int.Parse(Driver_Num.Text);
+            string Vnum = "";
             if (output1 == "1")
             {
-                Driver_Vehicle.Text = "";
-                MessageBox.Show("רכב זה משויך לנהג לא ניתן לשייך רכב אחד לשני נהגים ");
-                return;
+                con.Open();
+                SqlCommand cmd1234 = new SqlCommand(select_emv, con);
+                SqlDataReader drr = cmd1234.ExecuteReader();
+                
+               
+                if (drr.Read())
+                {
+                    Vnum = drr["Vehicle_Number"].ToString();
+                }
+                con.Close();
+                if (Vnum != Driver_Vehicle.Text)
+                {
+                    Driver_Vehicle.Text = "";
+                    MessageBox.Show("רכב זה משויך לנהג לא ניתן לשייך רכב אחד לשני נהגים ");
+                    return;
+                }
             }
 
-            else
-            {
+            
                 try
                 {
-                    string qem = "update Employee set Employee_Id='" + Driver_Id.Text + "', Employee_Fname ='" + Driver_Fmane.Text + "', Employee_Lname ='" + Driver_Lname.Text + "', Employee_BD ='" + Driver_Bd.Text + "'where Employee_Num ='" + Driver_Num.Text + "';";
+                    string qem = "update Employee set Employee_Id='" + Driver_Id.Text + "', Employee_Fname ='" + Driver_Fmane.Text + "', Employee_Lname ='" + Driver_Lname.Text + "', Employee_BD ='" + Driver_Bd.Text + "', employee_status ='"+ status + "'where Employee_Num ='" + Driver_Num.Text + "';";
                     string Qup = "update Driver_Vehicles set Vehicle_Number='" + Driver_Vehicle.Text + "'where Employee_Number ='" + Driver_Num.Text + "';";
                     SqlCommand cmdb = new SqlCommand(qem, con);
                     SqlDataReader myReader;
@@ -340,7 +361,7 @@ namespace TMS
                 {
                     MessageBox.Show(exce.Message);
                 }
-            }
+            
 
 
         }
@@ -493,6 +514,22 @@ namespace TMS
             {
                 e.Handled = true;
             }
+        }
+
+        
+        private void Driver_On_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "on";
+        }
+
+        private void Driver_Off_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "off";
+        }
+
+        private void Refresh_Btn_Click(object sender, EventArgs e)
+        {
+            Drivers_Load(sender, e);
         }
     }
     

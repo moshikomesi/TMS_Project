@@ -1,0 +1,224 @@
+﻿namespace TMS
+{
+    partial class Invoice_Credit_Report
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.GetInvoiveCreditByCustomer_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.GetInvoiveByCustomer_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.Customer_Num = new System.Windows.Forms.ComboBox();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDataSet = new TMS.CustomerDataSet();
+            this.ToDate = new System.Windows.Forms.DateTimePicker();
+            this.FromDate = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.LoadBtn = new System.Windows.Forms.Button();
+            this.customerTableAdapter = new TMS.CustomerDataSetTableAdapters.CustomerTableAdapter();
+            this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveCreditByCustomer_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveByCustomer_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // GetInvoiveCreditByCustomer_ResultBindingSource
+            // 
+            this.GetInvoiveCreditByCustomer_ResultBindingSource.DataSource = typeof(TMS.GetInvoiveCreditByCustomer_Result);
+            // 
+            // GetInvoiveByCustomer_ResultBindingSource
+            // 
+            this.GetInvoiveByCustomer_ResultBindingSource.DataSource = typeof(TMS.GetInvoiveByCustomer_Result);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            reportDataSource1.Name = "DataSet";
+            reportDataSource1.Value = this.GetInvoiveCreditByCustomer_ResultBindingSource;
+            reportDataSource2.Name = "DataSet1";
+            reportDataSource2.Value = this.GetInvoiveCreditByCustomer_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "TMS.Invoice_Credit_Report.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(12, 54);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(1354, 684);
+            this.reportViewer1.TabIndex = 9;
+            // 
+            // Customer_Num
+            // 
+            this.Customer_Num.DataSource = this.customerBindingSource1;
+            this.Customer_Num.DisplayMember = "Customer_Num";
+            this.Customer_Num.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Customer_Num.FormattingEnabled = true;
+            this.Customer_Num.Location = new System.Drawing.Point(882, 17);
+            this.Customer_Num.Name = "Customer_Num";
+            this.Customer_Num.Size = new System.Drawing.Size(121, 30);
+            this.Customer_Num.TabIndex = 12;
+            this.Customer_Num.ValueMember = "Customer_Num";
+            // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.customerDataSetBindingSource;
+            // 
+            // customerDataSetBindingSource
+            // 
+            this.customerDataSetBindingSource.DataSource = this.customerDataSet;
+            this.customerDataSetBindingSource.Position = 0;
+            // 
+            // customerDataSet
+            // 
+            this.customerDataSet.DataSetName = "CustomerDataSet";
+            this.customerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ToDate
+            // 
+            this.ToDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ToDate.CustomFormat = "yyyy-MM-dd";
+            this.ToDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.ToDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.ToDate.Location = new System.Drawing.Point(393, 16);
+            this.ToDate.Name = "ToDate";
+            this.ToDate.Size = new System.Drawing.Size(145, 29);
+            this.ToDate.TabIndex = 11;
+            // 
+            // FromDate
+            // 
+            this.FromDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.FromDate.CustomFormat = "yyyy-MM-dd";
+            this.FromDate.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.FromDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FromDate.Location = new System.Drawing.Point(642, 17);
+            this.FromDate.Name = "FromDate";
+            this.FromDate.Size = new System.Drawing.Size(145, 29);
+            this.FromDate.TabIndex = 10;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(1019, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = ": קוד לקוח ";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(803, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(56, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = ": מתאריך ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(553, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 14;
+            this.label1.Text = ": עד תאריך ";
+            // 
+            // LoadBtn
+            // 
+            this.LoadBtn.BackColor = System.Drawing.Color.LimeGreen;
+            this.LoadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LoadBtn.Font = new System.Drawing.Font("Guttman Adii", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LoadBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.LoadBtn.Location = new System.Drawing.Point(317, 13);
+            this.LoadBtn.Name = "LoadBtn";
+            this.LoadBtn.Size = new System.Drawing.Size(57, 31);
+            this.LoadBtn.TabIndex = 13;
+            this.LoadBtn.Text = "טען";
+            this.LoadBtn.UseVisualStyleBackColor = false;
+            this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
+            // 
+            // customerTableAdapter
+            // 
+            this.customerTableAdapter.ClearBeforeFill = true;
+            // 
+            // customerBindingSource1
+            // 
+            this.customerBindingSource1.DataMember = "Customer";
+            this.customerBindingSource1.DataSource = this.customerDataSetBindingSource;
+            // 
+            // Invoice_Credit_Report
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1370, 645);
+            this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.Customer_Num);
+            this.Controls.Add(this.ToDate);
+            this.Controls.Add(this.FromDate);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.LoadBtn);
+            this.Name = "Invoice_Credit_Report";
+            this.Text = "Invoice_Credit_Report";
+            this.Load += new System.EventHandler(this.Invoice_Credit_Report_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveCreditByCustomer_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveByCustomer_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource GetInvoiveByCustomer_ResultBindingSource;
+        private System.Windows.Forms.ComboBox Customer_Num;
+        private System.Windows.Forms.BindingSource customerBindingSource;
+        private System.Windows.Forms.BindingSource customerDataSetBindingSource;
+        private CustomerDataSet customerDataSet;
+        private System.Windows.Forms.DateTimePicker ToDate;
+        private System.Windows.Forms.DateTimePicker FromDate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button LoadBtn;
+        private CustomerDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
+        private System.Windows.Forms.BindingSource GetInvoiveCreditByCustomer_ResultBindingSource;
+        private System.Windows.Forms.BindingSource customerBindingSource1;
+    }
+}

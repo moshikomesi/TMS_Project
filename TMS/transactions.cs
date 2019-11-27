@@ -283,7 +283,7 @@ namespace TMS
 
             SqlDataReader myReader;
 
-            con.Open();
+          
             try
             {
                 if (CustomerNum.Text == "" || Driver.Text == "" || DocNum.Text == "" || KindTran.Text == "" || Exitt.Text == "" || Targett.Text == "" || quantity.Text == "" || Amount.Text == "")
@@ -292,7 +292,40 @@ namespace TMS
                     return;
                 }
 
+               
+                
+                string selectq = "select count(*) from Shipp, Customer where Shipp_DocNum='" + DocNum.Text + "'and Customer_Num =" + CustomerNum.Text;
+                con.Open();
+               // if (CustomerName.Text == "") MessageBox.Show("לא ניתן לקלוט הובלה ללא מספר לקוח, נא להזין מספר לקוח");
 
+                try
+                {
+                    SqlCommand cmdx = new SqlCommand(selectq, con);
+                    string output = cmdx.ExecuteScalar().ToString();
+                    string SelectDoc = "select Shipp_Num from Shipp where Shipp_DocNum ='" + DocNum.Text + "'";
+                    if (output == "1")
+                    {
+                        cmdx = new SqlCommand(SelectDoc, con);
+                        SqlDataReader drx = cmdx.ExecuteReader();
+                        if (drx.Read())
+                        {
+                            string m;
+                            m = (drx["Shipp_Num"].ToString());
+                            MessageBox.Show(m + " : תעודת משלוח מופיעה בזמנה מס ", "כפל תעודות משלוח ");
+                            DocNum.Text = "";
+                            
+                            return;
+                        }
+
+                    }
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                con.Open();
                 myReader = cmdDataBase.ExecuteReader();
                 MessageBox.Show("הזמנה נשמרה בהצלחה");
                 while (myReader.Read()) { }
@@ -396,7 +429,7 @@ namespace TMS
                 MessageBox.Show("מספר תעודה מופיע במערכת ");
 
                 this.Text = "";
-                string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_DocNum " + " = " + DocNum.Text;
+                string SqlSelectQuery = " select *, Customer_Name,Employee_Fname,Transacion_Type from Shipp, Customer,Employee,Transactions_Type where Shipp_DocNum " + " = '" + DocNum.Text+"'";
 
 
                 SqlCommand cmd = new SqlCommand(SqlSelectQuery, con);
@@ -408,7 +441,7 @@ namespace TMS
                     CustomerName.Text = (dr["Customer_Name"].ToString());
                     TranDate.Text = (dr["Shipp_Date_Time"].ToString());
                     DocNum.Text = (dr["Shipp_DocNum"].ToString());
-                    KindTran.Text = (dr["Transaction_Number"].ToString());
+                    KindTran.Text = (dr["Transaction_Number"].ToString().Trim());
                     ShipTypeText.Text = (dr["Transacion_Type"].ToString());
                     Exitt.Text = (dr["Shipp_Origin"].ToString());
                     Targett.Text = (dr["Shipp_Dest"].ToString());
@@ -609,7 +642,12 @@ namespace TMS
                 if (dr.Read())
                 {
                     CustomerNum.Text = (dr["Customer_Number"].ToString());
-                    CustomerName.Text = (dr["Customer_Name"].ToString());
+                    CustomerNum_Leave(sender, e);
+                    // CustomerName.Text = (dr["Customer_Name"].ToString());
+                    Driver.Text = (dr["Employee_Number"].ToString());
+                    Driver_Leave(sender, e);
+                  //  DriverNameText.Text = (dr["Employee_Fname"].ToString());
+                      
                     TranDate.Text = (dr["Shipp_Date_Time"].ToString());
                     DocNum.Text = (dr["Shipp_DocNum"].ToString().Trim());
                     KindTran.Text = (dr["Transaction_Number"].ToString());
@@ -632,10 +670,10 @@ namespace TMS
                         }
                     }
                     Amount.Text = ss;
-
-                    Driver.Text = (dr["Employee_Number"].ToString());
-                    DriverNameText.Text = (dr["Employee_Fname"].ToString());
-                    Car.Text = (dr["Vehicle_Number"].ToString());
+                    
+                //    Driver.Text = (dr["Employee_Number"].ToString());
+                 //   DriverNameText.Text = (dr["Employee_Fname"].ToString());
+                //    Car.Text = (dr["Vehicle_Number"].ToString());
                     dataGridView1.Rows[0].Cells[5].Value = TranDate.Text;
                     dataGridView1.Rows[0].Cells[6].Value = OrdeNum.Text;
                     dataGridView1.Rows[0].Cells[3].Value = Exitt.Text;
@@ -749,13 +787,7 @@ namespace TMS
 
         private void DocNum_TextChanged(object sender, EventArgs e)
         {
-            if (DocNum.Text.Length > 20)
-            {
-                MessageBox.Show("שדה מספר תעודה  לא יכול להכיל יותר מ 20 תוים");
-                return;
-
-            }
-
+           
         }
 
         private void Exitt_KeyDown(object sender, KeyEventArgs e)
@@ -799,37 +831,7 @@ namespace TMS
         private void DocNum_Leave(object sender, EventArgs e)
         {
 
-            string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
-            SqlConnection con = new SqlConnection(constring);
-            string selectq = "select count(*) from Shipp, Customer where Shipp_DocNum" + "=" + DocNum.Text + "and Customer_Num =" + CustomerNum.Text;
-            con.Open();
-            if(CustomerName.Text== "") MessageBox.Show("נא להזין מספר לקוח  ");
-            if (DocNum.Text.Length > 9) MessageBox.Show("  מספר תעודה ארוך מדי ");
-            try
-            {
-                SqlCommand cmdx = new SqlCommand(selectq, con);
-                string output = cmdx.ExecuteScalar().ToString();
-                string SelectDoc = "select Shipp_Num from Shipp where Shipp_DocNum " + "=" + DocNum.Text;
-                if (output == "1")
-                {
-                    cmdx = new SqlCommand(SelectDoc, con);
-                    SqlDataReader drx = cmdx.ExecuteReader();
-                    if (drx.Read())
-                    {
-                        string m;
-                        m = (drx["Shipp_Num"].ToString());
-                        MessageBox.Show(m + " : תעודת משלוח מופיעה בזמנה מס ", "כפל תעודות משלוח ");
-                        DocNum.Text = "";
-                        con.Close();
-                        return;
-                    }
-
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            
 
         }
 
@@ -845,27 +847,14 @@ namespace TMS
 
         private void Amount_TextChanged(object sender, EventArgs e)
         {
-            if (Amount.Text.Length > 10)
-            {
-                MessageBox.Show("שדה מחיר לא יכול להכיל יותר מ 10 תוים");
-                return;
-            }
+           
           
         }
       
         private void KindTran_TextChanged(object sender, EventArgs e)
         {
-            if (KindTran.Text.Length > 10)
-            {
-                MessageBox.Show("שדה סוג הובלה לא יכול להכיל יותר מ 10 תוים");
-                return;
-      
-            }
-            if (System.Text.RegularExpressions.Regex.IsMatch(KindTran.Text, "[^0-9]"))
-            {
-                MessageBox.Show("נא להזין מספרים בלבד");
-                KindTran.Text = "";
-            }
+            
+           
         }
 
         private void Exitt_KeyUp(object sender, KeyEventArgs e)
@@ -897,10 +886,55 @@ namespace TMS
 
         private void Amount_KeyPress(object sender, KeyPressEventArgs e)
         {
+           
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+            if (Amount.Text.Length > 10)
+            {
+                MessageBox.Show("שדה מחיר לא יכול להכיל יותר מ 10 תוים");
+                return;
+            }
+        }
+
+        private void KindTran_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void KindTran_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+
+            if (KindTran.Text.Length > 10)
+
+            {
+                MessageBox.Show("שדה סוג הובלה לא יכול להכיל יותר מ 10 תוים");
+                return;
+
+            }
+        }
+
+        private void DocNum_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DocNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (DocNum.Text.Trim().Length > 20)
+            {
+                MessageBox.Show("שדה מספר תעודה  לא יכול להכיל יותר מ 20 תוים");
+                return;
+
+            }
+
         }
     }
 }

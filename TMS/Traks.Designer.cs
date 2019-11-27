@@ -57,6 +57,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.קליטה = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.Truck_On = new System.Windows.Forms.RadioButton();
+            this.Truck_Off = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.T_Type_T = new System.Windows.Forms.TextBox();
@@ -167,7 +169,7 @@
             // 
             this.Truck_Type.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Truck_Type.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Truck_Type.Location = new System.Drawing.Point(62, 230);
+            this.Truck_Type.Location = new System.Drawing.Point(38, 230);
             this.Truck_Type.Margin = new System.Windows.Forms.Padding(6);
             this.Truck_Type.Name = "Truck_Type";
             this.Truck_Type.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -178,13 +180,13 @@
             // 
             this.TrackYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TrackYear.AutoSize = true;
-            this.TrackYear.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.TrackYear.Location = new System.Drawing.Point(264, 101);
+            this.TrackYear.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.TrackYear.Location = new System.Drawing.Point(221, 107);
             this.TrackYear.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.TrackYear.Name = "TrackYear";
-            this.TrackYear.Size = new System.Drawing.Size(122, 32);
+            this.TrackYear.Size = new System.Drawing.Size(174, 24);
             this.TrackYear.TabIndex = 78;
-            this.TrackYear.Text = "שנת ייצור ";
+            this.TrackYear.Text = "תאריך עליה לכביש ";
             this.TrackYear.Click += new System.EventHandler(this.TrackYear_Click);
             // 
             // TrackNum
@@ -203,7 +205,7 @@
             // 
             this.Trak_Num.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.Trak_Num.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Trak_Num.Location = new System.Drawing.Point(62, 171);
+            this.Trak_Num.Location = new System.Drawing.Point(38, 171);
             this.Trak_Num.Margin = new System.Windows.Forms.Padding(6);
             this.Trak_Num.Name = "Trak_Num";
             this.Trak_Num.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -274,7 +276,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(103, 148);
+            this.label1.Location = new System.Drawing.Point(103, 136);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(64, 32);
@@ -286,7 +288,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(103, 87);
+            this.label2.Location = new System.Drawing.Point(103, 75);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(67, 32);
@@ -298,7 +300,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(88, 18);
+            this.label3.Location = new System.Drawing.Point(87, 18);
             this.label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 32);
@@ -310,7 +312,7 @@
             this.Update.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.Update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Update.Image = global::TMS.Properties.Resources.updateicon;
-            this.Update.Location = new System.Drawing.Point(27, 84);
+            this.Update.Location = new System.Drawing.Point(27, 72);
             this.Update.Margin = new System.Windows.Forms.Padding(6);
             this.Update.Name = "Update";
             this.Update.Size = new System.Drawing.Size(44, 37);
@@ -323,7 +325,7 @@
             this.ResetBtn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ResetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ResetBtn.Image = global::TMS.Properties.Resources.pluse;
-            this.ResetBtn.Location = new System.Drawing.Point(27, 143);
+            this.ResetBtn.Location = new System.Drawing.Point(27, 131);
             this.ResetBtn.Margin = new System.Windows.Forms.Padding(6);
             this.ResetBtn.Name = "ResetBtn";
             this.ResetBtn.Size = new System.Drawing.Size(44, 37);
@@ -350,7 +352,7 @@
             this.Vhicle_Date.CustomFormat = "yyyy-MM-dd";
             this.Vhicle_Date.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Vhicle_Date.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Vhicle_Date.Location = new System.Drawing.Point(62, 103);
+            this.Vhicle_Date.Location = new System.Drawing.Point(38, 103);
             this.Vhicle_Date.Name = "Vhicle_Date";
             this.Vhicle_Date.Size = new System.Drawing.Size(157, 39);
             this.Vhicle_Date.TabIndex = 99;
@@ -410,6 +412,8 @@
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.Truck_On);
+            this.panel3.Controls.Add(this.Truck_Off);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.label2);
@@ -419,8 +423,34 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel3.Location = new System.Drawing.Point(106, 209);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(193, 206);
+            this.panel3.Size = new System.Drawing.Size(193, 250);
             this.panel3.TabIndex = 118;
+            // 
+            // Truck_On
+            // 
+            this.Truck_On.AutoSize = true;
+            this.Truck_On.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Truck_On.Location = new System.Drawing.Point(116, 193);
+            this.Truck_On.Name = "Truck_On";
+            this.Truck_On.Size = new System.Drawing.Size(73, 29);
+            this.Truck_On.TabIndex = 100;
+            this.Truck_On.TabStop = true;
+            this.Truck_On.Text = "פעיל";
+            this.Truck_On.UseVisualStyleBackColor = true;
+            this.Truck_On.CheckedChanged += new System.EventHandler(this.Truck_On_CheckedChanged);
+            // 
+            // Truck_Off
+            // 
+            this.Truck_Off.AutoSize = true;
+            this.Truck_Off.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Truck_Off.Location = new System.Drawing.Point(9, 193);
+            this.Truck_Off.Name = "Truck_Off";
+            this.Truck_Off.Size = new System.Drawing.Size(103, 29);
+            this.Truck_Off.TabIndex = 99;
+            this.Truck_Off.TabStop = true;
+            this.Truck_Off.Text = "לא פעיל";
+            this.Truck_Off.UseVisualStyleBackColor = true;
+            this.Truck_Off.CheckedChanged += new System.EventHandler(this.Truck_Off_CheckedChanged);
             // 
             // panel2
             // 
@@ -460,7 +490,7 @@
             // 
             this.T_Type_T.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.T_Type_T.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.T_Type_T.Location = new System.Drawing.Point(60, 329);
+            this.T_Type_T.Location = new System.Drawing.Point(36, 329);
             this.T_Type_T.Margin = new System.Windows.Forms.Padding(6);
             this.T_Type_T.Name = "T_Type_T";
             this.T_Type_T.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -488,7 +518,7 @@
             this.T_Date_V.Enabled = false;
             this.T_Date_V.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.T_Date_V.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.T_Date_V.Location = new System.Drawing.Point(60, 279);
+            this.T_Date_V.Location = new System.Drawing.Point(36, 279);
             this.T_Date_V.Name = "T_Date_V";
             this.T_Date_V.Size = new System.Drawing.Size(159, 39);
             this.T_Date_V.TabIndex = 109;
@@ -883,5 +913,7 @@
         private System.Windows.Forms.BindingSource vehicleBindingSource;
         private TmsDbDataSetVehicleTableAdapters.VehicleTableAdapter vehicleTableAdapter;
         private System.Windows.Forms.PageSetupDialog pageSetupDialog1;
+        private System.Windows.Forms.RadioButton Truck_On;
+        private System.Windows.Forms.RadioButton Truck_Off;
     }
 }

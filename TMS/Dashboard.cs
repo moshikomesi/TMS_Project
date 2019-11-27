@@ -39,9 +39,9 @@ namespace TMS
             }
 
 
-            string Cquery = "select COUNT(*) FROM Customer";
-            string Equery = "select COUNT(*) FROM Employee";
-            string Vquery = "select COUNT(*) FROM Vehicle";
+            string Cquery = "select COUNT(*) FROM Customer WHERE Customer_Status = 'On'";
+            string Equery = "select COUNT(*) FROM Employee WHERE Employee_Status = 'On'";
+            string Vquery = "select COUNT(*) FROM Vehicle WHERE Vehicle_Status = 'On'";
        
             SqlConnection con = new SqlConnection(constring);
             SqlCommand cmd1 = new SqlCommand(Cquery, con);
@@ -189,6 +189,24 @@ namespace TMS
         {
             Audit_Logs audit = new Audit_Logs();
             audit.ShowDialog();
+        }
+
+        private void EmployeeBtn_Click(object sender, EventArgs e)
+        {
+            Employee_list emp = new Employee_list();
+            emp.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Customer_List cl = new Customer_List();
+            cl.ShowDialog();
+        }
+
+        private void Inv_Btn_Click(object sender, EventArgs e)
+        {
+            Vhcels_list vhcl = new Vhcels_list();
+            vhcl.ShowDialog();
         }
     }
 }

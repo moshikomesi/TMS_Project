@@ -36,14 +36,18 @@
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ShippBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.To_Employee = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.employeeListDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employee_ListDataSet = new TMS.Employee_ListDataSet();
+            this.F_Employee = new System.Windows.Forms.ComboBox();
+            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SumBtn = new System.Windows.Forms.Button();
             this.C_N = new System.Windows.Forms.ComboBox();
             this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.customerDataSet = new TMS.CustomerDataSet();
             this.LoadBtn = new System.Windows.Forms.Button();
             this.ToDate_P = new System.Windows.Forms.DateTimePicker();
-            this.To_Employee = new System.Windows.Forms.TextBox();
-            this.F_Employee = new System.Windows.Forms.TextBox();
             this.FromD_P = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -60,6 +64,7 @@
             this.dataSet2BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new TMS.CustomerDataSetTableAdapters.CustomerTableAdapter();
+            this.employeeTableAdapter = new TMS.Employee_ListDataSetTableAdapters.EmployeeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.GetShippReport_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GetSumShippReport_ResultBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShippBindingSource)).BeginInit();
@@ -67,6 +72,10 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeListDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employee_ListDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).BeginInit();
@@ -95,7 +104,7 @@
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TMS.ShippReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(20, 60);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(410, 270);
+            this.reportViewer1.Size = new System.Drawing.Size(430, 267);
             this.reportViewer1.TabIndex = 0;
             this.reportViewer1.Visible = false;
             // 
@@ -107,18 +116,17 @@
             // 
             this.splitContainer1.BackColor = System.Drawing.Color.Honeydew;
             this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(20, 60);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.To_Employee);
+            this.splitContainer1.Panel1.Controls.Add(this.F_Employee);
             this.splitContainer1.Panel1.Controls.Add(this.SumBtn);
             this.splitContainer1.Panel1.Controls.Add(this.C_N);
             this.splitContainer1.Panel1.Controls.Add(this.LoadBtn);
             this.splitContainer1.Panel1.Controls.Add(this.ToDate_P);
-            this.splitContainer1.Panel1.Controls.Add(this.To_Employee);
-            this.splitContainer1.Panel1.Controls.Add(this.F_Employee);
             this.splitContainer1.Panel1.Controls.Add(this.FromD_P);
             // 
             // splitContainer1.Panel2
@@ -128,9 +136,51 @@
             this.splitContainer1.Panel2.Controls.Add(this.label3);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.label1);
-            this.splitContainer1.Size = new System.Drawing.Size(410, 270);
-            this.splitContainer1.SplitterDistance = 214;
+            this.splitContainer1.Size = new System.Drawing.Size(431, 270);
+            this.splitContainer1.SplitterDistance = 224;
             this.splitContainer1.TabIndex = 8;
+            // 
+            // To_Employee
+            // 
+            this.To_Employee.DataSource = this.employeeBindingSource1;
+            this.To_Employee.DisplayMember = "Employee_Num";
+            this.To_Employee.FormattingEnabled = true;
+            this.To_Employee.Location = new System.Drawing.Point(42, 188);
+            this.To_Employee.Name = "To_Employee";
+            this.To_Employee.Size = new System.Drawing.Size(103, 21);
+            this.To_Employee.TabIndex = 10;
+            this.To_Employee.ValueMember = "Employee_Num";
+            // 
+            // employeeBindingSource1
+            // 
+            this.employeeBindingSource1.DataMember = "Employee";
+            this.employeeBindingSource1.DataSource = this.employeeListDataSetBindingSource;
+            // 
+            // employeeListDataSetBindingSource
+            // 
+            this.employeeListDataSetBindingSource.DataSource = this.employee_ListDataSet;
+            this.employeeListDataSetBindingSource.Position = 0;
+            // 
+            // employee_ListDataSet
+            // 
+            this.employee_ListDataSet.DataSetName = "Employee_ListDataSet";
+            this.employee_ListDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // F_Employee
+            // 
+            this.F_Employee.DataSource = this.employeeBindingSource;
+            this.F_Employee.DisplayMember = "Employee_Num";
+            this.F_Employee.FormattingEnabled = true;
+            this.F_Employee.Location = new System.Drawing.Point(41, 151);
+            this.F_Employee.Name = "F_Employee";
+            this.F_Employee.Size = new System.Drawing.Size(103, 21);
+            this.F_Employee.TabIndex = 9;
+            this.F_Employee.ValueMember = "Employee_Num";
+            // 
+            // employeeBindingSource
+            // 
+            this.employeeBindingSource.DataMember = "Employee";
+            this.employeeBindingSource.DataSource = this.employeeListDataSetBindingSource;
             // 
             // SumBtn
             // 
@@ -185,20 +235,6 @@
             this.ToDate_P.Name = "ToDate_P";
             this.ToDate_P.Size = new System.Drawing.Size(103, 20);
             this.ToDate_P.TabIndex = 2;
-            // 
-            // To_Employee
-            // 
-            this.To_Employee.Location = new System.Drawing.Point(41, 189);
-            this.To_Employee.Name = "To_Employee";
-            this.To_Employee.Size = new System.Drawing.Size(103, 20);
-            this.To_Employee.TabIndex = 5;
-            // 
-            // F_Employee
-            // 
-            this.F_Employee.Location = new System.Drawing.Point(41, 151);
-            this.F_Employee.Name = "F_Employee";
-            this.F_Employee.Size = new System.Drawing.Size(103, 20);
-            this.F_Employee.TabIndex = 4;
             // 
             // FromD_P
             // 
@@ -261,7 +297,6 @@
             // 
             // reportViewer2
             // 
-            this.reportViewer2.AutoSize = true;
             this.reportViewer2.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource2.Name = "DataSet1";
             reportDataSource2.Value = this.GetSumShippReport_ResultBindingSource;
@@ -269,8 +304,8 @@
             this.reportViewer2.LocalReport.ReportEmbeddedResource = "TMS.SumShippReport.rdlc";
             this.reportViewer2.Location = new System.Drawing.Point(20, 60);
             this.reportViewer2.Name = "reportViewer2";
-            this.reportViewer2.Size = new System.Drawing.Size(410, 270);
-            this.reportViewer2.TabIndex = 16;
+            this.reportViewer2.Size = new System.Drawing.Size(430, 267);
+            this.reportViewer2.TabIndex = 9;
             this.reportViewer2.Visible = false;
             // 
             // customersTblBindingSource
@@ -313,11 +348,15 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // employeeTableAdapter
+            // 
+            this.employeeTableAdapter.ClearBeforeFill = true;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 350);
+            this.ClientSize = new System.Drawing.Size(470, 347);
             this.Controls.Add(this.reportViewer2);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.reportViewer1);
@@ -329,11 +368,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.GetSumShippReport_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ShippBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeListDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employee_ListDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersTblBindingSource)).EndInit();
@@ -344,7 +386,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -356,8 +397,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button LoadBtn;
         private System.Windows.Forms.DateTimePicker ToDate_P;
-        private System.Windows.Forms.TextBox To_Employee;
-        private System.Windows.Forms.TextBox F_Employee;
         private System.Windows.Forms.DateTimePicker FromD_P;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -377,7 +416,14 @@
         private System.Windows.Forms.BindingSource customerBindingSource1;
         private CustomerDataSetTableAdapters.CustomerTableAdapter customerTableAdapter;
         private System.Windows.Forms.Button SumBtn;
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
         private System.Windows.Forms.BindingSource GetSumShippReport_ResultBindingSource;
+        private System.Windows.Forms.ComboBox To_Employee;
+        private System.Windows.Forms.ComboBox F_Employee;
+        private System.Windows.Forms.BindingSource employeeListDataSetBindingSource;
+        private Employee_ListDataSet employee_ListDataSet;
+        private System.Windows.Forms.BindingSource employeeBindingSource;
+        private Employee_ListDataSetTableAdapters.EmployeeTableAdapter employeeTableAdapter;
+        private System.Windows.Forms.BindingSource employeeBindingSource1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
     }
 }

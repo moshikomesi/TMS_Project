@@ -46,18 +46,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.Inv_Btn = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.EmployeeBtn = new System.Windows.Forms.Button();
+            this.LogsBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.LogsBtn = new System.Windows.Forms.Button();
-            this.label10 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,9 +72,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
-            this.panel1.Controls.Add(this.Vhecles);
             this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.Inv_Btn);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.Vhecles);
             this.panel1.Location = new System.Drawing.Point(63, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(391, 255);
@@ -85,7 +87,7 @@
             this.Vhecles.AutoSize = true;
             this.Vhecles.Font = new System.Drawing.Font("Guttman David", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.Vhecles.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Vhecles.Location = new System.Drawing.Point(156, 59);
+            this.Vhecles.Location = new System.Drawing.Point(162, 43);
             this.Vhecles.Name = "Vhecles";
             this.Vhecles.Size = new System.Drawing.Size(52, 63);
             this.Vhecles.TabIndex = 3;
@@ -97,7 +99,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Guttman Adii", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(108, 8);
+            this.label1.Location = new System.Drawing.Point(117, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 36);
             this.label1.TabIndex = 0;
@@ -107,8 +109,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
-            this.panel2.Controls.Add(this.CustomersLable);
             this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.CustomersLable);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Location = new System.Drawing.Point(497, 0);
             this.panel2.Name = "panel2";
@@ -121,7 +124,7 @@
             this.CustomersLable.AutoSize = true;
             this.CustomersLable.Font = new System.Drawing.Font("Guttman David", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.CustomersLable.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.CustomersLable.Location = new System.Drawing.Point(162, 55);
+            this.CustomersLable.Location = new System.Drawing.Point(160, 47);
             this.CustomersLable.Name = "CustomersLable";
             this.CustomersLable.Size = new System.Drawing.Size(52, 63);
             this.CustomersLable.TabIndex = 4;
@@ -143,8 +146,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
-            this.panel3.Controls.Add(this.employeelbl);
             this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.EmployeeBtn);
+            this.panel3.Controls.Add(this.employeelbl);
             this.panel3.Controls.Add(this.label3);
             this.panel3.Location = new System.Drawing.Point(923, 0);
             this.panel3.Name = "panel3";
@@ -157,7 +161,7 @@
             this.employeelbl.AutoSize = true;
             this.employeelbl.Font = new System.Drawing.Font("Guttman David", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.employeelbl.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.employeelbl.Location = new System.Drawing.Point(135, 56);
+            this.employeelbl.Location = new System.Drawing.Point(136, 50);
             this.employeelbl.Name = "employeelbl";
             this.employeelbl.Size = new System.Drawing.Size(52, 63);
             this.employeelbl.TabIndex = 5;
@@ -243,48 +247,24 @@
             this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(29)))), ((int)(((byte)(36)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.LogsBtn);
-            this.panel5.Controls.Add(this.label9);
             this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(19, 347);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Controls.Add(this.LogsBtn);
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Location = new System.Drawing.Point(27, 376);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(260, 288);
+            this.panel5.Size = new System.Drawing.Size(260, 228);
             this.panel5.TabIndex = 4;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(72, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(197, 32);
-            this.label9.TabIndex = 11;
-            this.label9.Text = "הוספת משתמשים ";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(70, 148);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(0, 32);
-            this.label8.TabIndex = 10;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label7.Location = new System.Drawing.Point(73, 88);
+            this.label7.Location = new System.Drawing.Point(70, 88);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(166, 32);
             this.label7.TabIndex = 8;
@@ -295,23 +275,65 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label4.Location = new System.Drawing.Point(85, 25);
+            this.label4.Location = new System.Drawing.Point(371, 386);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 32);
             this.label4.TabIndex = 6;
             this.label4.Text = "הפקת דוחות ";
             // 
-            // button3
+            // label10
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(12, 145);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(54, 50);
-            this.button3.TabIndex = 9;
-            this.button3.UseVisualStyleBackColor = true;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label10.Location = new System.Drawing.Point(97, 165);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(139, 32);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "טבלת לוגים ";
+            // 
+            // Inv_Btn
+            // 
+            this.Inv_Btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Inv_Btn.Location = new System.Drawing.Point(34, 103);
+            this.Inv_Btn.Name = "Inv_Btn";
+            this.Inv_Btn.Size = new System.Drawing.Size(327, 144);
+            this.Inv_Btn.TabIndex = 10;
+            this.Inv_Btn.UseVisualStyleBackColor = true;
+            this.Inv_Btn.Click += new System.EventHandler(this.Inv_Btn_Click);
+            // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(30, 103);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(327, 144);
+            this.button4.TabIndex = 11;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // EmployeeBtn
+            // 
+            this.EmployeeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EmployeeBtn.Location = new System.Drawing.Point(34, 104);
+            this.EmployeeBtn.Name = "EmployeeBtn";
+            this.EmployeeBtn.Size = new System.Drawing.Size(287, 144);
+            this.EmployeeBtn.TabIndex = 11;
+            this.EmployeeBtn.UseVisualStyleBackColor = true;
+            this.EmployeeBtn.Click += new System.EventHandler(this.EmployeeBtn_Click);
+            // 
+            // LogsBtn
+            // 
+            this.LogsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogsBtn.BackgroundImage")));
+            this.LogsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.LogsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.LogsBtn.Location = new System.Drawing.Point(6, 159);
+            this.LogsBtn.Name = "LogsBtn";
+            this.LogsBtn.Size = new System.Drawing.Size(54, 50);
+            this.LogsBtn.TabIndex = 12;
+            this.LogsBtn.UseVisualStyleBackColor = true;
+            this.LogsBtn.Click += new System.EventHandler(this.LogsBtn_Click);
             // 
             // button1
             // 
@@ -319,7 +341,7 @@
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(12, 82);
+            this.button1.Location = new System.Drawing.Point(6, 82);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(54, 50);
             this.button1.TabIndex = 6;
@@ -331,7 +353,7 @@
             this.button2.BackgroundImage = global::TMS.Properties.Resources.report;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(12, 15);
+            this.button2.Location = new System.Drawing.Point(6, 9);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(54, 50);
             this.button2.TabIndex = 7;
@@ -341,7 +363,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(111, 147);
+            this.pictureBox3.Location = new System.Drawing.Point(115, 144);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(127, 90);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,7 +374,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(124, 139);
+            this.pictureBox2.Location = new System.Drawing.Point(124, 144);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(127, 90);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -364,7 +386,7 @@
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(117, 142);
+            this.pictureBox1.Location = new System.Drawing.Point(122, 144);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(127, 90);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -372,29 +394,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // LogsBtn
+            // label8
             // 
-            this.LogsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LogsBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LogsBtn.BackgroundImage")));
-            this.LogsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.LogsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LogsBtn.Location = new System.Drawing.Point(12, 213);
-            this.LogsBtn.Name = "LogsBtn";
-            this.LogsBtn.Size = new System.Drawing.Size(54, 50);
-            this.LogsBtn.TabIndex = 12;
-            this.LogsBtn.UseVisualStyleBackColor = true;
-            this.LogsBtn.Click += new System.EventHandler(this.LogsBtn_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label10.Location = new System.Drawing.Point(92, 219);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(139, 32);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "טבלת לוגים ";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Guttman Adii", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(99, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(149, 32);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "הפקת דוחות ";
             // 
             // Dashboard
             // 
@@ -405,6 +414,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.chartRevenue);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -451,10 +461,11 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button LogsBtn;
+        private System.Windows.Forms.Button Inv_Btn;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button EmployeeBtn;
+        private System.Windows.Forms.Label label8;
     }
 }

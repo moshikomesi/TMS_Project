@@ -29,32 +29,35 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InvoicesReport));
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.GetInvoiveByCustomer_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.ToDate = new System.Windows.Forms.DateTimePicker();
             this.Customer_Num = new System.Windows.Forms.ComboBox();
+            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.customerDataSet = new TMS.CustomerDataSet();
             this.LoadBtn = new System.Windows.Forms.Button();
-            this.GetInvoiveByCustomer_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.customerDataSet = new TMS.CustomerDataSet();
-            this.customerDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerTableAdapter = new TMS.CustomerDataSetTableAdapters.CustomerTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveByCustomer_ResultBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // GetInvoiveByCustomer_ResultBindingSource
+            // 
+            this.GetInvoiveByCustomer_ResultBindingSource.DataSource = typeof(TMS.GetInvoiveByCustomer_Result);
             // 
             // reportViewer1
             // 
-            reportDataSource2.Name = "GetInvoices";
-            reportDataSource2.Value = this.GetInvoiveByCustomer_ResultBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "GetInvoices";
+            reportDataSource1.Value = this.GetInvoiveByCustomer_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "TMS.InvoicesReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(12, 43);
             this.reportViewer1.Name = "reportViewer1";
@@ -95,20 +98,34 @@
             this.Customer_Num.TabIndex = 4;
             this.Customer_Num.ValueMember = "Customer_Num";
             // 
+            // customerBindingSource
+            // 
+            this.customerBindingSource.DataMember = "Customer";
+            this.customerBindingSource.DataSource = this.customerDataSetBindingSource;
+            // 
+            // customerDataSetBindingSource
+            // 
+            this.customerDataSetBindingSource.DataSource = this.customerDataSet;
+            this.customerDataSetBindingSource.Position = 0;
+            // 
+            // customerDataSet
+            // 
+            this.customerDataSet.DataSetName = "CustomerDataSet";
+            this.customerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // LoadBtn
             // 
+            this.LoadBtn.BackColor = System.Drawing.Color.LimeGreen;
             this.LoadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.LoadBtn.Image = ((System.Drawing.Image)(resources.GetObject("LoadBtn.Image")));
+            this.LoadBtn.Font = new System.Drawing.Font("Guttman Adii", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.LoadBtn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.LoadBtn.Location = new System.Drawing.Point(338, 6);
             this.LoadBtn.Name = "LoadBtn";
             this.LoadBtn.Size = new System.Drawing.Size(57, 31);
             this.LoadBtn.TabIndex = 5;
-            this.LoadBtn.UseVisualStyleBackColor = true;
+            this.LoadBtn.Text = "טען";
+            this.LoadBtn.UseVisualStyleBackColor = false;
             this.LoadBtn.Click += new System.EventHandler(this.LoadBtn_Click);
-            // 
-            // GetInvoiveByCustomer_ResultBindingSource
-            // 
-            this.GetInvoiveByCustomer_ResultBindingSource.DataSource = typeof(TMS.GetInvoiveByCustomer_Result);
             // 
             // label1
             // 
@@ -137,21 +154,6 @@
             this.label3.TabIndex = 8;
             this.label3.Text = ": קוד לקוח ";
             // 
-            // customerDataSet
-            // 
-            this.customerDataSet.DataSetName = "CustomerDataSet";
-            this.customerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customerDataSetBindingSource
-            // 
-            this.customerDataSetBindingSource.DataSource = this.customerDataSet;
-            this.customerDataSetBindingSource.Position = 0;
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.customerDataSetBindingSource;
-            // 
             // customerTableAdapter
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
@@ -174,9 +176,9 @@
             this.Text = "InvoicesReport";
             this.Load += new System.EventHandler(this.InvoicesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GetInvoiveByCustomer_ResultBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

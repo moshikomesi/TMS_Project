@@ -8,6 +8,7 @@ namespace TMS
     {
 
         string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
+        string status = "";
 
         public Customers()
         {
@@ -17,6 +18,8 @@ namespace TMS
 
         private void Customers_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'customerListDataSet.Customer' table. You can move, or remove it, as needed.
+            this.customerTableAdapter.Fill(this.customerListDataSet.Customer);
             WindowState = FormWindowState.Maximized;
             
         }
@@ -32,13 +35,14 @@ namespace TMS
         {
 
         }
-        
+        string tel = "";
+        string fax = "";
         private void SaveBtn_Click_1(object sender, EventArgs e)
         {
-            string tel = Start_Tel.Text + C_Tell.Text;
-            string fax = Start_Fax.Text + C_Fax.Text;
-            string Query = "insert into Customer(Customer_Name,Customer_LTD,Customer_Adress,Customer_Email,Customer_Tel,Customer_Fax)values('" + Cname.Text + "','" + C_Id.Text + "','" + C_Address.Text + "','" + C_Email.Text 
-                + "','" + tel + "','" + fax + "');";
+            tel = Start_Tel.Text + C_Tell.Text;
+            fax = Start_Fax.Text + C_Fax.Text;
+            string Query = "insert into Customer(Customer_Name,Customer_LTD,Customer_Adress,Customer_Email,Customer_Tel,Customer_Fax,Customer_Status)values('" + Cname.Text + "','" + C_Id.Text + "','" + C_Address.Text + "','" + C_Email.Text 
+                + "','" + tel + "','" + fax + "','"+status + "');";
 
             SqlConnection con = new SqlConnection(constring);
             con.Open();
@@ -135,70 +139,78 @@ namespace TMS
                     C_Id.Text = (dr["Customer_LTD"].ToString().Trim());
                     C_Address.Text = (dr["Customer_Adress"].ToString());
                     C_Email.Text = (dr["Customer_Email"].ToString());
+                    status = (dr["Customer_Status"].ToString());
+                    if (status == "On") Cust_On.Checked = true;
+                    if (status == "Off") Cust_Off.Checked = true;
                     tell = (dr["Customer_Tel"].ToString());
                     fx = (dr["Customer_Fax"].ToString());
-                    if (tell[1] == '9'|| tell[1] == '2'|| tell[1] == '4'|| tell[1] == '3'|| tell[1] == '8')
+                    if (tell.Length == 8|| tell.Length == 9)
                     {
-                        for (int i = 0; i < 2; i++)
+                        if (tell[1] == '9' || tell[1] == '2' || tell[1] == '4' || tell[1] == '3' || tell[1] == '8')
                         {
-                            st += tell[i];
+                            for (int i = 0; i < 2; i++)
+                            {
+                                st += tell[i];
 
+                            }
+                            Start_Tel.Text = st;
+                            for (int j = 2; j < 9; j++)
+                            {
+                                t += tell[j];
+                            }
+                            C_Tell.Text = t;
                         }
-                        Start_Tel.Text = st;
-                        for (int j =2; j <9; j++)
+                        else
                         {
-                            t += tell[j];
+                            for (int i = 0; i < 3; i++)
+                            {
+                                st += tell[i];
+
+                            }
+                            Start_Tel.Text = st;
+                            for (int j = 3; j < 10; j++)
+                            {
+                                t += tell[j];
+                            }
+                            C_Tell.Text = t;
                         }
-                        C_Tell.Text = t;
                     }
-                    else
+                    if (fx.Length == 8|| fx.Length ==9)
                     {
-                        for (int i = 0; i < 3; i++)
+                        if (fx[1] == '9' || fx[1] == '2' || fx[1] == '4' || fx[1] == '3' || fx[1] == '8')
                         {
-                            st += tell[i];
+                            for (int x = 0; x < 2; x++)
+                            {
+                                sf += fx[x];
 
+                            }
+                            Start_Fax.Text = sf;
+                            for (int z = 2; z < 9; z++)
+                            {
+                                f += fx[z];
+                            }
+                            C_Fax.Text = f;
                         }
-                        Start_Tel.Text = st;
-                        for (int j = 3; j < 10; j++)
+                        else
                         {
-                            t += tell[j];
-                        }
-                        C_Tell.Text = t;
-                    }
+                            for (int x = 0; x < 3; x++)
+                            {
+                                sf += fx[x];
 
-                    if (fx[1] == '9' || fx[1] == '2' || fx[1] == '4' || fx[1] == '3' || fx[1] == '8')
-                    {
-                        for (int x = 0; x < 2; x++)
-                        {
-                            sf += fx[x];
-
+                            }
+                            Start_Fax.Text = sf;
+                            for (int z = 3; z < 10; z++)
+                            {
+                                f += fx[z];
+                            }
+                            C_Fax.Text = f;
                         }
-                        Start_Fax.Text = sf;
-                        for (int z = 2; z < 9; z++)
-                        {
-                            f += fx[z];
-                        }
-                        C_Fax.Text = f;
-                    }
-                    else
-                    {
-                        for (int x = 0; x < 3; x++)
-                        {
-                            sf += fx[x];
-
-                        }
-                        Start_Fax.Text = sf;
-                        for (int z = 3; z < 10; z++)
-                        {
-                            f += fx[z];
-                        }
-                        C_Fax.Text = f;
                     }
 
 
                     UpdateBt.Enabled = true;
                     SaveBtn.Enabled = false;
-                    EraseBtn.Enabled = true;
+                    
                     Reset.Enabled = true;
                 }
                 con.Close();
@@ -228,7 +240,9 @@ namespace TMS
 
         private void UpdateBt_Click(object sender, EventArgs e)
         {
-            if  (Cname.Text == "" || C_Id.Text == "" || C_Address.Text == "" || C_Email.Text == "" || C_Tell.Text == "" || C_Fax.Text == "")
+            tel = Start_Tel.Text + C_Tell.Text;
+            fax = Start_Fax.Text + C_Fax.Text;
+            if  (Cname.Text == "" || C_Id.Text == "" || C_Address.Text == "" || C_Email.Text == "" || C_Tell.Text == "" ||status == "")
                     MessageBox.Show("אין אפשרות לעדכן פרטי לקוח ללא כל הפרטים ");
             else
             {
@@ -236,7 +250,7 @@ namespace TMS
 
                 try
                 {
-                    string qem = "update Customer SET Customer_Name ='"+ Cname.Text+"',Customer_LTD='"+ C_Id.Text+"',Customer_Adress ='"+ C_Address.Text+"',Customer_Email='"+ C_Email.Text+"',Customer_Fax='"+ C_Fax.Text+"',Customer_Tel='"+ C_Tell.Text+ "'where Customer_Num ='" + C_Num.Text + "';";
+                    string qem = "update Customer SET Customer_Name ='"+ Cname.Text+"',Customer_LTD='"+ C_Id.Text+"',Customer_Adress ='"+ C_Address.Text+"',Customer_Email='"+ C_Email.Text+"',Customer_Fax='"+ fax+"',Customer_Tel='"+ tel+ "',Customer_Status='"+status+ "'where Customer_Num ='" + C_Num.Text + "';";
 
                     SqlConnection con = new SqlConnection(constring);
                     SqlCommand cmdb = new SqlCommand(qem, con);
@@ -255,7 +269,7 @@ namespace TMS
                 }
             }
         }
-
+        /*
         private void EraseBtn_Click(object sender, EventArgs e)
         {
             if (Cname.Text == "" || C_Id.Text == "" || C_Address.Text == "" || C_Email.Text == "" || C_Tell.Text == "" || C_Fax.Text == "")
@@ -293,7 +307,7 @@ namespace TMS
                 MessageBox.Show(ex.Message);
             }
         }
-
+        */
         bool IsValidEmail(string mail)
         {
 
@@ -455,6 +469,16 @@ namespace TMS
         private void C_Num_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Cust_On_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "On";
+        }
+
+        private void Cust_Off_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "Off";
         }
     }
 

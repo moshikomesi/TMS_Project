@@ -106,13 +106,13 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.invoiceUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.invoiceDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoiceNumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.invoicedateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.customerNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceDetailsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityItemsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceAmountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invoiceUrlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1BindingSource)).BeginInit();
@@ -239,7 +239,7 @@
             this.Tax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Tax.Enabled = false;
             this.Tax.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Tax.Location = new System.Drawing.Point(3, 44);
+            this.Tax.Location = new System.Drawing.Point(3, 42);
             this.Tax.Name = "Tax";
             this.Tax.Size = new System.Drawing.Size(92, 26);
             this.Tax.TabIndex = 22;
@@ -442,6 +442,7 @@
             this.In_Q.Size = new System.Drawing.Size(78, 26);
             this.In_Q.TabIndex = 2;
             this.In_Q.TextChanged += new System.EventHandler(this.In_Q_TextChanged);
+            this.In_Q.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
             this.In_Q.Leave += new System.EventHandler(this.In_Q_Leave);
             // 
             // In_A
@@ -453,6 +454,7 @@
             this.In_A.Size = new System.Drawing.Size(78, 26);
             this.In_A.TabIndex = 3;
             this.In_A.TextChanged += new System.EventHandler(this.In_A_TextChanged);
+            this.In_A.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
             this.In_A.Leave += new System.EventHandler(this.In_A_Leave);
             // 
             // In_Sub
@@ -621,6 +623,7 @@
             this.In_Q2.Name = "In_Q2";
             this.In_Q2.Size = new System.Drawing.Size(78, 26);
             this.In_Q2.TabIndex = 2;
+            this.In_Q2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
             // 
             // In_A2
             // 
@@ -630,6 +633,8 @@
             this.In_A2.ShortcutsEnabled = false;
             this.In_A2.Size = new System.Drawing.Size(78, 26);
             this.In_A2.TabIndex = 3;
+            this.In_A2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
+            this.In_A2.Leave += new System.EventHandler(this.In_A2_Leave);
             // 
             // panel4
             // 
@@ -717,6 +722,7 @@
             this.In_Q3.Name = "In_Q3";
             this.In_Q3.Size = new System.Drawing.Size(78, 26);
             this.In_Q3.TabIndex = 2;
+            this.In_Q3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
             // 
             // In_A3
             // 
@@ -726,6 +732,8 @@
             this.In_A3.ShortcutsEnabled = false;
             this.In_A3.Size = new System.Drawing.Size(78, 26);
             this.In_A3.TabIndex = 3;
+            this.In_A3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.In_Q_KeyPress);
+            this.In_A3.Leave += new System.EventHandler(this.In_A3_Leave);
             // 
             // CraditInvoiceB
             // 
@@ -946,60 +954,68 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.invoiceUrlDataGridViewTextBoxColumn,
-            this.invoiceAmountDataGridViewTextBoxColumn,
-            this.quantityItemsDataGridViewTextBoxColumn,
-            this.invoiceDetailsDataGridViewTextBoxColumn,
-            this.customerNumberDataGridViewTextBoxColumn,
             this.invoiceNumDataGridViewTextBoxColumn,
-            this.invoicedateDataGridViewTextBoxColumn});
+            this.invoicedateDataGridViewTextBoxColumn,
+            this.customerNumberDataGridViewTextBoxColumn,
+            this.invoiceDetailsDataGridViewTextBoxColumn,
+            this.quantityItemsDataGridViewTextBoxColumn,
+            this.invoiceAmountDataGridViewTextBoxColumn,
+            this.invoiceUrlDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.invoicesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(226, 28);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 576);
+            this.dataGridView1.Size = new System.Drawing.Size(1217, 564);
             this.dataGridView1.TabIndex = 44;
-            // 
-            // invoiceUrlDataGridViewTextBoxColumn
-            // 
-            this.invoiceUrlDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Url";
-            this.invoiceUrlDataGridViewTextBoxColumn.HeaderText = "קישור לחשבונית ";
-            this.invoiceUrlDataGridViewTextBoxColumn.Name = "invoiceUrlDataGridViewTextBoxColumn";
-            // 
-            // invoiceAmountDataGridViewTextBoxColumn
-            // 
-            this.invoiceAmountDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Amount";
-            this.invoiceAmountDataGridViewTextBoxColumn.HeaderText = "סה\"כ לפני מע\"מ";
-            this.invoiceAmountDataGridViewTextBoxColumn.Name = "invoiceAmountDataGridViewTextBoxColumn";
-            // 
-            // quantityItemsDataGridViewTextBoxColumn
-            // 
-            this.quantityItemsDataGridViewTextBoxColumn.DataPropertyName = "Quantity_Items";
-            this.quantityItemsDataGridViewTextBoxColumn.HeaderText = "כמות";
-            this.quantityItemsDataGridViewTextBoxColumn.Name = "quantityItemsDataGridViewTextBoxColumn";
-            // 
-            // invoiceDetailsDataGridViewTextBoxColumn
-            // 
-            this.invoiceDetailsDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Details";
-            this.invoiceDetailsDataGridViewTextBoxColumn.HeaderText = "פרטים";
-            this.invoiceDetailsDataGridViewTextBoxColumn.Name = "invoiceDetailsDataGridViewTextBoxColumn";
-            // 
-            // customerNumberDataGridViewTextBoxColumn
-            // 
-            this.customerNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Number";
-            this.customerNumberDataGridViewTextBoxColumn.HeaderText = "מספר לקוח ";
-            this.customerNumberDataGridViewTextBoxColumn.Name = "customerNumberDataGridViewTextBoxColumn";
             // 
             // invoiceNumDataGridViewTextBoxColumn
             // 
+            this.invoiceNumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.invoiceNumDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Num";
             this.invoiceNumDataGridViewTextBoxColumn.HeaderText = " מספר החשבונית ";
             this.invoiceNumDataGridViewTextBoxColumn.Name = "invoiceNumDataGridViewTextBoxColumn";
             // 
             // invoicedateDataGridViewTextBoxColumn
             // 
+            this.invoicedateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.invoicedateDataGridViewTextBoxColumn.DataPropertyName = "Invoice_date";
             this.invoicedateDataGridViewTextBoxColumn.HeaderText = "תאריך החשבונית";
             this.invoicedateDataGridViewTextBoxColumn.Name = "invoicedateDataGridViewTextBoxColumn";
+            // 
+            // customerNumberDataGridViewTextBoxColumn
+            // 
+            this.customerNumberDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.customerNumberDataGridViewTextBoxColumn.DataPropertyName = "Customer_Number";
+            this.customerNumberDataGridViewTextBoxColumn.HeaderText = "מספר לקוח ";
+            this.customerNumberDataGridViewTextBoxColumn.Name = "customerNumberDataGridViewTextBoxColumn";
+            // 
+            // invoiceDetailsDataGridViewTextBoxColumn
+            // 
+            this.invoiceDetailsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.invoiceDetailsDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Details";
+            this.invoiceDetailsDataGridViewTextBoxColumn.HeaderText = "פרטים";
+            this.invoiceDetailsDataGridViewTextBoxColumn.Name = "invoiceDetailsDataGridViewTextBoxColumn";
+            // 
+            // quantityItemsDataGridViewTextBoxColumn
+            // 
+            this.quantityItemsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.quantityItemsDataGridViewTextBoxColumn.DataPropertyName = "Quantity_Items";
+            this.quantityItemsDataGridViewTextBoxColumn.HeaderText = "כמות";
+            this.quantityItemsDataGridViewTextBoxColumn.Name = "quantityItemsDataGridViewTextBoxColumn";
+            // 
+            // invoiceAmountDataGridViewTextBoxColumn
+            // 
+            this.invoiceAmountDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.invoiceAmountDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Amount";
+            this.invoiceAmountDataGridViewTextBoxColumn.HeaderText = "סה\"כ לפני מע\"מ";
+            this.invoiceAmountDataGridViewTextBoxColumn.Name = "invoiceAmountDataGridViewTextBoxColumn";
+            // 
+            // invoiceUrlDataGridViewTextBoxColumn
+            // 
+            this.invoiceUrlDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.invoiceUrlDataGridViewTextBoxColumn.DataPropertyName = "Invoice_Url";
+            this.invoiceUrlDataGridViewTextBoxColumn.HeaderText = "קישור לחשבונית ";
+            this.invoiceUrlDataGridViewTextBoxColumn.Name = "invoiceUrlDataGridViewTextBoxColumn";
             // 
             // Invoices
             // 
@@ -1117,12 +1133,12 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceUrlDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceAmountDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityItemsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceDetailsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoiceNumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn invoicedateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn customerNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceDetailsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityItemsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceAmountDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn invoiceUrlDataGridViewTextBoxColumn;
     }
 }

@@ -47,7 +47,7 @@ namespace TMS
             this.Cash_P.Visible = true;
             Check_P.Visible = false;
             MT_P.Visible = false;
-            this.Cash_P.Location = new Point(23, 314);
+            this.Cash_P.Location = new Point(26, 411);
         }
 
         private void Check_CheckedChanged(object sender, EventArgs e)
@@ -70,11 +70,13 @@ namespace TMS
             MT_P.Visible = true;
             Check_P.Visible = false;
             Cash_P.Visible = false;
-            this.MT_P.Location = new Point(23, 314);
+            this.MT_P.Location = new Point(77, 407);
         }
 
         private void Bills_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'recepitDataSet.Receipts' table. You can move, or remove it, as needed.
+            this.receiptsTableAdapter.Fill(this.recepitDataSet.Receipts);
             check_s = true;
             WindowState = FormWindowState.Maximized;
             // TODO: This line of code loads data into the 'customerDataSet.Customer' table. You can move, or remove it, as needed.
@@ -520,12 +522,10 @@ namespace TMS
         private void Serch_Btn_Click(object sender, EventArgs e)
         {
             button4.Enabled = false;
-            Check.Visible = false;
-            Cashe.Visible = false;
-            Mtransfer.Visible = false;
+         
             if (SherchB_Txt.Text == "")
             {
-                MessageBox.Show("אין אפרות לחפש קבלה ללא מספר הקבלה ");
+                MessageBox.Show("אין אפשרות לחפש קבלה ללא מספר הקבלה ");
                 return;
             }
             SqlConnection con = new SqlConnection(constring);
@@ -552,6 +552,7 @@ namespace TMS
                     Bill_Sub.Text = (dr["Receipts_Detaills"].ToString());
                     if ((dr["Payment_type"].ToString() == "Cash"))
                     {
+                        Cashe.Checked = true;
                         Cash_P.Visible = true;
                         Check_P.Visible = false;
                         MT_P.Visible = false;
@@ -563,6 +564,7 @@ namespace TMS
                     }
                     if ((dr["Payment_type"].ToString() == "Check"))
                     {
+                        Check.Checked = true;
                         Cash_P.Visible = false;
                         Check_P.Visible = true;
                         MT_P.Visible = false;
@@ -570,6 +572,7 @@ namespace TMS
                     }
                     if ((dr["Payment_type"].ToString() == "Money Transfer"))
                     {
+                        Mtransfer.Checked = true;
                         Cash_P.Visible = false;
                         Check_P.Visible = false;
                         MT_P.Visible = true;
@@ -597,6 +600,19 @@ namespace TMS
             Bills bill = new Bills();
             this.Close();
             bill.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Cash_Amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

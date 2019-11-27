@@ -14,6 +14,7 @@ namespace TMS
     public partial class Traks : MetroFramework.Forms.MetroForm
     {
         string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
+        string status = "";
         public Traks()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace TMS
         private void Save_Click(object sender, EventArgs e)
         {
 
-            string Query = "insert into Vehicle(Vehicle_Num,Vehicle_Year,Vehicle_Type) values('" + this.Trak_Num.Text + "','" + this.Vhicle_Date.Text + "','" + this.Truck_Type.Text + "');";
+            string Query = "insert into Vehicle(Vehicle_Num,Vehicle_Year,Vehicle_Type,vehicle_status) values('" + this.Trak_Num.Text + "','" + this.Vhicle_Date.Text + "','" + this.Truck_Type.Text + "','" +status+ "');";
 
 
             SqlConnection con = new SqlConnection(constring);
@@ -48,7 +49,7 @@ namespace TMS
             con.Open();
             try
             {
-                 if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == "")
+                if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == ""||status == "")
                     {
                     MessageBox.Show(" לא ניתן להוסיף רכב ללא כל הנתונים ");
                     return;
@@ -84,7 +85,7 @@ namespace TMS
 
         private void Update_Click(object sender, EventArgs e)
         {
-            if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == "")
+            if (Trak_Num.Text == "" || Truck_Type.Text == "" || Vhicle_Date.Text == ""||status== "")
             {
 
                 MessageBox.Show("אין אפשרות לעדכן פרטי רכב ללא כל הפרטים ");
@@ -109,7 +110,7 @@ namespace TMS
             {
                 try
                 {
-                    string qem = "update Vehicle set Vehicle_Num ='"+ Trak_Num.Text + "', Vehicle_Type ='"+ Truck_Type.Text + "', Vehicle_Year ='"+ Vhicle_Date.Text + "'where Vehicle_Num ='"+Serche_Trak.Text+"'";
+                    string qem = "update Vehicle set Vehicle_Num ='"+ Trak_Num.Text + "', Vehicle_Type ='"+ Truck_Type.Text + "', Vehicle_Year ='"+ Vhicle_Date.Text + "', vehicle_status ='"+status + "'where Vehicle_Num ='"+Serche_Trak.Text+"'";
                    
                     
                     SqlCommand cmdb = new SqlCommand(qem, con);
@@ -160,6 +161,9 @@ namespace TMS
                     Trak_Num.Text = (dr["Vehicle_Num"].ToString());
                     Vhicle_Date.Text = (dr["Vehicle_Year"].ToString());
                     Truck_Type.Text = (dr["Vehicle_Type"].ToString());
+                    status = (dr["vehicle_status"].ToString());
+                    if (status == "On") Truck_On.Checked = true;
+                    if (status == "Off") Truck_Off.Checked = true;
 
                 }
                 con.Close();
@@ -176,6 +180,7 @@ namespace TMS
                         T_Type_T.Visible = true;
                         T_Date_V.Text = (dr["Treatment_Last"].ToString());
                         T_Type_T.Text = (dr["Treatments_Type"].ToString());
+                        
                        
                     }
 
@@ -298,6 +303,16 @@ namespace TMS
                 Serche_Trak.Text = tnum;
 
             }
+        }
+
+        private void Truck_On_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "On";
+        }
+
+        private void Truck_Off_CheckedChanged(object sender, EventArgs e)
+        {
+            status = "Off";
         }
     }
 }

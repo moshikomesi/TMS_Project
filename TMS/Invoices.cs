@@ -33,7 +33,7 @@ namespace TMS
 
         string constring = "Data Source=DESKTOP-C2IN8KT;Initial Catalog = TmsDb; Integrated Security = True";
         
-        int a = 1;
+        int line = 1;
         List<Panel> PnalAdded = new List<Panel>();
         public int number;
         public string C_Num;
@@ -168,6 +168,7 @@ namespace TMS
             con.Close();
             return C_Email;
         }
+        /*
         System.Windows.Forms.Panel pnl = new System.Windows.Forms.Panel();
         public System.Windows.Forms.Panel AddNewLine()
         {
@@ -236,20 +237,21 @@ namespace TMS
             txt3.Anchor = AnchorStyles.Left;
             a = a + 1;
            return pnl;
+           
         }
-
+        */
         
         private void button2_Click(object sender, EventArgs e)
         {
-            if (a == 1)
+            if (line == 1)
             {
                 panel3.Visible = true;
-                a += 1;
+                line++;
             }
-            else if (a == 2)
+            else if (line == 2)
             {
                 panel4.Visible = true;
-                a += 1;
+                line++;
             }
         
             //  AddNewLine();
@@ -273,6 +275,17 @@ namespace TMS
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (line == 1)
+            {
+                MessageBox.Show("לא ניתן למחוק שורה זו");
+                return;
+            }
+            DialogResult result = MessageBox.Show("? האם אתה בטוח שברצונך למחוק את השורה האחרונה", "אזהרה", MessageBoxButtons.YesNo);
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+            else
             DeleteLine();
         }
 
@@ -294,19 +307,69 @@ namespace TMS
 
         public void DeleteLine()
         {
-            if (a == 4)
+            if (line == 0 || line == 1) return;
+            if (line == 4)
             {
 
             }
-            else if (a == 3)
+            else if (line == 3)
             {
+            if (In_A3.Text == ""|| In_Q3.Text == ""|| In_Sum3.Text == "")
+                {
+                    line--;
+                    panel4.Visible = false;
+                    return;
+                }
+                
+                double q = double.Parse(In_Q3.Text);
+            double a = double.Parse(In_A3.Text);
+            double s = a * q;
+            In_Sum3.Text = s.ToString();
+            double sum = double.Parse(Sum.Text);
+            double summ = sum - s;
+            Sum.Text = summ.ToString();
+            double t = s * 0.17;
+            double tax = double.Parse(Tax.Text);
+            double taxx = tax - t;
+            Tax.Text = taxx.ToString();
+            double p = summ + taxx;
+            To_Pay.Text = p.ToString() + " " + "₪";
+                line --;
                 panel4.Visible = false;
-                a -= 1;
+                In_A3.Text = "";
+                In_Q3.Text = "";
+                In_Sum3.Text = "";
+                
             }
-            else if (a == 2)
+            else if (line == 2)
             {
+                if (In_A2.Text == "" || In_Q2.Text == "" || In_Sum2.Text == "")
+                {
+                    line--;
+                    panel3.Visible = false;
+                    return;
+                }
+                double q = double.Parse(In_Q2.Text);
+                double a = double.Parse(In_A2.Text);
+                double s = a * q;
+                In_Sum2.Text = s.ToString();
+                double sum = double.Parse(Sum.Text);
+                double summ = sum - s;
+                Sum.Text = summ.ToString();
+                double t = s * 0.17;
+                double tax = double.Parse(Tax.Text);
+                double taxx = tax - t;
+                Tax.Text = taxx.ToString();
+                double p = summ + taxx;
+                To_Pay.Text = p.ToString() + " " + "₪";
+                line --;
                 panel3.Visible = false;
-                a -= 1;
+                In_Q2.Text = "";
+                In_A2.Text = "";
+                In_Sum2.Text = "";
+
+
+
             }
 
         }
@@ -318,7 +381,7 @@ namespace TMS
             Thread timer = new Thread(new ThreadStart(StartForm));
             timer.Start();
             Thread.Sleep(5000);
-            
+            string url = "";
 
             if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "")
             {
@@ -331,59 +394,111 @@ namespace TMS
                 button3.Visible = true;
             }
             CreateInvoice cri = new CreateInvoice();
-            //the next line is a function for API call from Invoice4U references 
-            Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text);
-            timer.Abort();
-            if (doc.Errors.Length > 0)
+            //the next line is a function for API call from Invoice4U references
+            if (line == 1)
             {
-                MessageBox.Show(doc.Errors[0].Error.ToString());
-                return;
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show(" חשבונית  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+                Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text);
 
-                Doc_ID = doc.ID.ToString();
-                doc_num = doc.DocumentNumber.ToString();
-               
-            }
-            string url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
-            invoice_Link = url;
-            // save the invoice to the DB
-            string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.In_A.Text + "','" +url+ "');";
-            SqlConnection con = new SqlConnection(constring);
-            SqlCommand cmdDataBase = new SqlCommand(Query, con);
-            SqlDataReader myReader;
-            con.Open();
 
-            try
-            {
-                if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "" )
+                timer.Abort();
+                if (doc.Errors.Length > 0)
                 {
-                    MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
                     return;
                 }
-                myReader = cmdDataBase.ExecuteReader();
-               
-                MessageBox.Show("חשבונית נשמרה בהצלחה");
-                while (myReader.Read()) { }
-                con.Close();
-                linkTo_Invoice.Visible = true;
-                pictureBox1.Visible = true;
-                button4.Enabled = false;
-                button2.Enabled = false;
-                button3.Enabled = false;
-                New_Bt.Enabled = true;
-                CraditInvoiceB.Enabled = true;
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" חשבונית  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
 
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
+                 url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
+                invoice_Link = url;
             }
-
-            catch (Exception ex)
+            if (line == 2)
             {
-                MessageBox.Show(ex.Message);
-            }
-            
+                Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text,In_Dt2.Text, double.Parse(In_A2.Text), double.Parse(In_Q2.Text));
 
+
+                timer.Abort();
+                if (doc.Errors.Length > 0)
+                {
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
+                    return;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" חשבונית  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
+                 url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
+                invoice_Link = url;
+            }
+            if(line==3)
+            {
+                Document doc = cri.CreateDocumentGeneralClient(InvoiceDate.Value, GetCustomerId().ToString(), CusName.Text, In_Dt.Text, double.Parse(In_A.Text), double.Parse(In_Q.Text), CusEmail.Text, In_Sub.Text, In_Dt2.Text, double.Parse(In_A2.Text), double.Parse(In_Q2.Text), In_Dt3.Text, double.Parse(In_A3.Text), double.Parse(In_Q3.Text));
+
+
+                timer.Abort();
+                if (doc.Errors.Length > 0)
+                {
+                    MessageBox.Show(doc.Errors[0].Error.ToString());
+                    return;
+                }
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show(" חשבונית  מס : " + doc.DocumentNumber + "הופקה ונשלחה אל הלקוח בהצלחה");
+
+                    Doc_ID = doc.ID.ToString();
+                    doc_num = doc.DocumentNumber.ToString();
+
+                }
+                url = "https://newview.invoice4u.co.il/Views/PDF.aspx?docid=" + Doc_ID + "&docNumber=" + doc_num;
+                invoice_Link = url;
+            }
+
+
+
+            // save the invoice to the DB
+            string Query = " insert into Invoices (Invoice_Num,Invoice_date,Customer_Number,Invoice_Details,Quantity_Items,Invoice_Amount,Invoice_Url)values('" + this.Number + "','" + this.InvoiceDate.Text + "','" + GetCustomerNum() + "','" + this.In_Dt.Text + "','" + this.In_Q.Text + "','" + this.Sum.Text + "','" + url + "');";
+                SqlConnection con = new SqlConnection(constring);
+                SqlCommand cmdDataBase = new SqlCommand(Query, con);
+                SqlDataReader myReader;
+                con.Open();
+           
+                try
+                {
+                    if (In_Dt.Text == "" || In_Q.Text == "" || In_A.Text == "")
+                    {
+                        MessageBox.Show(" לא ניתן להפיק חשבונית  ללא כל נתונים ");
+                        return;
+                    }
+                    myReader = cmdDataBase.ExecuteReader();
+
+                    MessageBox.Show("חשבונית נשמרה בהצלחה");
+                    while (myReader.Read()) { }
+                    con.Close();
+                    linkTo_Invoice.Visible = true;
+                    pictureBox1.Visible = true;
+                    button4.Enabled = false;
+                    button2.Enabled = false;
+                    button3.Enabled = false;
+                    New_Bt.Enabled = true;
+                    CraditInvoiceB.Enabled = true;
+
+                }
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            
         }
             
 
@@ -748,6 +863,57 @@ namespace TMS
 
         private void tabPage3_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void In_Q_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void In_A2_Leave(object sender, EventArgs e)
+        {
+            if( In_Q2.Text == "" || In_A2.Text == "") return;
+            double q = double.Parse(In_Q2.Text);
+            double a = double.Parse(In_A2.Text);
+            double s = a * q;
+            In_Sum2.Text = s.ToString();
+            double sum = double.Parse(Sum.Text);
+            double summ = sum + s;
+            Sum.Text = summ.ToString();
+            double t = s * 0.17;
+            double tax = double.Parse(Tax.Text);
+            double taxx = tax + t;
+            Tax.Text = taxx.ToString();
+            double p = summ + taxx;
+            To_Pay.Text = p.ToString() + " " + "₪";
+            button4.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
+        }
+
+        private void In_A3_Leave(object sender, EventArgs e)
+        {
+            if (In_Q3.Text == "" || In_A3.Text == "") return;
+            double q = double.Parse(In_Q3.Text);
+            double a = double.Parse(In_A3.Text);
+            double s = a * q;
+            In_Sum3.Text = s.ToString();
+            double sum = double.Parse(Sum.Text);
+            double summ = sum + s;
+            Sum.Text = summ.ToString();
+            double t = s * 0.17;
+            double tax = double.Parse(Tax.Text);
+            double taxx = tax + t;
+            Tax.Text = taxx.ToString();
+            double p = summ + taxx;
+            To_Pay.Text = p.ToString() + " " + "₪";
+            button4.Enabled = true;
+            button2.Enabled = true;
+            button3.Enabled = true;
 
         }
     }
